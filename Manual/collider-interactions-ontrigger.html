@@ -1,0 +1,320 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: 'en-us', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: OnTrigger events</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="author" content="Unity Technologies">
+<meta property="relative-path-to-manual" content="">
+<meta property="version-switcher-versions-with-this-page" content="Versions with this page:">
+<meta property="version-switcher-versions-without-this-page" content="Versions without this page:">
+<meta property="version-switcher-supported" content="Supported">
+<meta property="version-switcher-legacy" content="Legacy">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<link rel="canonical" href="https://docs.unity3d.com/6000.6/Documentation/Manual/collider-interactions-ontrigger.html">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="/StaticFilesConfig/UnityVersionsInfo.js"></script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js?ts=20261113"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js?ts=20261113"></script><script type="text/javascript" src="../StaticFilesManual/js/image-comp.js?ts=20261113"></script><script type="text/javascript" src="docdata/toc.js?ts=20261113"></script><script type="text/javascript" src="docdata/global_toc.js?ts=20261113"></script><link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css?ts=20261113">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/icons.css?ts=20261113">
+<link rel="stylesheet" href="../StaticFilesManual/css/prism.css">
+<script src="../StaticFilesManual/js/prism.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><script src="../StaticFilesManual/js/jquery.sidebar.min.js"></script><link rel="stylesheet" href="../StaticFilesManual/css/mobileoptimisation.css">
+<script src="../StaticFilesManual/js/mobileoptimisation.js"></script>
+</head>
+<body>
+<div id="DocsAnalyticsData" data-area="none" data-pagetype="manual"></div>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity.com/">unity.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                                Version: <b>Unity 6.6</b> (6000.6)
+                                <div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+<ul id="OtherVersionsContentUl"></ul>
+<div id="otherVersionsLegend"><ul>
+<li>
+<div id="supportedColour" class="legendBox"></div>Supported</li>
+<li>
+<div id="notFoundColour" class="legendBox"></div>Legacy</li>
+</ul></div>
+</div>
+<div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+</div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/collider-interactions-ontrigger.html">English</a></li>
+<li><a href="/cn/current/Manual/collider-interactions-ontrigger.html">中文</a></li>
+<li><a href="/ja/current/Manual/collider-interactions-ontrigger.html">日本語</a></li>
+<li><a href="/kr/current/Manual/collider-interactions-ontrigger.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div>
+<div class="mobileLogo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc" id="customScrollbar">
+<h2>Unity Manual</h2>
+<div class="search-form sidebar-search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" id="mobileSearchBtn" class="submit" value="Search">
+</form></div>
+<div class="toggle version-number sidebar-version-switcher" id="VersionNumber" data-target=".otherversionscontent"><form id="otherVersionsContentMobileForm"><div class="ui-field-contain">
+<label for="select-native-4">Version: Unity 6.6</label><select name="select-native-4" id="versionsSelectMobile"><option>Select a different version</option>
+<optgroup id="versionsWithThisPageMobile" label="Versions with this page"></optgroup>
+<optgroup id="versionsWithoutThisPageMobile" label="Versions without this page"></optgroup></select>
+</div></form></div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/collider-interactions-ontrigger.html">English</a></li>
+<li><a href="/cn/current/Manual/collider-interactions-ontrigger.html">中文</a></li>
+<li><a href="/ja/current/Manual/collider-interactions-ontrigger.html">日本語</a></li>
+<li><a href="/kr/current/Manual/collider-interactions-ontrigger.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="PhysicsSection.html">Physics</a></li>
+<li><a href="PhysicsOverview.html">Built-in 3D physics</a></li>
+<li><a href="collision-section.html">Collision</a></li>
+<li><a href="collider-interactions.html">Collider interactions</a></li>
+<li>OnTrigger events</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="collider-interactions-oncollision.html"></a></span><div class="tip">OnCollision events</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="collider-interactions-create-trigger.html"></a></span><div class="tip">Create and configure a trigger collider</div>
+</div>
+</div></div>
+<div id="_leavefeedback"></div>
+<h1>OnTrigger events</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Trigger colliders don’t cause collisions. Instead, they detect other colliders that pass through them, and call functions that you can use to initiate events. </p>
+
+<p>Example uses for triggers include: </p>
+
+<ul>
+<li>When the player reaches a specific area at the end of a corridor, activate a cinematic cutscene.</li>
+<li>When the player character walks within a space in front of a sliding door, trigger an animation to open the door.</li>
+<li>When projectiles pass through a trigger collider in the far distance, disable or destroy the projectile.</li>
+</ul>
+
+<p>Working with trigger colliders primarily involves the following API functions:</p>
+
+<ul>
+<li>
+<a href="../ScriptReference/Collider.OnTriggerEnter.html"><code>Collider.OnTriggerEnter</code></a>: Unity calls this function on a trigger collider when it first makes contact with another collider.</li>
+<li>
+<a href="../ScriptReference/Collider.OnTriggerStay.html"><code>Collider.OnTriggerStay</code></a>: Unity calls this function on a trigger collider once per frame if it detects another Collider inside the trigger collider.</li>
+<li>
+<a href="../ScriptReference/Collider.OnTriggerExit.html"><code>Collider.OnTriggerExit</code></a>: Unity calls this function on a trigger collider when it ceases contact with another collider.</li>
+</ul>
+
+<p>The following example prints a message to the Console when Unity calls each function.</p>
+
+<pre><code class="lang-cs">using UnityEngine;
+using System.Collections;
+
+public class DoorObject : MonoBehaviour
+{
+    // “other” refers to the collider on the GameObject inside this trigger
+    void OnTriggerEnter (Collider other)
+    {
+        Debug.Log (&quot;A collider has entered the DoorObject trigger&quot;);
+    }
+
+    void OnTriggerStay (Collider other)
+    {
+        Debug.Log (&quot;A collider is inside the DoorObject trigger&quot;);
+    }
+    
+    void OnTriggerExit (Collider other)
+    {
+        Debug.Log (&quot;A collider has exited the DoorObject trigger&quot;);
+    }
+}
+</code></pre>
+
+<p>For examples of practical applications for <code>OnTrigger</code> events, refer to <a href="collider-interactions-example-scripts.html">Example scripts for collider events</a>.</p>
+
+<h2>Detect colliders that are destroyed or disabled inside a trigger</h2>
+
+<p>If you disable or destroy a collider while it overlaps a trigger collider, Unity doesn’t call <code>OnTriggerExit</code> for that pair of colliders. The same applies if you deactivate or destroy the trigger collider itself.</p>
+
+<p>Physics backends report only that two shapes start or stop overlapping, so Unity calls <code>OnTriggerExit</code> when the two colliders move apart. Deactivation and destruction don’t produce an exit event for two different reasons:</p>
+
+<ul>
+<li>If you disable a collider, or the GameObject it belongs to, the event would report a collider that’s no longer in the simulation. Deactivating a GameObject also stops its scripts from receiving messages at all, unlike a disabled <code>MonoBehaviour</code>, which still receives trigger events.</li>
+<li>If you destroy a collider, there’s nothing left to report to. The destroyed object can’t receive the event, and the collider that <code>OnTriggerExit</code> supplies as its argument no longer exists.</li>
+</ul>
+
+<p>Unity does not call <code>OnTriggerExit</code> to store and maintain a record of every overlapping pair of colliders in the scene. Maintaining that record would cost CPU time and memory in every project and even in projects would not require that record.</p>
+
+<p>If your project needs an exit event whenever a collider stops overlapping a trigger, record the overlaps yourself and check them each physics update. If you choose which colliders and interactions to record, this approach usually costs much less than maintaining a record of every pair in the scene.</p>
+
+<p>Record each collider’s <a href="../ScriptReference/EntityId.html"><code>EntityId</code></a>, along with any data you need about it, while the collider is still alive. After Unity destroys a collider, the reference to it compares equal to <code>null</code>, so you can’t read any values from it and you can’t rely on it to report its own <code>EntityId</code>. The <code>EntityId</code> that you record on entry is what identifies the collider that left.</p>
+
+<p>Unity can reuse the <code>EntityId</code> of a destroyed object for a different object, so an entry under an <code>EntityId</code> that you already recorded doesn’t always mean the same collider entered twice. Compare the collider reference you recorded with the one Unity supplies, and treat a different reference as evidence that the collider you recorded left. For more information, refer to <a href="instanceid-to-entityid-migration.html">InstanceID to EntityId migration</a>.</p>
+
+<p>Your record also has to account for the trigger collider itself leaving the simulation, because Unity doesn’t call <code>OnTriggerExit</code> in that case either. Disabling the trigger’s <code>Collider</code> component doesn’t stop the script that holds the record, so check the trigger’s own state each physics update. Deactivating the trigger’s GameObject stops <code>FixedUpdate</code> from running at all, so clear the record in <a href="../ScriptReference/MonoBehaviour.OnDisable.html"><code>MonoBehaviour.OnDisable</code></a> instead. Disabling only the <code>MonoBehaviour</code> isn’t the same case: it stops <code>FixedUpdate</code>, but the script keeps receiving trigger messages, and the overlaps it recorded are still valid.</p>
+
+<p>The following example records the colliders that enter a trigger collider, and treats any recorded collider that’s no longer active, and any record held when the trigger stops being simulated, as having left the trigger.</p>
+
+<pre><code class="lang-cs">using System.Collections.Generic;
+using UnityEngine;
+
+public class TriggerOccupancy : MonoBehaviour
+{
+    readonly Dictionary&lt;EntityId, (Collider Collider, string Name)&gt; m_Occupants =
+        new Dictionary&lt;EntityId, (Collider, string)&gt;();
+
+    readonly List&lt;EntityId&gt; m_Departed = new List&lt;EntityId&gt;();
+
+    Collider m_Trigger;
+
+    void Awake()
+    {
+        m_Trigger = GetComponent&lt;Collider&gt;();
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        var id = other.GetEntityId();
+
+        // Unity can reuse the EntityId of a destroyed object, so a record under this ID might belong to
+        // a different collider that left without an exit event. Report that one before overwriting it.
+        if (m_Occupants.TryGetValue(id, out var recorded) &amp;&amp; recorded.Collider != other)
+            HandleExit(id);
+
+        // Record the identity and data you need while the collider is still alive.
+        m_Occupants[id] = (other, other.name);
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        HandleExit(other.GetEntityId());
+    }
+
+    void OnDisable()
+    {
+        // Deactivating this GameObject stops FixedUpdate, so nothing below runs again while the trigger
+        // is out of the simulation. Reactivating it makes the remaining overlaps enter again.
+        // Disabling only this MonoBehaviour keeps the records valid, so leave them alone.
+        if (!gameObject.activeInHierarchy)
+            ReportAllAsDeparted();
+    }
+
+    void FixedUpdate()
+    {
+        // Disabling or destroying the trigger's own Collider takes it out of the simulation without
+        // stopping this script, and ends every overlap silently. Check the trigger before its occupants.
+        if (m_Trigger == null || !m_Trigger.enabled)
+        {
+            ReportAllAsDeparted();
+            return;
+        }
+
+        // A collider that Unity destroys or deactivates inside the trigger doesn't send
+        // OnTriggerExit, so check the recorded colliders for any that are no longer active.
+        m_Departed.Clear();
+
+        foreach (var occupant in m_Occupants)
+        {
+            var collider = occupant.Value.Collider;
+
+            if (collider == null || !collider.enabled || !collider.gameObject.activeInHierarchy)
+                m_Departed.Add(occupant.Key);
+        }
+
+        foreach (var id in m_Departed)
+            HandleExit(id);
+    }
+
+    void ReportAllAsDeparted()
+    {
+        m_Departed.Clear();
+        m_Departed.AddRange(m_Occupants.Keys);
+
+        foreach (var id in m_Departed)
+            HandleExit(id);
+    }
+
+    void HandleExit(EntityId id)
+    {
+        if (!m_Occupants.TryGetValue(id, out var occupant))
+            return;
+
+        m_Occupants.Remove(id);
+
+        // Use the recorded name: the collider might already be destroyed.
+        Debug.Log(occupant.Name + &quot; left the trigger&quot;);
+    }
+}
+</code></pre>
+
+<p>Collision events have the same limitation. For more information, refer to <a href="collider-interactions-oncollision.html">OnCollision events</a>.</p>
+
+<h2>Additional resources</h2>
+
+<ul>
+<li><a href="collider-interactions.html">Collider interactions</a></li>
+<li><a href="collider-interactions-create-trigger.html">Create and configure a trigger collider</a></li>
+<li><a href="collider-interactions-example-scripts.html">Example scripts for collider events</a></li>
+<li><span class="tooltip" tabindex="0" ><a href="../ScriptReference/Collider.html">Collider</a><span class="tooltiptext">An invisible shape that is used to handle physical collisions for an object. A collider doesn’t need to be exactly the same shape as the object’s mesh - a rough approximation is often more efficient and indistinguishable in gameplay. <a class="tooltipMoreInfoLink" aria-label="Navigate to more info about CollidersOverview.html" href="CollidersOverview.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#collider" aria-label="Go to glossary anchor for collider">Glossary</a></span></span></span></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="collider-interactions-oncollision.html"></a></span><div class="tip">OnCollision events</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="collider-interactions-create-trigger.html"></a></span><div class="tip">Create and configure a trigger collider</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 79827756. Built on: 2026-11-13.</div>
+<div class="menu">
+<a href="https://learn.unity.com/">Tutorials</a><a href="https://answers.unity3d.com">Community Answers</a><a href="https://support.unity3d.com/hc/en-us">Knowledge Base</a><a href="https://forum.unity3d.com">Forums</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">Terms of use</a><a href="https://unity.com/legal">Legal</a><a href="https://unity.com/legal/privacy-policy">Privacy Policy</a><a href="https://unity.com/legal/cookie-policy">Cookies</a><a href="https://unity.com/legal/docs-terms">Documentation Terms of Use</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

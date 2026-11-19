@@ -1,0 +1,477 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: 'en-us', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Add a scene selector dropdown to the toolbar</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="author" content="Unity Technologies">
+<meta property="relative-path-to-manual" content="">
+<meta property="version-switcher-versions-with-this-page" content="Versions with this page:">
+<meta property="version-switcher-versions-without-this-page" content="Versions without this page:">
+<meta property="version-switcher-supported" content="Supported">
+<meta property="version-switcher-legacy" content="Legacy">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<link rel="canonical" href="https://docs.unity3d.com/6000.6/Documentation/Manual/toolbar-scene-selector.html">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="/StaticFilesConfig/UnityVersionsInfo.js"></script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js?ts=20261113"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js?ts=20261113"></script><script type="text/javascript" src="../StaticFilesManual/js/image-comp.js?ts=20261113"></script><script type="text/javascript" src="docdata/toc.js?ts=20261113"></script><script type="text/javascript" src="docdata/global_toc.js?ts=20261113"></script><link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css?ts=20261113">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/icons.css?ts=20261113">
+<link rel="stylesheet" href="../StaticFilesManual/css/prism.css">
+<script src="../StaticFilesManual/js/prism.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><script src="../StaticFilesManual/js/jquery.sidebar.min.js"></script><link rel="stylesheet" href="../StaticFilesManual/css/mobileoptimisation.css">
+<script src="../StaticFilesManual/js/mobileoptimisation.js"></script>
+</head>
+<body>
+<div id="DocsAnalyticsData" data-area="none" data-pagetype="manual"></div>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity.com/">unity.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                                Version: <b>Unity 6.6</b> (6000.6)
+                                <div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+<ul id="OtherVersionsContentUl"></ul>
+<div id="otherVersionsLegend"><ul>
+<li>
+<div id="supportedColour" class="legendBox"></div>Supported</li>
+<li>
+<div id="notFoundColour" class="legendBox"></div>Legacy</li>
+</ul></div>
+</div>
+<div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+</div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/toolbar-scene-selector.html">English</a></li>
+<li><a href="/cn/current/Manual/toolbar-scene-selector.html">中文</a></li>
+<li><a href="/ja/current/Manual/toolbar-scene-selector.html">日本語</a></li>
+<li><a href="/kr/current/Manual/toolbar-scene-selector.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div>
+<div class="mobileLogo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc" id="customScrollbar">
+<h2>Unity Manual</h2>
+<div class="search-form sidebar-search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" id="mobileSearchBtn" class="submit" value="Search">
+</form></div>
+<div class="toggle version-number sidebar-version-switcher" id="VersionNumber" data-target=".otherversionscontent"><form id="otherVersionsContentMobileForm"><div class="ui-field-contain">
+<label for="select-native-4">Version: Unity 6.6</label><select name="select-native-4" id="versionsSelectMobile"><option>Select a different version</option>
+<optgroup id="versionsWithThisPageMobile" label="Versions with this page"></optgroup>
+<optgroup id="versionsWithoutThisPageMobile" label="Versions without this page"></optgroup></select>
+</div></form></div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/toolbar-scene-selector.html">English</a></li>
+<li><a href="/cn/current/Manual/toolbar-scene-selector.html">中文</a></li>
+<li><a href="/ja/current/Manual/toolbar-scene-selector.html">日本語</a></li>
+<li><a href="/kr/current/Manual/toolbar-scene-selector.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="extending-the-editor.html">Extending the Unity Editor</a></li>
+<li><a href="toolbar-custom-controls-lp.html">Custom toolbar controls</a></li>
+<li>Add a scene selector dropdown to the toolbar</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="toolbar-control-state.html"></a></span><div class="tip">Update a toolbar control when its state changes</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="gizmos-handles-programming.html"></a></span><div class="tip">Programming with gizmos and handles</div>
+</div>
+</div></div>
+<div id="_leavefeedback"></div>
+<h1>Add a scene selector dropdown to the toolbar</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>If you often move between scenes while you work, add a dropdown to the Unity Editor toolbar that lists the scenes in your project. Select a scene from the list to open it, without having to find it in the <strong>Project</strong> window. The dropdown also displays the name of the active scene.</p>
+
+<p>A toolbar dropdown is a <a href="../ScriptReference/Toolbars.MainToolbarDropdown.html"><code>MainToolbarDropdown</code></a>. It displays text and an icon like a button. When you select it, the Editor calls your method and passes the position of the dropdown, so your code can open a menu at the dropdown. This page first creates a dropdown that opens scenes, then keeps the scene name up to date, and finally adds support for Play mode.</p>
+
+<h2>Prerequisites</h2>
+
+<ul>
+<li>Complete <a href="toolbar-add-button.html">Add a custom button to the toolbar</a>.</li>
+</ul>
+
+<h2>Create a scene selector dropdown</h2>
+
+<p>The following script creates a dropdown that displays the name of the active scene and lists every scene in the <code>Assets</code> folder. This first version doesn’t work in Play mode, and it doesn’t update its text when the active scene changes.</p>
+
+<p>To create a dropdown that opens the scenes in your project:</p>
+
+<ol>
+<li><p>In the <code>Assets/Editor</code> folder, create an empty C# script called <code>SceneSelectorDropdown.cs</code>.</p></li>
+<li>
+<p>Replace the contents of the script with the following code:</p>
+
+<pre><code class="lang-cs">using System.IO;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEditor.Toolbars;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class SceneSelectorDropdown
+{
+    [MainToolbarElement(&quot;Example/Scene Selector&quot;, defaultDockPosition = MainToolbarDockPosition.Middle)]
+    public static MainToolbarElement CreateSceneSelectorDropdown()
+    {
+        // A new scene that you haven't saved yet has no name.
+        string activeSceneName = SceneManager.GetActiveScene().name;
+        if (string.IsNullOrEmpty(activeSceneName))
+        {
+            activeSceneName = &quot;Untitled&quot;;
+        }
+
+        Texture2D icon = EditorGUIUtility.IconContent(&quot;UnityLogo&quot;).image as Texture2D;
+        MainToolbarContent content = new MainToolbarContent(activeSceneName, icon, &quot;Open a scene in the project&quot;);
+        return new MainToolbarDropdown(content, ShowDropdownMenu);
+    }
+
+    static void ShowDropdownMenu(Rect dropdownRect)
+    {
+        GenericMenu menu = new GenericMenu();
+        string activeScenePath = SceneManager.GetActiveScene().path;
+
+        // Find every scene asset in the Assets folder.
+        string[] sceneGuids = AssetDatabase.FindAssets(&quot;t:SceneAsset&quot;, new string[] { &quot;Assets&quot; });
+        if (sceneGuids.Length == 0)
+        {
+            menu.AddDisabledItem(new GUIContent(&quot;No scenes in project&quot;));
+        }
+
+        foreach (string sceneGuid in sceneGuids)
+        {
+            string scenePath = AssetDatabase.GUIDToAssetPath(sceneGuid);
+            string sceneName = Path.GetFileNameWithoutExtension(scenePath);
+
+            // Display a check mark next to the active scene.
+            bool isActiveScene = scenePath == activeScenePath;
+            menu.AddItem(new GUIContent(sceneName), isActiveScene, () =&gt; OpenScene(scenePath));
+        }
+
+        menu.DropDown(dropdownRect);
+    }
+
+    static void OpenScene(string scenePath)
+    {
+        // Ask whether to save changes to the open scenes before Unity closes them.
+        if (EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
+        {
+            EditorSceneManager.OpenScene(scenePath);
+        }
+    }
+}
+</code></pre>
+
+<p>The script contains the following parts:</p>
+
+<ul>
+<li>
+<code>CreateSceneSelectorDropdown</code> reads the name of the active scene and uses it as the text of the dropdown. It passes the <code>ShowDropdownMenu</code> method to <code>MainToolbarDropdown</code>.</li>
+<li>
+<code>ShowDropdownMenu</code> uses <a href="../ScriptReference/AssetDatabase.FindAssets.html"><code>AssetDatabase.FindAssets</code></a> to find every scene in the <code>Assets</code> folder, and adds each scene to a <a href="../ScriptReference/GenericMenu.html"><code>GenericMenu</code></a>. It then calls <a href="../ScriptReference/GenericMenu.DropDown.html"><code>GenericMenu.DropDown</code></a> with the position that the Editor passes in, so the menu opens at the dropdown.</li>
+<li>
+<code>OpenScene</code> calls <a href="../ScriptReference/SceneManagement.EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo.html"><code>EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo</code></a> to ask whether to save your changes, then opens the selected scene with <a href="../ScriptReference/SceneManagement.EditorSceneManager.OpenScene.html"><code>EditorSceneManager.OpenScene</code></a>.</li>
+</ul>
+</li>
+<li><p>Save the script.</p></li>
+<li><p>In the Editor, right-click an empty area of the toolbar and select <strong>Example</strong> &gt; <strong>Scene Selector</strong> to display the scene selector dropdown.</p></li>
+<li><p>Select the dropdown, and then select a scene.</p></li>
+</ol>
+
+<p>The scene selector dropdown appears in the middle section of the toolbar, and the Editor opens the scene that you select. The dropdown still displays the name of the previous scene.</p>
+
+<h2>Update the dropdown when the active scene changes</h2>
+
+<p>The toolbar doesn’t read the active scene again on its own. To display the name of the new scene, your script must call <a href="../ScriptReference/Toolbars.MainToolbar.Refresh.html"><code>MainToolbar.Refresh</code></a> when the active scene changes. For more information about how to refresh a control, refer to <a href="toolbar-control-state.html">Update a toolbar control when its state changes</a>.</p>
+
+<p>The following script refreshes the dropdown when the active scene changes and when you save a scene.</p>
+
+<p>To keep the scene name up to date:</p>
+
+<ol>
+<li>
+<p>Replace the contents of <code>SceneSelectorDropdown.cs</code> with the following code:</p>
+
+<pre><code class="lang-cs">using System.IO;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEditor.Toolbars;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+[InitializeOnLoad]
+public class SceneSelectorDropdown
+{
+    const string k_Path = &quot;Example/Scene Selector (Synced)&quot;;
+
+    static SceneSelectorDropdown()
+    {
+        // Refresh the dropdown when the active scene changes or when you save a scene,
+        // so the dropdown always displays the name of the active scene.
+        EditorSceneManager.activeSceneChangedInEditMode += OnActiveSceneChanged;
+        EditorSceneManager.sceneSaved += OnSceneSaved;
+    }
+
+    [MainToolbarElement(k_Path, defaultDockPosition = MainToolbarDockPosition.Middle)]
+    public static MainToolbarElement CreateSceneSelectorDropdown()
+    {
+        string activeSceneName = SceneManager.GetActiveScene().name;
+        if (string.IsNullOrEmpty(activeSceneName))
+        {
+            activeSceneName = &quot;Untitled&quot;;
+        }
+
+        Texture2D icon = EditorGUIUtility.IconContent(&quot;UnityLogo&quot;).image as Texture2D;
+        MainToolbarContent content = new MainToolbarContent(activeSceneName, icon, &quot;Open a scene in the project&quot;);
+        return new MainToolbarDropdown(content, ShowDropdownMenu);
+    }
+
+    static void ShowDropdownMenu(Rect dropdownRect)
+    {
+        GenericMenu menu = new GenericMenu();
+        string activeScenePath = SceneManager.GetActiveScene().path;
+
+        string[] sceneGuids = AssetDatabase.FindAssets(&quot;t:SceneAsset&quot;, new string[] { &quot;Assets&quot; });
+        if (sceneGuids.Length == 0)
+        {
+            menu.AddDisabledItem(new GUIContent(&quot;No scenes in project&quot;));
+        }
+
+        foreach (string sceneGuid in sceneGuids)
+        {
+            string scenePath = AssetDatabase.GUIDToAssetPath(sceneGuid);
+            string sceneName = Path.GetFileNameWithoutExtension(scenePath);
+            bool isActiveScene = scenePath == activeScenePath;
+            menu.AddItem(new GUIContent(sceneName), isActiveScene, () =&gt; OpenScene(scenePath));
+        }
+
+        menu.DropDown(dropdownRect);
+    }
+
+    static void OpenScene(string scenePath)
+    {
+        if (EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
+        {
+            EditorSceneManager.OpenScene(scenePath);
+        }
+    }
+
+    static void OnActiveSceneChanged(Scene previousScene, Scene newScene)
+    {
+        MainToolbar.Refresh(k_Path);
+    }
+
+    static void OnSceneSaved(Scene scene)
+    {
+        MainToolbar.Refresh(k_Path);
+    }
+}
+</code></pre>
+
+<p>The <a href="../ScriptReference/InitializeOnLoadAttribute.html"><code>InitializeOnLoad</code></a> attribute runs the static constructor when the Editor loads the script. The constructor subscribes to the following events, and each event handler calls <code>MainToolbar.Refresh</code>:</p>
+
+<ul>
+<li>
+<a href="../ScriptReference/SceneManagement.EditorSceneManager-activeSceneChangedInEditMode.html"><code>EditorSceneManager.activeSceneChangedInEditMode</code></a>: The Editor raises this event when the active scene changes, for example when you open a scene from the dropdown or from the <strong>Project</strong> window.</li>
+<li>
+<a href="../ScriptReference/SceneManagement.EditorSceneManager-sceneSaved.html"><code>EditorSceneManager.sceneSaved</code></a>: The Editor raises this event when you save a scene, for example when you save a new scene and give it a name.</li>
+</ul>
+</li>
+<li><p>Save the script.</p></li>
+<li><p>In the Editor, right-click an empty area of the toolbar and select <strong>Example</strong> &gt; <strong>Scene Selector (Synced)</strong> to display the scene selector dropdown.</p></li>
+<li><p>Open a different scene from the dropdown or from the <strong>Project</strong> window.</p></li>
+</ol>
+
+<p>The dropdown now displays the name of the scene that you opened.</p>
+
+<h2>Change scenes in Play mode</h2>
+
+<p>In Play mode, <code>EditorSceneManager.OpenScene</code> isn’t available. Instead, use <a href="../ScriptReference/SceneManagement.SceneManager.LoadScene.html"><code>SceneManager.LoadScene</code></a> to load the scene in the same way as your application does at runtime. <code>SceneManager</code> can load only the scenes in the scene list of the active build profile. For more information, refer to <a href="build-profile-scene-list.html">Manage scenes in a build</a>.</p>
+
+<p>The following script loads the selected scene with <code>SceneManager.LoadScene</code> in Play mode, and opens it with <code>EditorSceneManager.OpenScene</code> outside Play mode.</p>
+
+<p>To change scenes in Play mode:</p>
+
+<ol>
+<li>
+<p>Replace the contents of <code>SceneSelectorDropdown.cs</code> with the following code:</p>
+
+<pre><code class="lang-cs">using System.IO;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEditor.Toolbars;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+[InitializeOnLoad]
+public class SceneSelectorDropdown
+{
+    const string k_Path = &quot;Example/Scene Selector (Play mode)&quot;;
+
+    static SceneSelectorDropdown()
+    {
+        EditorSceneManager.activeSceneChangedInEditMode += OnActiveSceneChanged;
+        EditorSceneManager.sceneSaved += OnSceneSaved;
+
+        // Also refresh the dropdown when the active scene changes in Play mode.
+        SceneManager.activeSceneChanged += OnActiveSceneChanged;
+    }
+
+    [MainToolbarElement(k_Path, defaultDockPosition = MainToolbarDockPosition.Middle)]
+    public static MainToolbarElement CreateSceneSelectorDropdown()
+    {
+        string activeSceneName = SceneManager.GetActiveScene().name;
+        if (string.IsNullOrEmpty(activeSceneName))
+        {
+            activeSceneName = &quot;Untitled&quot;;
+        }
+
+        Texture2D icon = EditorGUIUtility.IconContent(&quot;UnityLogo&quot;).image as Texture2D;
+        MainToolbarContent content = new MainToolbarContent(activeSceneName, icon, &quot;Open a scene in the project&quot;);
+        return new MainToolbarDropdown(content, ShowDropdownMenu);
+    }
+
+    static void ShowDropdownMenu(Rect dropdownRect)
+    {
+        GenericMenu menu = new GenericMenu();
+        string activeScenePath = SceneManager.GetActiveScene().path;
+
+        string[] sceneGuids = AssetDatabase.FindAssets(&quot;t:SceneAsset&quot;, new string[] { &quot;Assets&quot; });
+        if (sceneGuids.Length == 0)
+        {
+            menu.AddDisabledItem(new GUIContent(&quot;No scenes in project&quot;));
+        }
+
+        foreach (string sceneGuid in sceneGuids)
+        {
+            string scenePath = AssetDatabase.GUIDToAssetPath(sceneGuid);
+            string sceneName = Path.GetFileNameWithoutExtension(scenePath);
+            bool isActiveScene = scenePath == activeScenePath;
+            menu.AddItem(new GUIContent(sceneName), isActiveScene, () =&gt; SwitchScene(scenePath));
+        }
+
+        menu.DropDown(dropdownRect);
+    }
+
+    static void SwitchScene(string scenePath)
+    {
+        if (EditorApplication.isPlaying)
+        {
+            // In Play mode, Unity can load only the scenes in the scene list
+            // of the active build profile.
+            string sceneName = Path.GetFileNameWithoutExtension(scenePath);
+            if (Application.CanStreamedLevelBeLoaded(sceneName))
+            {
+                SceneManager.LoadScene(sceneName);
+            }
+            else
+            {
+                Debug.LogError($&quot;Add the {sceneName} scene to the scene list of the active build profile to load it in Play mode.&quot;);
+            }
+        }
+        else if (EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
+        {
+            EditorSceneManager.OpenScene(scenePath);
+        }
+    }
+
+    static void OnActiveSceneChanged(Scene previousScene, Scene newScene)
+    {
+        MainToolbar.Refresh(k_Path);
+    }
+
+    static void OnSceneSaved(Scene scene)
+    {
+        MainToolbar.Refresh(k_Path);
+    }
+}
+</code></pre>
+
+<p>The script contains the following changes:</p>
+
+<ul>
+<li>
+<code>SwitchScene</code> checks whether the Editor is in Play mode. In Play mode, it uses <a href="../ScriptReference/Application.CanStreamedLevelBeLoaded.html"><code>Application.CanStreamedLevelBeLoaded</code></a> to check that the scene is in the scene list, and then loads the scene with <code>SceneManager.LoadScene</code>. If the scene isn’t in the scene list, the script logs an error in the <strong>Console</strong> window. In Edit mode, <code>SwitchScene</code> opens the scene in the same way as the previous script.</li>
+<li>The constructor also subscribes to <a href="../ScriptReference/SceneManagement.SceneManager-activeSceneChanged.html"><code>SceneManager.activeSceneChanged</code></a>, so the dropdown updates when the active scene changes in Play mode.</li>
+</ul>
+</li>
+<li><p>Save the script.</p></li>
+<li><p>In the Editor, right-click an empty area of the toolbar and select <strong>Example</strong> &gt; <strong>Scene Selector (Play mode)</strong> to display the scene selector dropdown.</p></li>
+<li><p>Enter Play mode.</p></li>
+<li><p>Select the dropdown, and then select a scene in the scene list of the active build profile.</p></li>
+</ol>
+
+<p>The Editor loads the scene, and the dropdown displays its name.</p>
+
+<h2>Additional resources</h2>
+
+<ul>
+<li><a href="toolbar-custom-controls-lp.html">Custom toolbar controls</a></li>
+<li><a href="toolbar-control-state.html">Update a toolbar control when its state changes</a></li>
+<li><span class="tooltip" tabindex="0" ><a href="CreatingScenes.html">Scenes</a><span class="tooltiptext">A Scene contains the environments and menus of your game. Think of each unique Scene file as a unique level. In each Scene, you place your environments, obstacles, and decorations, essentially designing and building your game in pieces. <a class="tooltipMoreInfoLink" aria-label="Navigate to more info about CreatingScenes.html" href="CreatingScenes.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Scene" aria-label="Go to glossary anchor for Scene">Glossary</a></span></span></span></li>
+<li><a href="../ScriptReference/Toolbars.MainToolbarDropdown.html"><code>MainToolbarDropdown</code></a></li>
+<li><a href="../ScriptReference/GenericMenu.html"><code>GenericMenu</code></a></li>
+<li><a href="../ScriptReference/SceneManagement.EditorSceneManager.html"><code>EditorSceneManager</code></a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="toolbar-control-state.html"></a></span><div class="tip">Update a toolbar control when its state changes</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="gizmos-handles-programming.html"></a></span><div class="tip">Programming with gizmos and handles</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 79827756. Built on: 2026-11-13.</div>
+<div class="menu">
+<a href="https://learn.unity.com/">Tutorials</a><a href="https://answers.unity3d.com">Community Answers</a><a href="https://support.unity3d.com/hc/en-us">Knowledge Base</a><a href="https://forum.unity3d.com">Forums</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">Terms of use</a><a href="https://unity.com/legal">Legal</a><a href="https://unity.com/legal/privacy-policy">Privacy Policy</a><a href="https://unity.com/legal/cookie-policy">Cookies</a><a href="https://unity.com/legal/docs-terms">Documentation Terms of Use</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

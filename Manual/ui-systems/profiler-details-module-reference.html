@@ -1,0 +1,348 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: 'en-us', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: UI Toolkit Details profiler module reference</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="author" content="Unity Technologies">
+<meta property="relative-path-to-manual" content="../">
+<meta property="version-switcher-versions-with-this-page" content="Versions with this page:">
+<meta property="version-switcher-versions-without-this-page" content="Versions without this page:">
+<meta property="version-switcher-supported" content="Supported">
+<meta property="version-switcher-legacy" content="Legacy">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<link rel="canonical" href="https://docs.unity3d.com/6000.6/Documentation/Manual/ui-systems/profiler-details-module-reference.html">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="/StaticFilesConfig/UnityVersionsInfo.js"></script><script type="text/javascript" src="../../StaticFilesManual/js/jquery.js?ts=20261113"></script><script type="text/javascript" src="../../StaticFilesManual/js/core.js?ts=20261113"></script><script type="text/javascript" src="../../StaticFilesManual/js/image-comp.js?ts=20261113"></script><script type="text/javascript" src="../docdata/toc.js?ts=20261113"></script><script type="text/javascript" src="../docdata/global_toc.js?ts=20261113"></script><link rel="stylesheet" type="text/css" href="../../StaticFilesManual/css/core.css?ts=20261113">
+<link rel="stylesheet" type="text/css" href="../../StaticFilesManual/css/icons.css?ts=20261113">
+<link rel="stylesheet" href="../../StaticFilesManual/css/prism.css">
+<script src="../../StaticFilesManual/js/prism.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><script src="../../StaticFilesManual/js/jquery.sidebar.min.js"></script><link rel="stylesheet" href="../../StaticFilesManual/css/mobileoptimisation.css">
+<script src="../../StaticFilesManual/js/mobileoptimisation.js"></script>
+</head>
+<body>
+<div id="DocsAnalyticsData" data-area="none" data-pagetype="manual"></div>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="../30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="../index.html" class="selected">Manual</a></li>
+<li><a href="../../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity.com/">unity.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                                Version: <b>Unity 6.6</b> (6000.6)
+                                <div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+<ul id="OtherVersionsContentUl"></ul>
+<div id="otherVersionsLegend"><ul>
+<li>
+<div id="supportedColour" class="legendBox"></div>Supported</li>
+<li>
+<div id="notFoundColour" class="legendBox"></div>Legacy</li>
+</ul></div>
+</div>
+<div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+</div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/ui-systems/profiler-details-module-reference.html">English</a></li>
+<li><a href="/cn/current/Manual/ui-systems/profiler-details-module-reference.html">中文</a></li>
+<li><a href="/ja/current/Manual/ui-systems/profiler-details-module-reference.html">日本語</a></li>
+<li><a href="/kr/current/Manual/ui-systems/profiler-details-module-reference.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div>
+<div class="mobileLogo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc" id="customScrollbar">
+<h2>Unity Manual</h2>
+<div class="search-form sidebar-search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" id="mobileSearchBtn" class="submit" value="Search">
+</form></div>
+<div class="toggle version-number sidebar-version-switcher" id="VersionNumber" data-target=".otherversionscontent"><form id="otherVersionsContentMobileForm"><div class="ui-field-contain">
+<label for="select-native-4">Version: Unity 6.6</label><select name="select-native-4" id="versionsSelectMobile"><option>Select a different version</option>
+<optgroup id="versionsWithThisPageMobile" label="Versions with this page"></optgroup>
+<optgroup id="versionsWithoutThisPageMobile" label="Versions without this page"></optgroup></select>
+</div></form></div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/ui-systems/profiler-details-module-reference.html">English</a></li>
+<li><a href="/cn/current/Manual/ui-systems/profiler-details-module-reference.html">中文</a></li>
+<li><a href="/ja/current/Manual/ui-systems/profiler-details-module-reference.html">日本語</a></li>
+<li><a href="/kr/current/Manual/ui-systems/profiler-details-module-reference.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="../UIToolkits.html">UI systems</a></li>
+<li><a href="../UIElements.html">UI Toolkit</a></li>
+<li><a href="../UIE-test-ui.html">Test UI</a></li>
+<li><a href="../ui-systems/profile-ui.html">Profile your UI</a></li>
+<li>UI Toolkit Details profiler module reference</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="../ui-systems/profiler-module-reference.html"></a></span><div class="tip">UI Toolkit profiler module reference</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="../UIE-profiler-markers.html"></a></span><div class="tip">UI Toolkit profiler markers</div>
+</div>
+</div></div>
+<div id="_leavefeedback"></div>
+<h1>UI Toolkit Details profiler module reference</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>The UI Toolkit Details profiler module collects data about the work your application performs to render and update your UI.</p>
+
+<p>Use the module to identify performance bottlenecks and optimize your UI elements.</p>
+
+<p>You can profile UI for Edit mode, Play mode, and player builds on devices. The profiler’s <a href="../profiling-play-mode.html">Play mode</a> captures only in-game UI, while <a href="../profiling-edit-mode.html">Edit mode</a> captures Unity Editor UI and in-game UI running in the Game view. For more information on profiling, refer to <a href="../profiler-profiling-applications.html">Collecting performance data</a>.</p>
+
+<p>To open the Profiler window, go to <strong>Window</strong> &gt; <strong>Analysis</strong> &gt; <strong>Profiler</strong>. For more information, refer to <a href="../Profiler.html">Unity Profiler</a>.</p>
+
+<figure>
+<img src="../../uploads/Main/uitk/uitk-details-profiler-module.png" alt="The UI Toolkit Details profiler module">
+<figcaption>The UI Toolkit Details profiler module</figcaption>
+</figure>
+
+<h2>UI Toolkit Details profiler module charts</h2>
+
+<p>The UI Toolkit Details profiler module contains the following charts. Each chart plots one value per frame:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Chart</strong></th>
+	<th style="text-align:left;"><strong>Description</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Batches Count</strong></td>
+	<td style="text-align:left;">Number of batches rendered.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Draw Calls Count</strong></td>
+	<td style="text-align:left;">Number of draw calls.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Vertices Count</strong></td>
+	<td style="text-align:left;">Number of vertices.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Indices Count</strong></td>
+	<td style="text-align:left;">Number of indices.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Hierarchy Changes</strong></td>
+	<td style="text-align:left;">Number of hierarchy changes for all panels. For example, adding, removing, or reparenting of visual elements.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Panel Changes</strong></td>
+	<td style="text-align:left;">Number of changes to visual elements for all panels. For example, style, layout, transform, or hierarchy changes.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Visual Element Count</strong></td>
+	<td style="text-align:left;">Number of visual elements in all panels.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Event Count</strong></td>
+	<td style="text-align:left;">Number of events dispatched on all panels. For example, pointer, keyboard, or navigation.</td>
+</tr>
+</tbody>
+</table>
+
+<p>A change is any modification that flags a visual element for its panel to reprocess, such as a style, layout, transform, or hierarchy change. Panels process these changes in a deferred pass, which can itself produce more changes.</p>
+
+<p>For example, the <strong>Panel Changes</strong> value is the number of changes accumulated since the panel last updated its rendering data. Updating rendering data isn’t the same as rendering a frame: a panel can render multiple frames without updating its data, or update its data multiple times between renders.</p>
+
+<p>Because the deferred pass can itself produce changes, a single user action can register as several.</p>
+
+<p>Select this module in the <strong>Profiler</strong> window to view the data. Select a point on the chart to view the data for that frame in the details pane in the bottom half of the window.</p>
+
+<p><a id="details-pane" aria-hidden="true"></a></p>
+
+<p>For each panel or batch, the details pane displays the chart data along with the following:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Data</strong></th>
+	<th style="text-align:left;"><strong>Description</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Panel / Batch</strong></td>
+	<td style="text-align:left;">The panel name or batch number. For runtime UI, the panel name is the <a href="../UIE-Runtime-Panel-Settings.html">Panel Settings</a> asset name. For Editor UI, the panel name is the <code>EditorWindow</code> name.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Batches</strong></td>
+	<td style="text-align:left;">Number of batches emitted by this panel during the render pass.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Draw Calls</strong></td>
+	<td style="text-align:left;">Number of Draw commands processed.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Vertices</strong></td>
+	<td style="text-align:left;">Number of vertices referenced by Draw commands.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Indices</strong></td>
+	<td style="text-align:left;">Number of indices submitted by Draw commands.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Immediate Draws</strong></td>
+	<td style="text-align:left;">Number of immediate-mode draws.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Draw Ranges</strong></td>
+	<td style="text-align:left;">Number of contiguous draw ranges stashed before each batch is broken.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Breaking Reason</strong></td>
+	<td style="text-align:left;">Reason why the renderer broke this batch instead of continuing to grow it.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Owner</strong></td>
+	<td style="text-align:left;">Panel component that owned the render chain when the batch was broken.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Hierarchy Changes</strong></td>
+	<td style="text-align:left;">Number of hierarchy changes on this panel in the frame. For example, adding, removing, or reparenting of visual elements.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Panel Changes</strong></td>
+	<td style="text-align:left;">Number of changes to visual elements on this panel in the frame. For example, style, layout, transform, or hierarchy changes.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Visual Elements</strong></td>
+	<td style="text-align:left;">Number of visual elements in this panel’s hierarchy.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Events</strong></td>
+	<td style="text-align:left;">Number of events dispatched on this panel.</td>
+</tr>
+</tbody>
+</table>
+
+<p>The UI Toolkit profiler modules display the following additional controls:</p>
+
+<ul>
+<li>A: Select <strong>Open Frame Debugger</strong> to inspect underlying rendering calls. For more information, refer to <a href="../FrameDebugger-landing.html">Frame Debugger</a>.</li>
+<li>B: Select <strong>Open UI Toolkit Debugger</strong> to inspect a panel’s UI elements. For more information, refer to <a href="../UIE-ui-debugger.html">UI Toolkit Debugger</a>.</li>
+<li>C: Open the documentation related to profiling UI.</li>
+<li>D: Select the Inspector icon to show or hide UI Toolkit related data.</li>
+<li>E: This pane is available when you show UI Toolkit related data by selecting the Inspector icon highlighted in (D). It displays more data for the chosen row, such as the associated panel components, batch breaking reasons, and the dispatched events. The events list provides information about the event type, the receiving element’s type and name, the panel component, and the event parameters.</li>
+<li>F: Select this to highlight the panel component in the Scene view and the Hierarchy.</li>
+</ul>
+
+<figure>
+<img src="../../uploads/Main/uitk/profiler-modules-controls.png" alt="Additional controls available in the UI Toolkit profiler modules view">
+<figcaption>Additional controls available in the UI Toolkit profiler modules view</figcaption>
+</figure>
+
+<p>Select a panel to view the count of each batch breaking reason for this frame. </p>
+
+<p>Select a batch to view more information about the batch breaking reason.</p>
+
+<p>The following batch breaking reasons are possible:</p>
+
+<ul>
+<li>
+<strong>Default Material Change</strong>: A Push/PopDefaultMaterial command interrupted the chain.</li>
+<li>
+<strong>Immediate Command</strong>: An Immediate (or ImmediateCull) command interrupted the chain.</li>
+<li>
+<strong>Material Change</strong>: A different material was needed for the next draw.</li>
+<li>
+<strong>Page Change</strong>: The next draw uses a mesh on a different vertex or index buffer.</li>
+<li>
+<strong>Ranges Buffer Full</strong>: The internal draw-range buffer ran out of room mid-pass and had to flush.</li>
+<li>
+<strong>Render Chain Cut</strong>: A CutRenderChain command (new render chain owner / world-space root).</li>
+<li>
+<strong>Scissor Change</strong>: A Push/PopScissor command changed the clip rectangle.</li>
+<li>
+<strong>Stencil Ref Change</strong>: The stencil reference value changed (typically a clipping mask boundary).</li>
+<li>
+<strong>Texture Slots Exhausted</strong>: All available texture slots were in use; no room for the next draw’s texture.</li>
+<li>
+<strong>View Change</strong>: A Push/PopView command changed the view matrix.</li>
+</ul>
+
+<h2>Additional resources</h2>
+
+<ul>
+<li><a href="../best-practice-guides/ui-toolkit-for-advanced-unity-developers/optimizing-performance.html">Optimizing performance</a></li>
+<li><a href="profiler-module-reference.html">UI Toolkit profiler module reference</a></li>
+<li><a href="../UIE-profiler-markers.html">UI Toolkit profiler markers</a></li>
+<li><a href="../profiler-profiling-applications.html">Collecting performance data</a></li>
+<li><a href="../profiling-target-device.html">Collect performance data on a target platform</a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="../ui-systems/profiler-module-reference.html"></a></span><div class="tip">UI Toolkit profiler module reference</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="../UIE-profiler-markers.html"></a></span><div class="tip">UI Toolkit profiler markers</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 79827756. Built on: 2026-11-13.</div>
+<div class="menu">
+<a href="https://learn.unity.com/">Tutorials</a><a href="https://answers.unity3d.com">Community Answers</a><a href="https://support.unity3d.com/hc/en-us">Knowledge Base</a><a href="https://forum.unity3d.com">Forums</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">Terms of use</a><a href="https://unity.com/legal">Legal</a><a href="https://unity.com/legal/privacy-policy">Privacy Policy</a><a href="https://unity.com/legal/cookie-policy">Cookies</a><a href="https://unity.com/legal/docs-terms">Documentation Terms of Use</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

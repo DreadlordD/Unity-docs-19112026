@@ -1,0 +1,583 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: 'en-us', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Smart merge</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="author" content="Unity Technologies">
+<meta property="relative-path-to-manual" content="">
+<meta property="version-switcher-versions-with-this-page" content="Versions with this page:">
+<meta property="version-switcher-versions-without-this-page" content="Versions without this page:">
+<meta property="version-switcher-supported" content="Supported">
+<meta property="version-switcher-legacy" content="Legacy">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<link rel="canonical" href="https://docs.unity3d.com/6000.6/Documentation/Manual/SmartMerge.html">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="/StaticFilesConfig/UnityVersionsInfo.js"></script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js?ts=20261113"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js?ts=20261113"></script><script type="text/javascript" src="../StaticFilesManual/js/image-comp.js?ts=20261113"></script><script type="text/javascript" src="docdata/toc.js?ts=20261113"></script><script type="text/javascript" src="docdata/global_toc.js?ts=20261113"></script><link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css?ts=20261113">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/icons.css?ts=20261113">
+<link rel="stylesheet" href="../StaticFilesManual/css/prism.css">
+<script src="../StaticFilesManual/js/prism.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><script src="../StaticFilesManual/js/jquery.sidebar.min.js"></script><link rel="stylesheet" href="../StaticFilesManual/css/mobileoptimisation.css">
+<script src="../StaticFilesManual/js/mobileoptimisation.js"></script>
+</head>
+<body>
+<div id="DocsAnalyticsData" data-area="none" data-pagetype="manual"></div>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity.com/">unity.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                                Version: <b>Unity 6.6</b> (6000.6)
+                                <div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+<ul id="OtherVersionsContentUl"></ul>
+<div id="otherVersionsLegend"><ul>
+<li>
+<div id="supportedColour" class="legendBox"></div>Supported</li>
+<li>
+<div id="notFoundColour" class="legendBox"></div>Legacy</li>
+</ul></div>
+</div>
+<div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+</div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/SmartMerge.html">English</a></li>
+<li><a href="/cn/current/Manual/SmartMerge.html">中文</a></li>
+<li><a href="/ja/current/Manual/SmartMerge.html">日本語</a></li>
+<li><a href="/kr/current/Manual/SmartMerge.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div>
+<div class="mobileLogo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc" id="customScrollbar">
+<h2>Unity Manual</h2>
+<div class="search-form sidebar-search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" id="mobileSearchBtn" class="submit" value="Search">
+</form></div>
+<div class="toggle version-number sidebar-version-switcher" id="VersionNumber" data-target=".otherversionscontent"><form id="otherVersionsContentMobileForm"><div class="ui-field-contain">
+<label for="select-native-4">Version: Unity 6.6</label><select name="select-native-4" id="versionsSelectMobile"><option>Select a different version</option>
+<optgroup id="versionsWithThisPageMobile" label="Versions with this page"></optgroup>
+<optgroup id="versionsWithoutThisPageMobile" label="Versions without this page"></optgroup></select>
+</div></form></div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/SmartMerge.html">English</a></li>
+<li><a href="/cn/current/Manual/SmartMerge.html">中文</a></li>
+<li><a href="/ja/current/Manual/SmartMerge.html">日本語</a></li>
+<li><a href="/kr/current/Manual/SmartMerge.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="get-started.html">Get started</a></li>
+<li><a href="project-configuration.html">Project configuration</a></li>
+<li><a href="VersionControl.html">Version control</a></li>
+<li>Smart merge</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="perForceIntegration.html"></a></span><div class="tip">Perforce Integration</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="diff-tool-support.html"></a></span><div class="tip">Diff tool support</div>
+</div>
+</div></div>
+<div id="_leavefeedback"></div>
+<h1>Smart merge</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Use the UnityYAMLMerge tool to merge scene and prefab files in a semantically correct way. You can run the tool from the command line, and several version control tools integrate it directly.</p>
+
+<h2>Merging capabilities</h2>
+
+<p>UnityYAMLMerge merges scene (<code>.unity</code>), prefab (<code>.prefab</code>), and <code>.meta</code> files. For other files, and for conflicts it can’t resolve, it uses fallback merge tools listed in the <code>mergespecfile.txt</code> file. These fallbacks let you use UnityYAMLMerge as the main merge tool for version control systems that don’t select merge tools based on file extension. The spec file already lists the most common merge tools, and you can edit it to add tools or change options. For the location of this file, refer to <a href="#configuration-file-locations">Configuration file locations</a>.</p>
+
+<p>By default, UnityYAMLMerge doesn’t merge other YAML-serialized files, such as <code>.asset</code>, <code>.mat</code>, or <code>.controller</code> files. If your version control tool passes these files to UnityYAMLMerge, UnityYAMLMerge hands them to a fallback merge tool. To merge them with UnityYAMLMerge anyway, use the <code>--force</code> argument. For more information, refer to <a href="#unityyamlmerge-command-line-reference">UnityYAMLMerge command-line reference</a>.</p>
+
+<h2>When to use smart merge</h2>
+
+<p>Smart merge is useful when two people change the same scene or prefab file in parallel, and your version control system needs to combine the changes. This happens when you work on separate branches, or when your version control system doesn’t lock files on checkout.</p>
+
+<p>If your team uses exclusive checkout to lock scene and prefab files, two people can’t edit the same file at the same time, and you don’t need smart merge for those files.</p>
+
+<p>In most workflows, you don’t run UnityYAMLMerge yourself. After you set it up, your version control tool runs it when you resolve a merge conflict in a scene or prefab file. For example, Unity runs it when you resolve conflicts in the Editor with Perforce, and Git runs it when you run <code>git mergetool</code>. You can also run UnityYAMLMerge from the command line. For more information, refer to <a href="#unityyamlmerge-command-line-reference">UnityYAMLMerge command-line reference</a>.</p>
+
+<h2>Set up smart merging in Unity</h2>
+
+<p>How you set up smart merging in the Editor depends on the version control system configured in <strong>Edit</strong> &gt; <strong>Project Settings</strong> &gt; <strong>Version Control</strong>.</p>
+
+<h3>Unity Version Control</h3>
+
+<p>When <strong>Mode</strong> is set to <strong>Unity Version Control</strong>, the Unity Version Control client resolves merges, not Unity. The client uses the merge tools set in its own preferences.</p>
+
+<p>The <strong>Revision Control Diff/Merge</strong> preference in Unity doesn’t control how the Unity Version Control client merges files. For example, selecting <strong>PlasticSCM Merge</strong> there doesn’t make the client use UnityYAMLMerge.</p>
+
+<p>To use UnityYAMLMerge for scene and prefab files, add it as a merge tool in the Unity Version Control client. For more information, refer to <a href="#set-up-for-unity-version-control">Set up for Unity Version Control</a>.</p>
+
+<h3 id="perforce">Perforce</h3>
+
+<p>When you use Perforce, Unity can use UnityYAMLMerge when you resolve conflicts in scene (<code>.unity</code>) and prefab (<code>.prefab</code>) files from inside the Editor.</p>
+
+<p>To set up smart merging:</p>
+
+<ol>
+<li><p>Go to <strong>Edit</strong> &gt; <strong>Project Settings</strong> &gt; <strong>Version Control</strong>.</p></li>
+<li><p>In <strong>Mode</strong>, select <strong>Perforce</strong>.</p></li>
+<li>
+<p>In <strong>Smart merge</strong>, select one of the following options:</p>
+
+<ul>
+<li>
+<strong>Off</strong>: Don’t use smart merging. Unity uses only the merge tool set in <strong>Edit</strong> &gt; <strong>Preferences</strong> &gt; <strong>External Tools</strong> &gt; <strong>Revision Control Diff/Merge</strong> (macOS: <strong>Unity</strong> &gt; <strong>Settings</strong> &gt; <strong>External Tools</strong> &gt; <strong>Revision Control Diff/Merge</strong>).</li>
+<li>
+<strong>Premerge</strong>: Smart merge the file first. If the result has no conflicts, Unity uses it. If conflicts remain, Unity opens the external merge tool with premerged versions of the base file, your version, and the other version, so that you only see the remaining conflicts.</li>
+<li>
+<strong>Ask</strong>: Each time you merge a scene or prefab file, Unity asks you which method to use: <strong>Semantic and merge tool</strong> (same as <strong>Premerge</strong>) or <strong>Merge tool only</strong> (same as <strong>Off</strong>). This is the default.</li>
+</ul>
+</li>
+</ol>
+
+<h2>Set up UnityYAMLMerge in your tools</h2>
+
+<p>To set up UnityYAMLMerge:</p>
+
+<ol>
+<li>Locate UnityYAMLMerge.</li>
+<li>Follow the instructions for your tool.</li>
+</ol>
+
+<h3 id="locate-unityyamlmerge">Locate UnityYAMLMerge</h3>
+
+<p>The UnityYAMLMerge tool is included with the Unity Editor.</p>
+
+<p>When Unity is installed in the default Unity Hub location, the path to UnityYAMLMerge is:</p>
+
+<p>On Windows:</p>
+
+<pre><code class="lang-shell">C:\Program Files\Unity\Hub\Editor\&lt;version&gt;\Editor\Data\Tools\UnityYAMLMerge.exe
+</code></pre>
+
+<p>On macOS:</p>
+
+<pre><code class="lang-shell">/Applications/Unity/Hub/Editor/&lt;version&gt;/Unity.app/Contents/Helpers/UnityYAMLMerge
+</code></pre>
+
+<p>
+<strong>Tip</strong>: To access this folder from the macOS Finder, right-click <code>Unity.app</code> and select <strong>Show Package Contents</strong>.</p>
+
+<p>On Linux:</p>
+
+<pre><code class="lang-shell">~/Unity/Hub/Editor/&lt;version&gt;/Editor/Data/Tools/UnityYAMLMerge
+</code></pre>
+
+<h3 id="configuration-file-locations">Configuration file locations</h3>
+
+<p>UnityYAMLMerge reads the <code>mergespecfile.txt</code> and <code>mergerules.txt</code> configuration files from the following folders:</p>
+
+<ul>
+<li>Windows and Linux: the same <code>Tools</code> folder as UnityYAMLMerge, for example <code>&lt;Unity installation&gt;\Editor\Data\Tools</code>.</li>
+<li>macOS: <code>Unity.app/Contents/Resources/UnityYAMLMerge</code>.</li>
+</ul>
+
+<h3 id="set-up-for-unity-version-control">Set up for Unity Version Control</h3>
+
+<p>To add UnityYAMLMerge as a merge tool in the Unity Version Control client:</p>
+
+<ol>
+<li><p>In the Unity Version Control desktop client, open <strong>Preferences</strong> and select <strong>Merge tools</strong>.</p></li>
+<li><p>Select <strong>Add</strong>.</p></li>
+<li><p>Select <strong>Custom extension</strong> and enter <code>.unity;.prefab</code>.</p></li>
+<li>
+<p>In <strong>External tool</strong>, select <strong>Unity Smart Merge</strong>. This option is available in Unity Version Control 11.0.16.10303 and later. The client fills in the command with the path to UnityYAMLMerge in one of your installed Unity Editors. If you remove that Editor version later, update the path.</p>
+
+<p>To use your own command instead, select <strong>Custom</strong> and enter:</p>
+
+<pre><code class="lang-shell">&quot;&lt;path to UnityYAMLMerge&gt;&quot; merge -p &quot;@basefile&quot; &quot;@sourcefile&quot; &quot;@destinationfile&quot; &quot;@output&quot;
+</code></pre>
+
+<p>For <code>&lt;path to UnityYAMLMerge&gt;</code>, refer to <a href="#locate-unityyamlmerge">Locate UnityYAMLMerge</a>.</p>
+</li>
+<li><p>Select <strong>Save</strong> next to the command field to load the new rule in the list.</p></li>
+<li><p>Use the up arrow to move the new rule above the <code>$text</code> rule. Unity Version Control applies rules from top to bottom, and scene and prefab files are text files, so the new rule must come first.</p></li>
+<li><p>Select <strong>Save</strong> at the bottom of the window to save your changes.</p></li>
+</ol>
+
+<h3>Set up for P4V</h3>
+
+<p>To resolve conflicts from inside the Unity Editor, refer to <span class="tooltip" tabindex="0" ><a href="#perforce">Perforce</a><span class="tooltiptext">A version control system for file change management. <a class="tooltipMoreInfoLink" aria-label="Navigate to more info about perForceIntegration.html" href="perForceIntegration.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Perforce" aria-label="Go to glossary anchor for Perforce">Glossary</a></span></span></span> instead.</p>
+
+<p>To merge scene and prefab files with UnityYAMLMerge when you resolve conflicts in P4V:</p>
+
+<ol>
+<li>In P4V, go to <strong>Edit</strong> &gt; <strong>Preferences</strong> (macOS: <strong>P4V</strong> &gt; <strong>Preferences</strong>) and select <strong>Merge</strong>.</li>
+<li>Under <strong>Specify merge application by extension (overrides default)</strong>, select <strong>Add</strong>.</li>
+<li>In <strong>Extension</strong>, enter <code>.unity</code>.</li>
+<li>In <strong>Application</strong>, enter the path to UnityYAMLMerge. For more information, refer to <a href="#locate-unityyamlmerge">Locate UnityYAMLMerge</a>.</li>
+<li>In <strong>Arguments</strong>, enter <code>merge -p %b %1 %2 %r</code>.</li>
+<li>Select <strong>Save</strong>.</li>
+<li>Repeat these steps for the <code>.prefab</code> extension.</li>
+</ol>
+
+<h3>Set up for Git</h3>
+
+<p>Add the following text to your repository’s <code>.git/config</code> file. To use it in all your repositories, add it to your global <code>~/.gitconfig</code> file instead:</p>
+
+<pre><code class="lang-git">[merge]
+tool = unityyamlmerge
+
+[mergetool &quot;unityyamlmerge&quot;]
+trustExitCode = false
+cmd = '&lt;path to UnityYAMLMerge&gt;' merge -p &quot;$BASE&quot; &quot;$REMOTE&quot; &quot;$LOCAL&quot; &quot;$MERGED&quot;
+</code></pre>
+
+<p>For <code>&lt;path to UnityYAMLMerge&gt;</code>, refer to <a href="#locate-unityyamlmerge">Locate UnityYAMLMerge</a>.</p>
+
+<h3>Set up for Mercurial</h3>
+
+<p>Add the following text to your <code>.hgrc</code> file:</p>
+
+<pre><code class="lang-git">[merge-patterns]
+**.unity = unityyamlmerge
+**.prefab = unityyamlmerge
+
+[merge-tools]
+unityyamlmerge.executable = &lt;path to UnityYAMLMerge&gt;
+unityyamlmerge.args = merge -p --force $base $other $local $output
+unityyamlmerge.checkprompt = True
+unityyamlmerge.premerge = False
+unityyamlmerge.binary = False
+</code></pre>
+
+<p>For <code>&lt;path to UnityYAMLMerge&gt;</code>, refer to <a href="#locate-unityyamlmerge">Locate UnityYAMLMerge</a>.</p>
+
+<h3>Set up for SVN</h3>
+
+<p>Add the following to your <code>~/.subversion/config</code> file:</p>
+
+<pre><code class="lang-git">[helpers]
+merge-tool-cmd = &lt;path to UnityYAMLMerge&gt;
+</code></pre>
+
+<p>For <code>&lt;path to UnityYAMLMerge&gt;</code>, refer to <a href="#locate-unityyamlmerge">Locate UnityYAMLMerge</a>.</p>
+
+<h3>Set up for TortoiseGit</h3>
+
+<p>To set up TortoiseGit:</p>
+
+<ol>
+<li><p>In <strong>Preferences</strong>, add an advanced merge tool.</p></li>
+<li><p>In <strong>Extension</strong>, enter <code>.unity</code>.</p></li>
+<li>
+<p>In <strong>External Program</strong>, enter:</p>
+
+<pre><code class="lang-shell">&quot;&lt;path to UnityYAMLMerge&gt;&quot; merge -p &quot;%base&quot; &quot;%theirs&quot; &quot;%mine&quot; &quot;%merged&quot;
+</code></pre>
+
+<p>For <code>&lt;path to UnityYAMLMerge&gt;</code>, refer to <a href="#locate-unityyamlmerge">Locate UnityYAMLMerge</a>.</p>
+</li>
+<li><p>Follow the same procedure to add the <code>.prefab</code> extension.</p></li>
+</ol>
+
+<h3>Set up for SourceTree</h3>
+
+<p>To set up SourceTree:</p>
+
+<ol>
+<li>In <strong>Tools</strong>, add a custom merge tool for diff.</li>
+<li>In <strong>Merge Command</strong>, enter the path to UnityYAMLMerge. For more information, refer to <a href="#locate-unityyamlmerge">Locate UnityYAMLMerge</a>.</li>
+<li>In <strong>Arguments</strong>, enter <code>merge -p $BASE $REMOTE $LOCAL $MERGED</code>.</li>
+</ol>
+
+<h2 id="unityyamlmerge-command-line-reference">UnityYAMLMerge command-line reference</h2>
+
+<p>Version control tools call UnityYAMLMerge with the <code>merge</code> command:</p>
+
+<pre><code class="lang-shell">UnityYAMLMerge merge [options] &lt;base&gt; &lt;theirs&gt; &lt;mine&gt; [&lt;output&gt;]
+</code></pre>
+
+<p>UnityYAMLMerge supports the following options:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Option</th>
+	<th style="text-align:left;">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><code>-p</code></td>
+	<td style="text-align:left;">Premerge the file. UnityYAMLMerge merges everything it can, then opens the fallback merge tool with premerged files that contain only the remaining conflicts.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>-l</code></td>
+	<td style="text-align:left;">Resolve conflicts with the theirs version.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>-r</code></td>
+	<td style="text-align:left;">Resolve conflicts with the mine version.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>-h</code></td>
+	<td style="text-align:left;">Run in headless mode, with no error dialogs.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>-i &lt;file&gt;</code></td>
+	<td style="text-align:left;">Resolve conflicts with a merge file.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>-o &lt;file&gt;</code></td>
+	<td style="text-align:left;">Write conflicts to a file instead of standard output.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>--rules &lt;file&gt;</code></td>
+	<td style="text-align:left;">Use a custom merge rules file instead of the default <code>mergerules.txt</code>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>--fallback &lt;file&gt;</code></td>
+	<td style="text-align:left;">Use a custom fallback spec file instead of the default <code>mergespecfile.txt</code>. Set to <code>none</code> to disable fallback tools. For more information, refer to <a href="#merge-without-a-fallback-tool">Merge without a fallback tool</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>--force</code></td>
+	<td style="text-align:left;">Merge files even if their extension isn’t <code>.unity</code>, <code>.prefab</code>, or <code>.meta</code>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>--describe</code></td>
+	<td style="text-align:left;">Include a description of the merge in the <code>-o</code> file.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>--nomappinginoneline</code></td>
+	<td style="text-align:left;">Deprecated. This argument has no effect, because Unity always serializes inline mappings on one line.</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Exit codes</h3>
+
+<p>UnityYAMLMerge returns one of the following exit codes:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Exit code</th>
+	<th style="text-align:left;">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><code>0</code></td>
+	<td style="text-align:left;">The merge succeeded with no conflicts. UnityYAMLMerge wrote the merged file to <code>&lt;output&gt;</code>, or to standard output if you didn’t set <code>&lt;output&gt;</code>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>1</code></td>
+	<td style="text-align:left;">An error occurred, for example invalid arguments, a file that UnityYAMLMerge can’t read or parse, or an unsupported file type when fallback tools are disabled. UnityYAMLMerge doesn’t write an output file.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>2</code></td>
+	<td style="text-align:left;">The merge has conflicts that UnityYAMLMerge can’t resolve.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>3</code></td>
+	<td style="text-align:left;">The merge has conflicts that depend on Unity type rules, for example components that another component requires. A text-based merge tool can’t resolve these conflicts correctly, so resolve them manually.</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+<strong>Note</strong>: UnityYAMLMerge returns exit codes <code>2</code> and <code>3</code> only when you disable fallback tools with <code>--fallback none</code>. When UnityYAMLMerge runs a fallback merge tool on Windows, it returns that tool’s exit code instead. On macOS and Linux, UnityYAMLMerge returns <code>0</code> when the fallback merge tool finishes, even if the tool reports an error. For more information, refer to <a href="#merge-without-a-fallback-tool">Merge without a fallback tool</a>.</p>
+
+<h3>Merge without a fallback tool</h3>
+
+<p>To merge without a fallback tool, set <code>--fallback none</code>. UnityYAMLMerge then writes a value for every conflict and doesn’t add conflict markers, so the output file looks like a clean merge even when conflicts remain.</p>
+
+<p>
+<strong>Important</strong>: Always check the exit code. Exit code <code>2</code> or <code>3</code> means that conflicts remain. UnityYAMLMerge lists the conflicting values in standard output, or in the file you set with <code>-o</code>.</p>
+
+<p>For each conflict, UnityYAMLMerge writes the following value to the output file:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Option</th>
+	<th style="text-align:left;">Value in the output file</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">None of <code>-l</code>, <code>-r</code>, or <code>-p</code>
+</td>
+	<td style="text-align:left;">The base value.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<code>-l</code> or <code>-p</code>
+</td>
+	<td style="text-align:left;">The theirs value.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>-r</code></td>
+	<td style="text-align:left;">The mine value.</td>
+</tr>
+</tbody>
+</table>
+
+<p>If you also use <code>-i</code>, UnityYAMLMerge first resolves conflicts with the merge file, and uses the values in this table only for the conflicts that the merge file doesn’t cover.</p>
+
+<p>This table applies to conflicts between values. Exit code <code>3</code> conflicts can also leave the output file in a state that breaks Unity type rules, because UnityYAMLMerge checks for required components after it merges the file, and doesn’t undo the merge when it finds a conflict. For example, the output file can contain a component without a component that it requires.</p>
+
+<h2>Configure merge rules</h2>
+
+<p>To customize how UnityYAMLMerge merges files, edit the <code>mergerules.txt</code> file. For its location, refer to <a href="#configuration-file-locations">Configuration file locations</a>.</p>
+
+<h3>Arrays</h3>
+
+<p>The arrays configuration section tells UnityYAMLMerge to treat the specified path as an array: either as a <code>set</code> with a key value, or as a <code>plain</code> array without key values. The default for all arrays is a hybrid mode that tries to match with some known heuristics.</p>
+
+<p>Each rule starts with a mode: <code>set</code> or <code>plain</code>.</p>
+
+<p>Default array rules:</p>
+
+<pre><code class="lang-git">[arrays]
+set *.GameObject.m_Component *.fileID
+set *.Prefab.m_Modification.m_Modifications target.fileID target.guid propertyPath
+plain *.MeshRenderer.m_Materials
+plain *.Renderer.m_Materials
+</code></pre>
+
+<h3>Exclusions</h3>
+
+<p>The exclusions configuration section indicates which paths to exclude from merging. If both sides modify the same path, UnityYAMLMerge treats the change as a conflict and prompts you to resolve it.</p>
+
+<p>Each rule starts with one of the following modes: <code>include</code>, <code>exclude</code>, <code>includeIfContains</code>, or <code>excludeIfContains</code>.</p>
+
+<p>Default exclusion rules:</p>
+
+<pre><code class="lang-git">[exclusions]
+exclude *.MeshRenderer.m_Materials.*
+exclude *.SpriteRenderer.m_Materials
+exclude *.SpriteRenderer.m_Color
+include *.ParticleSystem.InitialModule
+exclude *.ParticleSystem.*
+exclude *.ParticleSystem.InitialModule.*
+#excludeDepend *.MonoBehaviour m_Script ^m_
+excludeIfContains *.MonoBehaviour.* x y z
+excludeIfContains *.MonoBehaviour.* r g b
+</code></pre>
+
+<h3>Comparisons</h3>
+
+<p>The comparisons section lets UnityYAMLMerge ignore negligible differences between float values. When enabled, UnityYAMLMerge compares floating-point values relative to their magnitude, to account for relative error. You can configure comparison in the following ways:</p>
+
+<ul>
+<li>
+<code>float &lt;float value to compare&gt;</code>: Sets epsilon to a default value close to machine epsilon.</li>
+<li>
+<code>float &lt;float value to compare&gt; &lt;relative comparison value and absolute cutoff&gt;</code>: Uses one value as both the relative comparison value and the absolute comparison cutoff.</li>
+<li>
+<code>float &lt;float value to compare&gt; &lt;relative comparison value&gt; &lt;absolute comparison cutoff&gt;</code>: Sets the relative comparison value and the absolute comparison cutoff separately.</li>
+</ul>
+
+<p>The relative comparison value determines epsilon and how the comparison scales with the size of the values’ relative error. The absolute comparison cutoff determines how far from zero a value must be before the comparison switches from absolute to relative.</p>
+
+<p>
+<strong>Note</strong>: Comparison values must be between float epsilon (<code>0.00000011921</code>) and <code>1.0</code>.</p>
+
+<p>
+<strong>Note</strong>: Don’t indent rule or section lines. If you copy the commented example from <code>mergerules.txt</code>, remove the leading tab as well as the <code>#</code> character. Otherwise, UnityYAMLMerge reports an invalid rule format error.</p>
+
+<p>Comparison examples:</p>
+
+<pre><code class="lang-git">[comparisons]
+float *.Transform.m_LocalPosition.x 0.0000005
+float *.Transform.m_LocalPosition.y 0.0000005
+float *.Transform.m_LocalPosition.z 0.0000005
+float *.Transform.m_LocalRotation.x 0.00005 0.001
+float *.Transform.m_LocalRotation.y
+float *.Transform.m_LocalRotation.z 0.00005 0.001
+float *.Transform.m_LocalRotation.w
+</code></pre>
+
+<h2>Additional resources</h2>
+
+<ul>
+<li><a href="yaml-prefab-serialization.html">YAML serialization of prefabs</a></li>
+<li><a href="FormatDescription.html">Format of text serialized files</a></li>
+<li><a href="YAMLSceneExample.html">An example of a YAML scene file</a></li>
+<li><span class="tooltip" tabindex="0" ><a href="VersionControl.html">Version control</a><span class="tooltiptext">A system for managing file changes. You can use Unity in conjunction with most common version control tools, including Perforce, Git, Mercurial and Unity Version Control (UVCS). <a class="tooltipMoreInfoLink" aria-label="Navigate to more info about VersionControl.html" href="VersionControl.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#versioncontrol" aria-label="Go to glossary anchor for versioncontrol">Glossary</a></span></span></span></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="perForceIntegration.html"></a></span><div class="tip">Perforce Integration</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="diff-tool-support.html"></a></span><div class="tip">Diff tool support</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 79827756. Built on: 2026-11-13.</div>
+<div class="menu">
+<a href="https://learn.unity.com/">Tutorials</a><a href="https://answers.unity3d.com">Community Answers</a><a href="https://support.unity3d.com/hc/en-us">Knowledge Base</a><a href="https://forum.unity3d.com">Forums</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">Terms of use</a><a href="https://unity.com/legal">Legal</a><a href="https://unity.com/legal/privacy-policy">Privacy Policy</a><a href="https://unity.com/legal/cookie-policy">Cookies</a><a href="https://unity.com/legal/docs-terms">Documentation Terms of Use</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

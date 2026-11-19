@@ -1,0 +1,401 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: 'en-us', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Add a custom column to the Hierarchy window</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="author" content="Unity Technologies">
+<meta property="relative-path-to-manual" content="">
+<meta property="version-switcher-versions-with-this-page" content="Versions with this page:">
+<meta property="version-switcher-versions-without-this-page" content="Versions without this page:">
+<meta property="version-switcher-supported" content="Supported">
+<meta property="version-switcher-legacy" content="Legacy">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<link rel="canonical" href="https://docs.unity3d.com/6000.6/Documentation/Manual/hierarchy-add-column.html">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="/StaticFilesConfig/UnityVersionsInfo.js"></script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js?ts=20261113"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js?ts=20261113"></script><script type="text/javascript" src="../StaticFilesManual/js/image-comp.js?ts=20261113"></script><script type="text/javascript" src="docdata/toc.js?ts=20261113"></script><script type="text/javascript" src="docdata/global_toc.js?ts=20261113"></script><link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css?ts=20261113">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/icons.css?ts=20261113">
+<link rel="stylesheet" href="../StaticFilesManual/css/prism.css">
+<script src="../StaticFilesManual/js/prism.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><script src="../StaticFilesManual/js/jquery.sidebar.min.js"></script><link rel="stylesheet" href="../StaticFilesManual/css/mobileoptimisation.css">
+<script src="../StaticFilesManual/js/mobileoptimisation.js"></script>
+</head>
+<body>
+<div id="DocsAnalyticsData" data-area="none" data-pagetype="manual"></div>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity.com/">unity.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                                Version: <b>Unity 6.6</b> (6000.6)
+                                <div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+<ul id="OtherVersionsContentUl"></ul>
+<div id="otherVersionsLegend"><ul>
+<li>
+<div id="supportedColour" class="legendBox"></div>Supported</li>
+<li>
+<div id="notFoundColour" class="legendBox"></div>Legacy</li>
+</ul></div>
+</div>
+<div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+</div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/hierarchy-add-column.html">English</a></li>
+<li><a href="/cn/current/Manual/hierarchy-add-column.html">中文</a></li>
+<li><a href="/ja/current/Manual/hierarchy-add-column.html">日本語</a></li>
+<li><a href="/kr/current/Manual/hierarchy-add-column.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div>
+<div class="mobileLogo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc" id="customScrollbar">
+<h2>Unity Manual</h2>
+<div class="search-form sidebar-search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" id="mobileSearchBtn" class="submit" value="Search">
+</form></div>
+<div class="toggle version-number sidebar-version-switcher" id="VersionNumber" data-target=".otherversionscontent"><form id="otherVersionsContentMobileForm"><div class="ui-field-contain">
+<label for="select-native-4">Version: Unity 6.6</label><select name="select-native-4" id="versionsSelectMobile"><option>Select a different version</option>
+<optgroup id="versionsWithThisPageMobile" label="Versions with this page"></optgroup>
+<optgroup id="versionsWithoutThisPageMobile" label="Versions without this page"></optgroup></select>
+</div></form></div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/hierarchy-add-column.html">English</a></li>
+<li><a href="/cn/current/Manual/hierarchy-add-column.html">中文</a></li>
+<li><a href="/ja/current/Manual/hierarchy-add-column.html">日本語</a></li>
+<li><a href="/kr/current/Manual/hierarchy-add-column.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="extending-the-editor.html">Extending the Unity Editor</a></li>
+<li><a href="hierarchy-extend-lp.html">Extending the Hierarchy window</a></li>
+<li>Add a custom column to the Hierarchy window</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="hierarchy-custom-tooltips.html"></a></span><div class="tip">Display custom tooltips in the Hierarchy window</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="define-context-for-aop.html"></a></span><div class="tip">Define a context for the Advanced Object Selector</div>
+</div>
+</div></div>
+<div id="_leavefeedback"></div>
+<h1>Add a custom column to the Hierarchy window</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>The <strong>Hierarchy</strong> window has <a href="configure-hierarchy-window.html#add-or-remove-columns">built-in columns</a>, such as <strong>Layer</strong> and <strong>Tag</strong>, that display information about each GameObject. To display your own information in the same way, add a custom column. For example, you can add a column that displays the components of each GameObject. You can then find the GameObjects that have a Rigidbody component or a script without opening their <strong>Inspector</strong> window individually.</p>
+
+<p>A custom column uses two descriptors. You define each descriptor in a static method in an Editor script, and mark the method with an attribute:</p>
+
+<ul>
+<li>A column descriptor, represented by the <a href="../ScriptReference/Unity.Hierarchy.HierarchyViewColumnDescriptor.html"><code>HierarchyViewColumnDescriptor</code></a> class, defines the column itself, such as its header text and default width.</li>
+<li>A cell descriptor, represented by the <a href="../ScriptReference/Unity.Hierarchy.HierarchyViewCellDescriptor.html"><code>HierarchyViewCellDescriptor</code></a> class, defines what the column displays in each cell for one type of item, such as GameObjects.</li>
+</ul>
+
+<p>The Unity Editor finds the methods with these attributes and calls them when it creates the <strong>Hierarchy</strong> window. You don’t need to subscribe to an event.</p>
+
+<h2>Prerequisites</h2>
+
+<p>Before you begin, complete the following steps:</p>
+
+<ul>
+<li>Disable the <a href="class-EditorManager.html#hierarchy"><strong>Use Legacy Hierarchy</strong></a> setting, if you enabled it. For more information, refer to <a href="configure-hierarchy-window.html#switch-to-the-legacy-hierarchy-window">Switch to the legacy Hierarchy window</a>.</li>
+<li>In the <strong>Project</strong> window, create the <code>Assets/Editor/HierarchyExtensions</code> folder. The scripts on this page load their style sheets from this folder.</li>
+</ul>
+
+<h2>Create a column that displays a value</h2>
+
+<p>The following script adds a <strong>Components</strong> column that displays the number of components on each GameObject.</p>
+
+<p>To create the <strong>Components</strong> column:</p>
+
+<ol>
+<li><p>In the <code>Assets/Editor/HierarchyExtensions</code> folder, right-click and select <strong>Create</strong> &gt; <strong>Scripting</strong> &gt; <strong>Empty C# Script</strong>.</p></li>
+<li><p>Name the script <code>ComponentsColumn.cs</code>.</p></li>
+<li>
+<p>Open the script and replace its contents with the following code:</p>
+
+<pre><code class="lang-cs">using Unity.Hierarchy;
+using Unity.Hierarchy.Editor;
+using UnityEngine;
+using UnityEngine.UIElements;
+
+public static class ComponentsColumn
+{
+    const string k_ColumnId = &quot;Example/Components&quot;;
+
+    // Describes the column: its header text, tooltip, position, and width.
+    [HierarchyViewColumnDescriptor(k_ColumnId)]
+    static void CreateColumnDescriptor(HierarchyViewColumnDescriptor descriptor)
+    {
+        descriptor.Title = &quot;Components&quot;;
+        descriptor.Tooltip = &quot;Components on the GameObject&quot;;
+        descriptor.DefaultPriority = 1000;
+        descriptor.DefaultWidth = 100;
+    }
+
+    // Describes the cells that the column displays for GameObjects.
+    [HierarchyViewCellDescriptor(k_ColumnId, typeof(HierarchyGameObjectHandler))]
+    static void CreateGameObjectCellDescriptor(HierarchyViewCellDescriptor descriptor)
+    {
+        // Runs each time a cell displays a GameObject.
+        descriptor.BindCell = cell =&gt;
+        {
+            // The attribute registers this descriptor for HierarchyGameObjectHandler only,
+            // so the handler of every cell is a HierarchyGameObjectHandler.
+            HierarchyGameObjectHandler handler = (HierarchyGameObjectHandler)cell.Handler;
+            GameObject gameObject = handler.GetGameObject(cell.Node);
+            Component[] components = gameObject.GetComponents&lt;Component&gt;();
+
+            cell.Add(new Label(components.Length.ToString()));
+
+            // Display the cell content on every row, not only on selected or hovered rows.
+            cell.IsDefaultValue = false;
+        };
+    }
+}
+</code></pre>
+
+<p>The script contains the following parts:</p>
+
+<ul>
+<li>
+<code>k_ColumnId</code> identifies the column. The column descriptor and the cell descriptor use the same identifier, so the Editor knows that the cells belong to the column. Use an identifier that’s unique to your project, such as one that starts with the name of your project or team.</li>
+<li>The <a href="../ScriptReference/Unity.Hierarchy.HierarchyViewColumnDescriptorAttribute.html"><code>HierarchyViewColumnDescriptorAttribute</code></a> attribute registers <code>CreateColumnDescriptor</code>, which sets the header text, tooltip, and default width of the column. <code>DefaultPriority</code> sets the initial order of the column among the other columns.</li>
+<li>The <a href="../ScriptReference/Unity.Hierarchy.HierarchyViewCellDescriptorAttribute.html"><code>HierarchyViewCellDescriptorAttribute</code></a> attribute registers <code>CreateGameObjectCellDescriptor</code> for items that <code>HierarchyGameObjectHandler</code> manages, which are GameObjects. Other items, such as scenes, display an empty cell.</li>
+<li>
+<a href="../ScriptReference/Unity.Hierarchy.HierarchyViewCellDescriptor-BindCell.html"><code>BindCell</code></a> runs each time a cell displays a GameObject. It adds a label with the number of components to the cell. By default, the Editor removes the contents of a cell when the cell stops displaying an item, so you don’t need to remove the label yourself.</li>
+<li>By default, the <strong>Hierarchy</strong> window displays the contents of a cell only when you hover over or select its row. To display the contents on every row, set <a href="../ScriptReference/Unity.Hierarchy.HierarchyViewCell-IsDefaultValue.html"><code>IsDefaultValue</code></a> to <code>false</code> in <code>BindCell</code>.</li>
+</ul>
+</li>
+<li><p>Save the script.</p></li>
+</ol>
+
+<p>After the Editor compiles the script, the <strong>Components</strong> column is available, but the <strong>Hierarchy</strong> window doesn’t display it yet.</p>
+
+<h2>Display the column</h2>
+
+<p>The <strong>Hierarchy</strong> window lists custom columns with the built-in columns.</p>
+
+<p>To display the <strong>Components</strong> column:</p>
+
+<ol>
+<li>In the <strong>Hierarchy</strong> window, right-click a column header.</li>
+<li>Select <strong>Components</strong>.</li>
+</ol>
+
+<p>The <strong>Components</strong> column displays the number of components on each GameObject. You can move, resize, and hide the column in the same way as the built-in columns. For more information, refer to <a href="configure-hierarchy-window.html">Configure the Hierarchy window</a>.</p>
+
+<figure>
+<img src="../uploads/Main/hierarchy-components-column-count.png" alt="The Hierarchy window with a Components column that displays the number of components on each GameObject.">
+<figcaption>The Hierarchy window with a Components column that displays the number of components on each GameObject.</figcaption>
+</figure>
+
+<h2>Display component icons</h2>
+
+<p>A cell can contain any <span class="tooltip" tabindex="0" ><a href="UIE-VisualTree.html">visual element</a><span class="tooltiptext">A node of a visual tree that instantiates or derives from the C# <a href="../ScriptReference/UIElements.VisualElement.html"><code>VisualElement</code></a> class. You can style the look, define the behaviour, and display it on screen as part of the UI. <a class="tooltipMoreInfoLink" aria-label="Navigate to more info about UIE-VisualTree.html" href="UIE-VisualTree.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#visualelement" aria-label="Go to glossary anchor for visualelement">Glossary</a></span></span></span>. The following script replaces the number of components with the icon of each component.</p>
+
+<p>To display the icon of each component:</p>
+
+<ol>
+<li><p>In the <code>Assets/Editor/HierarchyExtensions</code> folder, right-click and select <strong>Create</strong> &gt; <strong>UI Toolkit</strong> &gt; <strong>Style Sheet (USS)</strong>.</p></li>
+<li><p>Name the style sheet <code>ComponentsColumn.uss</code>.</p></li>
+<li>
+<p>Open the style sheet and replace its contents with the following code:</p>
+
+<pre><code class="lang-css">.component-icon-row {
+    justify-content: flex-end;
+}
+    
+.component-icon {
+    width: 14px;
+    height: 14px;
+    margin-left: 3px;
+    margin-top: 3px;
+}
+</code></pre>
+</li>
+<li>
+<p>Replace the contents of <code>ComponentsColumn.cs</code> with the following code:</p>
+
+<pre><code class="lang-cs">using Unity.Hierarchy;
+using Unity.Hierarchy.Editor;
+using Unity.Scripting.LifecycleManagement;
+using UnityEditor;
+using UnityEngine;
+using UnityEngine.Pool;
+using UnityEngine.UIElements;
+
+public static class ComponentsColumn
+{
+    const string k_ColumnId = &quot;Example/Components&quot;;
+    const string k_StyleSheetPath = &quot;Assets/Editor/HierarchyExtensions/ComponentsColumn.uss&quot;;
+    const string k_IconRowUssClassName = &quot;component-icon-row&quot;;
+    const string k_ComponentIconUssClassName = &quot;component-icon&quot;;
+
+    // Reuses Image elements instead of creating new ones each time a cell is bound.
+    // The pool is safe to keep between Play mode sessions, so it doesn't need to be reset.
+    [NoAutoStaticsCleanup]
+    static readonly ObjectPool&lt;Image&gt; s_ImagePool = new ObjectPool&lt;Image&gt;(() =&gt; new Image());
+
+    [InitializeOnLoadMethod]
+    static void Initialize()
+    {
+        HierarchyWindow.BindView += OnBindView;
+    }
+
+    static void OnBindView(HierarchyWindow window, HierarchyView view)
+    {
+        StyleSheet styleSheet = AssetDatabase.LoadAssetAtPath&lt;StyleSheet&gt;(k_StyleSheetPath);
+        view.styleSheets.Add(styleSheet);
+    }
+
+    [HierarchyViewColumnDescriptor(k_ColumnId)]
+    static void CreateColumnDescriptor(HierarchyViewColumnDescriptor descriptor)
+    {
+        descriptor.Title = &quot;Components&quot;;
+        descriptor.Tooltip = &quot;Components on the GameObject&quot;;
+        descriptor.DefaultPriority = 1000;
+        descriptor.DefaultWidth = 100;
+    }
+
+    [HierarchyViewCellDescriptor(k_ColumnId, typeof(HierarchyGameObjectHandler))]
+    static void CreateGameObjectCellDescriptor(HierarchyViewCellDescriptor descriptor)
+    {
+        descriptor.BindCell = cell =&gt;
+        {
+            HierarchyGameObjectHandler handler = (HierarchyGameObjectHandler)cell.Handler;
+            GameObject gameObject = handler.GetGameObject(cell.Node);
+            Component[] components = gameObject.GetComponents&lt;Component&gt;();
+
+            // The Editor clears the cell each time it stops displaying an item,
+            // so create a new row of icons each time the cell is bound.
+            VisualElement iconRow = new VisualElement();
+            iconRow.AddToClassList(k_IconRowUssClassName);
+            iconRow.style.flexDirection = FlexDirection.Row;
+            cell.Add(iconRow);
+
+            // Add the icon of each component.
+            foreach (Component component in components)
+            {
+                Texture2D texture = AssetPreview.GetMiniThumbnail(component);
+                if (texture == null)
+                {
+                    continue;
+                }
+
+                Image icon = s_ImagePool.Get();
+                icon.AddToClassList(k_ComponentIconUssClassName);
+                icon.image = texture;
+                iconRow.Add(icon);
+            }
+
+            cell.IsDefaultValue = false;
+        };
+
+        // Runs each time a cell stops displaying a GameObject, before the Editor clears the cell.
+        descriptor.UnbindCell = cell =&gt;
+        {
+            // Return the icons to the pool so that the next bind can reuse them.
+            cell.Query&lt;Image&gt;(className: k_ComponentIconUssClassName).ForEach(icon =&gt;
+            {
+                icon.RemoveFromHierarchy();
+                s_ImagePool.Release(icon);
+            });
+        };
+    }
+}
+</code></pre>
+
+<p>The script contains the following parts:</p>
+
+<ul>
+<li>
+<code>OnBindView</code> adds the style sheet to the view, which also applies to the cells of the column.</li>
+<li>
+<code>BindCell</code> gets the icon of each component with <a href="../ScriptReference/AssetPreview.GetMiniThumbnail.html"><code>AssetPreview.GetMiniThumbnail</code></a> and adds an <a href="../ScriptReference/UIElements.Image.html"><code>Image</code></a> element for each icon to a row of icons.</li>
+<li>The <strong>Hierarchy</strong> window can bind cells many times as you scroll. To avoid creating new <code>Image</code> elements each time, <code>BindCell</code> gets them from an <a href="../ScriptReference/Pool.ObjectPool_1.html"><code>ObjectPool</code></a>.</li>
+<li>
+<a href="../ScriptReference/Unity.Hierarchy.HierarchyViewCellDescriptor-UnbindCell.html"><code>UnbindCell</code></a> runs each time a cell stops displaying a GameObject, before the Editor removes the contents of the cell. It returns the <code>Image</code> elements to the pool so that the next bind can reuse them.</li>
+<li>The <a href="../ScriptReference/Unity.Scripting.LifecycleManagement.NoAutoStaticsCleanupAttribute.html"><code>NoAutoStaticsCleanup</code></a> attribute indicates that the pool doesn’t need to be reset when you enter Play mode. Without the attribute, the Editor logs warnings for the static field in projects that disable domain reloading. For more information, refer to <a href="domain-reloading.html">Domain reloading</a>.</li>
+</ul>
+</li>
+<li><p>Save the script.</p></li>
+</ol>
+
+<p>The <strong>Components</strong> column displays an icon for each component on each GameObject. If the column is too narrow to display all the icons, drag the edge of the column header to make it wider.</p>
+
+<figure>
+<img src="../uploads/Main/hierarchy-components-column-icons.png" alt="The Hierarchy window with a Components column that displays the icon of each component on each GameObject.">
+<figcaption>The Hierarchy window with a Components column that displays the icon of each component on each GameObject.</figcaption>
+</figure>
+
+<h2>Additional resources</h2>
+
+<ul>
+<li><a href="hierarchy-extend-lp.html">Extending the Hierarchy window</a></li>
+<li><a href="hierarchy-add-row-elements.html">Add labels and buttons to Hierarchy rows</a></li>
+<li><a href="configure-hierarchy-window.html">Configure the Hierarchy window</a></li>
+<li><a href="../ScriptReference/Unity.Hierarchy.HierarchyViewColumnDescriptor.html"><code>HierarchyViewColumnDescriptor</code></a></li>
+<li><a href="../ScriptReference/Unity.Hierarchy.HierarchyViewCellDescriptor.html"><code>HierarchyViewCellDescriptor</code></a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="hierarchy-custom-tooltips.html"></a></span><div class="tip">Display custom tooltips in the Hierarchy window</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="define-context-for-aop.html"></a></span><div class="tip">Define a context for the Advanced Object Selector</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 79827756. Built on: 2026-11-13.</div>
+<div class="menu">
+<a href="https://learn.unity.com/">Tutorials</a><a href="https://answers.unity3d.com">Community Answers</a><a href="https://support.unity3d.com/hc/en-us">Knowledge Base</a><a href="https://forum.unity3d.com">Forums</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">Terms of use</a><a href="https://unity.com/legal">Legal</a><a href="https://unity.com/legal/privacy-policy">Privacy Policy</a><a href="https://unity.com/legal/cookie-policy">Cookies</a><a href="https://unity.com/legal/docs-terms">Documentation Terms of Use</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

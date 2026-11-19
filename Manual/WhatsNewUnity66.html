@@ -1,0 +1,1037 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: 'en-us', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: New in Unity 6.6</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="author" content="Unity Technologies">
+<meta property="relative-path-to-manual" content="">
+<meta property="version-switcher-versions-with-this-page" content="Versions with this page:">
+<meta property="version-switcher-versions-without-this-page" content="Versions without this page:">
+<meta property="version-switcher-supported" content="Supported">
+<meta property="version-switcher-legacy" content="Legacy">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<link rel="canonical" href="https://docs.unity3d.com/6000.6/Documentation/Manual/WhatsNewUnity66.html">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="/StaticFilesConfig/UnityVersionsInfo.js"></script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js?ts=20261113"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js?ts=20261113"></script><script type="text/javascript" src="../StaticFilesManual/js/image-comp.js?ts=20261113"></script><script type="text/javascript" src="docdata/toc.js?ts=20261113"></script><script type="text/javascript" src="docdata/global_toc.js?ts=20261113"></script><link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css?ts=20261113">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/icons.css?ts=20261113">
+<link rel="stylesheet" href="../StaticFilesManual/css/prism.css">
+<script src="../StaticFilesManual/js/prism.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><script src="../StaticFilesManual/js/jquery.sidebar.min.js"></script><link rel="stylesheet" href="../StaticFilesManual/css/mobileoptimisation.css">
+<script src="../StaticFilesManual/js/mobileoptimisation.js"></script>
+</head>
+<body>
+<div id="DocsAnalyticsData" data-area="none" data-pagetype="manual"></div>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity.com/">unity.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                                Version: <b>Unity 6.6</b> (6000.6)
+                                <div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+<ul id="OtherVersionsContentUl"></ul>
+<div id="otherVersionsLegend"><ul>
+<li>
+<div id="supportedColour" class="legendBox"></div>Supported</li>
+<li>
+<div id="notFoundColour" class="legendBox"></div>Legacy</li>
+</ul></div>
+</div>
+<div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+</div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/WhatsNewUnity66.html">English</a></li>
+<li><a href="/cn/current/Manual/WhatsNewUnity66.html">中文</a></li>
+<li><a href="/ja/current/Manual/WhatsNewUnity66.html">日本語</a></li>
+<li><a href="/kr/current/Manual/WhatsNewUnity66.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div>
+<div class="mobileLogo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc" id="customScrollbar">
+<h2>Unity Manual</h2>
+<div class="search-form sidebar-search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" id="mobileSearchBtn" class="submit" value="Search">
+</form></div>
+<div class="toggle version-number sidebar-version-switcher" id="VersionNumber" data-target=".otherversionscontent"><form id="otherVersionsContentMobileForm"><div class="ui-field-contain">
+<label for="select-native-4">Version: Unity 6.6</label><select name="select-native-4" id="versionsSelectMobile"><option>Select a different version</option>
+<optgroup id="versionsWithThisPageMobile" label="Versions with this page"></optgroup>
+<optgroup id="versionsWithoutThisPageMobile" label="Versions without this page"></optgroup></select>
+</div></form></div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/WhatsNewUnity66.html">English</a></li>
+<li><a href="/cn/current/Manual/WhatsNewUnity66.html">中文</a></li>
+<li><a href="/ja/current/Manual/WhatsNewUnity66.html">日本語</a></li>
+<li><a href="/kr/current/Manual/WhatsNewUnity66.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="WhatsNew.html">What's new in Unity</a></li>
+<li>New in Unity 6.6</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="WhatsNew.html"></a></span><div class="tip">What's new in Unity</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="WhatsNewUnity65.html"></a></span><div class="tip">New in Unity 6.5</div>
+</div>
+</div></div>
+<div id="_leavefeedback"></div>
+<h1>New in Unity 6.6</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Unity 6.6 (6000.6) introduces several new features and improvements.</p>
+
+<p>To read about all of the changes and known issues in this version of Unity, refer to the <a href="https://unity.com/releases/editor/whats-new/6000.6.0#notes">Unity 6.6 Release Notes</a>.</p>
+
+<p>To find the release notes for other releases, refer to the <a href="https://unity.com/releases/editor/archive">Unity download archive</a>.</p>
+
+<p>To watch a video summary of the new features and improvements in this release, refer to the official <a href="https://youtu.be/u7TQJWmZ_rk">What’s New in Unity 6.6 video</a>.</p>
+
+<p>To read about changes made to packages that were updated as part of this release, refer to the <a href="upm-docs.html">documentation of those packages</a>.</p>
+
+<p>If you’re upgrading existing projects from Unity 6.5 (6000.5), refer to <a href="UpgradeGuideUnity66.html">Upgrade to Unity 6.6</a> for information about how your project might be affected.</p>
+
+<p>Review the new features and improvements for Unity 6.6 in these areas:</p>
+
+<ul>
+<li><a href="#2d">2D</a></li>
+<li><a href="#animation">Animation</a></li>
+<li><a href="#assets-and-media">Assets and media</a></li>
+<li><span class="tooltip" tabindex="0" ><a href="#cameras">Cameras</a><span class="tooltiptext">A component which creates an image of a particular viewpoint in your scene. The output is either drawn to the screen or captured as a texture. <a class="tooltipMoreInfoLink" aria-label="Navigate to more info about CamerasOverview.html" href="CamerasOverview.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Camera" aria-label="Go to glossary anchor for Camera">Glossary</a></span></span></span></li>
+<li><a href="#editor-and-workflow">Editor and workflow</a></li>
+<li><a href="#entities">Entities</a></li>
+<li><a href="#graph-toolkit">Graph Toolkit</a></li>
+<li><a href="#graphics">Graphics</a></li>
+<li><a href="#optimization">Optimization</a></li>
+<li><a href="#package-manager">Package Manager</a></li>
+<li><a href="#platforms">Platforms</a></li>
+<li><a href="#programming">Programming</a></li>
+<li><a href="#ui">UI</a></li>
+<li><span class="tooltip" tabindex="0" ><a href="#xr">XR</a><span class="tooltiptext">An umbrella term encompassing Virtual Reality (VR), Augmented Reality (AR) and Mixed Reality (MR) applications. Devices supporting these forms of interactive applications can be referred to as XR devices. <a class="tooltipMoreInfoLink" aria-label="Navigate to more info about XR.html" href="XR.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#XR" aria-label="Go to glossary anchor for XR">Glossary</a></span></span></span></li>
+</ul>
+
+<p><a name="2d" aria-hidden="true"></a></p>
+
+<h2>2D</h2>
+
+<p>This section outlines recent updates to Unity’s 2D system.</p>
+
+<h3>Sprite Editor improvements</h3>
+
+<p>The <a href="sprite/sprite-editor/sprite-editor-window-reference-landing.html">Sprite Editor window</a> now has the following features:</p>
+
+<ul>
+<li>Hover over sprites in the <strong>Skinning Editor</strong> to highlight them.</li>
+<li>Set the minimum and maximum zoom range.</li>
+<li>Editing sprite data that comes from source files is blocked by default. You can override this in the <strong>Project Settings</strong> window.</li>
+</ul>
+
+<p>You can also now edit the colors of bones in an overlay in the <strong>Scene</strong> view.</p>
+
+<h3>Tilemap improvements</h3>
+
+<p>The <a href="tilemaps/tile-palettes/tile-palette-editor-reference.html">Tile Palette window</a> now has the following features:</p>
+
+<ul>
+<li>Filter tilemaps by name.</li>
+<li>Lock brushes and tile palettes to the active tilemap, so Unity automatically selects them when you reactivate the tilemap.</li>
+</ul>
+
+<p>The <a href="tilemaps/tile-palettes/grid-brush-preferences-reference.html">Grid Brush tab of the Preferences window</a> has the following features: </p>
+
+<ul>
+<li>Toggle the preview of the fill area when you use the <strong>Flood Fill</strong> tool, or limit its size.</li>
+<li>Display the name of the brush in the <strong>Scene</strong> view when you paint tiles.</li>
+</ul>
+
+<p>The <a href="preferences-editor-diagnostics.html">Editor Diagnostics Preferences window</a> now lets you enable a debug display to visualize tilemap chunks in the <strong>Scene</strong> view when running diagnostics as part of a report to the Unity Support team.</p>
+
+<h3>Configure and optimize 2D lights</h3>
+
+<p>2D lights in the Universal Render Pipeline now support the following:</p>
+
+<ul>
+<li>Configure which 2D lights affect which GameObjects using rendering layers as well as sorting layers. For more information, refer to <a href="urp/2d-light-properties-explained.html">Create a 2D light in URP</a>.</li>
+<li>Strip the 2D light shader variants your scenes don’t use. For more information, refer to <a href="urp/2d-light-batching-debugger.html">Optimize 2D lights in URP</a>.</li>
+</ul>
+
+<h3>2D shadows with GPU skinning</h3>
+
+<p>Sprites in projects that use <a href="https://docs.unity3d.com/Packages/com.unity.2d.animation@16.0/manual/GPUDeformation.html">GPU skinning</a> can now cast 2D shadows. </p>
+
+<h3>Analyze 2D animation, tilemaps, and 2D graphics</h3>
+
+<p>The Unity Profiler now includes the following modules for 2D projects:</p>
+
+<ul>
+<li>
+<strong>2D Animation</strong>: Analyze performance metrics and deformation.</li>
+<li>
+<strong>Tilemap</strong>: Analyze tilemaps, chunks, meshes, and performance timing.</li>
+<li>
+<strong>2D Graphics</strong>: Analyze light textures, light batches, light triangles, and shadows.</li>
+</ul>
+
+<p>For more information, refer to <a href="profiler-modules-introduction.html">Profiler modules introduction</a>.</p>
+
+<h3>New sprite mesh triangulation method</h3>
+
+<p>Added the Delaunay subdivision method as a way to generate the mesh for a sprite. It creates a tighter fit to the sprite’s outline. For more information, refer to <a href="texture-type-sprite.html">Sprite (2D and UI) texture Import Settings window reference</a>.</p>
+
+<p><a name="animation" aria-hidden="true"></a></p>
+
+<h2>Animation</h2>
+
+<p>This section outlines recent updates to Unity’s animation system.</p>
+
+<h3>Added search bar to the Animation window</h3>
+
+<p>You can now use the search bar to filter properties in the <a href="animeditor-UsingAnimationEditor.html"><strong>Animation</strong> window</a>.</p>
+
+<h3>Animation Rigging is a core package</h3>
+
+<p>The <a href="https://docs.unity3d.com/Packages/com.unity.animation.rigging@6.6/manual/index.html">Animation Rigging</a> package is now a <a href="pack-core.html">core package</a>. </p>
+
+<h3>Timeline is a core package</h3>
+
+<p>The <a href="https://docs.unity3d.com/Packages/com.unity.timeline@6.6/manual/install.html">Timeline</a> package is now a <a href="pack-core.html">core package</a>. </p>
+
+<p><a name="assets-and-media" aria-hidden="true"></a></p>
+
+<h2>Assets and media</h2>
+
+<p>This section outlines recent updates to Unity’s asset and media handling.</p>
+
+<h3>Added content directory system for content builds</h3>
+
+<p>The content directory build system is designed as a replacement for the AssetBundle content build system. It supports local content distribution and has benefits such as automatic de-duplication of assets, reduced load times, and a lower memory overhead. To define assets to include in a content build, use root assets, and then use the <a href="../ScriptReference/Unity.Loading.Loadable_1.html"><code>Loadable</code></a> API to load and unload individual assets. You can then use <a href="../ScriptReference/BuildPipeline.BuildContentDirectory.html"><code>BuildPipeline.BuildContentDirectory</code></a> to create a content build.</p>
+
+<p>Content directories are supported in the Addressables package. While the workflow of adding assets to groups, and building from the <strong>Addressables Groups</strong> window remains the same, there is now a new <a href="https://docs.unity3d.com/Packages/com.unity.addressables@4.0/manual/groups-create.html#create-a-group"><strong>Content Directory</strong> schema</a> which you can use to control content directory builds. Additionally, the <strong>Default Build Script</strong> now acts as a build script for both AssetBundles and content directory builds.</p>
+
+<p>For more information, refer to <a href="content-directories-introduction.html">Introduction to content directories</a>. For information about using content directories in the Addressables package, refer to <a href="https://docs.unity3d.com/Packages/com.unity.addressables@4.0/manual/convert-content-directories.html">Convert Addressables projects to content directories</a> and <a href="https://docs.unity3d.com/Packages/com.unity.addressables@4.0/manual/content-build-systems.html">Choose a content build system</a>.</p>
+
+<h3>Added Build Analysis window and build history report</h3>
+
+<p>Whenever you create a Player or content directory build, Unity now creates report files related to the build history in the <code>Library/BuildHistory</code> folder of your project. These files contain information about the build and the files it produced, including a build report, which you can analyze through the new <a href="build-analysis-window-reference.html"><strong>Build Analysis</strong> window</a> in the Editor. You can also use the <a href="../ScriptReference/Build.BuildHistory.html"><code>BuildHistory</code></a> API to access the build history through scripts.</p>
+
+<p>For more information, refer to <a href="build-history.html">Build history</a>.</p>
+
+<h3>Read/Write settings for meshes</h3>
+
+<p>If a Particle System <strong>Shape</strong> module, Terrain Detail Mesh setting, or Mesh Collider component requires a mesh to be readable by the CPU, you must enable the <a href="FBXImporter-Model.html#meshes"><strong>Read/Write</strong></a> property of the mesh. Previously, Unity enabled this setting at build time, which contributed to long build times. If you don’t enable the <strong>Read/Write</strong> property of the mesh, a warning is displayed in the <strong>Inspector</strong> window, and if you attempt to build, the build process fails.</p>
+
+<h3>Second and third order ambisonic audio</h3>
+
+<p>Added support to import and use up to third order ambisonic audio files, which helps you achieve more spatial definition and precise localization of sound.</p>
+
+<p>While first order files contain 4 channels for basic 360-degree audio, second and third order files contain 9 and 16 channels respectively. This allows you to play more immersive audio clips within your application. For more information, refer to <a href="AmbisonicAudio.html">Ambisonic Audio</a>.</p>
+
+<p>
+<strong>Note</strong>: Unity doesn’t decode these files by default. To decode them, you need to use a third-party ambisonic decoder plug-in or create your own <a href="AudioDevelopAmbisonicDecoder.html">Ambisonic decoder plug-in</a>. </p>
+
+<h3>Artifacts folder renamed to DataStore</h3>
+
+<p>New projects now contain a <code>DataStore</code> subfolder in the <a href="default-directories.html">Library folder of your project</a>. This replaces the <code>Artifacts</code> subfolder, and still contains data related to asset processing.</p>
+
+<p><a name="cameras" aria-hidden="true"></a></p>
+
+<h2>Cameras</h2>
+
+<p>This section outlines recent updates to Unity’s camera tools.</p>
+
+<h3>Cinemachine is a core package</h3>
+
+<p>The <a href="https://docs.unity3d.com/Packages/com.unity.cinemachine@6.6/manual/index.html">Cinemachine</a> package is now a <a href="pack-core.html">core package</a>. </p>
+
+<p><a name="editor-and-workflow" aria-hidden="true"></a></p>
+
+<h2>Editor and workflow</h2>
+
+<p>This section outlines recent updates to the Unity Editor’s general workflows and user interface.</p>
+
+<h3>Added selection history to the Editor toolbar</h3>
+
+<p>You can now navigate backward and forward through your recent selections in the Editor. The Editor records up to 50 selections as you work, including objects selected in the <strong>Inspector</strong> window and folders navigated in the <strong>Project</strong> window. </p>
+
+<p>You can navigate the selection history in the following ways:</p>
+
+<ul>
+<li>Use the selection history buttons in the toolbar to return to a previous selection.</li>
+<li>Use the keyboard shortcuts <strong>Ctrl</strong>+<strong>Shift</strong>+<strong>[</strong> (macOS: <strong>Cmd</strong>+<strong>Shift</strong>+<strong>[</strong>) to return to a previous selection or <strong>Ctrl</strong>+<strong>Shift</strong>+<strong>]</strong> (macOS: <strong>Cmd</strong>+<strong>Shift</strong>+<strong>]</strong>) to move forward in your selection history.</li>
+<li>In the main menu, select <strong>Edit</strong> &gt; <strong>Previous Selection</strong> or <strong>Edit</strong> &gt; <strong>Next Selection</strong>.</li>
+</ul>
+
+<p>For more information, refer to <a href="selection-history.html">Navigate through your Editor selection history</a>.</p>
+
+<h3>Added Vivox to the Services dropdown menu</h3>
+
+<p>You can now add Vivox to your Unity project through the <strong>Services</strong> dropdown menu by selecting <strong>Services</strong> &gt; <strong>Vivox</strong> &gt; <strong>Install</strong>.</p>
+
+<h3>Host Editor tools in custom windows</h3>
+
+<p>You can now use <a href="../ScriptReference/EditorTools.EditorTool.html">Editor Tool APIs</a> in any custom Editor window, not just in the <strong>Scene</strong> view.</p>
+
+<p>You can use these APIs to do the following:</p>
+
+<ul>
+<li>Create custom tool owner windows by implementing <a href="../ScriptReference/EditorTools.ISupportsEditorTools.html"><code>ISupportsEditorTools</code></a> on any <code>EditorWindow</code> subclass.</li>
+<li>Define a custom <code>EditorToolContext</code> that targets a specific custom tooling window.</li>
+<li>Define a custom <code>EditorTool</code> that targets contexts belonging to custom tool-owning windows.</li>
+<li>Override built-in tools. For example, you can remap <strong>Move</strong> to a custom vertex mover.</li>
+<li>Extend the built-in tools group with additional custom tools.</li>
+<li>Define custom pivot modes and rotations targeting specific tools or contexts.</li>
+<li>Provide tool control through the <strong>Tools</strong> overlay and keyboard shortcuts.</li>
+<li>Implement a <strong>Tool Settings</strong> overlay UI.</li>
+</ul>
+
+<p>For more information about hosting Editor tools in custom windows, refer to the Unity Discussions post <a href="https://discussions.unity.com/t/technical-guide-building-custom-tools-for-the-unity-editor/1733712">Building custom tools for the Unity Editor</a>.</p>
+
+<h3>Define Constraints for native plug-ins</h3>
+
+<p>You can now use <strong>Define Constraints</strong> with native plug-ins. With <strong>Define Constraints</strong>, you can specify conditions under which Unity includes these plug-ins in a build, similar to the <code>#if</code> preprocessor directive but at the plug-in importer level.</p>
+
+<p>For more information, refer to <a href="plug-in-inspector.html">Import and configure plug-ins</a>.</p>
+
+<h3>New Hierarchy window enabled by default</h3>
+
+<p>The Editor now uses the new <strong>Hierarchy</strong> window by default. Previously, you had to enable the new <strong>Hierarchy</strong> window explicitly.</p>
+
+<p>The new <strong>Hierarchy</strong> window displays extra information about GameObjects and adds the following features:</p>
+
+<ul>
+<li>Improved performance in large scenes.</li>
+<li>Horizontal scrolling.</li>
+<li>Customizable, reorderable columns that display information about GameObjects in the scene. For example, you can add columns that display the <span class="tooltip" tabindex="0" ><a href="Layers.html">layer</a><span class="tooltiptext">Layers in Unity can be used to selectively opt groups of GameObjects in or out of certain processes or calculations. This includes camera rendering, lighting, physics collisions, or custom calculations in your own code. <a class="tooltipMoreInfoLink" aria-label="Navigate to more info about Layers.html" href="Layers.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#layer" aria-label="Go to glossary anchor for layer">Glossary</a></span></span></span> and <span class="tooltip" tabindex="0" ><a href="Tags.html">tag</a><span class="tooltiptext"><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#tag" aria-label="Go to glossary anchor for tag">Glossary</a></span></span></span> of each GameObject in the <strong>Hierarchy</strong> window. For more information, refer to <a href="configure-hierarchy-window.html">Configure the Hierarchy window</a>.</li>
+<li>Configurable visual options, such as <a href="configure-hierarchy-window.html#disable-alternating-row-background">alternating row backgrounds</a> and <a href="hierarchy-reference.html#icons-in-the-hierarchy-window">component icons that display next to the name of each GameObject</a> in the <strong>Hierarchy</strong> window.</li>
+<li>A full set of public APIs, available from Unity 6.5, that you can use to customize and extend the window.</li>
+<li>Support for items that aren’t GameObjects, such as entities and <a href="ui-systems/reference-visual-elements-in-inspector.html#enable-hierarchy-integration">UI Toolkit visual elements</a>.</li>
+</ul>
+
+<p>You can still use the legacy <strong>Hierarchy</strong> window. To enable the legacy <strong>Hierarchy</strong> window, refer to <a href="configure-hierarchy-window.html#switch-to-the-legacy-hierarchy-window">Switch to the legacy Hierarchy window</a>.</p>
+
+<h3>Toggle Draw Gizmos in the Scene view keyboard shortcut</h3>
+
+<p>Added the <strong>Toggle Draw Gizmos</strong> keyboard shortcut to the <a href="ShortcutsManager.html"><strong>Shortcuts</strong> window</a>. Use this shortcut to quickly disable the visual representation of <span class="tooltip" tabindex="0" ><a href="gizmos-and-handles.html">gizmos</a><span class="tooltiptext">A graphic overlay associated with a GameObject in a Scene, and displayed in the Scene View. Built-in scene tools such as the move tool are Gizmos, and you can create custom Gizmos using textures or scripting. Some Gizmos are only drawn when the GameObject is selected, while other Gizmos are drawn by the Editor regardless of which GameObjects are selected. <a class="tooltipMoreInfoLink" aria-label="Navigate to more info about GizmosMenu.html" href="GizmosMenu.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Gizmo" aria-label="Go to glossary anchor for Gizmo">Glossary</a></span></span></span> in the <strong>Scene</strong> view. By default, it doesn’t have a predefined key binding, so you must assign it one in the <strong>Shortcuts</strong> window.</p>
+
+<p><a name="entities" aria-hidden="true"></a></p>
+
+<h2>Entities</h2>
+
+<p>This section outlines recent updates to the Entities system.</p>
+
+<h3>Improved entities support in the Hierarchy window</h3>
+
+<p>The <strong>Hierarchy</strong> window is now the default window for working with both GameObjects and entities, and displays entity worlds, subscenes, and entities alongside your GameObjects. This release adds the following to the entity views:</p>
+
+<ul>
+<li>Filter entities by component type with the <code>t:</code> token in the search field, for example <code>t:LocalTransform</code>. You can select ECS component types from the <strong>+</strong> dropdown menu in the search field.</li>
+<li>Open or close a subscene from the <strong>Hierarchy</strong> window. Right-click a subscene node and select <strong>Open</strong> or <strong>Close</strong>, or double-click the node to toggle it. The context menu also contains a <strong>Reimport</strong> action, which acts the same as the <strong>Reimport</strong> button on the <strong>Sub Scene</strong> component.</li>
+<li>Expanded World nodes by default, in the same way as scene nodes.</li>
+<li>Hide Entities that are implementation details, such as the <code>WorldTime</code> entity that stores the data for <code>World.Time</code>. To display them, enable <strong>Show Hidden Entities</strong> in <strong>Preferences</strong> &gt; <strong>Entities</strong> &gt; <strong>Hierarchy Window</strong>.</li>
+</ul>
+
+<p>For more information, refer to <a href="https://docs.unity3d.com/Packages/com.unity.entities@6.6/manual/editor-hierarchy-world-node.html">Entity world view in Hierarchy window</a>.</p>
+
+<h3>Improved the Systems window</h3>
+
+<p>The <strong>Systems</strong> window has a new toolbar, a reorganized details panel, and a new column that shows how the systems in your project affect each other’s update order. This release adds the following:</p>
+
+<ul>
+<li>A <strong>Scheduling</strong> column. When you select a system, this column labels every system that has a direct update order relationship with it, based on the <code>UpdateBefore</code> and <code>UpdateAfter</code> attributes. Indicators at the top and bottom edges of the tree view count the related systems that are scrolled out of view, and you can select an indicator to scroll to the next one.</li>
+<li>Back and forward buttons that move through the systems you previously selected.</li>
+<li>A details panel icon (<strong>i</strong>) that shows or hides the panel that contains the <strong>System Inspector</strong>.</li>
+<li>A <strong>Show Unity-Namespaced Systems</strong> option in the <strong>More</strong> (<strong>⋮</strong>) menu. This option is enabled by default. Disabling it hides every system whose namespace is <code>Unity</code> or begins with <code>Unity.</code>, <code>UnityEngine</code>, or <code>UnityEditor</code>, which are the systems that the Entities package and other Unity packages define.</li>
+</ul>
+
+<p>The <strong>Relationships</strong> tab is merged into the <strong>Queries</strong> tab, where each query now displays the number of matching entities and an <strong>Entities</strong> foldout that lists them. The scheduling constraints that the <strong>Relationships</strong> tab previously listed are now in the <strong>Scheduling</strong> column. If more than five entities match a query, select <strong>See all</strong> to filter the <strong>Hierarchy</strong> window by that query. The <strong>Query</strong> window and the <strong>World</strong> column are removed.</p>
+
+<p>For more information, refer to <a href="https://docs.unity3d.com/Packages/com.unity.entities@6.6/manual/editor-systems-window.html">Systems window reference</a> and <a href="https://docs.unity3d.com/Packages/com.unity.entities@6.6/manual/editor-system-inspector.html">System Inspector reference</a>.</p>
+
+<h3>Deprecated the Entities Hierarchy window</h3>
+
+<p>The <strong>Entities Hierarchy</strong> window (<strong>Window</strong> &gt; <strong>Entities</strong> &gt; <strong>Hierarchy</strong>) is deprecated and will be removed in a future release. Entities are now integrated into the standard <strong>Hierarchy</strong> window.</p>
+
+<h3>Added component lifecycle callbacks</h3>
+
+<p>You can now receive a callback when a component is added to or removed from an entity. Implement <code>IDebugOnAdded</code> or <code>IDebugOnRemoved</code> on an <code>IComponentData</code> struct, and provide a matching public static method:</p>
+
+<pre><code class="lang-csharp">public struct Foo : IComponentData, IDebugOnAdded, IDebugOnRemoved
+{
+    public static void OnAdded(Entity entity, in Foo component) { }
+    public static void OnRemoved(Entity entity, in Foo component) { }
+}
+</code></pre>
+
+<p>
+<code>OnAdded</code> runs when you add the component to an entity. <code>OnRemoved</code> runs when you remove the component, and when you destroy an entity that has it. Each method must be public, static, return void, and take an <code>Entity</code> and an <code>in</code> reference to the component, otherwise compilation fails.</p>
+
+<p>These callbacks run in the Editor and in development builds. Unity excludes them from release Player builds.</p>
+
+<h3>Added memory labels to Entities allocations</h3>
+
+<p>The Entities and Entities Graphics packages now tag their native allocations with memory labels, so you can check how much memory ECS uses in the <a href="https://docs.unity3d.com/Packages/com.unity.memoryprofiler@latest/">Memory Profiler package</a>. The labels use two categories:</p>
+
+<ul>
+<li>
+<strong>Entities</strong>: <code>World.EntityManager</code>, <code>Chunks.Metadata</code>, <code>Query.EntityQuery</code>, <code>Jobs.Dependencies</code>, <code>Safety.ComponentHandles</code>, <code>Safety.StructuralChange</code>, and <code>Allocator.Scratchpad</code>.</li>
+<li>
+<strong>Entities Graphics</strong>: <code>Rendering.System</code> and <code>Rendering.SparseUploader</code>.</li>
+</ul>
+
+<p>For more information about memory labels, refer to <a href="performance-unmanaged-memory.html">Unmanaged memory</a>.</p>
+
+<h3>Added an API to check subscene baking determinism</h3>
+
+<p>You can now verify that baking a subscene produces the same result every time. <a href="https://docs.unity3d.com/Packages/com.unity.entities@6.6/api/Unity.Scenes.Editor.EntitySceneImporterDeterminismChecker.Check.html"><code>EntitySceneImporterDeterminismChecker.Check</code></a> takes the asset path of a subscene, imports it twice, and compares the two artifact hashes. Use it in your own Editor tooling or tests to catch bakers that produce different output from identical input, which increases the size of patches and asset bundles.</p>
+
+<h3>Deprecated managed components</h3>
+
+<p>Managed components are deprecated and will be removed in a future release. A component is managed if it’s a <code>class</code>, or a <code>struct</code> that contains reference-type fields such as <code>string</code> or other classes. The following APIs now produce a deprecation warning:</p>
+
+<ul>
+<li>Class-based <code>IComponentData</code>, and the <code>AddComponentData</code>, <code>GetComponentData</code>, and <code>SetComponentData</code> overloads that take it.</li>
+<li>Managed <code>ISharedComponentData</code>, and the <code>EntityManager</code> methods with the <code>Managed</code> suffix, such as <code>SetSharedComponentManaged</code>.</li>
+<li>
+<code>EntityManager.AddComponentObject</code>, <code>GetComponentObject</code>, and <code>SetComponentObject</code>.</li>
+<li>
+<code>SystemAPI.ManagedAPI</code>.</li>
+</ul>
+
+<p>To migrate from the deprecated API, convert the component to a <code>struct</code> that contains only unmanaged fields, and reference <code>UnityEngine.Object</code> instances with the <a href="https://docs.unity3d.com/Packages/com.unity.entities@6.6/manual/reference-unity-objects.html"><code>UnityObjectRef&lt;T&gt;</code></a> struct. A new <code>EA0017</code> warning indicates an <code>ISharedComponentData</code> struct that still contains reference-type fields. To silence it across a project, use the <code>UNITY_DISABLE_MANAGED_SHARED_COMPONENT_WARNINGS</code> scripting symbol.</p>
+
+<p>This release doesn’t remove the API: the managed code paths still work, and baking still supports the <code>UnityEngine.Component</code> types that have no ECS equivalent, such as <code>Light</code> and <code>MeshRenderer</code>.<br>
+Unity now stores those types in an unmanaged <code>CompanionComponent&lt;T&gt;</code> wrapper. Use <code>entityManager.GetCompanion&lt;T&gt;(entity)</code> instead of the deprecated <code>GetComponentObject&lt;T&gt;</code>, and query for <code>CompanionComponent&lt;T&gt;</code> rather than the type itself, for example <code>WithAll&lt;CompanionComponent&lt;Light&gt;&gt;()</code>.</p>
+
+<p>For more information, refer to <a href="https://docs.unity3d.com/Packages/com.unity.entities@6.6/manual/components-managed.html">Managed components</a> and the <a href="https://docs.unity3d.com/Packages/com.unity.entities@6.6/manual/upgrade-guide.html">Entities upgrade guide</a>.</p>
+
+<p><a name="graph-toolkit" aria-hidden="true"></a></p>
+
+<h2>Graph Toolkit</h2>
+
+<p>This section outlines recent updates to Graph Toolkit.</p>
+
+<h3>Wire animation and customization</h3>
+
+<p>Added APIs to trigger a preset animation on, and customize the appearance of, the wires that connect the nodes in a graph. You can use this to display the flow of execution of graph tools that have a runtime backend. </p>
+
+<p>For more information, refer to the following: </p>
+
+<ul>
+<li>
+<a href="../ScriptReference/Unity.GraphToolkit.Editor.GraphVisualization.GraphMotion.html"><code>GraphMotion</code></a> for wire animation.</li>
+<li>
+<a href="../ScriptReference/Unity.GraphToolkit.Editor.Wire.html"><code>Wire</code></a> for wire customization in the Editor.</li>
+<li>
+<a href="../ScriptReference/Unity.GraphToolkit.Editor.GraphVisualization.WireReference.html"><code>WireReference</code></a> for wire customization at runtime.</li>
+</ul>
+
+<h3>Node progress and animation</h3>
+
+<p>You can now customize the colored bar at the top of a node (the node accent). You can set a fill amount, or animate it to show that the node is being evaluated. </p>
+
+<p>For more information, refer to the following:</p>
+
+<ul>
+<li>
+<a href="../ScriptReference/Unity.GraphToolkit.Editor.GraphVisualization.GraphMotion.html"><code>GraphMotion</code></a> to animate the node.</li>
+<li>
+<a href="../ScriptReference/Unity.GraphToolkit.Editor.Node.FillAmount.html"><code>Node.FillAmount</code></a> to set the fill amount in the Editor.</li>
+<li>
+<a href="../ScriptReference/Unity.GraphToolkit.Editor.GraphVisualization.NodeReference.FillAmount.html"><code>NodeReference.FillAmount</code></a> to set the fill amount at runtime.</li>
+</ul>
+
+<h3>Port previews</h3>
+
+<p>You can now display a small text field next to the ports of a node. Use this to display the value of the data passed into the ports at runtime. For more information, refer to <a href="../ScriptReference/Unity.GraphToolkit.Editor.GraphVisualization.PortReference.html"><code>PortReference</code></a>.</p>
+
+<h3>Error, Warning, and Information markers</h3>
+
+<p>Added methods to the <a href="../ScriptReference/Unity.GraphToolkit.Editor.GraphLogger.html"><code>GraphLogger</code></a> that display Error, Warning, or Information markers on nodes, ports, and graphs. You can access <code>GraphLogger</code> through <a href="../ScriptReference/Unity.GraphToolkit.Editor.Graph.OnGraphChanged.html"><code>Graph.OnGraphChanged</code></a>.</p>
+
+<h3>Access to unique identifiers of graph elements</h3>
+
+<p>You can now retrieve unique identifiers for graph assets, nodes, ports, and subgraphs. This enables you to identify specific elements within your graph during runtime debugging sessions.</p>
+
+<h3>Customize a node’s UI with USS</h3>
+
+<p>Added the <code>stylesheet</code> parameter to the <a href="../ScriptReference/Unity.GraphToolkit.Editor.NodeAttribute.html"><code>NodeAttribute</code></a>. This allows you to use a USS file to define the visual appearance of your nodes.</p>
+
+<h3>Allow multi-connection</h3>
+
+<p>Added the <a href="../ScriptReference/Unity.GraphToolkit.Editor.IPortBuilder_1.WithCapacity.html"><code>IPortBuilder.WithCapacity</code></a><code>(PortCapacity capacity)</code> API for port creation. With it, tool developers can define if a port supports zero, single, or multiple connections.</p>
+
+<h3>Define possible connections (TypeCasting)</h3>
+
+<p>Added the <a href="../ScriptReference/Unity.GraphToolkit.Editor.Graph.IsConnectionAllowed.html"><code>Graph.IsConnectionAllowed()</code></a> API, which provides tool developers with greater control over defining valid port connections.</p>
+
+<p>To enable this feature, this release exposes a new <a href="../ScriptReference/Unity.GraphToolkit.Editor.Untyped.html"><code>Untyped</code></a> type. This type is only used to represent a port that carries no data. Previously, when you created a port without data using either <code>context.AddInputPort(&quot;name&quot;).Build()</code> or <code>AddOutputPort</code>, the value of <code>port.DataType</code> was <code>null</code>. Now the value is <code>typeof(Untyped)</code>. This change gives you more control over how you manage your connections. If you had code that relied on <code>port.DataType</code> and included null checks, update your code when you upgrade to this release.</p>
+
+<h3>Support for Enum with FlagsAttribute</h3>
+
+<p>The graph now includes support for <code>MaskField</code> when using enums with the <code>FlagsAttribute</code>. This update lets you choose more than one option from the enum’s dropdown menu within the Editor.</p>
+
+<h3>Add custom actions to the Graph window toolbar</h3>
+
+<p>Tools developers can now add custom buttons to the toolbar in the graph window. For more information, refer to <a href="gtk/add-custom-toolbar-actions.html">Add custom toolbar actions</a>.</p>
+
+<h3>Set new values for node options</h3>
+
+<p>Added the <code>TrySetValue</code> method to the <code>INodeOption</code> interface, which you can use to set new values for node options. For more information, refer to <a href="../ScriptReference/Unity.GraphToolkit.Editor.INodeOption.TrySetValue.html"><code>INodeOption.TrySetValue</code></a>. </p>
+
+<p><a name="graphics" aria-hidden="true"></a></p>
+
+<h2>Graphics</h2>
+
+<p>This section outlines recent updates to Unity’s graphics systems.</p>
+
+<h3>Removed dynamic batching</h3>
+
+<p>Dynamic batching is now obsolete. For information about other methods of optimizing draw calls, refer to <a href="optimizing-draw-calls-choose-method.html">Choose a method for optimizing calls</a>.</p>
+
+<h3>URP support in Project Auditor</h3>
+
+<p>Added a new URP Settings Analyzer module to <a href="project-auditor/project-auditor.html">Project Auditor</a> so you can now detect misconfigurations early, avoid rendering issues, and improve quality and performance in your URP projects.</p>
+
+<h3>GPU Resident Drawer activity in the Profiler</h3>
+
+<p>The <span class="tooltip" tabindex="0" ><a href="ProfilerRendering.html">Profiler</a><span class="tooltiptext">A window that helps you to optimize your game. It shows how much time is spent in the various areas of your game. For example, it can report the percentage of time spent rendering, animating, or in your game logic. <a class="tooltipMoreInfoLink" aria-label="Navigate to more info about Profiler.html" href="Profiler.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Profiler" aria-label="Go to glossary anchor for Profiler">Glossary</a></span></span></span> now reports GPU Resident Drawer (GRD) activity directly. This includes a <strong>Chart Mode</strong> dropdown for GRD views and a details card with coverage, culling, LOD, and pipeline timing information.</p>
+
+<h3>Set shader constant values</h3>
+
+<p>Set the value of a shader constant across all your shaders, or in each build profile you have. As a result, you can set a different value for different platforms without using shader variants. For more information, refer to <a href="shader-variant-stripping.html">Reduce shader variants</a>.</p>
+
+<h3>Compile shaders with the DirectX 12 compiler</h3>
+
+<p>To speed up compilation and use the latest shader features on some platforms, use the DirectX 12 (DX12) compiler DXC instead of the DirectX 11 (DX11) compiler FXC.</p>
+
+<p>
+<strong>Note</strong>: DXC isn’t compatible with DX11. Including DX11 in your Graphics API settings forces the Unity Editor to compile an additional shader set using FXC. The recommended best practice for faster shader builds is to remove the DX11 fallback.</p>
+
+<p>For more information, refer to <a href="shader-dxc-compiler.html">Compile shaders with the DirectX 12 compiler</a>.</p>
+
+<h3>Display values of constant buffers in the Frame Debugger</h3>
+
+<p>The <strong>Frame Debugger</strong> window now displays the names and values of the fields in a constant buffer. For more information, refer to <a href="frame-debugger-window-event-information.html">Frame Debugger Event Information reference</a>.</p>
+
+<h3>Read the depth buffer from GPU memory in URP</h3>
+
+<p>Added support for reading the depth value of the current pixel directly from GPU memory using an input attachment, instead of sampling a depth texture. This reduces memory bandwidth use in your project, especially on mobile devices that use tile-based deferred rendering (TBDR). You can use this to optimize effects such as custom on-tile depth-based fog and depth-based smoke.</p>
+
+<p>
+<strong>Note</strong>: This is supported only in URP, and only on DirectX 12 and Vulkan.</p>
+
+<p>For more information, refer to <a href="urp/read-depth-input-attachment.html">Get the current depth buffer from GPU memory in URP</a>.</p>
+
+<h3>Light baking architecture improvements</h3>
+
+<p>A new light baking backend, the Unity Compute Light Baker, is now available to produce lightmaps, light probes, and adaptive probe volume data. This baker is built for Scriptable Render Pipelines, is based on Unity Compute shaders, and uses the Unified Ray Tracing API. It is more accurate and delivers higher quality than the existing Progressive Light Baker and scales to larger scenes.</p>
+
+<p>You can now select the default light baker to use in your project, either the new Unity Compute Light Baker or the Progressive Light Baker, through the <a href="class-GraphicsSettings.html#light-baker">Graphics Project Settings</a>.</p>
+
+<p>Also, the Progressive CPU Light Baker is now deprecated and the recommended best practice is to update your projects to use either the Unity Compute Light Baker or the Progressive GPU Light Baker instead. As there are a few behavioral differences between the light bakers, you might need to adjust your lighting settings to reproduce the expected results.</p>
+
+<h3>Generate a shader graph from Visual Effect Graph</h3>
+
+<p>Visual Effect Graph now allows you to create a new shader graph asset directly from a Shader Graph output block.</p>
+
+<p>To do so, in the output block’s <strong>Shader Graph</strong> property, select <strong>New</strong>, choose one of the available shader graph VFX-compatible templates, and finalize the shader graph creation. Use this method so you don’t have to first create a new shader graph asset and later assign it manually.</p>
+
+<p>For more information, refer to <a href="https://docs.unity3d.com/Packages/com.unity.visualeffectgraph@latest?subfolder=/manual/sg-working-with.html">Working with Shader Graph in the Visual Effect Graph</a>.</p>
+
+<h3>Deprecate subgraphs in Shader Graph</h3>
+
+<p>You can now mark a subgraph as deprecated through its <a href="https://docs.unity3d.com/Packages/com.unity.shadergraph@17.6/manual/Graph-Settings-Tab.html">Graph Settings</a>. This helps with migration and removal because deprecated subgraphs no longer appear in the node search window and Shader Graph displays a validation warning on any existing subgraph node that references one.</p>
+
+<h3>Use promoted properties and keywords in Visual Effect Graph</h3>
+
+<p>Visual Effect Graph now supports <a href="https://docs.unity3d.com/Packages/com.unity.shadergraph@17.6/manual/Sub-Graph-Promote-Property.html#promote-a-sub-graph-property-or-keyword">promoted properties and keywords</a> from a Shader Graph subgraph.</p>
+
+<p>When you <a href="https://docs.unity3d.com/Packages/com.unity.visualeffectgraph@17.6/manual/sg-working-with.html">use a shader graph to produce visual effects through a visual effect graph</a>, any promoted properties and keywords from a subgraph embedded in that shader graph can now be visible and managed as properties in the visual effect graph.</p>
+
+<h3>Add preprocessor directives in Shader Graph</h3>
+
+<p>In Shader Graph, the <a href="https://docs.unity3d.com/Packages/com.unity.shadergraph@17.6/manual/Graph-Settings-Tab.html">Graph Settings</a> tab now includes a <strong>Preprocessor Directives</strong> section where you can add pragmas, defines, and includes to the shader without relying on Custom Function nodes.</p>
+
+<p>For practical details and examples of use, refer to <a href="https://discussions.unity.com/t/preprocessor-directives-in-graph-settings/1719940">Preprocessor Directives in Graph Settings post on Unity Discussions</a>.</p>
+
+<h3>Create particle shader graphs compatible with the Built-in Particle System</h3>
+
+<p>Shader Graph now allows you to <a href="https://docs.unity3d.com/Packages/com.unity.shadergraph@17.6/manual/Particle-Shaders-Introduction.html">create shader graphs fully compatible with the Built-in Particle System</a> in the Universal Render Pipeline (URP), including Mesh Particles GPU Instancing support, without relying on Custom Function nodes.</p>
+
+<p>The node library includes <a href="https://docs.unity3d.com/Packages/com.unity.shadergraph@17.6/manual/Particle-Nodes.html">five new nodes dedicated to particles</a> and the Particle shader graph templates have been updated to use these new nodes. Also, <a href="https://docs.unity3d.com/Packages/com.unity.shadergraph@17.6/manual/Particle-Shaders-Introduction.html">the Particle Shader sample</a> has been moved from the HDRP package to the Shader Graph package and is now fully compatible with both URP and HDRP.</p>
+
+<p><a name="optimization" aria-hidden="true"></a></p>
+
+<h2>Optimization</h2>
+
+<p>This section outlines recent optimization updates.</p>
+
+<h3>Project Auditor incorporates auto statics cleanup analyzer</h3>
+
+<p>To support the new default behavior, where domain reload is off when you enter Play mode, Project Auditor now incorporates the Roslyn analyzer to identify static fields that might need resetting between Play mode runs. When Project Auditor runs with Roslyn analyzers enabled, the analyzer emits warnings with the <code>UAL</code> prefix, which are visible on the <strong>Domain Reload</strong> issues page of the <strong>Code</strong> section of the report, and which you can usually resolve by applying <a href="../ScriptReference/Unity.Scripting.LifecycleManagement.AutoStaticsCleanupAttribute.html"><code>AutoStaticsCleanup</code></a> or <a href="../ScriptReference/Unity.Scripting.LifecycleManagement.NoAutoStaticsCleanupAttribute.html"><code>NoAutoStaticsCleanup</code></a> attributes. For more information, refer to <a href="project-auditor/domain-reloading-issues.html">Domain reloading issues</a>.</p>
+
+<h3>Performance Testing package now a core package</h3>
+
+<p>The Performance Testing package is now a core package. Its APIs are available to user code by default in the <code>Unity.PerformanceTesting</code> namespace, with no package installation required.</p>
+
+<h3>C++ logging framework</h3>
+
+<p>The new logging framework supports multithreaded logging and asynchronous processing, which are enabled by default. The <strong>Preferences</strong> window includes the following settings to enable or disable the logging framework and to export logs in the JSON Lines format: </p>
+
+<ul>
+<li><strong>Enable logging framework</strong></li>
+<li><strong>Enable JSON logging</strong></li>
+</ul>
+
+<p>For more information, refer to <a href="log-files.html">Log files reference</a>.</p>
+
+<h3>Code build size optimization</h3>
+
+<p>Significantly reduced the runtime size of the WebGL Player, and reduced the size of the Android and iOS Players.</p>
+
+<p>This change also adds the following options to the <strong>Code Optimization</strong> property in the <strong>Build Settings</strong> window:</p>
+
+<ul>
+<li><strong>Maximum Size Reduction</strong></li>
+<li><strong>Maximum Size Reduction with LTO</strong></li>
+</ul>
+
+<p>For more information, refer to <a href="web-build-settings.html">Web build settings reference</a>. </p>
+
+<h3>Profiler Overview and Session list</h3>
+
+<p>You can now capture and browse through a full series of screenshots in the <strong>Profiler</strong> window to visually link profiling information to changes in the application. You can also pin up to four Profiler modules to the top of the <strong>Profiler</strong> window. </p>
+
+<p><a name="package-manager" aria-hidden="true"></a></p>
+
+<h2>Package Manager</h2>
+
+<p>This section outlines recent updates to Unity’s Package Manager.</p>
+
+<h3>Unity Package Manager CLI for signing packages</h3>
+
+<p>Added the Unity Package Manager command-line interface (UPM CLI) for signing packages.</p>
+
+<ul>
+<li>UPM CLI is a secure, lightweight command-line interface, which runs independently of the Unity Editor.</li>
+<li>Use the UPM CLI <code>pack</code> command to sign your packages outside of the Unity Editor or without the scripting API.</li>
+<li>UPM CLI is especially useful for package creators who use automated environments.</li>
+</ul>
+
+<p>For more information, refer to <a href="upm-cli.html">Unity Package Manager CLI workflow</a>.</p>
+
+<h3>Asset package signatures</h3>
+
+<p>Added support for package signatures on asset packages (<code>.unitypackage</code> files) exported from the Unity Editor. This feature provides content provenance and integrity verification for <code>.unitypackage</code> files, aligning them with the signature model already available for UPM packages.</p>
+
+<p>For more information, refer to <a href="AssetPackagesSignatures.html">Package signatures in asset packages</a>.</p>
+
+<p><a name="platforms" aria-hidden="true"></a></p>
+
+<h2>Platforms</h2>
+
+<p>This section outlines recent updates to platform-specific tools and settings.</p>
+
+<h3>Android</h3>
+
+<p>This section outlines recent updates to the Android platform.</p>
+
+<h4>Removed support for legacy and round icons</h4>
+
+<p>Removed support for Legacy and Round Android icons. Unity now supports only Adaptive icons for Android projects. For upgrade information, refer to <a href="UpgradeGuideUnity66.html#platforms">Upgrade to Unity 6.6</a>.</p>
+
+<h4>Added Profileable Shell Android build setting</h4>
+
+<p>Added the <strong>Profileable Shell</strong> build setting for Android. This setting enables Android system services and shell tools to profile your application’s release build for performance testing. For more information, refer to <a href="android-build-settings.html">Android build settings reference</a>.</p>
+
+<h4>Raised minimum supported OpenGL ES version</h4>
+
+<p>The minimum supported OpenGL ES version for Android is raised from OpenGL ES 3.0 to OpenGL ES 3.1. As a result, the <strong>Require ES3.1</strong> checkbox in the Android <strong>Player</strong> settings is now removed, as OpenGL ES 3.1 is the minimum requirement. OpenGL ES 3.0 is no longer supported on Android. For upgrade information, refer to <a href="UpgradeGuideUnity66.html#platforms">Upgrade to Unity 6.6</a>.</p>
+
+<h4>Removed the -androidChainedSignalHandlerBehavior legacy option</h4>
+
+<p>The <code>legacy</code> option for the <code>-androidChainedSignalHandlerBehavior</code> command-line argument has been fully removed. The legacy behavior was incompatible with third-party crash handlers as it converted native crashes to Java exceptions instead of forwarding the crash signals to installed crash handlers. If you pass the <code>legacy</code> value, Unity now triggers a console error and uses the default chained signal handler. For upgrade information, refer to <a href="UpgradeGuideUnity66.html#platforms">Upgrade to Unity 6.6</a>.</p>
+
+<h4>Rumble support for gamepads</h4>
+
+<p>Unity now supports rumble on gamepads connected to Android devices. Use the Input System’s <a href="https://docs.unity3d.com/Packages/com.unity.inputsystem@1.20/manual/gamepad-haptics.html">Gamepad Haptics</a> APIs, such as <code>Gamepad.SetMotorSpeeds</code>, to trigger rumble.</p>
+
+<p>Rumble support varies depending on the Android operating system version. For more information, refer to <a href="https://docs.unity3d.com/Packages/com.unity.inputsystem@latest?subfolder=/manual/supported-devices-reference.html">Supported devices reference</a>.</p>
+
+<h3>iOS</h3>
+
+<p>This section outlines recent updates to the iOS platform.</p>
+
+<h4>Dedicated public API module for native plug-ins</h4>
+
+<p>Unity now splits the generated <code>UnityFramework</code> target into two targets in Swift Xcode projects:</p>
+
+<ul>
+<li>
+<code>UnityFramework</code>, which produces the <code>UnityFramework.framework</code> bundle. It includes the Unity runtime and dependent frameworks, and links the <code>UnityAPI</code> target.</li>
+<li>
+<code>UnityAPI</code>, a static framework that produces the <code>UnityAPI.framework</code> bundle. It exposes the public <code>UnityAPI</code> module, including the <code>UnityPlayer</code> API and the <code>UnityPluginInterface</code> headers, to native plug-ins.</li>
+</ul>
+
+<p>This change applies to the experimental Swift Xcode project type for iOS, iPadOS, and tvOS.</p>
+
+<p>For more information, refer to <a href="ios-structure-of-swift-xcode-project.html">Structure of a Unity Xcode Swift project type</a> and <a href="ios-swift-api-reference.html">Swift project type API reference</a>.</p>
+
+<h3>macOS</h3>
+
+<p>This section outlines recent updates to the macOS platform.</p>
+
+<h4>Deprecated Intel support on macOS</h4>
+
+<p>Intel (x86_64) architecture support on macOS is deprecated and will be removed in a future release. This deprecation affects:</p>
+
+<ul>
+<li>
+<strong>Unity Editor on macOS</strong>: Intel (x86_64) support for the Unity Editor is deprecated.</li>
+<li>
+<strong>macOS standalone Players</strong>: Intel (x86_64) support for macOS standalone Players is deprecated.</li>
+<li>
+<strong>iOS and tvOS x86_64 and Simulators</strong>: The <strong>x86_64</strong> and <strong>Universal</strong> Simulator Architecture options in <strong>Player</strong> settings.</li>
+</ul>
+
+<p>This change doesn’t affect Apple silicon support.</p>
+
+<p>For more information, refer to <a href="https://discussions.unity.com/t/unity-to-deprecate-intel-based-mac-support-starting-with-unity-6-6/1721740">Unity to Deprecate Intel-based Mac Support Starting with Unity 6.6</a> (Unity Discussions).</p>
+
+<h3>QNX</h3>
+
+<p>This section outlines recent updates to the QNX platform.</p>
+
+<h4>Player setting for IL2CPP builds on QNX</h4>
+
+<p>Added the <strong>IL2CPP LTO Mode</strong> Player setting. Use this setting to choose <strong>Full</strong> or <strong>Thin</strong> options for IL2CPP builds.</p>
+
+<ul>
+<li>
+<strong>Full</strong> features comprehensive link-time optimization, potentially improving runtime performance at the expense of longer build times.</li>
+<li>
+<strong>Thin</strong> features fewer link-time optimizations, resulting in faster build times but potentially lower runtime performance.</li>
+</ul>
+
+<p>For more information, refer to <a href="qnx-player-settings.html">QNX Player settings reference</a>.</p>
+
+<h4>Windowing API extensions for QNX</h4>
+
+<p>The <code>UnityEngine.Windowing</code> API now allows you to configure QNX-specific window properties using the following APIs:</p>
+
+<ul>
+<li>
+<a href="../ScriptReference/Windowing.QNX.QNXGameWindowCreationSettings.html"><code>QNXGameWindowCreationSettings</code></a> extends <a href="../ScriptReference/Windowing.GameWindowCreationSettings.html"><code>GameWindowCreationSettings</code></a>, which you can use to set the window properties during window creation. These properties include transparency mode, alpha blending mode, QNX screen hardware pipeline ID, z-order, and a window class string to identify a specific window.</li>
+<li>
+<a href="../ScriptReference/Windowing.QNX.GameWindowExtensions.html"><code>GameWindowExtensions</code></a> provides asynchronous extension methods to configure alpha blending mode, QNX screen hardware pipeline ID, z-order, and a window class string at runtime for an existing game window.</li>
+</ul>
+
+<h3>Web</h3>
+
+<p>This section outlines recent updates to the Web platform.</p>
+
+<h4>WebGPU no longer an experimental release</h4>
+
+<p>WebGPU is now out of experimental release. For more information, refer to <a href="WebGPU-enable.html">Enable the WebGPU graphics API</a>. </p>
+
+<h4>WebAssembly64 support</h4>
+
+<p>Added WebAssembly64 support as a build option for Web builds alongside the existing WebAssembly32 architecture. This upgrades the maximum memory limit from 4 GB to 16 GB to support larger, memory-intensive applications. </p>
+
+<p>Note the following:</p>
+
+<ul>
+<li>WebAssembly64 isn’t recommended for load-time sensitive scenarios.</li>
+<li>Safari doesn’t support WebAssembly64. For more information, refer to <a href="https://webassembly.org/features/">WebAssembly Feature Status</a>.</li>
+</ul>
+
+<p>For more information, refer to <a href="wasm-64bit-support.html">WebAssembly64</a>.</p>
+
+<h4>WebGPU device filtering</h4>
+
+<p>The WebGPU Device Filtering Asset allows you to fine-tune which browsers use the WebGPU API. This asset lets you use two filter lists to define which browsers can or can’t use the WebGPU API when running a Unity application.</p>
+
+<p>For more information, refer to <a href="webgpu-intro-device-filter-asset.html">Introduction to WebGPU Device Filter asset</a>. </p>
+
+<h4>WebGPU compatibility mode</h4>
+
+<p>Some older devices might not support the maximum WebGPU features and API limits. WebGPU provides a compatibility mode with stricter limits for these devices. Unity automatically falls back to compatibility mode if a device can’t support the core WebGPU specifications.</p>
+
+<p>For more information, refer to <a href="WebGPU-limitations.html#compatibility-mode">Limitations of the WebGPU graphics API</a>. </p>
+
+<h4>Progressive Asset Loading for Web builds</h4>
+
+<p>Progressive Asset Loading is a new <strong>Player</strong> settings option for Web builds that loads assets on a per-scene basis instead of downloading everything before the application starts. This reduces initial load times and lowers upfront bandwidth consumption, especially for projects with large asset sets or many scenes.</p>
+
+<p>Consider enabling this setting if you develop projects that target web deployment and you want to improve the time-to-first-interaction for users. </p>
+
+<p>For more information, refer to <a href="class-PlayerSettingsWebGL.html#Publishing">Publishing settings</a> in <a href="class-PlayerSettingsWebGL.html">Web Player Settings</a>.</p>
+
+<p><a name="programming" aria-hidden="true"></a></p>
+
+<h2>Programming</h2>
+
+<p>This section outlines recent updates to the Programming system.</p>
+
+<h3>Domain reload on entering Play mode is now off by default</h3>
+
+<p>The default option for <strong>Enter Play Mode Settings</strong> (<a href="class-EditorManager.html"><strong>Edit</strong> &gt; <strong>Project Settings</strong> &gt; <strong>Editor</strong></a>) in new projects is now <strong>Reload Scene only</strong> on entering Play mode, instead of <strong>Reload Domain and Scene</strong> like in previous versions. Domain reload on entering Play mode can be turned on again by modifying the <strong>Enter Play Mode Settings</strong>. However, the recommended best practice is to keep domain reload off to prepare for the forthcoming removal of Mono and the domain reload mechanism in future Unity versions. Instead, use one of the alternative methods for resetting static state on entering Play mode, as described in <a href="domain-reloading.html">Enter Play mode without domain reload</a>.</p>
+
+<h3>Burst compiler now a built-in module</h3>
+
+<p>The Burst package is now a built-in module of the core Unity Editor and Engine. Its APIs are available to user code by default in the <code>Unity.Burst</code> namespace, with no package installation required. Accordingly, the Burst API documentation is now part of the core Scripting API reference under the <a href="../ScriptReference/Unity.Burst.BurstAuthorizedExternalMethodAttribute.html">Unity.Burst namespace</a>, and the user manual is integrated with the core user manual.</p>
+
+<h3>Unity API compatibility analyzer flags incompatible .NET API</h3>
+
+<p>A new Unity API Compatibility (UAC) code analyzer now issues compilation warnings for several .NET reflection APIs that are or will soon become incompatible with Unity’s assembly lifecycle. For details of each warning and the compatible Unity APIs you can use instead, refer to <a href="dotnet-incompatible-api.html">Incompatible .NET API reference</a>.</p>
+
+<h3>New managed code variant API and Player setting</h3>
+
+<p>A new managed code variant setting defines how C# code in a project is compiled when producing a Player build. The different options for this setting control the extent to which code is optimized, the inclusion of additional features such as safety checks and profiler instrumentation, and which <a href="scripting-symbol-reference.html">scripting symbols</a> are defined for the build. The managed code variant can be set in the Editor UI through the <a href="playersettings-windows.html#Optimization">Optimization section of Player settings</a> or by calling <a href="../ScriptReference/PlayerSettings.SetManagedCodeVariant.html"><code>PlayerSettings.SetManagedCodeVariant</code></a> with a valid <a href="../ScriptReference/ManagedCodeVariant.html"><code>ManagedCodeVariant</code></a> enum value.</p>
+
+<p>As part of this change, the <code>UNITY_64</code> and <code>DEVELOPMENT_BUILD</code> <a href="scripting-symbol-reference.html">preprocessor symbols</a> are deprecated, which can require important upgrade steps for your code. For more information, refer to <a href="UpgradeGuideUnity66.html#programming">Upgrade to Unity 6.6</a>.</p>
+
+<h3>Dictionary serialization</h3>
+
+<p>Unity now serializes <code>Dictionary&lt;TKey, TValue&gt;</code> fields directly, so you can author and edit dictionary data without writing custom serialization code. Apply <code>[SerializeField]</code> to a dictionary field on a <code>MonoBehaviour</code>, <code>ScriptableObject</code>, or nested <code>[Serializable]</code> type, and Unity persists it across domain reloads, scene saves, and Play mode transitions.</p>
+
+<p>The <strong>Inspector</strong> window displays a serialized dictionary as a two-column list with the keys on the left and the values on the right. The serialization rules analyzer validates supported key and value types at compile time and points to the rule that explains any unsupported type. Serialized dictionaries also support per-entry overrides on prefab instances.</p>
+
+<p>For more information, refer to <a href="script-serialization-dictionaries.html">Dictionary serialization</a>.</p>
+
+<p><a name="ui" aria-hidden="true"></a></p>
+
+<h2>UI</h2>
+
+<p>This section outlines recent updates to Unity’s UI systems.</p>
+
+<h3>uGUI</h3>
+
+<p>This section outlines recent updates to Unity’s uGUI system.</p>
+
+<h4>Safe Area component</h4>
+
+<p>Added the <strong>SafeArea</strong> component, which adjusts a <code>RectTransform</code> so that its content stays within the region the device reports as safe (<code>Screen.safeArea</code>). Use this component to keep your UI clear of display cutouts, rounded corners, and system gesture areas without hard-coding a margin for each device. <code>SafeArea</code> drives the anchors of the <code>RectTransform</code> it’s attached to, which means every element parented under that container is constrained as well. A common setup is to place <code>SafeArea</code> on a single container under the <code>Canvas</code>, put the UI that must remain visible inside that container, and leave full-bleed artwork such as backgrounds outside it.</p>
+
+<p>Use the <strong>Edges</strong> property to select which edges Unity insets, so that elements can still reach the border of the screen on the edges you don’t select. You author the edges against a <strong>Reference Orientation</strong>, and Unity remaps them to the corresponding physical edges of the screen when the device rotates, so a single configuration covers all four orientations. The <strong>Alignment</strong> property mirrors the larger inset on an axis onto the opposite edge, which keeps the remaining area centered on devices with asymmetric insets, such as a device with a notch on only one side in landscape. <code>SafeArea</code> reapplies its values at runtime whenever the safe area, the resolution, or the orientation changes.</p>
+
+<p>For more information, refer to <a href="https://docs.unity3d.com/Packages/com.unity.ugui@2.6/manual/script-SafeArea.html">Safe Area</a>.</p>
+
+<h4>Set maximum width and height for layout elements</h4>
+
+<p>Layout elements now support a maximum size, alongside the existing minimum, preferred, and flexible sizes. Use the <strong>Max Width</strong> and <strong>Max Height</strong> properties on the <code>LayoutElement</code> component to set an upper bound on the size that the layout system allocates to a UI element, or set the <code>maxWidth</code> and <code>maxHeight</code> properties from a script. These properties are part of the <code>ILayoutElement</code> interface, so any component that supplies layout information can provide a maximum size. When several components on the same GameObject specify a maximum size at the same layout priority, the layout system uses the smallest value.</p>
+
+<h4>Clamped fit mode in the Content Size Fitter</h4>
+
+<p>The <code>ContentSizeFitter</code> component has a new <strong>Clamped</strong> fit mode, available for both <strong>HorizontalFit</strong> and <strong>VerticalFit</strong>, that keeps the size of the <code>RectTransform</code> between the minimum and maximum size of the layout element without driving the size itself. Use <strong>Clamped</strong> to constrain a UI element that another component or a manual value already sizes. The <strong>Preferred Size</strong> fit mode also respects the maximum size, so an element that fits to its content no longer grows past its <strong>Max Width</strong> or <strong>Max Height</strong>.</p>
+
+<h4>Maximum size calculation in layout groups</h4>
+
+<p>The <code>HorizontalLayoutGroup</code>, <code>VerticalLayoutGroup</code>, and <code>GridLayoutGroup</code> components calculate their own maximum width and height from the layout properties of their children, so maximum sizes propagate up through a layout hierarchy.</p>
+
+<h4>Fit RectTransforms across coplanar surfaces</h4>
+
+<p>Added <code>RectTransform.FitResult</code>, <code>RectTransform.IsCoplanarWith</code>, <code>RectTransform.FitInsideCoplanarRectTransform</code>, and <code>RectTransform.TryFitInsideCoplanarRectTransform</code> to check whether two <code>RectTransform</code> components share a plane and to constrain one <code>RectTransform</code> to fit inside another.</p>
+
+<p>Use these to keep tooltips, popups, and similar elements inside a container:</p>
+
+<ul>
+<li>
+<code>IsCoplanarWith</code> checks coplanarity.</li>
+<li>
+<code>FitInsideCoplanarRectTransform</code> moves (and, if <code>allowShrink</code> is true, uniformly shrinks) this <code>RectTransform</code> to fit inside an already confirmed coplanar target.</li>
+<li>
+<code>TryFitInsideCoplanarRectTransform</code> does the same fit but first validates target size, coplanarity, and matching Z rotation, returning a <code>FitResult</code> indicating success or the reason for failure.</li>
+</ul>
+
+<p>These are new, additive APIs and don’t change existing <code>RectTransform</code> behavior.</p>
+
+<p>For more information, refer to <a href="../ScriptReference/RectTransform.TryFitInsideCoplanarRectTransform.html"><code>RectTransform.TryFitInsideCoplanarRectTransform</code></a> and <a href="../ScriptReference/RectTransform.FitResult.html"><code>RectTransform.FitResult</code></a>.</p>
+
+<h4>Update TextMesh Pro using spans</h4>
+
+<p>The <code>SetText()</code> method in TextMesh Pro is designed to be a high-performance API for updating text content, especially in scenarios where strings change frequently. It already supports several allocation-conscious inputs such as <code>StringBuilder</code> and formatted arguments, helping developers reduce unnecessary string allocations during frequent updates. Unity now supports <code>ReadOnlySpan</code>, because modern .NET and C# APIs increasingly rely on <code>ReadOnlySpan</code> as a standard way to represent slices of text without allocating new strings.</p>
+
+<h3>UI Toolkit</h3>
+
+<p>This section outlines recent updates to Unity’s UI Toolkit.</p>
+
+<h4>Backdrop filters</h4>
+
+<p>UI Toolkit now supports the <code>backdrop-filter</code> USS property, which applies filter effects, such as blur, tint, grayscale, and more, to whatever is rendered behind an element, rather than to the element itself. This makes frosted-glass panels, dimmed overlays, and similar depth effects possible directly from USS, with no render textures or custom shaders required. You can freely combine filter functions, and create custom filter functions for bespoke effects.</p>
+
+<pre><code class="lang-css">.frosted-panel {
+    backdrop-filter: blur(8px) tint(rgba(255, 255, 255, 0.2));
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+}
+</code></pre>
+
+<p>Built-in functions: <code>blur</code>, <code>tint</code>, <code>grayscale</code>, <code>sepia</code>, <code>brightness</code>, <code>contrast</code>, <code>saturate</code>, <code>hue-rotate</code>, <code>invert</code>, and <code>opacity</code>. <code>tint</code> is a UI Toolkit addition, and the rest match their CSS equivalents.</p>
+
+<p>For more information, refer to <a href="ui-systems/backdrop-filter.html">Apply effects behind elements with backdrop filters</a>.</p>
+
+<figure>
+<img src="../uploads/Main/wn-66-backdrop-filter.png" alt="Examples using backdrop-filter on UI to apply filter effects, such as blur and tint, to the 3D objects and other UI behind them.">
+<figcaption>Examples using backdrop-filter on UI to apply filter effects, such as blur and tint, to the 3D objects and other UI behind them.</figcaption>
+</figure>
+
+<h4>Drop shadow filter</h4>
+
+<p>Added support for the <code>drop-shadow</code> filter function on the <code>filter</code> USS property in UI Toolkit. Drop shadows follow the element hierarchy’s rendered content, including transparent regions. You can add soft, offset shadows to any element without authoring extra assets. </p>
+
+<p>The filter takes an offset, a blur radius, and a color. You can combine <code>drop-shadow</code> with other filter functions such as <code>blur</code>, <code>contrast</code>, and <code>hue-rotate</code> in the same declaration to layer effects.</p>
+
+<p>For more information, refer to <a href="ui-systems/built-in-filters.html">Apply common effects with built-in filters</a>. </p>
+
+<figure>
+<img src="../uploads/Main/wn-66-drop-shadow.png" alt="Examples of the drop-shadow filter applied to UI elements, showing the effect of the offset, radius, and color parameters, and combinations with other filters such as blur and hue-rotate.">
+<figcaption>Examples of the drop-shadow filter applied to UI elements, showing the effect of the offset, radius, and color parameters, and combinations with other filters such as blur and hue-rotate.</figcaption>
+</figure>
+
+<p>A: Adjust the offset X and Y parameters to change the position of the shadow.</p>
+
+<p>B: Adjust the radius parameter to impact the range of the shadow.</p>
+
+<p>C: Adjust the color parameter to change the shadow’s color.</p>
+
+<p>D: Apply the filter to hollow elements with borders to cast shadows that follow the border’s shape.</p>
+
+<p>E: Apply the filter to parent elements to cast shadows that follow the shape of their descendants.</p>
+
+<p>F: Apply the filter to an element with custom <code>border-radius</code> to cast a shadow that follows the element’s shape.</p>
+
+<p>G: Combine it with the <code>blur</code> filter to blur the element and its shadow.</p>
+
+<p>H: Combine it with the <code>hue-rotate</code> filter to change the hue of the element and its shadow.</p>
+
+<p>I: Combine multiple <code>drop-shadow</code> filters together on one element.</p>
+
+<h4>Create dynamic, GPU-driven UI with programmable vertices</h4>
+
+<p>Added support for programming the vertex stage in <a href="ui-systems/ui-shader-graph.html">UI Shader Graph</a>. This lets you manipulate vertex positions, tints, and UVs, and read extra vertex data to create dynamic effects. Custom vertex channels and interpolators provide a complete data path between C#, the vertex stage, and the fragment stage.</p>
+
+<p>With programmable vertices, you can:</p>
+
+<ul>
+<li>Animate and deform UI geometry, transform UVs, modify tint, and create effects such as waves, distortion, procedural animation, and custom transitions directly on the GPU.</li>
+<li>Reduce per-pixel work by moving suitable calculations from the fragment stage to the vertex stage, and animate geometry without regenerating and uploading meshes from the CPU every frame.</li>
+<li>Vary effects between elements with custom vertex data while sharing shaders and materials, which helps preserve batching.</li>
+<li>Pass calculated values from the vertex stage to the fragment stage with custom interpolators, and carry effect parameters through custom channels such as <code>UV1</code> and <code>UV2</code>.</li>
+</ul>
+
+<p>
+<a href="../ScriptReference/UIElements.MeshGenerationContext.AllocateTempMesh.html"><code>UIElements.MeshGenerationContext.AllocateTempMesh</code></a> and <a href="../ScriptReference/UIElements.MeshGenerationContext.DrawMesh.html"><code>UIElements.MeshGenerationContext.DrawMesh</code></a> support custom vertex data. You can also use <a href="../ScriptReference/UIElements.VisualElement.AddMeshModifier.html"><code>UIElements.VisualElement.AddMeshModifier</code></a> to modify default or custom meshes after generation, including changing vertex data, transforming geometry, or supplying new vertices and indices.</p>
+
+<p>For more information, refer to <a href="ui-systems/custom-vertex-data.html">Custom vertex data</a>.</p>
+<figure>
+ <video style="width: 849px; max-width: 100%; height: auto;" src="../uploads/Main/wn-66-mesh-modifier.mp4" controls="controls" muted="muted" playsinline="playsinline"></video>
+ <figcaption>Examples of meshes changed with mesh modification callbacks: a custom generated shape, an example of the recursive parameter being applied, and per-vertex tinting of borders.</figcaption>
+</figure>
+
+<p>A: Highlight sweep animated on the GPU by a Shader Graph that reads the extra vertex channel populated with a modifier on a border mesh using <code>draw.GetUv1</code>.</p>
+
+<p>B: Impact of the <code>recursive</code> parameter, which decides whether mesh modifications apply to descendants.</p>
+
+<p>C: Per-vertex tint applied to meshes in <code>DrawPhase.Border</code> to achieve rounded and gradient borders.</p>
+
+<h4>Added Profiler integration</h4>
+
+<p>The <strong>CPU Usage</strong> Profiler module now displays UI Toolkit performance data in the <strong>UI</strong> chart.</p>
+
+<p>Added two new Profiler modules for UI Toolkit, so you can view more data about the performance of your UI in the <strong>Profiler</strong> window.</p>
+
+<p>Use the <strong>UI Toolkit</strong> and <strong>UI Toolkit Details</strong> Profiler modules to learn more about the time and work required to update and render your UI. For example, you can check how long it takes to update layouts and bindings, how many events were dispatched on a panel, and the reasons for a rendering batch break.</p>
+
+<p>For more information, refer to <a href="ui-systems/profile-ui.html">Profile your UI</a>.</p>
+
+<figure>
+<img src="../uploads/Main/wn-66-uitk-details-profiler-module.png" alt="The UI Toolkit Details Profiler module displaying update and rendering performance data in the Profiler window.">
+<figcaption>The UI Toolkit Details Profiler module displaying update and rendering performance data in the Profiler window.</figcaption>
+</figure>
+
+<p><a name="xr" aria-hidden="true"></a></p>
+
+<h2>XR</h2>
+
+<p>This section outlines recent updates to Unity’s XR features.</p>
+
+<h3>OpenXR Adaptive Performance support</h3>
+
+<p>The <a href="adaptive-performance/adaptive-performance.html">Adaptive Performance</a> module now supports XR devices with an OpenXR runtime. Use Adaptive Performance in your XR project to automatically adjust application quality based on device frame timing. For more information, refer to <a href="xr-untethered-device-optimization.html">Optimize for untethered XR devices in URP</a>.</p>
+
+<h3>Meta Quest graphics optimizations</h3>
+
+<p>Added new graphics optimizations that are automatically applied to improve GPU performance on the Meta Quest platform. For more information, refer to <a href="xr-meta-quest-graphics-optimization.html">Configure Shader Optimizations for Meta Quest</a>.</p>
+
+<h2>Additional resources</h2>
+
+<ul>
+<li><a href="WhatsNew.html">What’s new in Unity</a></li>
+<li><a href="UpgradeGuides.html">Upgrade Unity</a></li>
+<li><a href="system-requirements.html">System requirements</a></li>
+<li><a href="GettingStartedInstallingUnity.html">Install Unity</a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="WhatsNew.html"></a></span><div class="tip">What's new in Unity</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="WhatsNewUnity65.html"></a></span><div class="tip">New in Unity 6.5</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 79827756. Built on: 2026-11-13.</div>
+<div class="menu">
+<a href="https://learn.unity.com/">Tutorials</a><a href="https://answers.unity3d.com">Community Answers</a><a href="https://support.unity3d.com/hc/en-us">Knowledge Base</a><a href="https://forum.unity3d.com">Forums</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">Terms of use</a><a href="https://unity.com/legal">Legal</a><a href="https://unity.com/legal/privacy-policy">Privacy Policy</a><a href="https://unity.com/legal/cookie-policy">Cookies</a><a href="https://unity.com/legal/docs-terms">Documentation Terms of Use</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

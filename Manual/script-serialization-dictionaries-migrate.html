@@ -1,0 +1,604 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: 'en-us', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Migrate a custom dictionary solution to built-in dictionary serialization</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="author" content="Unity Technologies">
+<meta property="relative-path-to-manual" content="">
+<meta property="version-switcher-versions-with-this-page" content="Versions with this page:">
+<meta property="version-switcher-versions-without-this-page" content="Versions without this page:">
+<meta property="version-switcher-supported" content="Supported">
+<meta property="version-switcher-legacy" content="Legacy">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<link rel="canonical" href="https://docs.unity3d.com/6000.6/Documentation/Manual/script-serialization-dictionaries-migrate.html">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="/StaticFilesConfig/UnityVersionsInfo.js"></script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js?ts=20261113"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js?ts=20261113"></script><script type="text/javascript" src="../StaticFilesManual/js/image-comp.js?ts=20261113"></script><script type="text/javascript" src="docdata/toc.js?ts=20261113"></script><script type="text/javascript" src="docdata/global_toc.js?ts=20261113"></script><link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css?ts=20261113">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/icons.css?ts=20261113">
+<link rel="stylesheet" href="../StaticFilesManual/css/prism.css">
+<script src="../StaticFilesManual/js/prism.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><script src="../StaticFilesManual/js/jquery.sidebar.min.js"></script><link rel="stylesheet" href="../StaticFilesManual/css/mobileoptimisation.css">
+<script src="../StaticFilesManual/js/mobileoptimisation.js"></script>
+</head>
+<body>
+<div id="DocsAnalyticsData" data-area="none" data-pagetype="manual"></div>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity.com/">unity.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                                Version: <b>Unity 6.6</b> (6000.6)
+                                <div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+<ul id="OtherVersionsContentUl"></ul>
+<div id="otherVersionsLegend"><ul>
+<li>
+<div id="supportedColour" class="legendBox"></div>Supported</li>
+<li>
+<div id="notFoundColour" class="legendBox"></div>Legacy</li>
+</ul></div>
+</div>
+<div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+</div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/script-serialization-dictionaries-migrate.html">English</a></li>
+<li><a href="/cn/current/Manual/script-serialization-dictionaries-migrate.html">中文</a></li>
+<li><a href="/ja/current/Manual/script-serialization-dictionaries-migrate.html">日本語</a></li>
+<li><a href="/kr/current/Manual/script-serialization-dictionaries-migrate.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div>
+<div class="mobileLogo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc" id="customScrollbar">
+<h2>Unity Manual</h2>
+<div class="search-form sidebar-search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" id="mobileSearchBtn" class="submit" value="Search">
+</form></div>
+<div class="toggle version-number sidebar-version-switcher" id="VersionNumber" data-target=".otherversionscontent"><form id="otherVersionsContentMobileForm"><div class="ui-field-contain">
+<label for="select-native-4">Version: Unity 6.6</label><select name="select-native-4" id="versionsSelectMobile"><option>Select a different version</option>
+<optgroup id="versionsWithThisPageMobile" label="Versions with this page"></optgroup>
+<optgroup id="versionsWithoutThisPageMobile" label="Versions without this page"></optgroup></select>
+</div></form></div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/script-serialization-dictionaries-migrate.html">English</a></li>
+<li><a href="/cn/current/Manual/script-serialization-dictionaries-migrate.html">中文</a></li>
+<li><a href="/ja/current/Manual/script-serialization-dictionaries-migrate.html">日本語</a></li>
+<li><a href="/kr/current/Manual/script-serialization-dictionaries-migrate.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="programming-environment.html">Unity programming environment</a></li>
+<li><a href="code-reload-serialization.html">Code reload and serialization</a></li>
+<li><a href="script-serialization.html">Script serialization</a></li>
+<li>Migrate a custom dictionary solution to built-in dictionary serialization</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="script-serialization-dictionaries.html"></a></span><div class="tip">Dictionary serialization</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="script-serialization-how-unity-uses.html"></a></span><div class="tip">How Unity uses serialization</div>
+</div>
+</div></div>
+<div id="_leavefeedback"></div>
+<h1>Migrate a custom dictionary solution to built-in dictionary serialization</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Starting in Unity 6.6, Unity can serialize a field declared as the .NET <a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.dictionary-2"><code>Dictionary&lt;TKey, TValue&gt;</code></a> type without custom serialization code. Apply the <a href="../ScriptReference/SerializeField.html"><code>[SerializeField]</code></a> attribute to the field, and Unity saves the dictionary with the object and shows it in the <strong>Inspector</strong> window. For how dictionary serialization works, refer to <a href="script-serialization-dictionaries.html">Dictionary serialization</a>.</p>
+
+<p>Earlier versions didn’t serialize dictionary fields, so projects used one of the following solutions:</p>
+
+<ul>
+<li>A class marked with the <a href="https://learn.microsoft.com/en-us/dotnet/api/system.serializableattribute"><code>[Serializable]</code></a> attribute that stores two lists, one for keys and one for values, and rebuilds the dictionary in the <a href="../ScriptReference/ISerializationCallbackReceiver.OnAfterDeserialize.html"><code>ISerializationCallbackReceiver.OnAfterDeserialize</code></a> callback.</li>
+<li>A type that derives from the <code>Dictionary&lt;TKey, TValue&gt;</code> class and serializes its own key and value lists through the same callbacks. Most third-party serializable dictionary packages work this way.</li>
+</ul>
+
+<p>This page describes how to migrate a field from one of those solutions to Unity’s dictionary serialization, and how to copy its data to the new field.</p>
+
+<h2 id="before-you-migrate">Fields that you don’t need to migrate</h2>
+
+<p>Check the following cases before you start.</p>
+
+<h3 id="cannot-edit">When you can’t edit the type that stores the data</h3>
+
+<p>If the data is in a type that you can’t edit, such as a <code>MonoBehaviour</code> or <code>ScriptableObject</code> inside a package, you can’t migrate it, because there’s nowhere to add the new field.</p>
+
+<p>The solution keeps working, and Unity’s dictionary serialization doesn’t interfere with it. Consider contacting the package author and asking to adopt the built-in dictionary. You can still use serialized dictionaries in your own code.</p>
+
+<h3 id="not-migrated-yet">When you don’t want to migrate a field yet</h3>
+
+<p>If the runtime dictionary that the callbacks rebuild is a public field with neither the <code>[SerializeField]</code> nor the <a href="https://learn.microsoft.com/en-us/dotnet/api/system.nonserializedattribute"><code>[NonSerialized]</code></a> attribute, the <a href="script-serialization-analyzer.html">serialization rules analyzer</a> reports the warning <a href="script-serialization-analyzer.html#uac1015">UAC1015</a> on it. To stop the warning and keep your current solution, apply the <code>[NonSerialized]</code> attribute to the runtime dictionary. If no other class uses the field, you can make it private instead. Only do this if the callbacks rebuild the dictionary from key and value lists that the same class stores. If a package serializes the dictionary field itself, don’t change the field, because it stores the data.</p>
+
+<p>If the runtime dictionary has the <code>[SerializeField]</code> attribute while the callbacks are still in place, Unity serializes the dictionary field as well as the key and value lists, so the object stores the same data twice. The object still behaves the same way, because the <code>OnAfterDeserialize</code> callback rebuilds the dictionary from the lists after Unity reads the dictionary field. The extra copy takes up space in every scene, prefab, and asset that stores the object. To store one copy again, replace the <code>[SerializeField]</code> attribute with <code>[NonSerialized]</code>, or complete the migration.</p>
+
+<h3 id="data-already-loads">Check whether the data already loads</h3>
+
+<p>A solution that stores two separate lists writes them as two fields. A type that derives from <code>Dictionary&lt;TKey, TValue&gt;</code> writes its own fields nested under the field name:</p>
+
+<pre><code class="lang-yml">m_Prices:
+  m_Keys:
+  - sword
+  - shield
+  m_Values:
+  - 0.5
+  - 1.5
+</code></pre>
+
+<p>After you migrate, Unity stores the dictionary field as an array of entries, where each entry has a field named <code>key</code> and a field named <code>value</code>:</p>
+
+<pre><code class="lang-yml">m_Prices:
+- key: sword
+  value: 0.5
+- key: shield
+  value: 1.5
+</code></pre>
+
+<p>The structures are different, so data from these solutions can’t load into a dictionary field.</p>
+
+<p>A solution that stores one list of key/value pairs can match the structure exactly. If it does, its data might load into the dictionary field with no migration. Changing the field’s declared type to <code>Dictionary&lt;TKey, TValue&gt;</code> is enough when all of the following are true:</p>
+
+<ul>
+<li>The new field has the same name as the old one.</li>
+<li>The old field is a list or an array of a <code>[Serializable]</code> entry type.</li>
+<li>That entry type has a serialized field named <code>key</code> whose type matches <code>TKey</code>, and a serialized field named <code>value</code> whose type matches <code>TValue</code>.</li>
+</ul>
+
+<p>The order of the two fields doesn’t matter. If the entry type has other fields, Unity ignores them and drops their values the next time it saves the object.</p>
+
+<p>
+<strong>Note</strong>: If the entry type’s fields have other names, the data doesn’t load, and Unity doesn’t report the mismatch. Every entry gets default values, so Unity reports duplicate keys and keeps only the first entry.</p>
+
+<p>Test this on a copy of your project before you rely on it. If the data doesn’t load, follow the procedure in <a href="#migrate">Migrate the data</a>. It works whatever the solution you’re replacing stores.</p>
+
+<h2 id="migrate">Migrate the data</h2>
+
+<p>
+<strong>Note</strong>: Unity doesn’t copy existing data into the new field. Until the migration method copies it, the data exists only in the old field. If you delete the old field first, you lose the data.</p>
+
+<p>The general migration workflow is as follows:</p>
+
+<ol>
+<li>
+<p>Add the new <code>Dictionary&lt;TKey, TValue&gt;</code> field with the <code>[SerializeField]</code> attribute. Give it a different name from the old field, and keep the old field in place.</p>
+
+<p>If the old dictionary uses a custom key comparer, pass the same <a href="https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.iequalitycomparer-1"><code>IEqualityComparer&lt;TKey&gt;</code></a> implementation to the constructor in the new field’s declaration. Unity doesn’t serialize the comparer.</p>
+
+<p>If the class implements the <code>ISerializationCallbackReceiver</code> interface, don’t use the runtime dictionary that the callbacks rebuild as the new field. Keep that dictionary as a separate field with the <code>[NonSerialized]</code> attribute, so the analyzer stops reporting it. Otherwise, the callbacks fill the new field when the object loads, and the migration method finds nothing to copy.</p>
+</li>
+<li><p>Add a migration method that copies the data from the old field into the new field. Make the method return whether it copied anything, so the caller knows which objects to save.</p></li>
+<li>Run the migration method once from an Editor script, in the following order:
+
+<ol>
+<li>
+<a href="#scriptableobject"><code>ScriptableObject</code> assets</a>. An asset stores its own values and inherits nothing.</li>
+<li><span class="tooltip" tabindex="0" ><a href="#prefabs">Prefabs</a><span class="tooltiptext">An asset type that allows you to store a GameObject complete with components and properties. The prefab acts as a template from which you can create new object instances in the scene. <a class="tooltipMoreInfoLink" aria-label="Navigate to more info about Prefabs.html" href="Prefabs.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#prefab" aria-label="Go to glossary anchor for prefab">Glossary</a></span></span></span>, in dependency order. A prefab variant inherits values from the prefab it derives from, so migrate that prefab first.</li>
+<li><span class="tooltip" tabindex="0" ><a href="#scenes">Scenes</a><span class="tooltiptext">A Scene contains the environments and menus of your game. Think of each unique Scene file as a unique level. In each Scene, you place your environments, obstacles, and decorations, essentially designing and building your game in pieces. <a class="tooltipMoreInfoLink" aria-label="Navigate to more info about CreatingScenes.html" href="CreatingScenes.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Scene" aria-label="Go to glossary anchor for Scene">Glossary</a></span></span></span>. A prefab instance in a scene inherits values from its prefab asset, so migrate the prefab first.</li>
+</ol>
+</li>
+<li><p>Check that the migration copied the data on every asset, then delete the old field and the migration code. If the class implemented the <code>ISerializationCallbackReceiver</code> interface only to rebuild the dictionary, remove the interface and both callbacks as well.</p></li>
+</ol>
+
+<p>The following sections describe the migration process for each object type.</p>
+
+<h3 id="scriptableobject">Migrate a dictionary on a ScriptableObject</h3>
+
+<p>A <code>ScriptableObject</code> asset stores its own values and doesn’t inherit values from another asset, so the migration only has to load each asset, copy the data, and save the asset.</p>
+
+<p>The following class has the new field next to the old one. The <a href="../ScriptReference/HideInInspector.html"><code>[HideInInspector]</code></a> attribute hides the old field in the <strong>Inspector</strong> window while Unity still serializes it:</p>
+
+<pre><code class="lang-cs">using System.Collections.Generic;
+using UnityEngine;
+
+[CreateAssetMenu]
+public class LootTable : ScriptableObject
+{
+    // The old field, serialized by the third-party solution.
+    [SerializeField, HideInInspector]
+    private ThirdPartyDictionary&lt;string, int&gt; m_LegacyWeights = new();
+
+    // The new field, serialized by Unity.
+    [SerializeField]
+    private Dictionary&lt;string, int&gt; m_Weights = new();
+
+    // Returns true when it copied something, so the caller knows which assets to save.
+    public bool MigrateLegacyWeights()
+    {
+        bool copiedAnything = false;
+
+        foreach (KeyValuePair&lt;string, int&gt; entry in m_LegacyWeights)
+        {
+            if (m_Weights.TryGetValue(entry.Key, out int existing) &amp;&amp; existing == entry.Value)
+                continue;
+
+            m_Weights[entry.Key] = entry.Value;
+            copiedAnything = true;
+        }
+
+        return copiedAnything;
+    }
+}
+</code></pre>
+
+<p>
+<code>ThirdPartyDictionary</code> stands for the dictionary type of the solution you’re replacing. The migration method reads the data in the old field through whatever that type exposes.</p>
+
+<p>The following Editor script loads each asset of that type, calls the method, marks the assets that changed as dirty, and saves them:</p>
+
+<pre><code class="lang-cs">using UnityEditor;
+
+public static class LootTableMigration
+{
+    [MenuItem(&quot;Tools/Migrate Loot Tables&quot;)]
+    static void MigrateLootTables()
+    {
+        bool migratedAnything = false;
+
+        foreach (string guid in AssetDatabase.FindAssets(&quot;t:LootTable&quot;))
+        {
+            string path = AssetDatabase.GUIDToAssetPath(guid);
+            var lootTable = AssetDatabase.LoadAssetAtPath&lt;LootTable&gt;(path);
+
+            if (lootTable == null || !lootTable.MigrateLegacyWeights())
+                continue;
+
+            EditorUtility.SetDirty(lootTable);
+            migratedAnything = true;
+        }
+
+        if (migratedAnything)
+            AssetDatabase.SaveAssets();
+    }
+}
+</code></pre>
+
+<h3 id="component">Migrate a dictionary on a component</h3>
+
+<p>The migration is the same whether the old field is a pair of lists or a dictionary type from a package. The only difference is how the migration method reads the data from the old field.</p>
+
+<p>The component in the following example still has the two list fields from the solution you’re replacing, next to the new dictionary field:</p>
+
+<pre><code class="lang-cs">using System.Collections.Generic;
+using UnityEngine;
+
+public class Inventory : MonoBehaviour, ISerializationCallbackReceiver
+{
+    // The old solution: two lists, rebuilt into a runtime dictionary.
+    [SerializeField, HideInInspector] private List&lt;string&gt; m_LegacyKeys = new();
+    [SerializeField, HideInInspector] private List&lt;int&gt; m_LegacyValues = new();
+
+    // The new field, serialized by Unity.
+    [SerializeField] private Dictionary&lt;string, int&gt; m_ItemCounts = new();
+
+    // Returns true when it copied something, so the caller knows which objects to save.
+    public bool MigrateLegacyItemCounts()
+    {
+        bool copiedAnything = false;
+
+        for (int i = 0; i &lt; m_LegacyKeys.Count &amp;&amp; i &lt; m_LegacyValues.Count; i++)
+        {
+            string key = m_LegacyKeys[i];
+            int value = m_LegacyValues[i];
+
+            if (m_ItemCounts.TryGetValue(key, out int existing) &amp;&amp; existing == value)
+                continue;
+
+            m_ItemCounts[key] = value;
+            copiedAnything = true;
+        }
+
+        return copiedAnything;
+    }
+
+    public void OnBeforeSerialize() { }
+
+    public void OnAfterDeserialize()
+    {
+        // The existing code that rebuilds your runtime dictionary.
+        // It must not write to m_ItemCounts.
+    }
+}
+</code></pre>
+
+<p>When the old field is a dictionary type from a package, only the migration method changes. It reads the entries through that type’s public API, usually by enumerating it as key/value pairs:</p>
+
+<pre><code class="lang-cs">using System.Collections.Generic;
+using UnityEngine;
+
+public class Inventory : MonoBehaviour
+{
+    // The old field, serialized by the third-party solution.
+    [SerializeField, HideInInspector]
+    private ThirdPartyDictionary&lt;string, int&gt; m_LegacyItemCounts = new();
+
+    // The new field, serialized by Unity.
+    [SerializeField]
+    private Dictionary&lt;string, int&gt; m_ItemCounts = new();
+
+    public bool MigrateLegacyItemCounts()
+    {
+        bool copiedAnything = false;
+
+        foreach (KeyValuePair&lt;string, int&gt; entry in m_LegacyItemCounts)
+        {
+            if (m_ItemCounts.TryGetValue(entry.Key, out int existing) &amp;&amp; existing == entry.Value)
+                continue;
+
+            m_ItemCounts[entry.Key] = entry.Value;
+            copiedAnything = true;
+        }
+
+        return copiedAnything;
+    }
+}
+</code></pre>
+
+<p>
+<strong>Note</strong>: Call the migration method from an Editor script, not from the <code>OnAfterDeserialize</code> callback. The callback runs on every object as it loads, including prefab variants and prefab instances that only inherit the value. When Unity saves those objects, it records the copied data as an override on each of them. An Editor script can check whether an object stores the value or inherits it, and a deserialization callback can’t.</p>
+
+<h3 id="prefabs">Migrate dictionaries in prefabs</h3>
+
+<p>Migrating a prefab needs more attention than migrating a <code>ScriptableObject</code> asset, because a prefab might inherit a value instead of storing it. A prefab variant inherits the values of the prefab it derives from, and a prefab that nests another prefab inherits the nested prefab’s values. If the migration script writes to every component it finds, it also writes to those inherited values, and Unity records each write as a prefab override.</p>
+
+<p>To migrate a component without recording an unwanted override, the migration script has to perform the following operations:</p>
+
+<ul>
+<li>
+<strong>Check whether the component stores the value.</strong> The <code>StoresLegacyItemCounts</code> method checks whether the component inherits from a prefab and, if it does, whether it overrides the old field. The script skips a component that only inherits the value.</li>
+<li>
+<strong>Record the change as an override.</strong> When you change a field directly on a prefab instance or a prefab variant, Unity doesn’t record the change as an override until you call the <a href="../ScriptReference/PrefabUtility.RecordPrefabInstancePropertyModifications.html"><code>PrefabUtility.RecordPrefabInstancePropertyModifications</code></a> method.</li>
+<li>
+<strong>Migrate prefabs in dependency order.</strong> The <code>PrefabsInDependencyOrder</code> method visits a prefab only after the prefabs it derives from and the prefabs it nests. By the time the script reaches a prefab variant, it has already migrated the prefab that the variant derives from, so the variant inherits the migrated entries instead of storing its own copy.</li>
+</ul>
+
+<p>The following example performs these operations:</p>
+
+<pre><code class="lang-cs">using System;
+using System.Collections.Generic;
+using UnityEditor;
+using UnityEngine;
+
+public static class InventoryMigration
+{
+    [MenuItem(&quot;Tools/Migrate Inventory Dictionaries&quot;)]
+    static void MigrateInventoryDictionaries()
+    {
+        foreach (GameObject root in PrefabsInDependencyOrder())
+        {
+            bool migratedAnything = false;
+
+            // Passing true also finds components on inactive GameObjects.
+            foreach (Inventory inventory in root.GetComponentsInChildren&lt;Inventory&gt;(true))
+            {
+                if (MigrateComponent(inventory))
+                    migratedAnything = true;
+            }
+
+            if (migratedAnything)
+                PrefabUtility.SavePrefabAsset(root);
+        }
+    }
+
+    // Migrates one component if the component stores the value itself.
+    // The scene migration script reuses this method.
+    internal static bool MigrateComponent(Inventory inventory)
+    {
+        bool inherited = PrefabUtility.GetCorrespondingObjectFromSource(inventory) != null;
+
+        if (!StoresLegacyItemCounts(inventory, inherited, &quot;m_LegacyKeys&quot;, &quot;m_LegacyValues&quot;)
+            || !inventory.MigrateLegacyItemCounts())
+            return false;
+
+        // Record the change as a prefab override.
+        if (inherited)
+            PrefabUtility.RecordPrefabInstancePropertyModifications(inventory);
+
+        return true;
+    }
+
+    // Returns every prefab in the project, ordered so that each prefab comes after
+    // the prefabs it derives from and the prefabs it nests.
+    static List&lt;GameObject&gt; PrefabsInDependencyOrder()
+    {
+        var ordered = new List&lt;GameObject&gt;();
+        var visited = new HashSet&lt;string&gt;();
+
+        foreach (string guid in AssetDatabase.FindAssets(&quot;t:Prefab&quot;))
+            Visit(AssetDatabase.GUIDToAssetPath(guid), ordered, visited);
+
+        return ordered;
+    }
+
+    static void Visit(string path, List&lt;GameObject&gt; ordered, HashSet&lt;string&gt; visited)
+    {
+        if (!visited.Add(path))
+            return;
+
+        foreach (string dependency in AssetDatabase.GetDependencies(path, false))
+        {
+            if (dependency != path
+                &amp;&amp; dependency.EndsWith(&quot;.prefab&quot;, StringComparison.OrdinalIgnoreCase))
+                Visit(dependency, ordered, visited);
+        }
+
+        var root = AssetDatabase.LoadAssetAtPath&lt;GameObject&gt;(path);
+        if (root != null)
+            ordered.Add(root);
+    }
+
+    // True when the component stores the value itself: it doesn't inherit from a prefab,
+    // or it overrides one of the fields of the solution you're replacing.
+    // Pass the names of all those fields, for example both the key list and the value list.
+    static bool StoresLegacyItemCounts(Component component, bool inherited,
+        params string[] legacyFieldNames)
+    {
+        if (!inherited)
+            return true;
+
+        using (var serializedObject = new SerializedObject(component))
+        {
+            foreach (string fieldName in legacyFieldNames)
+            {
+                SerializedProperty legacyField = serializedObject.FindProperty(fieldName);
+                if (legacyField == null)
+                    continue;
+
+                if (legacyField.prefabOverride)
+                    return true;
+
+                // A serializable class records overrides on its child properties.
+                // Use Next instead of NextVisible, because NextVisible skips fields that have the
+                // [HideInInspector] attribute, and the fields you're replacing often have it.
+                SerializedProperty end = legacyField.GetEndProperty();
+                SerializedProperty iterator = legacyField.Copy();
+
+                while (iterator.Next(true) &amp;&amp; !SerializedProperty.EqualContents(iterator, end))
+                {
+                    if (iterator.prefabOverride)
+                        return true;
+                }
+            }
+        }
+
+        return false;
+    }
+}
+</code></pre>
+
+<p>The dependency order matters because Unity records an override by comparing the component against its source prefab. If the script migrates a prefab variant before the prefab it derives from, the variant doesn’t inherit the entries yet, so Unity records the whole dictionary as an override on the variant. After that, if you change the dictionary on the source prefab, the variant keeps its own copy and doesn’t receive the change. The same applies to nested prefabs, because a nested prefab instance takes its values from its source prefab, exactly as a variant does.</p>
+
+<p>If a prefab variant already overrides the old field, the variant stores the value itself. In that case, the script migrates the variant too, and records a matching override of the new dictionary. Unity records that override by entry position, the same way as for lists, so adding or removing entries on the source prefab later can shift the override to a different entry. For more information, refer to <a href="PrefabInstanceOverrides.html#collection-overrides">Overrides on arrays, lists, and dictionaries</a>.</p>
+
+<p>Run the migration script once, then delete the old field. If you run the script again before you delete the old field, it doesn’t copy anything as long as the new dictionary contains the same entries as the old field. If you edited the new dictionary in the meantime, the script overwrites your edit with the value from the old field.</p>
+
+<h3 id="scenes">Migrate dictionaries in scenes</h3>
+
+<p>Run the scene migration after the prefab migration. Scenes need the same check as prefabs, whether the component stores the value or inherits it. A scene object that isn’t a prefab instance stores its own value, so the script migrates it. A prefab instance inherits its value from the prefab asset, so the script skips it unless it overrides the old field.</p>
+
+<pre><code class="lang-cs">using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public static class InventorySceneMigration
+{
+    [MenuItem(&quot;Tools/Migrate Inventory Dictionaries In Scenes&quot;)]
+    static void MigrateInventoryDictionariesInScenes()
+    {
+        // Opening a scene discards unsaved changes in the current one.
+        if (!EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
+            return;
+
+        // Restore the scenes that were open when the migration finishes.
+        SceneSetup[] sceneSetup = EditorSceneManager.GetSceneManagerSetup();
+
+        try
+        {
+            // Only scenes under Assets. A scene in a read-only package can't be opened.
+            foreach (string guid in AssetDatabase.FindAssets(&quot;t:Scene&quot;, new[] { &quot;Assets&quot; }))
+            {
+                string path = AssetDatabase.GUIDToAssetPath(guid);
+                Scene scene = EditorSceneManager.OpenScene(path, OpenSceneMode.Single);
+                bool migratedAnything = false;
+
+                foreach (GameObject root in scene.GetRootGameObjects())
+                {
+                    foreach (Inventory inventory in root.GetComponentsInChildren&lt;Inventory&gt;(true))
+                    {
+                        // The same per-component step as the prefab migration script.
+                        if (!InventoryMigration.MigrateComponent(inventory))
+                            continue;
+
+                        // Unity saves a scene as a whole, so mark the changed object
+                        // before you save the scene.
+                        EditorUtility.SetDirty(inventory);
+                        migratedAnything = true;
+                    }
+                }
+
+                if (migratedAnything)
+                {
+                    EditorSceneManager.MarkSceneDirty(scene);
+                    EditorSceneManager.SaveScene(scene);
+                }
+            }
+        }
+        finally
+        {
+            EditorSceneManager.RestoreSceneManagerSetup(sceneSetup);
+        }
+    }
+}
+</code></pre>
+
+<p>Because you migrated the prefabs first, a prefab instance in a scene inherits the entries and records only its own changes. Most scenes need no changes at all, because a prefab instance that overrides nothing inherits the migrated dictionary from its prefab.</p>
+
+<h2>Additional resources</h2>
+
+<ul>
+<li><a href="script-serialization-dictionaries.html">Dictionary serialization</a></li>
+<li><a href="script-serialization-analyzer.html">Serialization rules analyzer</a></li>
+<li><a href="script-serialization-custom-serialization.html">Custom serialization</a></li>
+<li><a href="script-serialization-dictionaries.html#dictionaries-in-prefabs">Dictionaries in prefabs</a></li>
+<li><a href="PrefabInstanceOverrides.html#collection-overrides">Overrides on arrays, lists, and dictionaries</a></li>
+<li><a href="../ScriptReference/ISerializationCallbackReceiver.html"><code>ISerializationCallbackReceiver</code></a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="script-serialization-dictionaries.html"></a></span><div class="tip">Dictionary serialization</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="script-serialization-how-unity-uses.html"></a></span><div class="tip">How Unity uses serialization</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 79827756. Built on: 2026-11-13.</div>
+<div class="menu">
+<a href="https://learn.unity.com/">Tutorials</a><a href="https://answers.unity3d.com">Community Answers</a><a href="https://support.unity3d.com/hc/en-us">Knowledge Base</a><a href="https://forum.unity3d.com">Forums</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">Terms of use</a><a href="https://unity.com/legal">Legal</a><a href="https://unity.com/legal/privacy-policy">Privacy Policy</a><a href="https://unity.com/legal/cookie-policy">Cookies</a><a href="https://unity.com/legal/docs-terms">Documentation Terms of Use</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

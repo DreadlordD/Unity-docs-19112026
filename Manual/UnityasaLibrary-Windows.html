@@ -1,0 +1,223 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: 'en-us', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Integrate Unity into Windows applications</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="author" content="Unity Technologies">
+<meta property="relative-path-to-manual" content="">
+<meta property="version-switcher-versions-with-this-page" content="Versions with this page:">
+<meta property="version-switcher-versions-without-this-page" content="Versions without this page:">
+<meta property="version-switcher-supported" content="Supported">
+<meta property="version-switcher-legacy" content="Legacy">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<link rel="canonical" href="https://docs.unity3d.com/6000.6/Documentation/Manual/UnityasaLibrary-Windows.html">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="/StaticFilesConfig/UnityVersionsInfo.js"></script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js?ts=20261113"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js?ts=20261113"></script><script type="text/javascript" src="../StaticFilesManual/js/image-comp.js?ts=20261113"></script><script type="text/javascript" src="docdata/toc.js?ts=20261113"></script><script type="text/javascript" src="docdata/global_toc.js?ts=20261113"></script><link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css?ts=20261113">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/icons.css?ts=20261113">
+<link rel="stylesheet" href="../StaticFilesManual/css/prism.css">
+<script src="../StaticFilesManual/js/prism.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><script src="../StaticFilesManual/js/jquery.sidebar.min.js"></script><link rel="stylesheet" href="../StaticFilesManual/css/mobileoptimisation.css">
+<script src="../StaticFilesManual/js/mobileoptimisation.js"></script>
+</head>
+<body>
+<div id="DocsAnalyticsData" data-area="none" data-pagetype="manual"></div>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity.com/">unity.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                                Version: <b>Unity 6.6</b> (6000.6)
+                                <div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+<ul id="OtherVersionsContentUl"></ul>
+<div id="otherVersionsLegend"><ul>
+<li>
+<div id="supportedColour" class="legendBox"></div>Supported</li>
+<li>
+<div id="notFoundColour" class="legendBox"></div>Legacy</li>
+</ul></div>
+</div>
+<div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+</div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/UnityasaLibrary-Windows.html">English</a></li>
+<li><a href="/cn/current/Manual/UnityasaLibrary-Windows.html">中文</a></li>
+<li><a href="/ja/current/Manual/UnityasaLibrary-Windows.html">日本語</a></li>
+<li><a href="/kr/current/Manual/UnityasaLibrary-Windows.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div>
+<div class="mobileLogo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc" id="customScrollbar">
+<h2>Unity Manual</h2>
+<div class="search-form sidebar-search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" id="mobileSearchBtn" class="submit" value="Search">
+</form></div>
+<div class="toggle version-number sidebar-version-switcher" id="VersionNumber" data-target=".otherversionscontent"><form id="otherVersionsContentMobileForm"><div class="ui-field-contain">
+<label for="select-native-4">Version: Unity 6.6</label><select name="select-native-4" id="versionsSelectMobile"><option>Select a different version</option>
+<optgroup id="versionsWithThisPageMobile" label="Versions with this page"></optgroup>
+<optgroup id="versionsWithoutThisPageMobile" label="Versions without this page"></optgroup></select>
+</div></form></div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/UnityasaLibrary-Windows.html">English</a></li>
+<li><a href="/cn/current/Manual/UnityasaLibrary-Windows.html">中文</a></li>
+<li><a href="/ja/current/Manual/UnityasaLibrary-Windows.html">日本語</a></li>
+<li><a href="/kr/current/Manual/UnityasaLibrary-Windows.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="PlatformSpecific.html">Platform development  </a></li>
+<li><a href="Windows.html">Windows</a></li>
+<li>Integrate Unity into Windows applications</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="windows-requirements-and-compatibility.html"></a></span><div class="tip">Windows requirements and compatibility</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="playersettings-windows.html"></a></span><div class="tip">Windows Player settings</div>
+</div>
+</div></div>
+<div id="_leavefeedback"></div>
+<h1>Integrate Unity into Windows applications</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>You can use the Unity as a Library feature to integrate the Unity Runtime Library in Windows applications.</p>
+
+<p>This feature enables you to include Unity-powered features in your application, such as: </p>
+
+<ul>
+<li>3D/2D Real-Time Rendering</li>
+<li>AR Experience</li>
+<li>3D model interaction</li>
+<li>2D mini-games</li>
+</ul>
+
+<p>The Unity Runtime Library exposes controls to manage when and how to load, activate, and unload content within the application.</p>
+
+<p>On Windows, you can embed a Unity build into your application in the following ways:</p>
+
+<ul>
+<li>
+<a href="#launch-unity-as-an-external-build">Launch Unity as an external build</a> - This is the easier option.</li>
+<li><a href="#embed-unity-within-your-existing-operating-system-process">Embed Unity within your existing operating system process</a></li>
+</ul>
+
+<h2 id="launch-unity-as-an-external-build">Launch Unity as an external build</h2>
+
+<p>You can launch Unity as an external build from your application and specify a window in which Unity will initialize and render with the <code>-parentHWND</code> <a href="PlayerCommandLineArguments.html">command line argument</a>.</p>
+
+<p>You can either pass the command the handle of your preferred window (for example, <code>-parentHWND 12740</code>), or pass a delay (<code>-parentHWND delayed</code>). </p>
+
+<h3>Pass the window handle directly</h3>
+
+<p>Pass the actual window handle (for example, <code>-parentHWND 12740</code>) to make Unity automatically create a child window and parent it to the specified handle on startup.</p>
+
+<h3>Pass a delay</h3>
+
+<p>Pass the delayed keyword (<code>-parentHWND delayed</code>) to start the Unity application hidden in the background. This gives your parent application time to finish loading or perform other tasks before you manually parent the window. </p>
+
+<p>To embed the window when you use a delay:</p>
+
+<ol>
+<li>Wait for your parent application to be ready.</li>
+<li>Call <a href="https://docs.microsoft.com/en-gb/windows/win32/api/winuser/nf-winuser-setparent?redirectedfrom=MSDN">SetParent</a> from the <a href="https://docs.microsoft.com/en-gb/">Microsoft Developer library</a> in your application to manually embed the window.</li>
+</ol>
+
+<p>The Unity window respects the position and size defined in the <a href="https://docs.microsoft.com/en-gb/windows/win32/api/processthreadsapi/ns-processthreadsapi-startupinfoa?redirectedfrom=MSDN">STARTUPINFO</a> structure that your parent application provides when launching the process.</p>
+
+<p>For an example of a Unity application embedded in a window, refer to the <a href="../uploads/Examples/EmbeddedWindow.zip">EmbeddedWindow downloadable example</a>.</p>
+
+<h3>Resize the window</h3>
+
+<p>To resize the Unity window, check its <a href="https://docs.microsoft.com/en-gb/windows/win32/api/winuser/nf-winuser-getwindowlongptra?redirectedfrom=MSDN">GWLP_USERDATA</a> in Microsoft’s <code>GetWindowLongPtr</code> function:</p>
+
+<ul>
+<li>Its lowest bit is set to 1 when the graphics initialize and it’s safe to resize.</li>
+<li>Its second lowest bit is set to 1 after the Unity splash screen finishes displaying.</li>
+</ul>
+
+<h2 id="embed-unity-within-your-existing-operating-system-process">Embed Unity within your existing operating system process</h2>
+
+<p>To embed Unity within your existing operating system process: </p>
+
+<ol>
+<li><p>Load <code>UnityPlayer.dll</code> directly into your Win32 application.</p></li>
+<li>
+<p>Call the <code>UnityMain</code> entry point with the following signature:</p>
+
+<pre><code class="cpp">extern &quot;C&quot; int UnityMain2(HINSTANCE hInst, LPCWSTR customDataFolder, LPWSTR szCmdLine, int nCmdShow);
+</code></pre>
+</li>
+<li><p>Pass command line arguments to Unity via the <code>lpCmdLine</code> parameter. You can use this to control settings such as resolution, job threads, or the parent HWND.</p></li>
+</ol>
+
+<p>For a full list of valid arguments you can pass to <code>lpCmdLine</code>, refer to the <a href="PlayerCommandLineArguments.html">Unity Standalone Player command line arguments</a> documentation.</p>
+
+<h2>Additional resources</h2>
+
+<ul>
+<li><a href="UnityasaLibrary.html">Using Unity as a Library in other applications</a></li>
+<li><a href="PlayerCommandLineArguments.html">Unity Standalone Player command line arguments</a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="windows-requirements-and-compatibility.html"></a></span><div class="tip">Windows requirements and compatibility</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="playersettings-windows.html"></a></span><div class="tip">Windows Player settings</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 79827756. Built on: 2026-11-13.</div>
+<div class="menu">
+<a href="https://learn.unity.com/">Tutorials</a><a href="https://answers.unity3d.com">Community Answers</a><a href="https://support.unity3d.com/hc/en-us">Knowledge Base</a><a href="https://forum.unity3d.com">Forums</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">Terms of use</a><a href="https://unity.com/legal">Legal</a><a href="https://unity.com/legal/privacy-policy">Privacy Policy</a><a href="https://unity.com/legal/cookie-policy">Cookies</a><a href="https://unity.com/legal/docs-terms">Documentation Terms of Use</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

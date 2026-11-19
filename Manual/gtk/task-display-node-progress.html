@@ -1,0 +1,292 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: 'en-us', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Display progress bars on nodes</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="author" content="Unity Technologies">
+<meta property="relative-path-to-manual" content="../">
+<meta property="version-switcher-versions-with-this-page" content="Versions with this page:">
+<meta property="version-switcher-versions-without-this-page" content="Versions without this page:">
+<meta property="version-switcher-supported" content="Supported">
+<meta property="version-switcher-legacy" content="Legacy">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<link rel="canonical" href="https://docs.unity3d.com/6000.6/Documentation/Manual/gtk/task-display-node-progress.html">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="/StaticFilesConfig/UnityVersionsInfo.js"></script><script type="text/javascript" src="../../StaticFilesManual/js/jquery.js?ts=20261113"></script><script type="text/javascript" src="../../StaticFilesManual/js/core.js?ts=20261113"></script><script type="text/javascript" src="../../StaticFilesManual/js/image-comp.js?ts=20261113"></script><script type="text/javascript" src="../docdata/toc.js?ts=20261113"></script><script type="text/javascript" src="../docdata/global_toc.js?ts=20261113"></script><link rel="stylesheet" type="text/css" href="../../StaticFilesManual/css/core.css?ts=20261113">
+<link rel="stylesheet" type="text/css" href="../../StaticFilesManual/css/icons.css?ts=20261113">
+<link rel="stylesheet" href="../../StaticFilesManual/css/prism.css">
+<script src="../../StaticFilesManual/js/prism.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><script src="../../StaticFilesManual/js/jquery.sidebar.min.js"></script><link rel="stylesheet" href="../../StaticFilesManual/css/mobileoptimisation.css">
+<script src="../../StaticFilesManual/js/mobileoptimisation.js"></script>
+</head>
+<body>
+<div id="DocsAnalyticsData" data-area="none" data-pagetype="manual"></div>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="../30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="../index.html" class="selected">Manual</a></li>
+<li><a href="../../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity.com/">unity.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                                Version: <b>Unity 6.6</b> (6000.6)
+                                <div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+<ul id="OtherVersionsContentUl"></ul>
+<div id="otherVersionsLegend"><ul>
+<li>
+<div id="supportedColour" class="legendBox"></div>Supported</li>
+<li>
+<div id="notFoundColour" class="legendBox"></div>Legacy</li>
+</ul></div>
+</div>
+<div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+</div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/gtk/task-display-node-progress.html">English</a></li>
+<li><a href="/cn/current/Manual/gtk/task-display-node-progress.html">中文</a></li>
+<li><a href="/ja/current/Manual/gtk/task-display-node-progress.html">日本語</a></li>
+<li><a href="/kr/current/Manual/gtk/task-display-node-progress.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div>
+<div class="mobileLogo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc" id="customScrollbar">
+<h2>Unity Manual</h2>
+<div class="search-form sidebar-search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" id="mobileSearchBtn" class="submit" value="Search">
+</form></div>
+<div class="toggle version-number sidebar-version-switcher" id="VersionNumber" data-target=".otherversionscontent"><form id="otherVersionsContentMobileForm"><div class="ui-field-contain">
+<label for="select-native-4">Version: Unity 6.6</label><select name="select-native-4" id="versionsSelectMobile"><option>Select a different version</option>
+<optgroup id="versionsWithThisPageMobile" label="Versions with this page"></optgroup>
+<optgroup id="versionsWithoutThisPageMobile" label="Versions without this page"></optgroup></select>
+</div></form></div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/gtk/task-display-node-progress.html">English</a></li>
+<li><a href="/cn/current/Manual/gtk/task-display-node-progress.html">中文</a></li>
+<li><a href="/ja/current/Manual/gtk/task-display-node-progress.html">日本語</a></li>
+<li><a href="/kr/current/Manual/gtk/task-display-node-progress.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="../extending-the-editor.html">Extending the Unity Editor</a></li>
+<li><a href="../gtk/gtk-index.html">Extending the Editor with Graph Toolkit</a></li>
+<li><a href="../gtk/landing-implementing-debug-graph-view.html">Implementing a debug graph view</a></li>
+<li>Display progress bars on nodes</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="../gtk/task-display-errors-in-graph.html"></a></span><div class="tip">Display errors and warnings on graph elements</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="../gtk/task-customize-wire-display.html"></a></span><div class="tip">Customize wire appearance</div>
+</div>
+</div></div>
+<div id="_leavefeedback"></div>
+<h1>Display progress bars on nodes</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Show which node your graph tool evaluates and how far that node has progressed.</p>
+
+<p>Each node has an accent bar along its upper border that can display a progress fill. Use the fill to report execution feedback while your graph tool runs, so users can follow which node is active and how much work remains.</p>
+
+<p>Use a fill amount when you know how much of the work is complete, such as a node that processes a known number of items. Use a looping animation when a node is active but the amount of work left is unknown.</p>
+
+<p>This page covers how to display progress on nodes only. For information on how visualization contexts work, refer to <a href="concept-graph-visualization.html">Introduction to graph visualization</a>.</p>
+
+<h2>Prerequisites</h2>
+
+<p>Before you display progress on nodes, you need a graph class that Unity can open in the <strong>Graph</strong> window. If you haven’t created one yet, follow the instructions in <a href="implement-a-graph-tool.html">Implement a graph tool</a>.</p>
+
+<h2>Create a visualization context</h2>
+
+<p>A visualization context owns all the progress feedback you apply, so you can remove it in a single call.</p>
+
+<p>To create a visualization context for a graph:</p>
+
+<ol>
+<li>Call <code>Registry.CreateVisualizationContext</code> with the graph’s identifier, available from <code>Graph.ID</code>. For a node inside a nested graph, pass the identifier of the root graph.</li>
+<li>Store the context for the whole run, for example in a field, and dispose of it when the run finishes.</li>
+</ol>
+
+<pre><code class="lang-csharp">readonly Context m_Context;
+
+public NodeVisualizationExamples(Graph graph)
+{
+    // Pass Graph.ID. For a node inside a nested graph, pass the ID of the root graph.
+    m_Context = Registry.CreateVisualizationContext(graph.ID);
+}
+
+// Call Dispose when the run finishes. Unity then removes every
+// visual that the context applied to the graph.
+public void Dispose() =&gt; m_Context.Dispose();
+</code></pre>
+
+<p>To annotate a node, call <code>Context.GetNodeReference</code> with the node’s identifier, available from <code>INode.ID</code>, to get a <code>NodeReference</code> for that node.</p>
+
+<p>When you dispose of the context, Unity removes every progress bar the context applied. To clear the feedback but continue to use the context, call <code>Context.ClearAllVisualization</code> instead.</p>
+
+<p>
+<strong>Note</strong>: When you enter or exit Play mode, Unity releases every visualization context. Create the context after the mode change, and don’t reuse a context from before it.</p>
+
+<h2>Show determinate progress on a node</h2>
+
+<p>To display a progress bar that reflects how much work a node has completed:</p>
+
+<ol>
+<li>Get a <code>NodeReference</code> for the node from the context.</li>
+<li>Set <code>NodeReference.FillAmount</code> to the percentage complete, as a value from <code>0</code> to <code>100</code>.</li>
+<li>Set <code>FillAmount</code> again each time the progress changes.</li>
+</ol>
+
+<pre><code class="lang-csharp">public void ReportProgress(INode node, float completedFraction)
+{
+    NodeReference nodeRef = m_Context.GetNodeReference(node.ID);
+
+    // A positive value fills the accent bar from left to right.
+    nodeRef.FillAmount = completedFraction * 100f;
+}
+
+public void ReportReverseProgress(INode node, float completedFraction)
+{
+    NodeReference nodeRef = m_Context.GetNodeReference(node.ID);
+
+    // A negative value fills the accent bar from right to left.
+    nodeRef.FillAmount = -completedFraction * 100f;
+}
+</code></pre>
+
+<p>The accent bar fills from left to right in proportion to the value. A negative value from <code>-100</code> to <code>0</code> fills the bar from right to left instead, which suits nodes that undo or roll back work. Unity clamps values outside the range <code>-100</code> to <code>100</code>.</p>
+
+<p>To hide the bar, set <code>FillAmount</code> to <code>0</code> .</p>
+
+<h2>Show that a node is active without progress</h2>
+
+<p>When a node is active but you can’t measure how much work is left, display a looping animation instead of a fill.</p>
+
+<p>To display a looping animation on a node:</p>
+
+<ol>
+<li>Get a <code>NodeReference</code> for the node from the context.</li>
+<li>Call <code>Context.Motion.Play</code> with the reference. Optionally pass an <code>animationSpeed</code> multiplier, which defaults to <code>1</code>. Higher values move the animated segment faster.</li>
+</ol>
+
+<pre><code class="lang-csharp">public void MarkNodeRunning(INode node)
+{
+    NodeReference nodeRef = m_Context.GetNodeReference(node.ID);
+
+    // The animation loops until you call Stop or Pause, and overrides FillAmount.
+    m_Context.Motion.Play(nodeRef, animationSpeed: 2f);
+}
+</code></pre>
+
+<p>The animation loops until you stop or pause it. While it plays, it overrides any fill amount you set on the node.</p>
+
+<p>
+<strong>Note</strong>: <code>Play</code> throws an <code>ArgumentException</code> if the reference doesn’t correspond to a node in the current session.</p>
+
+<h2>Pause or stop the progress display</h2>
+
+<p>To freeze the animation and leave the accent bar visible, call <code>Context.Motion.Pause</code> and pass the node reference. Call <code>Play</code> again to resume it.</p>
+
+<p>To end the animation, call <code>Context.Motion.Stop</code> with the node reference. This hides the accent bar unless you set a fill amount before you play the animation. In this case, the bar stays visible at that fill amount.</p>
+
+<pre><code class="lang-csharp">public void PauseNode(INode node)
+{
+    // Freezes the animation and leaves the accent bar visible.
+    m_Context.Motion.Pause(m_Context.GetNodeReference(node.ID));
+}
+
+public void StopNode(INode node)
+{
+    // Hides the accent bar. If you set a fill amount before you play the
+    // animation, the bar stays visible at that fill amount instead.
+    m_Context.Motion.Stop(m_Context.GetNodeReference(node.ID));
+}
+</code></pre>
+
+<p>If you pause a node that has no active animation, no effect is visible.</p>
+
+<h2>Reset a node to its default appearance</h2>
+
+<p>To remove the progress bar from a single node, call <code>NodeReference.ClearCustomization</code>. This removes the fill amount and stops any looping animation on that node.</p>
+
+<pre><code class="lang-csharp">public void ResetNode(INode node)
+{
+    // Removes the fill amount and stops any animation on the node.
+    m_Context.GetNodeReference(node.ID).ClearCustomization();
+}
+</code></pre>
+
+<p>The node returns to its default appearance, and the accent bar is hidden.</p>
+
+<p>To hide the progress bars on every node but keep the values, set <code>Context.NodeCustomizationEnabled</code> to <code>false</code>. Unity restores the values when you set the property back to <code>true</code>.</p>
+
+<h2>Additional resources</h2>
+
+<ul>
+<li><a href="../../ScriptReference/Unity.GraphToolkit.Editor.GraphVisualization.NodeReference.FillAmount.html">NodeReference.FillAmount API reference</a></li>
+<li><a href="../../ScriptReference/Unity.GraphToolkit.Editor.GraphVisualization.GraphMotion.html">GraphMotion API reference</a></li>
+<li><a href="../../ScriptReference/Unity.GraphToolkit.Editor.GraphVisualization.Context.html">Context API reference</a></li>
+<li><a href="concept-graph-visualization.html">Introduction to graph visualization</a></li>
+<li><a href="node-introduction.html">Introduction to nodes</a></li>
+<li><a href="implement-nodes.html">Implement nodes for your graph tool</a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="../gtk/task-display-errors-in-graph.html"></a></span><div class="tip">Display errors and warnings on graph elements</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="../gtk/task-customize-wire-display.html"></a></span><div class="tip">Customize wire appearance</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 79827756. Built on: 2026-11-13.</div>
+<div class="menu">
+<a href="https://learn.unity.com/">Tutorials</a><a href="https://answers.unity3d.com">Community Answers</a><a href="https://support.unity3d.com/hc/en-us">Knowledge Base</a><a href="https://forum.unity3d.com">Forums</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">Terms of use</a><a href="https://unity.com/legal">Legal</a><a href="https://unity.com/legal/privacy-policy">Privacy Policy</a><a href="https://unity.com/legal/cookie-policy">Cookies</a><a href="https://unity.com/legal/docs-terms">Documentation Terms of Use</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

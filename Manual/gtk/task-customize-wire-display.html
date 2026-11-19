@@ -1,0 +1,320 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: 'en-us', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Customize wire appearance</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="author" content="Unity Technologies">
+<meta property="relative-path-to-manual" content="../">
+<meta property="version-switcher-versions-with-this-page" content="Versions with this page:">
+<meta property="version-switcher-versions-without-this-page" content="Versions without this page:">
+<meta property="version-switcher-supported" content="Supported">
+<meta property="version-switcher-legacy" content="Legacy">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<link rel="canonical" href="https://docs.unity3d.com/6000.6/Documentation/Manual/gtk/task-customize-wire-display.html">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="/StaticFilesConfig/UnityVersionsInfo.js"></script><script type="text/javascript" src="../../StaticFilesManual/js/jquery.js?ts=20261113"></script><script type="text/javascript" src="../../StaticFilesManual/js/core.js?ts=20261113"></script><script type="text/javascript" src="../../StaticFilesManual/js/image-comp.js?ts=20261113"></script><script type="text/javascript" src="../docdata/toc.js?ts=20261113"></script><script type="text/javascript" src="../docdata/global_toc.js?ts=20261113"></script><link rel="stylesheet" type="text/css" href="../../StaticFilesManual/css/core.css?ts=20261113">
+<link rel="stylesheet" type="text/css" href="../../StaticFilesManual/css/icons.css?ts=20261113">
+<link rel="stylesheet" href="../../StaticFilesManual/css/prism.css">
+<script src="../../StaticFilesManual/js/prism.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><script src="../../StaticFilesManual/js/jquery.sidebar.min.js"></script><link rel="stylesheet" href="../../StaticFilesManual/css/mobileoptimisation.css">
+<script src="../../StaticFilesManual/js/mobileoptimisation.js"></script>
+</head>
+<body>
+<div id="DocsAnalyticsData" data-area="none" data-pagetype="manual"></div>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="../30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="../index.html" class="selected">Manual</a></li>
+<li><a href="../../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity.com/">unity.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                                Version: <b>Unity 6.6</b> (6000.6)
+                                <div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+<ul id="OtherVersionsContentUl"></ul>
+<div id="otherVersionsLegend"><ul>
+<li>
+<div id="supportedColour" class="legendBox"></div>Supported</li>
+<li>
+<div id="notFoundColour" class="legendBox"></div>Legacy</li>
+</ul></div>
+</div>
+<div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+</div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/gtk/task-customize-wire-display.html">English</a></li>
+<li><a href="/cn/current/Manual/gtk/task-customize-wire-display.html">中文</a></li>
+<li><a href="/ja/current/Manual/gtk/task-customize-wire-display.html">日本語</a></li>
+<li><a href="/kr/current/Manual/gtk/task-customize-wire-display.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div>
+<div class="mobileLogo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc" id="customScrollbar">
+<h2>Unity Manual</h2>
+<div class="search-form sidebar-search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" id="mobileSearchBtn" class="submit" value="Search">
+</form></div>
+<div class="toggle version-number sidebar-version-switcher" id="VersionNumber" data-target=".otherversionscontent"><form id="otherVersionsContentMobileForm"><div class="ui-field-contain">
+<label for="select-native-4">Version: Unity 6.6</label><select name="select-native-4" id="versionsSelectMobile"><option>Select a different version</option>
+<optgroup id="versionsWithThisPageMobile" label="Versions with this page"></optgroup>
+<optgroup id="versionsWithoutThisPageMobile" label="Versions without this page"></optgroup></select>
+</div></form></div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/gtk/task-customize-wire-display.html">English</a></li>
+<li><a href="/cn/current/Manual/gtk/task-customize-wire-display.html">中文</a></li>
+<li><a href="/ja/current/Manual/gtk/task-customize-wire-display.html">日本語</a></li>
+<li><a href="/kr/current/Manual/gtk/task-customize-wire-display.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="../extending-the-editor.html">Extending the Unity Editor</a></li>
+<li><a href="../gtk/gtk-index.html">Extending the Editor with Graph Toolkit</a></li>
+<li><a href="../gtk/landing-implementing-debug-graph-view.html">Implementing a debug graph view</a></li>
+<li>Customize wire appearance</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="../gtk/task-display-node-progress.html"></a></span><div class="tip">Display progress bars on nodes</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="../CustomizingYourWorkspace.html"></a></span><div class="tip">Customize your workspace layout</div>
+</div>
+</div></div>
+<div id="_leavefeedback"></div>
+<h1>Customize wire appearance</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Customize the appearance of wires in a graph.</p>
+
+<p>You can change the width, opacity, and dash pattern of a wire, and you can animate a wire to highlight an active data path.</p>
+
+<p>Use these overrides to make a dense graph easier to read, to de-emphasize connections that aren’t relevant, or to show which path data takes in your graph.</p>
+
+<p>This page covers the appearance of existing wires only. For information on how to create connections between nodes, refer to <a href="task-connect-nodes.html">Connect nodes in your graphs</a>.</p>
+
+<h2>Prerequisites</h2>
+
+<p>Before you customize wire appearance, you need a graph class with at least two connected nodes. If you haven’t created a graph tool yet, follow the instructions in <a href="implement-a-graph-tool.html">Implement a graph tool</a>.</p>
+
+<h2>Modify the appearance of the wires</h2>
+
+<p>There are two ways to override the width, opacity, and dash pattern of a wire, and they differ in which object owns the override:</p>
+
+<ul>
+<li>Set the properties on the wire itself when the appearance is part of how the graph reads as the user edits it.</li>
+<li>Set the properties through a visualization context when the appearance represents a temporary state, such as a run in progress. When you dispose of the context, Unity removes every override the context applied.</li>
+</ul>
+
+<p>Neither approach saves the overrides to the graph asset. Apply them again each time the graph loads.</p>
+
+<p>
+<strong>Note</strong>: You can’t set the color of an individual wire. Wire color comes from the data type of the port that the wire connects. To define the color for a custom data type, register the type in a <code>DataTypeStyleMapper</code> subclass. Don’t use it to override the style of a built-in type, because that leads to inconsistent visuals in the <strong>Graph canvas</strong>.</p>
+
+<h3>Set the properties on a wire</h3>
+
+<p>To override the appearance of a single wire:</p>
+
+<ol>
+<li>Get the output and input ports that the wire connects, for example with <code>INode.GetOutputPortByName</code> and <code>INode.GetInputPortByName</code>.</li>
+<li>Call <code>Graph.GetWire</code>, and pass the two ports. Check the result for <code>null</code> because the method returns <code>null</code> when the ports aren’t connected.</li>
+<li>Set <code>WidthOverride</code>, <code>Opacity</code>, or <code>IsDashed</code> on the returned wire.</li>
+</ol>
+
+<pre><code class="lang-csharp">public void StyleWire(Graph graph, INode fromNode, INode toNode)
+{
+    IPort outputPort = fromNode.GetOutputPortByName(&quot;result&quot;);
+    IPort inputPort = toNode.GetInputPortByName(&quot;a&quot;);
+
+    // GetWire returns null when the two ports aren't connected.
+    Wire wire = graph.GetWire(outputPort, inputPort);
+    if (wire == null)
+        return;
+
+    // Set to 0 to restore the default thickness.
+    wire.WidthOverride = 4f;
+    // Clamped to the range 0 to 1.
+    wire.Opacity = 0.5f;
+    wire.IsDashed = true;
+}
+readonly Context m_Context;
+
+public WireVisualizationExamples(Graph graph)
+{
+    m_Context = Registry.CreateVisualizationContext(graph.ID);
+}
+
+// When you dispose of the context, Unity removes these overrides.
+public void Dispose() =&gt; m_Context.Dispose();
+
+public void StyleWireThroughContext(IPort outputPort, IPort inputPort)
+{
+    WireReference wire = m_Context.GetWireReference(outputPort.ID, inputPort.ID);
+    wire.WidthOverride = 4f;
+    wire.Opacity = 0.5f;
+    wire.IsDashed = true;
+}
+</code></pre>
+
+<p>The wire redraws with the values you set. When you set <code>WidthOverride</code> to <code>0</code>, Unity removes the override, so the wire reverts to the default thickness from the graph canvas style. Unity clamps <code>Opacity</code> to the range <code>0</code> to <code>1</code>, where <code>0</code> is fully transparent and <code>1</code> is fully opaque.</p>
+
+<p>A single wire covers the whole connection between two ports, even one that passes through a <span class="tooltip" tabindex="0" ><a href="task-portal.html">portal</a><span class="tooltiptext">A connection point that works in pairs and replaces visible wires with wireless pathways to reduce visual clutter. They respect the same constraints as the wires they replace.<br/><span class="tooltipGlossaryLink">See in <a href="../Glossary.html#Portal" aria-label="Go to glossary anchor for Portal">Glossary</a></span></span></span>.</p>
+
+<h3>Set the properties through a visualization context</h3>
+
+<p>To override the appearance of a wire through a visualization context:</p>
+
+<ol>
+<li>Call <code>Registry.CreateVisualizationContext</code>, and pass the graph’s identifier, available from <code>Graph.ID</code>.</li>
+<li>Call <code>Context.GetWireReference</code>, and pass the identifiers of the output port and the input port, available from <code>IPort.ID</code>.</li>
+<li>Set <code>WidthOverride</code>, <code>Opacity</code>, or <code>IsDashed</code> on the returned <code>WireReference</code>.</li>
+</ol>
+
+<pre><code class="lang-csharp">readonly Context m_Context;
+
+public WireVisualizationExamples(Graph graph)
+{
+    m_Context = Registry.CreateVisualizationContext(graph.ID);
+}
+
+// When you dispose of the context, Unity removes these overrides.
+public void Dispose() =&gt; m_Context.Dispose();
+
+public void StyleWireThroughContext(IPort outputPort, IPort inputPort)
+{
+    WireReference wire = m_Context.GetWireReference(outputPort.ID, inputPort.ID);
+    wire.WidthOverride = 4f;
+    wire.Opacity = 0.5f;
+    wire.IsDashed = true;
+}
+</code></pre>
+
+<p>The properties behave the same way as on a wire, but the context owns the values. When you dispose of the context, Unity removes every override the context applied.</p>
+
+<p>
+<strong>Note</strong>: Assign the <code>WireReference</code> to a local variable before you set a property on it. <code>WireReference</code> is a struct, so the compiler rejects an assignment to a property on the value that <code>GetWireReference</code> returns directly.</p>
+
+<h3>Remove the overrides from a wire</h3>
+
+<p>To remove the width, opacity, and dash overrides from one wire, call <code>WireReference.ClearCustomization</code>.</p>
+
+<pre><code class="lang-csharp">public void ResetWire(IPort outputPort, IPort inputPort)
+{
+    WireReference wire = m_Context.GetWireReference(outputPort.ID, inputPort.ID);
+
+    // Removes the width, opacity, and dash overrides from the wire.
+    wire.ClearCustomization();
+}
+</code></pre>
+
+<p>The wire returns to the appearance that the graph canvas style defines.</p>
+
+<p>To hide the overrides on every wire but not discard the wires themselves, set <code>Context.WireCustomizationEnabled</code> to <code>false</code>. Unity preserves the values and restores them when you set the property back to <code>true</code>.</p>
+
+<h2>Control the wire animation</h2>
+
+<p>A flow animation moves a highlighted segment along a wire to draw attention to an active data path. Animation is available only through a visualization context, so there’s no equivalent on a wire.</p>
+
+<p>To animate a wire:</p>
+
+<ol>
+<li>Get a <code>WireReference</code> for the connection from the context.</li>
+<li>Call <code>Context.Motion.Play</code>, and pass the reference. Optionally, pass an <code>animationSpeed</code> multiplier, which defaults to <code>1</code>. Higher values move the segment faster.</li>
+</ol>
+
+<pre><code class="lang-csharp">public void AnimateWire(IPort outputPort, IPort inputPort)
+{
+    WireReference wire = m_Context.GetWireReference(outputPort.ID, inputPort.ID);
+
+    // The animation loops until you stop or pause it.
+    m_Context.Motion.Play(wire, animationSpeed: 2f);
+}
+
+public void PauseWireAnimation(WireReference wire)
+{
+    // Freezes the animation and keeps the width, opacity, and dash overrides.
+    m_Context.Motion.Pause(wire);
+}
+
+public void StopWireAnimation(WireReference wire)
+{
+    m_Context.Motion.Stop(wire);
+}
+</code></pre>
+
+<p>The animation loops until you pause or stop it.</p>
+
+<p>To freeze the animation at its current position, call <code>Context.Motion.Pause</code>. This keeps the width, opacity, and dash overrides applied. Call <code>Context.Motion.Play</code> again on the same wire to resume. To end the animation, call <code>Context.Motion.Stop</code>.</p>
+
+<p>If you pause a wire that has no active animation, no effect is visible.</p>
+
+<h2>Additional resources</h2>
+
+<ul>
+<li><a href="../../ScriptReference/Unity.GraphToolkit.Editor.Wire.html">Wire class API reference</a></li>
+<li><a href="../../ScriptReference/Unity.GraphToolkit.Editor.Graph.GetWire.html">GetWire API reference</a></li>
+<li><a href="../../ScriptReference/Unity.GraphToolkit.Editor.GraphVisualization.WireReference.html">WireReference API reference</a></li>
+<li><a href="../../ScriptReference/Unity.GraphToolkit.Editor.GraphVisualization.GraphMotion.html">GraphMotion API reference</a></li>
+<li><a href="task-connect-nodes.html">Connect nodes in your graphs</a></li>
+<li><a href="task-portal.html">Replace wires with portals</a></li>
+<li><a href="implement-a-graph-tool.html">Implement a graph tool</a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="../gtk/task-display-node-progress.html"></a></span><div class="tip">Display progress bars on nodes</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="../CustomizingYourWorkspace.html"></a></span><div class="tip">Customize your workspace layout</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 79827756. Built on: 2026-11-13.</div>
+<div class="menu">
+<a href="https://learn.unity.com/">Tutorials</a><a href="https://answers.unity3d.com">Community Answers</a><a href="https://support.unity3d.com/hc/en-us">Knowledge Base</a><a href="https://forum.unity3d.com">Forums</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">Terms of use</a><a href="https://unity.com/legal">Legal</a><a href="https://unity.com/legal/privacy-policy">Privacy Policy</a><a href="https://unity.com/legal/cookie-policy">Cookies</a><a href="https://unity.com/legal/docs-terms">Documentation Terms of Use</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: 'en-us', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Manage GameObjects in the Hierarchy window</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="author" content="Unity Technologies">
+<meta property="relative-path-to-manual" content="">
+<meta property="version-switcher-versions-with-this-page" content="Versions with this page:">
+<meta property="version-switcher-versions-without-this-page" content="Versions without this page:">
+<meta property="version-switcher-supported" content="Supported">
+<meta property="version-switcher-legacy" content="Legacy">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<link rel="canonical" href="https://docs.unity3d.com/6000.6/Documentation/Manual/Hierarchy.html">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="/StaticFilesConfig/UnityVersionsInfo.js"></script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js?ts=20261113"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js?ts=20261113"></script><script type="text/javascript" src="../StaticFilesManual/js/image-comp.js?ts=20261113"></script><script type="text/javascript" src="docdata/toc.js?ts=20261113"></script><script type="text/javascript" src="docdata/global_toc.js?ts=20261113"></script><link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css?ts=20261113">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/icons.css?ts=20261113">
+<link rel="stylesheet" href="../StaticFilesManual/css/prism.css">
+<script src="../StaticFilesManual/js/prism.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><script src="../StaticFilesManual/js/jquery.sidebar.min.js"></script><link rel="stylesheet" href="../StaticFilesManual/css/mobileoptimisation.css">
+<script src="../StaticFilesManual/js/mobileoptimisation.js"></script>
+</head>
+<body>
+<div id="DocsAnalyticsData" data-area="none" data-pagetype="manual"></div>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity.com/">unity.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                                Version: <b>Unity 6.6</b> (6000.6)
+                                <div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+<ul id="OtherVersionsContentUl"></ul>
+<div id="otherVersionsLegend"><ul>
+<li>
+<div id="supportedColour" class="legendBox"></div>Supported</li>
+<li>
+<div id="notFoundColour" class="legendBox"></div>Legacy</li>
+</ul></div>
+</div>
+<div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+</div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/Hierarchy.html">English</a></li>
+<li><a href="/cn/current/Manual/Hierarchy.html">中文</a></li>
+<li><a href="/ja/current/Manual/Hierarchy.html">日本語</a></li>
+<li><a href="/kr/current/Manual/Hierarchy.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div>
+<div class="mobileLogo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc" id="customScrollbar">
+<h2>Unity Manual</h2>
+<div class="search-form sidebar-search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" id="mobileSearchBtn" class="submit" value="Search">
+</form></div>
+<div class="toggle version-number sidebar-version-switcher" id="VersionNumber" data-target=".otherversionscontent"><form id="otherVersionsContentMobileForm"><div class="ui-field-contain">
+<label for="select-native-4">Version: Unity 6.6</label><select name="select-native-4" id="versionsSelectMobile"><option>Select a different version</option>
+<optgroup id="versionsWithThisPageMobile" label="Versions with this page"></optgroup>
+<optgroup id="versionsWithoutThisPageMobile" label="Versions without this page"></optgroup></select>
+</div></form></div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/Hierarchy.html">English</a></li>
+<li><a href="/cn/current/Manual/Hierarchy.html">中文</a></li>
+<li><a href="/ja/current/Manual/Hierarchy.html">日本語</a></li>
+<li><a href="/kr/current/Manual/Hierarchy.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="unity-editor.html">Unity Editor interface</a></li>
+<li><a href="editor-windows-views-reference.html">Unity Editor windows and views reference</a></li>
+<li><a href="hierarchy-window.html">Hierarchy window</a></li>
+<li>Manage GameObjects in the Hierarchy window</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="hierarchy-create-gameobjects.html"></a></span><div class="tip">Create GameObjects from the Hierarchy window</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="configure-hierarchy-window.html"></a></span><div class="tip">Configure the Hierarchy window</div>
+</div>
+</div></div>
+<div id="_leavefeedback"></div>
+<h1>Manage GameObjects in the Hierarchy window</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Use the <strong>Hierarchy</strong> window to arrange the GameObjects in your scenes, group them into parent-child hierarchies, and control their visibility in the <strong>Scene</strong> view.</p>
+
+<p>Unity uses the concept of parent-child hierarchies, or parenting, to group GameObjects. Group GameObjects under a parent to keep the <strong>Hierarchy</strong> window organized and to move, rotate, and scale the whole group of GameObjects together. To learn more, refer to <a href="hierarchy-parent-child.html">Parent-child relationships in the Hierarchy window</a>.</p>
+
+<h2>Reorder GameObjects in the Hierarchy window</h2>
+
+<p>By default, the <strong>Hierarchy</strong> window lists GameObjects by order of creation, with the most recently created GameObjects at the bottom. You can reorder the GameObjects by dragging them up or down.</p>
+
+<h2>Use an existing GameObject as a parent</h2>
+
+<p>To make an existing GameObject the parent of another GameObject, drag the child onto the parent GameObject in the <strong>Hierarchy</strong> window. </p>
+
+<p>To ungroup GameObjects, select the child GameObject and drag it to a different position in the <strong>Hierarchy</strong> window.</p>
+
+<p>You can also <a href="#paste-a-gameobject-as-a-child">paste a GameObject as a child</a> of another GameObject.</p>
+
+<h2>Create an empty parent GameObject</h2>
+
+<p>Create a new GameObject in the <strong>Hierarchy</strong> window as the parent of existing GameObjects. An empty parent GameObject acts as a container for related GameObjects.</p>
+
+<p>To create an empty parent GameObject:</p>
+
+<ol>
+<li>In the <strong>Hierarchy</strong> window, do one of the following:
+
+<ul>
+<li>To create an empty parent for a single GameObject, right-click the GameObject to open the context menu.</li>
+<li>To create an empty parent for multiple GameObjects, select the GameObjects on the same level, then right-click to open the context menu.</li>
+</ul>
+</li>
+<li>Select <strong>Create Empty Parent</strong>.</li>
+</ol>
+
+<p>
+<strong>Tip</strong>: Press <strong>Ctrl</strong>+<strong>Shift</strong>+<strong>G</strong> (macOS: <strong>Cmd</strong>+<strong>Shift</strong>+<strong>G</strong>) to create an empty parent GameObject for the selected GameObject.</p>
+
+<p><a name="paste-a-gameobject-as-a-child" aria-hidden="true"></a></p>
+
+<h2>Paste a GameObject as a child</h2>
+
+<p>You can cut or copy a GameObject and paste it as a child of another GameObject.</p>
+
+<p>To paste a GameObject as a child:</p>
+
+<ol>
+<li>In the <strong>Hierarchy</strong> window, right-click the GameObject, then select <strong>Cut</strong> or <strong>Copy</strong>.</li>
+<li>Right-click the intended parent GameObject, then do one of the following:
+
+<ul>
+<li>Select <strong>Paste Special</strong> &gt; <strong>Paste as Child (Keep Local Transform)</strong> to paste the GameObject as a child, but keep its local position, rotation, and scale relative to the parent. The GameObject might move in the scene, because it now inherits the parent’s transform.</li>
+<li>Select <strong>Paste Special</strong> &gt; <strong>Paste as Child (Keep World Transform)</strong> to paste the GameObject as a child, but keep its world position, rotation, and scale. Unity adjusts the local position, rotation, and scale relative to the parent so the GameObject stays in place in the scene.</li>
+</ul>
+</li>
+</ol>
+
+<p>
+<strong>Tip</strong>: You can also press <strong>Ctrl</strong>+<strong>Shift</strong>+<strong>V</strong> (macOS: <strong>Cmd</strong>+<strong>Shift</strong>+<strong>V</strong>) to paste a GameObject as a child with its local transform.</p>
+
+<h2>Organize GameObjects as siblings</h2>
+
+<p>Child GameObjects that share the same parent are siblings.</p>
+
+<p>To organize siblings under their parent, do one of the following:</p>
+
+<ul>
+<li><p>Drag them in the <strong>Hierarchy</strong> window.</p></li>
+<li>
+<p>Right-click a GameObject in the <strong>Hierarchy</strong> window to open its context menu, then either:</p>
+
+<ul>
+<li>Select <strong>Set as first sibling</strong> to move the GameObject to the top of its parent’s list of siblings.</li>
+<li>Select <strong>Set as last sibling</strong> to move it to the bottom of the list.</li>
+</ul>
+
+<p>These options aren’t available for GameObjects that don’t have a parent.</p>
+</li>
+</ul>
+
+<p><a name="set-a-default-parent" aria-hidden="true"></a></p>
+
+<h2>Set a default parent for new GameObjects</h2>
+
+<p>You can make any GameObject in the <strong>Hierarchy</strong> window the default parent of new GameObjects. When you create or drag a GameObject into the <strong>Scene</strong> view, it becomes a child of the default parent GameObject. The name of the default parent GameObject appears in bold in the <strong>Hierarchy</strong> window.</p>
+
+<p>You can only set one default parent in each scene. If you set a GameObject as the default parent, and then you make a different GameObject in the same scene the default parent, only the second GameObject is the default parent.</p>
+
+<p>If you have multiple <span class="tooltip" tabindex="0" ><a href="MultiSceneEditing.html">scenes</a><span class="tooltiptext">A Scene contains the environments and menus of your game. Think of each unique Scene file as a unique level. In each Scene, you place your environments, obstacles, and decorations, essentially designing and building your game in pieces. <a class="tooltipMoreInfoLink" aria-label="Navigate to more info about CreatingScenes.html" href="CreatingScenes.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Scene" aria-label="Go to glossary anchor for Scene">Glossary</a></span></span></span> in the <strong>Hierarchy</strong> window and you set a default parent for each scene, when you drag a GameObject into the <strong>Scene</strong> view, Unity makes the default parent GameObject in the active scene the parent of the new GameObject.</p>
+
+<p>To set a default parent GameObject:</p>
+
+<ol>
+<li>In the <strong>Hierarchy</strong> window, right-click the GameObject you want to set as the default parent.</li>
+<li>From the context menu, select <strong>Set as Default Parent</strong>.</li>
+</ol>
+
+<p>
+<strong>Tip</strong>: You can set a keyboard shortcut for the default parent setting in the <a href="ShortcutsManager.html">Shortcuts Manager</a>. Assign a keyboard shortcut to <strong>Hierarchy View</strong> &gt; <strong>Set as Default Parent</strong>. The shortcut sets a selected GameObject as the default parent, or removes default parent status from an existing default parent.</p>
+
+<h2>Remove a default parent</h2>
+
+<p>When you remove default parent status from a GameObject, its name is no longer in bold. If you don’t set a new default parent, when you drag a GameObject into the <strong>Scene</strong> view, it appears at the top level in the <strong>Hierarchy</strong> window.</p>
+
+<p>To remove default parent status from a GameObject:</p>
+
+<ol>
+<li>In the <strong>Hierarchy</strong> window, right-click the default parent GameObject. The default parent GameObject is the one whose name is in bold.</li>
+<li>From the context menu, select <strong>Clear Default Parent</strong>.</li>
+</ol>
+
+<h2>Expand or collapse nested GameObjects</h2>
+
+<p>In the <strong>Hierarchy</strong> window, you can expand or collapse the GameObjects nested under a parent GameObject to make large collections easier to navigate.</p>
+
+<ul>
+<li>To expand a parent, select the foldout arrow (►) to its left.</li>
+<li>To expand both the parent and any child that contains its own children, hold <strong>Alt</strong> (macOS: <strong>Option</strong>) and select the foldout arrow (►).</li>
+<li>To collapse all descendant GameObjects, select the down-facing foldout arrow (▼).</li>
+</ul>
+
+<h2>Set Scene visibility and pickability</h2>
+
+<p>If you have a scene with many GameObjects, it can be difficult to find and select specific GameObjects in the <a href="UsingTheSceneView.html"><strong>Scene</strong> view</a>. To clear the <strong>Scene</strong> view without affecting the visibility or behavior of GameObjects at runtime, you can toggle the visibility and pickability of GameObjects from the <strong>Hierarchy</strong> window:</p>
+
+<ul>
+<li>To hide and show the GameObject, select <strong>Scene visibility</strong> (eye icon).</li>
+<li>To toggle the GameObject’s pickability, select <strong>Scene picking</strong> (hand icon).</li>
+</ul>
+
+<p>
+<strong>Note</strong>: If you select multiple GameObjects, press <strong>H</strong> to hide and show them, and <strong>L</strong> to toggle their pickability.</p>
+
+<p>For more information, refer to <a href="SceneVisibility.html">Scene visibility</a> and <a href="ScenePicking.html">Scene picking</a>.</p>
+
+<h2>Additional resources</h2>
+
+<ul>
+<li><a href="hierarchy-parent-child.html">Parent-child relationships in the Hierarchy window</a></li>
+<li><a href="hierarchy-reference.html">Hierarchy window reference</a></li>
+<li><a href="EditingInPrefabMode.html">Edit prefab assets</a></li>
+<li><a href="class-GameObject.html">GameObject class</a></li>
+<li><span class="tooltip" tabindex="0" ><a href="UsingTheSceneView.html">Scene view</a><span class="tooltiptext">An interactive view into the world you are creating. You use the Scene View to select and position scenery, characters, cameras, lights, and all other types of Game Object. <a class="tooltipMoreInfoLink" aria-label="Navigate to more info about UsingTheSceneView.html" href="UsingTheSceneView.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#SceneView" aria-label="Go to glossary anchor for SceneView">Glossary</a></span></span></span></li>
+<li><a href="UsingTheInspector.html">Inspector window</a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="hierarchy-create-gameobjects.html"></a></span><div class="tip">Create GameObjects from the Hierarchy window</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="configure-hierarchy-window.html"></a></span><div class="tip">Configure the Hierarchy window</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 79827756. Built on: 2026-11-13.</div>
+<div class="menu">
+<a href="https://learn.unity.com/">Tutorials</a><a href="https://answers.unity3d.com">Community Answers</a><a href="https://support.unity3d.com/hc/en-us">Knowledge Base</a><a href="https://forum.unity3d.com">Forums</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">Terms of use</a><a href="https://unity.com/legal">Legal</a><a href="https://unity.com/legal/privacy-policy">Privacy Policy</a><a href="https://unity.com/legal/cookie-policy">Cookies</a><a href="https://unity.com/legal/docs-terms">Documentation Terms of Use</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

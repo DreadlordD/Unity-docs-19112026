@@ -1,0 +1,346 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: 'en-us', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Foveated rendering support reference</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="author" content="Unity Technologies">
+<meta property="relative-path-to-manual" content="">
+<meta property="version-switcher-versions-with-this-page" content="Versions with this page:">
+<meta property="version-switcher-versions-without-this-page" content="Versions without this page:">
+<meta property="version-switcher-supported" content="Supported">
+<meta property="version-switcher-legacy" content="Legacy">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<link rel="canonical" href="https://docs.unity3d.com/6000.6/Documentation/Manual/xr-foveated-rendering-support.html">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="/StaticFilesConfig/UnityVersionsInfo.js"></script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js?ts=20261113"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js?ts=20261113"></script><script type="text/javascript" src="../StaticFilesManual/js/image-comp.js?ts=20261113"></script><script type="text/javascript" src="docdata/toc.js?ts=20261113"></script><script type="text/javascript" src="docdata/global_toc.js?ts=20261113"></script><link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css?ts=20261113">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/icons.css?ts=20261113">
+<link rel="stylesheet" href="../StaticFilesManual/css/prism.css">
+<script src="../StaticFilesManual/js/prism.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><script src="../StaticFilesManual/js/jquery.sidebar.min.js"></script><link rel="stylesheet" href="../StaticFilesManual/css/mobileoptimisation.css">
+<script src="../StaticFilesManual/js/mobileoptimisation.js"></script>
+</head>
+<body>
+<div id="DocsAnalyticsData" data-area="none" data-pagetype="manual"></div>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity.com/">unity.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                                Version: <b>Unity 6.6</b> (6000.6)
+                                <div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+<ul id="OtherVersionsContentUl"></ul>
+<div id="otherVersionsLegend"><ul>
+<li>
+<div id="supportedColour" class="legendBox"></div>Supported</li>
+<li>
+<div id="notFoundColour" class="legendBox"></div>Legacy</li>
+</ul></div>
+</div>
+<div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+</div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/xr-foveated-rendering-support.html">English</a></li>
+<li><a href="/cn/current/Manual/xr-foveated-rendering-support.html">中文</a></li>
+<li><a href="/ja/current/Manual/xr-foveated-rendering-support.html">日本語</a></li>
+<li><a href="/kr/current/Manual/xr-foveated-rendering-support.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div>
+<div class="mobileLogo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc" id="customScrollbar">
+<h2>Unity Manual</h2>
+<div class="search-form sidebar-search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" id="mobileSearchBtn" class="submit" value="Search">
+</form></div>
+<div class="toggle version-number sidebar-version-switcher" id="VersionNumber" data-target=".otherversionscontent"><form id="otherVersionsContentMobileForm"><div class="ui-field-contain">
+<label for="select-native-4">Version: Unity 6.6</label><select name="select-native-4" id="versionsSelectMobile"><option>Select a different version</option>
+<optgroup id="versionsWithThisPageMobile" label="Versions with this page"></optgroup>
+<optgroup id="versionsWithoutThisPageMobile" label="Versions without this page"></optgroup></select>
+</div></form></div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/xr-foveated-rendering-support.html">English</a></li>
+<li><a href="/cn/current/Manual/xr-foveated-rendering-support.html">中文</a></li>
+<li><a href="/ja/current/Manual/xr-foveated-rendering-support.html">日本語</a></li>
+<li><a href="/kr/current/Manual/xr-foveated-rendering-support.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="XR.html">XR</a></li>
+<li><a href="xr-graphics.html">XR graphics</a></li>
+<li><a href="xr-foveated-rendering.html">Foveated rendering</a></li>
+<li>Foveated rendering support reference</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="xr-foveated-rendering-introduction.html"></a></span><div class="tip">Introduction to foveated rendering</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="xr-foveated-rendering-shader-workflow.html"></a></span><div class="tip">Foveated rendering shader compatibility workflow</div>
+</div>
+</div></div>
+<div id="_leavefeedback"></div>
+<h1>Foveated rendering support reference</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Support for foveated rendering depends on your Unity version, render pipeline, and graphics API, and on both the XR provider plug-in and the device. This page lists those requirements, including which XR provider plug-ins and platforms support foveated rendering. It also lists the pipeline and resolution combinations Unity supports, the additional conditions that dynamic foveation requires, and the capability values a device reports at runtime.</p>
+
+<p>For an explanation of variable rate shading (VRS) and variable rate rasterization (VRR), refer to <a href="xr-foveated-rendering-introduction.html">Introduction to foveated rendering</a>.</p>
+
+<h2>Project requirements</h2>
+
+<p>Your project must meet all the following requirements to use foveated rendering:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Requirement</strong></th>
+	<th style="text-align:left;"><strong>Details</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">Unity version</td>
+	<td style="text-align:left;">Unity 2022.3 or later.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Render pipeline</td>
+	<td style="text-align:left;">Universal Render Pipeline (URP).</td>
+</tr>
+<tr>
+	<td style="text-align:left;">XR provider plug-in</td>
+	<td style="text-align:left;">Configure the foveated rendering settings that your XR provider plug-in exposes, if it has any.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Graphics API</td>
+	<td style="text-align:left;">On Windows standalone XR, the project must use the DirectX 12 or Vulkan graphics APIs.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">GPU</td>
+	<td style="text-align:left;">On Windows standalone XR, the computer running the application must have a GPU such as NVIDIA GeForce RTX 20 series or later, or AMD Radeon RX 6000 series or later.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Plug-in and device support</td>
+	<td style="text-align:left;">On standalone XR platforms, both the XR provider plug-in and the device must support foveated rendering. For the plug-ins and platforms that support it, refer to <a href="#plug-in-and-platform-support">Plug-in and platform support</a>.</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="plug-in-and-platform-support">Plug-in and platform support</h2>
+
+<p>The following table lists the XR provider plug-ins that document foveated rendering support and the platforms on which each plug-in supports it. Other plug-ins might also support foveated rendering. To find the documentation for other plug-ins, refer to <a href="xr-support-packages.html#plug-ins">XR provider plug-ins</a>.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>XR provider plug-in</strong></th>
+	<th style="text-align:left;"><strong>Platforms</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><a href="https://docs.unity3d.com/Packages/com.unity.xr.openxr@1.19/manual/features/foveated-rendering/foveated-rendering-requirements.html">OpenXR Plug-in</a></td>
+	<td style="text-align:left;">Meta Quest, Android XR, and Windows.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="https://docs.unity3d.com/Packages/com.unity.polyspatial.visionos@latest?subfolder=/manual/VisionOSSettings.html">Apple visionOS XR Plug-in</a></td>
+	<td style="text-align:left;">visionOS, when your application renders with Metal.</td>
+</tr>
+</tbody>
+</table>
+
+<p>On Android XR, the Unity OpenXR: Android XR package provides additional settings and permissions for foveated rendering. For more information, refer to <a href="https://docs.unity3d.com/Packages/com.unity.xr.androidxr-openxr@1.4/manual/features/foveated-rendering.html">Eye tracking and foveated rendering</a>.</p>
+
+<p>To render with Metal on visionOS, go to <strong>Edit</strong> &gt; <strong>Project Settings</strong> &gt; <strong>XR Plug-in Management</strong> &gt; <strong>Apple visionOS</strong>, and set <strong>App Mode</strong> to <strong>Metal Rendering with Compositor Services</strong> or <strong>Hybrid - Switch between Metal and RealityKit</strong>.</p>
+
+<h2>Render pipeline and resolution compatibility</h2>
+
+<p>The following conditions determine whether foveated rendering is available outside the standard Universal Render Pipeline (URP) configuration:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Condition</strong></th>
+	<th style="text-align:left;"><strong>Support</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">The Built-In Render Pipeline</td>
+	<td style="text-align:left;">Unity doesn’t support foveated rendering in projects that use the Built-In Render Pipeline.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">The Built-In Render Pipeline through a provider plug-in</td>
+	<td style="text-align:left;">Some XR provider plug-ins use a different API and implementation to support foveated rendering in Unity 2022.3 with the Built-In Render Pipeline. These plug-ins include the <a href="https://docs.unity3d.com/Packages/com.unity.xr.openxr@1.18/">OpenXR Plug-in</a> and the <a href="https://docs.unity3d.com/Packages/com.unity.xr.oculus@4.5/">Oculus XR Plug-in</a>. Unity deprecated the Oculus XR Plug-in in Unity 6.5 and later, so the OpenXR Plug-in is the active path.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Dynamic resolution</td>
+	<td style="text-align:left;">Fixed foveated rendering is compatible with dynamic resolution that uses <a href="../ScriptReference/XR.XRSettings-renderViewportScale.html"><code>XRSettings.renderViewportScale</code></a>. Refer to <a href="xr-graphics-resolution-scaling.html">Resolution control in XR projects</a> for more information.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Dynamic foveation support</h2>
+
+<p>Dynamic foveation has narrower support than foveated rendering. For an explanation of what it does to the foveated rendering level, refer to <a href="xr-foveated-rendering-introduction.html">Introduction to foveated rendering</a>. Your project must meet all the following conditions to use dynamic foveation:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Condition</strong></th>
+	<th style="text-align:left;"><strong>Details</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">XR provider plug-in</td>
+	<td style="text-align:left;">The OpenXR Plug-in, version 1.19 or later.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Graphics API</td>
+	<td style="text-align:left;">Vulkan.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Foveation method</td>
+	<td style="text-align:left;">The plug-in must use the foveation method that <a href="../ScriptReference/XR.XRDisplaySubsystem-foveatedRenderingLevel.html"><code>foveatedRenderingLevel</code></a> controls, not a provider-specific foveation method.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Device and runtime</td>
+	<td style="text-align:left;">The device’s OpenXR runtime must support the <code>XR_FB_foveation</code>, <code>XR_FB_foveation_configuration</code>, <code>XR_FB_foveation_vulkan</code>, and <code>XR_FB_swapchain_update_state</code> extensions.</td>
+</tr>
+</tbody>
+</table>
+
+<p>To enable dynamic foveation, refer to <a href="https://docs.unity3d.com/Packages/com.unity.xr.openxr@1.19/manual/features/foveated-rendering/foveated-rendering-dynamic.html">Use dynamic foveation</a> in the OpenXR Plug-in documentation.</p>
+
+<h2>Foveated rendering capabilities</h2>
+
+<p>A device reports its foveated rendering capabilities through the <a href="../ScriptReference/SystemInfo-foveatedRenderingCaps.html"><code>foveatedRenderingCaps</code></a> property of <a href="../ScriptReference/SystemInfo.html"><code>SystemInfo</code></a>. The property returns a <a href="../ScriptReference/Rendering.FoveatedRenderingCaps.html"><code>FoveatedRenderingCaps</code></a> value. To read this property in a script, refer to <a href="xr-foveated-rendering-enable.html">Enable and control foveated rendering</a>.</p>
+
+<p>The property can report the following values:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Value</strong></th>
+	<th style="text-align:left;"><strong>Meaning</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><a href="../ScriptReference/Rendering.FoveatedRenderingCaps.None.html"><code>None</code></a></td>
+	<td style="text-align:left;">The device doesn’t support foveated rendering. Various factors can cause a lack of support, including software, the device runtime, or drivers, so even if a platform supports foveated rendering, it might not be available on a particular device.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="../ScriptReference/Rendering.FoveatedRenderingCaps.FoveationImage.html"><code>FoveationImage</code></a></td>
+	<td style="text-align:left;">The foveated rendering implementation uses VRS.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="../ScriptReference/Rendering.FoveatedRenderingCaps.NonUniformRaster.html"><code>NonUniformRaster</code></a></td>
+	<td style="text-align:left;">The foveated rendering implementation uses VRR.</td>
+</tr>
+</tbody>
+</table>
+
+<p>The <code>FoveationImage</code> and <code>NonUniformRaster</code> values describe how a device implements foveated rendering, which is useful if you implement a custom render pipeline.</p>
+
+<h2>Additional resources</h2>
+
+<ul>
+<li><a href="xr-render-pipeline-compatibility.html">Universal Render Pipeline compatibility in XR</a></li>
+<li><a href="xr-untethered-device-optimization.html">Optimize for untethered XR devices in URP</a></li>
+<li><a href="xr-multiview-render-regions.html">Multiview Render Regions</a></li>
+</ul>
+
+<p><span class="notooltips"></span></p>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="xr-foveated-rendering-introduction.html"></a></span><div class="tip">Introduction to foveated rendering</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="xr-foveated-rendering-shader-workflow.html"></a></span><div class="tip">Foveated rendering shader compatibility workflow</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 79827756. Built on: 2026-11-13.</div>
+<div class="menu">
+<a href="https://learn.unity.com/">Tutorials</a><a href="https://answers.unity3d.com">Community Answers</a><a href="https://support.unity3d.com/hc/en-us">Knowledge Base</a><a href="https://forum.unity3d.com">Forums</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">Terms of use</a><a href="https://unity.com/legal">Legal</a><a href="https://unity.com/legal/privacy-policy">Privacy Policy</a><a href="https://unity.com/legal/cookie-policy">Cookies</a><a href="https://unity.com/legal/docs-terms">Documentation Terms of Use</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

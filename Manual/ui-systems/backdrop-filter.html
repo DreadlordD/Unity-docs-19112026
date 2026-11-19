@@ -1,0 +1,252 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: 'en-us', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Apply effects behind elements with backdrop filters</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="author" content="Unity Technologies">
+<meta property="relative-path-to-manual" content="../">
+<meta property="version-switcher-versions-with-this-page" content="Versions with this page:">
+<meta property="version-switcher-versions-without-this-page" content="Versions without this page:">
+<meta property="version-switcher-supported" content="Supported">
+<meta property="version-switcher-legacy" content="Legacy">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<link rel="canonical" href="https://docs.unity3d.com/6000.6/Documentation/Manual/ui-systems/backdrop-filter.html">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="/StaticFilesConfig/UnityVersionsInfo.js"></script><script type="text/javascript" src="../../StaticFilesManual/js/jquery.js?ts=20261113"></script><script type="text/javascript" src="../../StaticFilesManual/js/core.js?ts=20261113"></script><script type="text/javascript" src="../../StaticFilesManual/js/image-comp.js?ts=20261113"></script><script type="text/javascript" src="../docdata/toc.js?ts=20261113"></script><script type="text/javascript" src="../docdata/global_toc.js?ts=20261113"></script><link rel="stylesheet" type="text/css" href="../../StaticFilesManual/css/core.css?ts=20261113">
+<link rel="stylesheet" type="text/css" href="../../StaticFilesManual/css/icons.css?ts=20261113">
+<link rel="stylesheet" href="../../StaticFilesManual/css/prism.css">
+<script src="../../StaticFilesManual/js/prism.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><script src="../../StaticFilesManual/js/jquery.sidebar.min.js"></script><link rel="stylesheet" href="../../StaticFilesManual/css/mobileoptimisation.css">
+<script src="../../StaticFilesManual/js/mobileoptimisation.js"></script>
+</head>
+<body>
+<div id="DocsAnalyticsData" data-area="none" data-pagetype="manual"></div>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="../30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="../index.html" class="selected">Manual</a></li>
+<li><a href="../../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity.com/">unity.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                                Version: <b>Unity 6.6</b> (6000.6)
+                                <div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+<ul id="OtherVersionsContentUl"></ul>
+<div id="otherVersionsLegend"><ul>
+<li>
+<div id="supportedColour" class="legendBox"></div>Supported</li>
+<li>
+<div id="notFoundColour" class="legendBox"></div>Legacy</li>
+</ul></div>
+</div>
+<div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+</div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/ui-systems/backdrop-filter.html">English</a></li>
+<li><a href="/cn/current/Manual/ui-systems/backdrop-filter.html">中文</a></li>
+<li><a href="/ja/current/Manual/ui-systems/backdrop-filter.html">日本語</a></li>
+<li><a href="/kr/current/Manual/ui-systems/backdrop-filter.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div>
+<div class="mobileLogo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc" id="customScrollbar">
+<h2>Unity Manual</h2>
+<div class="search-form sidebar-search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" id="mobileSearchBtn" class="submit" value="Search">
+</form></div>
+<div class="toggle version-number sidebar-version-switcher" id="VersionNumber" data-target=".otherversionscontent"><form id="otherVersionsContentMobileForm"><div class="ui-field-contain">
+<label for="select-native-4">Version: Unity 6.6</label><select name="select-native-4" id="versionsSelectMobile"><option>Select a different version</option>
+<optgroup id="versionsWithThisPageMobile" label="Versions with this page"></optgroup>
+<optgroup id="versionsWithoutThisPageMobile" label="Versions without this page"></optgroup></select>
+</div></form></div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/ui-systems/backdrop-filter.html">English</a></li>
+<li><a href="/cn/current/Manual/ui-systems/backdrop-filter.html">中文</a></li>
+<li><a href="/ja/current/Manual/ui-systems/backdrop-filter.html">日本語</a></li>
+<li><a href="/kr/current/Manual/ui-systems/backdrop-filter.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="../UIToolkits.html">UI systems</a></li>
+<li><a href="../UIElements.html">UI Toolkit</a></li>
+<li><a href="../UIE-USS.html">Style UI</a></li>
+<li><a href="../ui-systems/uss-filter.html">Apply post-processing effects with USS filter</a></li>
+<li>Apply effects behind elements with backdrop filters</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="../ui-systems/built-in-filters.html"></a></span><div class="tip">Apply common effects with built-in filters</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="../ui-systems/custom-filters.html"></a></span><div class="tip">Create and apply custom filters</div>
+</div>
+</div></div>
+<div id="_leavefeedback"></div>
+<h1>Apply effects behind elements with backdrop filters</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>You can use the <code>backdrop-filter</code> USS property to apply filter effects to the area behind a visual element. Unlike the <a href="built-in-filters.html"><code>filter</code> property</a>, which processes the element and its children, <code>backdrop-filter</code> processes what’s rendered behind the element. This is useful for effects such as frosted-glass panels, where the content behind a panel appears blurred. The <code>backdrop-filter</code> property is similar to the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter">CSS backdrop-filter</a> property.</p>
+
+<p>When an element has a backdrop filter, UI Toolkit captures the content already rendered behind the element, applies the filter functions to it, and draws the result under the element. The result is clipped to the element’s shape, including its rounded corners. The captured content includes other visual elements rendered behind the element and, for runtime panels that render as a screen overlay, the camera output behind the UI.</p>
+
+<p>The element’s own background, border, and content render on top of the filtered backdrop and aren’t affected by the filter. To keep the filtered backdrop visible, use a transparent or semi-transparent background color for the element.</p>
+
+<p>
+<strong>Important</strong>: The Universal Render Pipeline (URP) is the only render pipeline that supports backdrop filters. In the Built-In Render Pipeline and the High Definition Render Pipeline (HDRP), UI Toolkit ignores the property.</p>
+
+<h2>Supported filter functions</h2>
+
+<p>The <code>backdrop-filter</code> property supports the same <a href="built-in-filters.html">built-in filter functions</a> as the <code>filter</code> property:</p>
+
+<pre><code class="lang-css">backdrop-filter: blur(&lt;length&gt;) | grayscale(&lt;number&gt;) | invert(&lt;number&gt;) | opacity(&lt;number&gt;) | sepia(&lt;number&gt;) | tint(&lt;color&gt;) | hue-rotate(&lt;angle&gt;) | contrast(&lt;number&gt;) | drop-shadow(&lt;offset-x&gt; &lt;offset-y&gt; &lt;blur-radius&gt; &lt;color&gt;)
+</code></pre>
+
+<p>You can combine multiple filter functions in a single <code>backdrop-filter</code> declaration. Filters work as a sequential pipeline where each pass processes the output from the previous pass.</p>
+
+<p>The <code>backdrop-filter</code> property also supports <a href="custom-filters.html">custom filters</a>. Use the same <code>filter</code> function that you use with the <code>filter</code> property, and reference the path to the custom filter asset:</p>
+
+<pre><code class="lang-css">.custom-backdrop {
+    backdrop-filter: filter(&quot;/Assets/Filters/CustomFilter.asset&quot; 10px);
+}
+</code></pre>
+
+<h2>Apply backdrop filters to visual elements</h2>
+
+<p>You can apply backdrop filters to visual elements in UI Builder, USS, or C# code.</p>
+
+<h3>Apply backdrop filters in UI Builder</h3>
+
+<p>To apply a backdrop filter to a visual element in UI Builder:</p>
+
+<ol>
+<li>Open the <strong>UI Builder</strong> and create a new UXML file or open an existing one.</li>
+<li>Select the visual element you want to apply the backdrop filter to.</li>
+<li>In the <strong>Inspector</strong> window, select <strong>Inline Styles</strong> &gt; <strong>Backdrop Filter</strong>.</li>
+<li>Select <strong>Add (+)</strong> to add a filter function.</li>
+<li>Set <strong>Function</strong> to a built-in filter function, such as <strong>Blur</strong>, <strong>Grayscale</strong>, or <strong>Invert</strong>. To use a custom filter instead, set <strong>Function</strong> to <strong>Custom</strong> and set <strong>Definition</strong> to the custom filter asset.</li>
+<li>Set the parameters for the filter function, such as the blur radius or grayscale percentage.</li>
+<li>Repeat steps 4–6 to add more filter functions if needed.</li>
+</ol>
+
+<h3>Apply backdrop filters with USS</h3>
+
+<p>To apply a backdrop filter to a visual element, use the <code>backdrop-filter</code> property in a USS file. The following example creates a frosted-glass panel that blurs the content behind it:</p>
+
+<pre><code class="lang-css">.frosted-panel {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+}
+</code></pre>
+
+<p>To combine multiple filter functions, list them in the same declaration:</p>
+
+<pre><code class="lang-css">.frosted-panel-desaturated {
+    backdrop-filter: blur(10px) grayscale(50%);
+}
+</code></pre>
+
+<p>If multiple classes each define a <code>backdrop-filter</code> and you apply them to the same element, the filter applied last takes precedence over the earlier ones instead of combining the effects. For more information, refer to <a href="../UIE-uss-selector-precedence.html">Selector precedence</a>.</p>
+
+<h3>Apply backdrop filters in C# code</h3>
+
+<p>To apply backdrop filters to a visual element in C# code, create a list of <code>FilterFunction</code> objects and assign it to the visual element’s <code>style.backdropFilter</code> property. For example:</p>
+
+<pre><code class="lang-csharp">// Create a blur filter using the built-in blur filter function.
+var blur = new FilterFunction(FilterFunctionType.Blur);
+blur.AddParameter(new FilterParameter(10.0f));
+
+// Apply the blur to the area behind the element.
+element.style.backdropFilter = new List&lt;FilterFunction&gt; { blur };
+</code></pre>
+
+<p>To apply a custom filter, create the <code>FilterFunction</code> from a <a href="../../ScriptReference/UIElements.FilterFunctionDefinition.html"><code>FilterFunctionDefinition</code></a> asset and add the parameters that the filter expects:</p>
+
+<pre><code class="lang-csharp">// Create a filter function from a custom filter function definition.
+var swirl = new FilterFunction(functionDef);
+swirl.AddParameter(new FilterParameter(58.9f)); // Angle
+swirl.AddParameter(new FilterParameter(2.3f));  // Radius
+
+// Apply the swirl to the area behind the element.
+element.style.backdropFilter = new List&lt;FilterFunction&gt; { swirl };
+</code></pre>
+
+<h2>Limitations</h2>
+
+<p>The <code>backdrop-filter</code> property has the following limitations:</p>
+
+<ul>
+<li>URP is the only render pipeline that supports backdrop filters. In the Built-In Render Pipeline and HDRP, UI Toolkit ignores the property.</li>
+<li>A custom filter can’t sample content outside the element’s bounds. UI Toolkit captures only the area behind the element and clamps the result at its edges.</li>
+<li>Backdrop filters render only on panels that use screen-space rendering. They aren’t supported on world-space panels rendered by a camera.</li>
+<li>USS transitions aren’t supported for <code>backdrop-filter</code>.</li>
+</ul>
+
+<h2>Additional resources</h2>
+
+<ul>
+<li><a href="uss-filter.html">Apply post-processing effects with USS filter</a></li>
+<li><a href="built-in-filters.html">Apply common effects with built-in filters</a></li>
+<li><a href="custom-filters.html">Create and apply custom filters</a></li>
+<li><a href="create-custom-swirl-filter.html">Create a custom swirl filter</a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="../ui-systems/built-in-filters.html"></a></span><div class="tip">Apply common effects with built-in filters</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="../ui-systems/custom-filters.html"></a></span><div class="tip">Create and apply custom filters</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 79827756. Built on: 2026-11-13.</div>
+<div class="menu">
+<a href="https://learn.unity.com/">Tutorials</a><a href="https://answers.unity3d.com">Community Answers</a><a href="https://support.unity3d.com/hc/en-us">Knowledge Base</a><a href="https://forum.unity3d.com">Forums</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">Terms of use</a><a href="https://unity.com/legal">Legal</a><a href="https://unity.com/legal/privacy-policy">Privacy Policy</a><a href="https://unity.com/legal/cookie-policy">Cookies</a><a href="https://unity.com/legal/docs-terms">Documentation Terms of Use</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,663 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: 'en-us', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: ScriptableObject designs for content directories</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="author" content="Unity Technologies">
+<meta property="relative-path-to-manual" content="">
+<meta property="version-switcher-versions-with-this-page" content="Versions with this page:">
+<meta property="version-switcher-versions-without-this-page" content="Versions without this page:">
+<meta property="version-switcher-supported" content="Supported">
+<meta property="version-switcher-legacy" content="Legacy">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<link rel="canonical" href="https://docs.unity3d.com/6000.6/Documentation/Manual/content-directories-examples.html">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="/StaticFilesConfig/UnityVersionsInfo.js"></script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js?ts=20261113"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js?ts=20261113"></script><script type="text/javascript" src="../StaticFilesManual/js/image-comp.js?ts=20261113"></script><script type="text/javascript" src="docdata/toc.js?ts=20261113"></script><script type="text/javascript" src="docdata/global_toc.js?ts=20261113"></script><link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css?ts=20261113">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/icons.css?ts=20261113">
+<link rel="stylesheet" href="../StaticFilesManual/css/prism.css">
+<script src="../StaticFilesManual/js/prism.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><script src="../StaticFilesManual/js/jquery.sidebar.min.js"></script><link rel="stylesheet" href="../StaticFilesManual/css/mobileoptimisation.css">
+<script src="../StaticFilesManual/js/mobileoptimisation.js"></script>
+</head>
+<body>
+<div id="DocsAnalyticsData" data-area="none" data-pagetype="manual"></div>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity.com/">unity.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                                Version: <b>Unity 6.6</b> (6000.6)
+                                <div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+<ul id="OtherVersionsContentUl"></ul>
+<div id="otherVersionsLegend"><ul>
+<li>
+<div id="supportedColour" class="legendBox"></div>Supported</li>
+<li>
+<div id="notFoundColour" class="legendBox"></div>Legacy</li>
+</ul></div>
+</div>
+<div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+</div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/content-directories-examples.html">English</a></li>
+<li><a href="/cn/current/Manual/content-directories-examples.html">中文</a></li>
+<li><a href="/ja/current/Manual/content-directories-examples.html">日本語</a></li>
+<li><a href="/kr/current/Manual/content-directories-examples.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div>
+<div class="mobileLogo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc" id="customScrollbar">
+<h2>Unity Manual</h2>
+<div class="search-form sidebar-search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" id="mobileSearchBtn" class="submit" value="Search">
+</form></div>
+<div class="toggle version-number sidebar-version-switcher" id="VersionNumber" data-target=".otherversionscontent"><form id="otherVersionsContentMobileForm"><div class="ui-field-contain">
+<label for="select-native-4">Version: Unity 6.6</label><select name="select-native-4" id="versionsSelectMobile"><option>Select a different version</option>
+<optgroup id="versionsWithThisPageMobile" label="Versions with this page"></optgroup>
+<optgroup id="versionsWithoutThisPageMobile" label="Versions without this page"></optgroup></select>
+</div></form></div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/content-directories-examples.html">English</a></li>
+<li><a href="/cn/current/Manual/content-directories-examples.html">中文</a></li>
+<li><a href="/ja/current/Manual/content-directories-examples.html">日本語</a></li>
+<li><a href="/kr/current/Manual/content-directories-examples.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="assets-and-media.html">Assets and media</a></li>
+<li><a href="assets-managing-runtime.html">Managing assets at runtime</a></li>
+<li><a href="content-directories.html">Use content directories to load assets at runtime</a></li>
+<li>ScriptableObject designs for content directories</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="content-directories-references.html"></a></span><div class="tip">Reference content in a content directory</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="content-directories-scenes.html"></a></span><div class="tip">Include scenes in a content build</div>
+</div>
+</div></div>
+<div id="_leavefeedback"></div>
+<h1>ScriptableObject designs for content directories</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>A content directory build starts at the root assets you pass to <a href="../ScriptReference/BuildPipeline.BuildContentDirectory.html"><code>BuildPipeline.BuildContentDirectory</code></a> and follows every tracked reference it finds. You define the <code>ScriptableObject</code> types that hold those references, which determines how your code finds content at runtime, and how much of it Unity loads into memory when you register the content directory.</p>
+
+<p>The following are examples of ways that you can design <code>ScriptableObject</code> instances to suit your project. Each illustrates a design pattern rather than a finished implementation:</p>
+
+<ul>
+<li>
+<a href="#look-up-assets-by-key">Look up assets by key</a>: Map a string key to a loadable reference in a dictionary, which your code uses at runtime to work out which asset it needs.</li>
+<li>
+<a href="#track-additional-data">Track additional data</a>: Make the dictionary value a type of your own, so each entry holds extra data next to the reference. This approach is useful to get data about an asset without loading the asset.</li>
+<li>
+<a href="#track-assets-of-a-single-type">Track assets of a single type</a>: Reference the assets with a <code>Loadable&lt;T&gt;</code> instance rather than a <code>LoadableObjectId</code>. Use this design if you want a collection to hold only one kind of asset.</li>
+<li>
+<a href="#populate-entries-from-a-folder">Populate entries from a folder</a>: Organize entries into folders if your project has a large number of assets that you can’t maintain manually.</li>
+<li>
+<a href="#populate-a-root-asset-during-a-build">Populate a root asset during a build</a>: Create a temporary root asset in a build script, fill it from the project, then delete it after the build. Use this design if a rule automatically decides the content of a build, rather than a person manually choosing each entry.</li>
+<li>
+<a href="#keep-entries-in-step-with-a-folder">Keep entries in step with a folder</a>: Refill a list whenever the folder it tracks changes, so nobody has to remember to refresh it. Use this design if the list has to be correct at every moment.</li>
+<li>
+<a href="#match-the-design-to-your-game">Match the design to your game</a>: Nest <code>ScriptableObject</code> types that mirror the structure of your game, and choose a direct or a loadable reference for each field. This approach is useful if you want to control which content Unity loads immediately and which it loads on demand.</li>
+</ul>
+
+<p>In your own project, add the methods and data structures your code needs, and a custom Inspector where you want a different display than the one Unity generates. For more information, refer to <a href="script-serialization-dictionaries.html#customize-the-dictionary-display">Customize the dictionary display</a> and <a href="UIE-HowTo-CreateCustomInspector.html">Create a custom Inspector</a>.</p>
+
+<p>These examples use loadable references and direct references. For an explanation of the reference types and how Unity follows them, refer to <a href="content-directories-references.html">Reference content in a content directory</a>. For a walkthrough of defining a root asset, creating it, and running a build, refer to <a href="content-directories-create.html">Create content directories</a>.</p>
+
+<p><a id="look-up-assets-by-key" aria-hidden="true"></a></p>
+
+<h2>Look up assets by key</h2>
+
+<p>A root asset doesn’t have to hold a collection. When you know each asset as you author the project, give it a named field, in the way that the <a href="content-directories-create.html#create-a-scriptableobject-root-asset">content pack root asset</a> does. Use a dictionary when your code has to find an asset from a key it works out at runtime.</p>
+
+<p>A dictionary that maps a string to a loadable reference gives your code a lookup similar to what the <a href="LoadingResourcesatRuntime.html"><code>Resources</code> folder</a> provides for Player builds. Unity includes every asset the dictionary names in the content directory build, and loads each one only when your code asks for it.</p>
+
+<pre><code class="lang-cs">using System.Collections.Generic;
+using Unity.Loading;
+using UnityEngine;
+
+// Maps a key to any asset in the project. Use it as a root asset, or reference it from one,
+// to include every asset it lists in a content directory build.
+[CreateAssetMenu(fileName = &quot;AssetList&quot;, menuName = &quot;Content/Asset List&quot;)]
+public class AssetList : ScriptableObject
+{
+    [SerializeField]
+    [DictionaryDisplay(keyLabel = &quot;Key&quot;, valueLabel = &quot;Asset&quot;)]
+    Dictionary&lt;string, LoadableObjectId&gt; m_Assets = new();
+
+    // Constructs a Loadable of the requested type, or returns null when the key is missing,
+    // so that a caller can search several asset lists. A LoadableObjectId doesn't record the
+    // type of the object it points at, so the caller states the type it expects, or
+    // UnityEngine.Object to accept any Unity object.
+    public Loadable&lt;T&gt; Find&lt;T&gt;(string key) where T : UnityEngine.Object
+    {
+        if (m_Assets.TryGetValue(key, out var id))
+            // A new Loadable each time, so every caller gets its own reference.
+            return new Loadable&lt;T&gt;(id);
+
+        return null;
+    }
+}
+</code></pre>
+
+<p>The dictionary stores a <a href="../ScriptReference/Unity.Loading.LoadableObjectId.html"><code>LoadableObjectId</code></a> rather than a <a href="../ScriptReference/Unity.Loading.Loadable_1.html"><code>Loadable&lt;T&gt;</code></a>, so a caller can ask for the type it expects. To choose between the two for your own design, refer to <a href="content-directories-references.html#choose-a-reference-type">Determine which loadable reference type to use</a>.</p>
+
+<p>The following example looks up an entry when each asset list is a root asset:</p>
+
+<pre><code class="lang-cs">using Unity.Loading;
+using UnityEngine;
+
+// Loads a mesh that an AssetList root asset tracks, and releases it when this component is
+// destroyed.
+[RequireComponent(typeof(MeshFilter))]
+public class AssetListLookup : MonoBehaviour
+{
+    public string key;
+
+    // Not serialized, because the asset list supplies the Loadable at runtime.
+    Loadable&lt;Mesh&gt; m_Loadable;
+
+    void Start()
+    {
+        foreach (var list in ContentLoadManager.GetRootAssets&lt;AssetList&gt;())
+        {
+            var loadable = list.Find&lt;Mesh&gt;(key);
+            if (loadable == null)
+                continue;
+
+            m_Loadable = loadable;
+            GetComponent&lt;MeshFilter&gt;().sharedMesh = loadable.Load();
+            return;
+        }
+
+        Debug.LogError($&quot;No registered asset list has an entry for the key {key}&quot;);
+    }
+
+    void OnDestroy()
+    {
+        m_Loadable?.Release();
+    }
+}
+</code></pre>
+
+<p>The example retrieves the root assets using <a href="../ScriptReference/Unity.Loading.ContentLoadManager.GetRootAssets.html"><code>ContentLoadManager.GetRootAssets&lt;T&gt;</code></a>. It searches them in turn and stops at the first one that has the key, rather than assuming the array always has a single element. If your project only registers one asset list, you can index the array directly instead.</p>
+
+<p>The component holds the loadable reference in a field it doesn’t serialize, and releases it in <code>OnDestroy</code>. That ties the lifetime of the reference to the lifetime of the code that uses the asset, which is the pattern to follow whenever you load on demand.</p>
+
+<p>
+<code>GetRootAssets&lt;T&gt;</code> finds root assets only. This lookup therefore works when each asset list is itself a root asset of its content directory.</p>
+
+<p>If there are many asset lists, for example based on different kinds of content, avoid making them all root assets. Instead reference them from a single root asset per content directory, in a structure that fits your project. Unity follows the references from the root asset to each list, so every asset the lists reference is still part of the build. Retrieve that root asset and read the lists from it in the way that the <a href="#match-the-design-to-your-game">character roster</a> does.</p>
+
+<p><a id="track-additional-data" aria-hidden="true"></a></p>
+
+<h2>Track additional data</h2>
+
+<p>A key and a reference aren’t always enough when you reference assets in a collection. You might want to track additional data that your code can read without loading the asset, for example to filter by label or to record a loading priority. To store that data next to the reference, make the dictionary value a struct or class of your own, which can be any <a href="script-serialization-dictionaries.html#supported-types">type that Unity serializes</a>.</p>
+
+<pre><code class="lang-cs">using System;
+using System.Collections.Generic;
+using Unity.Loading;
+using UnityEngine;
+
+// One entry in a LabeledAssetList. Any serializable type works as a dictionary value, so an
+// entry can carry whatever data your project needs alongside the asset reference.
+[Serializable]
+public struct LabeledAsset
+{
+    public LoadableObjectId asset;
+    public List&lt;string&gt; labels;
+    public int priority;
+}
+
+[CreateAssetMenu(fileName = &quot;LabeledAssetList&quot;, menuName = &quot;Content/Labeled Asset List&quot;)]
+public class LabeledAssetList : ScriptableObject
+{
+    // An entry has fields of its own, so keep each one behind a foldout to stop a long list
+    // from filling the Inspector.
+    [SerializeField]
+    [DictionaryDisplay(layout = DictionaryLayout.OneColumnWithValueFoldout,
+        keyLabel = &quot;Key&quot;, valueLabel = &quot;Entry&quot;)]
+    Dictionary&lt;string, LabeledAsset&gt; m_Assets = new();
+
+    public Loadable&lt;T&gt; Find&lt;T&gt;(string key) where T : UnityEngine.Object
+    {
+        if (m_Assets.TryGetValue(key, out var entry))
+            return new Loadable&lt;T&gt;(entry.asset);
+
+        Debug.LogError($&quot;{name} has no asset with the key {key}&quot;);
+        return null;
+    }
+
+    public IEnumerable&lt;string&gt; FindKeysWithLabel(string label)
+    {
+        foreach (var entry in m_Assets)
+        {
+            if (entry.Value.labels != null &amp;&amp; entry.Value.labels.Contains(label))
+                yield return entry.Key;
+        }
+    }
+}
+</code></pre>
+
+<p>An alternative is to store the loadable reference and its extra data on individual <code>ScriptableObject</code> assets, and reference those from the dictionary. This suits data that’s large or structured, such as all the attributes of an item or a character in a game. For more information, refer to <a href="#match-the-design-to-your-game">Match the design to your game</a>.</p>
+
+<p><a id="track-assets-of-a-single-type" aria-hidden="true"></a></p>
+
+<h2>Track assets of a single type</h2>
+
+<p>When a list holds one kind of asset, state that in the type. The <strong>Inspector</strong> window then accepts only assets of that type, so Unity catches a wrong assignment while you edit rather than while your code runs.</p>
+
+<pre><code class="lang-cs">using System.Collections.Generic;
+using Unity.Loading;
+using UnityEngine;
+
+// Maps a name to an audio clip. The dictionary value is a Loadable&lt;AudioClip&gt; rather than a
+// LoadableObjectId, so the Inspector only accepts audio clips.
+[CreateAssetMenu(fileName = &quot;AudioLibrary&quot;, menuName = &quot;Content/Audio Library&quot;)]
+public class AudioLibrary : ScriptableObject
+{
+    [SerializeField]
+    [DictionaryDisplay(keyLabel = &quot;Name&quot;, valueLabel = &quot;Audio Clip&quot;)]
+    Dictionary&lt;string, Loadable&lt;AudioClip&gt;&gt; m_Clips = new();
+
+    public Loadable&lt;AudioClip&gt; Find(string clipName)
+    {
+        if (m_Clips.TryGetValue(clipName, out var clip))
+            // A new Loadable each time, so every caller gets its own reference.
+            return new Loadable&lt;AudioClip&gt;(clip.LoadableObjectId);
+
+        Debug.LogError($&quot;{name} has no clip called {clipName}&quot;);
+        return null;
+    }
+
+    public void Clear() =&gt; m_Clips.Clear();
+
+    // Refuses a name that is already in use, rather than replacing the entry, so that a
+    // caller can report the collision instead of losing a clip.
+    public bool Add(string clipName, Loadable&lt;AudioClip&gt; clip)
+    {
+        if (m_Clips.ContainsKey(clipName))
+            return false;
+
+        m_Clips[clipName] = clip;
+        return true;
+    }
+}
+</code></pre>
+
+<p>This example stores a <code>Loadable&lt;AudioClip&gt;</code> rather than a <code>LoadableObjectId</code>, so the <strong>Inspector</strong> window accepts only audio clips. <code>Find</code> builds a new <code>Loadable&lt;AudioClip&gt;</code> from the <code>LoadableObjectId</code> of the stored one, so each caller still gets its own reference. Return a new instance rather than the stored one, whichever of the two types you store.</p>
+
+<p><a id="populate-entries-from-a-folder" aria-hidden="true"></a></p>
+
+<h2>Populate entries from a folder</h2>
+
+<p>This section and the two that follow describe how to populate a list, so you can combine any of them with the designs above.</p>
+
+<p>Maintaining a list manually works for a small number of entries. To avoid manual maintenance work, you can organize entries into folders and then add a custom Inspector with a button that refills the list from the contents of the folder.</p>
+
+<pre><code class="lang-cs">using Unity.Loading;
+using UnityEditor;
+using UnityEditor.UIElements;
+using UnityEngine;
+using UnityEngine.UIElements;
+
+// Adds a button to the AudioLibrary Inspector that fills the library from a project folder.
+// The dictionary needs no UI code of its own, because Unity draws a serialized dictionary.
+[CustomEditor(typeof(AudioLibrary))]
+public class AudioLibraryEditor : Editor
+{
+    public override VisualElement CreateInspectorGUI()
+    {
+        var root = new VisualElement();
+        InspectorElement.FillDefaultInspector(root, serializedObject, this);
+        root.Add(new Button(PopulateFromFolder) { text = &quot;Populate from folder&quot; });
+        return root;
+    }
+
+    void PopulateFromFolder()
+    {
+        var library = (AudioLibrary)target;
+
+        var absoluteFolder = EditorUtility.OpenFolderPanel(&quot;Select a folder of audio clips&quot;, &quot;Assets&quot;, &quot;&quot;);
+        if (string.IsNullOrEmpty(absoluteFolder))
+            return;
+
+        // The folder panel returns an absolute path, but AssetDatabase needs a project relative one.
+        var folder = FileUtil.GetProjectRelativePath(absoluteFolder);
+        if (string.IsNullOrEmpty(folder))
+        {
+            Debug.LogError($&quot;{absoluteFolder} is not inside this project&quot;);
+            return;
+        }
+
+        // Replacing every entry discards whatever was there, so make it undoable.
+        Undo.RecordObject(library, &quot;Populate audio library from folder&quot;);
+
+        library.Clear();
+
+        // FindAssets searches subfolders, so two clips can arrive with the same name.
+        foreach (var guid in AssetDatabase.FindAssets(&quot;t:AudioClip&quot;, new[] { folder }))
+        {
+            var path = AssetDatabase.GUIDToAssetPath(guid);
+            var clip = AssetDatabase.LoadAssetAtPath&lt;AudioClip&gt;(path);
+            var id = LoadableObjectIdEditorUtility.CreateLoadableObjectId(clip);
+
+            if (!library.Add(clip.name, new Loadable&lt;AudioClip&gt;(id)))
+                Debug.LogWarning($&quot;{path} has the same name as an earlier clip, so it was skipped&quot;);
+        }
+
+        EditorUtility.SetDirty(library);
+    }
+}
+</code></pre>
+
+<p>The button calls <a href="../ScriptReference/AssetDatabase.FindAssets.html"><code>AssetDatabase.FindAssets</code></a> with a type filter, so only audio clips in the selected folder become entries. Because <code>FindAssets</code> searches subfolders, two clips can share a file name and collide on the same key, which will result in a warning message.</p>
+
+<p>The list reflects the folder as of the last time you selected the button. If someone adds an asset to the folder after that, the build excludes it until you refresh the list. If keeping a saved list in step with a folder becomes a burden, you can populate a root asset during the build, or keep the list in step automatically. The next two sections describe both approaches and their trade-offs.</p>
+
+<p><a id="populate-a-root-asset-during-a-build" aria-hidden="true"></a></p>
+
+<h2>Populate a root asset during a build</h2>
+
+<p>A build script can create a root asset, fill it from the project, run the build, then delete the asset. The script saves nothing in your project, so there’s no stored list that falls out of date, and the <code>ScriptableObject</code> still loads at runtime from the content directory like any other root asset.</p>
+
+<p>Use this approach when a rule decides the content of a build, such as every audio clip under a folder or every asset that carries a given label, rather than a person choosing each entry. The temporary asset must exist at a project path when you call <code>BuildPipeline.BuildContentDirectory</code>, because you pass its path in <a href="../ScriptReference/BuildContentDirectoryParameters-rootAssetPaths.html"><code>BuildContentDirectoryParameters.rootAssetPaths</code></a>.</p>
+
+<p>This approach has a downside. The root asset exists only for the duration of the build, so a project you run in Play mode must register a previously built content directory rather than reading the <code>ScriptableObject</code> from the project. If your builds are out of date or missing, you get unexpected results when you enter Play mode. After the build there’s also no asset left to inspect, which can make a content problem harder to reproduce and to debug. Prefer a root asset saved in your project unless a rule genuinely decides the content of the build.</p>
+
+<p>For a build script that creates and fills a temporary root asset, refer to <a href="build-script-build.html">Create a custom build script</a>.</p>
+
+<p><a id="keep-entries-in-step-with-a-folder" aria-hidden="true"></a></p>
+
+<h2>Keep entries in step with a folder</h2>
+
+<p>Each approach so far needs something to happen before the list is correct: somebody selects the button, or a build script runs. An <a href="../ScriptReference/AssetPostprocessor.html"><code>AssetPostprocessor</code></a> removes that step. It refills the list whenever the folder changes, so the saved asset is current in the Editor, in Play mode, and in a build, with nothing to remember.</p>
+
+<p>This design ties an asset to a folder, so save the asset in the folder whose clips it tracks. Its own path then decides the contents, and there’s no folder field that can go stale:</p>
+
+<pre><code class="lang-cs">using System.Collections.Generic;
+using Unity.Loading;
+using UnityEngine;
+
+// An audio library that Editor code keeps in step with the folder holding the asset. Save the
+// asset in the folder whose clips it tracks, because its own path is what decides the contents.
+[CreateAssetMenu(fileName = &quot;AutoAudioLibrary&quot;, menuName = &quot;Content/Auto Audio Library&quot;)]
+public class AutoAudioLibrary : ScriptableObject
+{
+    [SerializeField]
+    [DictionaryDisplay(keyLabel = &quot;Name&quot;, valueLabel = &quot;Audio Clip&quot;)]
+    Dictionary&lt;string, Loadable&lt;AudioClip&gt;&gt; m_Clips = new();
+
+    public Loadable&lt;AudioClip&gt; Find(string clipName)
+    {
+        if (m_Clips.TryGetValue(clipName, out var clip))
+            // A new Loadable each time, so every caller gets its own reference.
+            return new Loadable&lt;AudioClip&gt;(clip.LoadableObjectId);
+
+        Debug.LogError($&quot;{name} has no clip called {clipName}&quot;);
+        return null;
+    }
+
+    public void Clear() =&gt; m_Clips.Clear();
+
+    // Refuses a name that is already in use, rather than replacing the entry, so that a
+    // caller can report the collision instead of losing a clip.
+    public bool Add(string clipName, Loadable&lt;AudioClip&gt; clip)
+    {
+        if (m_Clips.ContainsKey(clipName))
+            return false;
+
+        m_Clips[clipName] = clip;
+        return true;
+    }
+}
+</code></pre>
+
+<p>The postprocessor finds every library in the project and refills the ones whose folder the import touched:</p>
+
+<pre><code class="lang-cs">using Unity.Loading;
+using UnityEditor;
+using UnityEngine;
+
+// Refills every AutoAudioLibrary whose folder gained, lost, or moved an audio clip, so a saved
+// library never falls behind the folder it sits in.
+public class AutoAudioLibraryWatcher : AssetPostprocessor
+{
+    static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets,
+        string[] movedAssets, string[] movedFromAssetPaths)
+    {
+        // Unity calls this after every import in the project, and FindAssets searches the whole
+        // project, so rule out a batch that holds no clip at all before paying for the search.
+        if (!HasClip(importedAssets) &amp;&amp; !HasClip(deletedAssets) &amp;&amp;
+            !HasClip(movedAssets) &amp;&amp; !HasClip(movedFromAssetPaths))
+            return;
+
+        foreach (var guid in AssetDatabase.FindAssets(&quot;t:AutoAudioLibrary&quot;))
+        {
+            var libraryPath = AssetDatabase.GUIDToAssetPath(guid);
+
+            // A library tracks the folder it lives in, so its own path defines the scope.
+            var folder = libraryPath.Substring(0, libraryPath.LastIndexOf('/'));
+
+            if (!HasClip(importedAssets, folder) &amp;&amp; !HasClip(deletedAssets, folder) &amp;&amp;
+                !HasClip(movedAssets, folder) &amp;&amp; !HasClip(movedFromAssetPaths, folder))
+                continue;
+
+            var library = AssetDatabase.LoadAssetAtPath&lt;AutoAudioLibrary&gt;(libraryPath);
+            Populate(library, folder);
+
+            // Saving reimports the library, so this method runs again with the library's own
+            // path in the batch. That path resolves to a library rather than a clip, so
+            // MightBeClip rules it out and the second run returns at the check above. Without
+            // that, saving here would loop.
+            AssetDatabase.SaveAssetIfDirty(library);
+        }
+    }
+
+    // No undo record here, unlike a button that a user selects: an import isn't a user action,
+    // and the folder is the authority on the contents either way.
+    static void Populate(AutoAudioLibrary library, string folder)
+    {
+        library.Clear();
+
+        // FindAssets searches subfolders, so two clips can arrive with the same name.
+        foreach (var guid in AssetDatabase.FindAssets(&quot;t:AudioClip&quot;, new[] { folder }))
+        {
+            var path = AssetDatabase.GUIDToAssetPath(guid);
+            var clip = AssetDatabase.LoadAssetAtPath&lt;AudioClip&gt;(path);
+            var id = LoadableObjectIdEditorUtility.CreateLoadableObjectId(clip);
+
+            if (!library.Add(clip.name, new Loadable&lt;AudioClip&gt;(id)))
+                Debug.LogWarning($&quot;{path} has the same name as an earlier clip, so it was skipped&quot;);
+        }
+
+        EditorUtility.SetDirty(library);
+    }
+
+    // Any possible clip in the batch, or in one folder when a folder is given.
+    static bool HasClip(string[] paths, string folder = null)
+    {
+        foreach (var path in paths)
+        {
+            if ((folder == null || path.StartsWith(folder + &quot;/&quot;)) &amp;&amp; MightBeClip(path))
+                return true;
+        }
+
+        return false;
+    }
+
+    // A deleted or moved-away path has no asset left to ask for a type, so treat a path that
+    // resolves to nothing as a possible clip. Ignoring it would miss deletions.
+    static bool MightBeClip(string path)
+    {
+        var type = AssetDatabase.GetMainAssetTypeAtPath(path);
+        return type == null || type == typeof(AudioClip);
+    }
+}
+</code></pre>
+
+<p>Unity calls <a href="../ScriptReference/AssetPostprocessor.OnPostprocessAllAssets.html"><code>OnPostprocessAllAssets</code></a> after each batch of imports finishes, and passes the paths it imported, deleted, and moved. It runs for every import in the project, so on a project with a very large number of assets prefer the button or the build script unless the list has to be correct at every moment.</p>
+
+<p><a id="match-the-design-to-your-game" aria-hidden="true"></a></p>
+
+<h2>Match the design to your game</h2>
+
+<p>A generic list keyed by a string is a good replacement for the <code>Resources</code> folder, but it’s not the only design a root asset can take, and it’s often not the best one. Unity follows tracked references wherever they lead, so you can nest <code>ScriptableObject</code> types that mirror the structure of your game and give each one the fields and keys that suit it.</p>
+
+<p>For example, a game with a fixed set of characters can give each character its own asset. Use an enum for the sounds a character makes, so that the compiler checks every lookup instead of a misspelled string failing at runtime, and the <strong>Inspector</strong> window offers the sounds as a dropdown:</p>
+
+<pre><code class="lang-cs">using System.Collections.Generic;
+using Unity.Loading;
+using UnityEngine;
+
+// The sounds one character can make. An enum key means the compiler checks every lookup,
+// unlike a string key, where a typo fails only at runtime.
+public enum CharacterSound
+{
+    Laugh,
+    Walk,
+    Run,
+    Yell,
+    Sneeze,
+}
+
+[CreateAssetMenu(fileName = &quot;CharacterSoundProfile&quot;, menuName = &quot;Content/Character Sound Profile&quot;)]
+public class CharacterSoundProfile : ScriptableObject
+{
+    [SerializeField]
+    [DictionaryDisplay(keyLabel = &quot;Sound&quot;, valueLabel = &quot;Audio Clip&quot;)]
+    Dictionary&lt;CharacterSound, Loadable&lt;AudioClip&gt;&gt; m_Sounds = new();
+
+    public Loadable&lt;AudioClip&gt; Find(CharacterSound sound)
+    {
+        if (m_Sounds.TryGetValue(sound, out var clip))
+            return new Loadable&lt;AudioClip&gt;(clip.LoadableObjectId);
+
+        Debug.LogError($&quot;{name} has no clip for {sound}&quot;);
+        return null;
+    }
+}
+</code></pre>
+
+<p>Each character mixes its own game attributes with references to the assets it needs. The model is a loadable reference, and the sound profile is a direct reference:</p>
+
+<pre><code class="lang-cs">using Unity.Loading;
+using UnityEngine;
+
+[CreateAssetMenu(fileName = &quot;Character&quot;, menuName = &quot;Content/Character&quot;)]
+public class Character : ScriptableObject
+{
+    public string displayName;
+    public int strength;
+    public float speed;
+
+    // Loadable reference, so it stays unloaded until something asks for it.
+    public Loadable&lt;GameObject&gt; model;
+
+    // CharacterSoundProfile holds only loadable references of its own, so it is
+    // lightweight enough for a direct reference.
+    public CharacterSoundProfile sounds;
+}
+</code></pre>
+
+<p>Neither of these types is a root asset. The root asset is the list of characters:</p>
+
+<pre><code class="lang-cs">using System.Collections.Generic;
+using Unity.Loading;
+using UnityEngine;
+
+[CreateAssetMenu(fileName = &quot;CharacterRoster&quot;, menuName = &quot;Content/Character Roster&quot;)]
+public class CharacterRoster : ScriptableObject
+{
+    // Tracks all the characters to include in the build. Direct references, because
+    // Character is lightweight, so loading every one when the content directory is
+    // registered costs little.
+    public List&lt;Character&gt; characters = new();
+
+    public static CharacterRoster Get() =&gt; ContentLoadManager.GetRootAssets&lt;CharacterRoster&gt;()[0];
+
+    public Character Find(string displayName) =&gt;
+        characters.Find(character =&gt; character.displayName == displayName);
+}
+</code></pre>
+
+<p>When you register this content directory, Unity loads the roster, every character, and every sound profile, because a direct reference loads with the object that holds it. These are small serialized objects, so your code can read every character’s name and inspect its sound profile without loading a model or an audio clip. The models and the clips stay unloaded behind their loadable references until something asks for them.</p>
+
+<p>In a hierarchy of game-specific <code>ScriptableObject</code> types, you decide what loads immediately and what loads on demand by choosing a direct or a loadable reference for each field. A <code>ScriptableObject</code> is an asset like any other, so a nested one can sit behind a loadable reference too. Use a direct reference for the small metadata you want available as soon as you register the content directory, and a loadable reference for anything you’d rather load on demand. For more information, refer to <a href="content-directories-create.html#root-asset-overview">Root asset overview</a>.</p>
+
+<h2>Additional resources</h2>
+
+<ul>
+<li><a href="content-directories-create.html">Create content directories</a></li>
+<li><a href="content-directories-references.html">Reference content in a content directory</a></li>
+<li><a href="content-directories-load.html">Load content directories</a></li>
+<li><a href="script-serialization-dictionaries.html">Dictionary serialization</a></li>
+<li><a href="../ScriptReference/Unity.Loading.Loadable_1.html"><code>Loadable&lt;T&gt;</code> API reference</a></li>
+<li><a href="../ScriptReference/Unity.Loading.LoadableObjectId.html"><code>LoadableObjectId</code> API reference</a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="content-directories-references.html"></a></span><div class="tip">Reference content in a content directory</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="content-directories-scenes.html"></a></span><div class="tip">Include scenes in a content build</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 79827756. Built on: 2026-11-13.</div>
+<div class="menu">
+<a href="https://learn.unity.com/">Tutorials</a><a href="https://answers.unity3d.com">Community Answers</a><a href="https://support.unity3d.com/hc/en-us">Knowledge Base</a><a href="https://forum.unity3d.com">Forums</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">Terms of use</a><a href="https://unity.com/legal">Legal</a><a href="https://unity.com/legal/privacy-policy">Privacy Policy</a><a href="https://unity.com/legal/cookie-policy">Cookies</a><a href="https://unity.com/legal/docs-terms">Documentation Terms of Use</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

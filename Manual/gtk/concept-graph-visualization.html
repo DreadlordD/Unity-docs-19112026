@@ -1,0 +1,206 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: 'en-us', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Introduction to graph visualization</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="author" content="Unity Technologies">
+<meta property="relative-path-to-manual" content="../">
+<meta property="version-switcher-versions-with-this-page" content="Versions with this page:">
+<meta property="version-switcher-versions-without-this-page" content="Versions without this page:">
+<meta property="version-switcher-supported" content="Supported">
+<meta property="version-switcher-legacy" content="Legacy">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<link rel="canonical" href="https://docs.unity3d.com/6000.6/Documentation/Manual/gtk/concept-graph-visualization.html">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="/StaticFilesConfig/UnityVersionsInfo.js"></script><script type="text/javascript" src="../../StaticFilesManual/js/jquery.js?ts=20261113"></script><script type="text/javascript" src="../../StaticFilesManual/js/core.js?ts=20261113"></script><script type="text/javascript" src="../../StaticFilesManual/js/image-comp.js?ts=20261113"></script><script type="text/javascript" src="../docdata/toc.js?ts=20261113"></script><script type="text/javascript" src="../docdata/global_toc.js?ts=20261113"></script><link rel="stylesheet" type="text/css" href="../../StaticFilesManual/css/core.css?ts=20261113">
+<link rel="stylesheet" type="text/css" href="../../StaticFilesManual/css/icons.css?ts=20261113">
+<link rel="stylesheet" href="../../StaticFilesManual/css/prism.css">
+<script src="../../StaticFilesManual/js/prism.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><script src="../../StaticFilesManual/js/jquery.sidebar.min.js"></script><link rel="stylesheet" href="../../StaticFilesManual/css/mobileoptimisation.css">
+<script src="../../StaticFilesManual/js/mobileoptimisation.js"></script>
+</head>
+<body>
+<div id="DocsAnalyticsData" data-area="none" data-pagetype="manual"></div>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="../30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="../index.html" class="selected">Manual</a></li>
+<li><a href="../../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity.com/">unity.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                                Version: <b>Unity 6.6</b> (6000.6)
+                                <div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+<ul id="OtherVersionsContentUl"></ul>
+<div id="otherVersionsLegend"><ul>
+<li>
+<div id="supportedColour" class="legendBox"></div>Supported</li>
+<li>
+<div id="notFoundColour" class="legendBox"></div>Legacy</li>
+</ul></div>
+</div>
+<div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+</div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/gtk/concept-graph-visualization.html">English</a></li>
+<li><a href="/cn/current/Manual/gtk/concept-graph-visualization.html">中文</a></li>
+<li><a href="/ja/current/Manual/gtk/concept-graph-visualization.html">日本語</a></li>
+<li><a href="/kr/current/Manual/gtk/concept-graph-visualization.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div>
+<div class="mobileLogo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc" id="customScrollbar">
+<h2>Unity Manual</h2>
+<div class="search-form sidebar-search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" id="mobileSearchBtn" class="submit" value="Search">
+</form></div>
+<div class="toggle version-number sidebar-version-switcher" id="VersionNumber" data-target=".otherversionscontent"><form id="otherVersionsContentMobileForm"><div class="ui-field-contain">
+<label for="select-native-4">Version: Unity 6.6</label><select name="select-native-4" id="versionsSelectMobile"><option>Select a different version</option>
+<optgroup id="versionsWithThisPageMobile" label="Versions with this page"></optgroup>
+<optgroup id="versionsWithoutThisPageMobile" label="Versions without this page"></optgroup></select>
+</div></form></div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/gtk/concept-graph-visualization.html">English</a></li>
+<li><a href="/cn/current/Manual/gtk/concept-graph-visualization.html">中文</a></li>
+<li><a href="/ja/current/Manual/gtk/concept-graph-visualization.html">日本語</a></li>
+<li><a href="/kr/current/Manual/gtk/concept-graph-visualization.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="../extending-the-editor.html">Extending the Unity Editor</a></li>
+<li><a href="../gtk/gtk-index.html">Extending the Editor with Graph Toolkit</a></li>
+<li><a href="../gtk/landing-implementing-debug-graph-view.html">Implementing a debug graph view</a></li>
+<li>Introduction to graph visualization</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="../gtk/landing-implementing-debug-graph-view.html"></a></span><div class="tip">Implementing a debug graph view</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="../gtk/task-display-port-values.html"></a></span><div class="tip">Display port values</div>
+</div>
+</div></div>
+<div id="_leavefeedback"></div>
+<h1>Introduction to graph visualization</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Understand how visualization contexts display visual feedback, such as node progress, on a graph.</p>
+
+<p>Graph visualization displays visual progress indicators on the graph canvas at runtime. Use it to show which node your tool is evaluating and how far that node has progressed.</p>
+
+<p>A visualization context owns these indicators. You create a context for a graph, apply the indicators through references to individual nodes, and release the context when the run is complete. Because the context owns everything it applies, you can remove all the feedback at once rather than track each change.</p>
+
+<p>This page covers the concepts behind graph visualization only. For information on how to display progress on a node, refer to <a href="task-display-node-progress.html">Display progress bars on nodes</a>.</p>
+
+<h2>Visualization contexts</h2>
+
+<p>A visualization context is the entry point for graph visualization. To create one, call <code>Registry.CreateVisualizationContext</code> with the identifier of the graph you want to annotate, which is available from <code>Graph.ID</code>.</p>
+
+<p>For a node inside a nested graph, pass the identifier of the root graph rather than that of the nested graph.</p>
+
+<p>A context doesn’t modify the graph. It holds a separate layer of visual data that Unity draws over the graph canvas, so nothing you apply through a context saves to the graph asset.</p>
+
+<p>You can create a context before the <strong>Graph</strong> window opens. The context stores the values you set and applies them when a graph canvas becomes available.</p>
+
+<h2>Node references</h2>
+
+<p>A context doesn’t expose nodes directly. Instead, call <code>Context.GetNodeReference</code> with a node identifier, available from <code>INode.ID</code>, to get a <code>NodeReference</code> for that node. Use the reference to set, read, and clear the feedback on that node.</p>
+
+<p>A <code>NodeReference</code> is only meaningful to the context that produced it. If the identifier no longer matches a node in the graph, for example because the user deleted the node, Unity discards the stored visual data and ignores the call instead of throwing an exception.</p>
+
+<h2>The context lifecycle</h2>
+
+<p>A context implements <code>IDisposable</code> and keeps its visual data until you release it. When you dispose of a context, Unity removes every visual that the context applied to the graph.</p>
+
+<p>To reset the feedback between runs and keep the context, call <code>Context.ClearAllVisualization</code> instead. This removes the visual data but leaves the context valid so you can set new values.</p>
+
+<p>When you enter or exit Play mode, Unity releases every visualization context for every graph. Create your contexts after the mode change, and don’t reuse a context from before it.</p>
+
+<p>To hide the node feedback but not discard it, set <code>Context.NodeCustomizationEnabled</code> to <code>false</code>. Unity preserves the values you applied and restores them when you set the property back to <code>true</code>.</p>
+
+<h2>Ways to set the progress fill</h2>
+
+<p>There are two ways to set the progress fill on a node, and they differ in which object owns the value:</p>
+
+<ul>
+<li>
+<code>Node.FillAmount</code> sets the fill directly on the node. This is the shorter option when you already have the node and you don’t need a visualization context.</li>
+<li>
+<code>NodeReference.FillAmount</code> sets the fill through a context. The context owns the value, which means you can clear it along with all other feedback or hide all of it at once.</li>
+</ul>
+
+<p>Unity doesn’t save either property to the graph asset. For feedback that represents a run in progress, prefer a context, because when you dispose of the context, the graph returns to its default appearance.</p>
+
+<p>
+<strong>Note</strong>: The <code>INode</code> interface also declares a <code>FillAmount</code> property, but it throws a <code>NotSupportedException</code>. Use <code>Node.FillAmount</code> or <code>NodeReference.FillAmount</code> instead.</p>
+
+<h2>Additional resources</h2>
+
+<ul>
+<li><a href="../../ScriptReference/Unity.GraphToolkit.Editor.GraphVisualization.Registry.CreateVisualizationContext.html">CreateVisualizationContext API reference</a></li>
+<li><a href="../../ScriptReference/Unity.GraphToolkit.Editor.GraphVisualization.Context.html">Context API reference</a></li>
+<li><a href="../../ScriptReference/Unity.GraphToolkit.Editor.GraphVisualization.NodeReference.html">NodeReference API reference</a></li>
+<li><a href="task-display-node-progress.html">Display progress bars on nodes</a></li>
+<li><a href="node-introduction.html">Introduction to nodes</a></li>
+<li><a href="implement-a-graph-tool.html">Implement a graph tool</a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="../gtk/landing-implementing-debug-graph-view.html"></a></span><div class="tip">Implementing a debug graph view</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="../gtk/task-display-port-values.html"></a></span><div class="tip">Display port values</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 79827756. Built on: 2026-11-13.</div>
+<div class="menu">
+<a href="https://learn.unity.com/">Tutorials</a><a href="https://answers.unity3d.com">Community Answers</a><a href="https://support.unity3d.com/hc/en-us">Knowledge Base</a><a href="https://forum.unity3d.com">Forums</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">Terms of use</a><a href="https://unity.com/legal">Legal</a><a href="https://unity.com/legal/privacy-policy">Privacy Policy</a><a href="https://unity.com/legal/cookie-policy">Cookies</a><a href="https://unity.com/legal/docs-terms">Documentation Terms of Use</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

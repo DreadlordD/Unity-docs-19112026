@@ -1,0 +1,426 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: 'en-us', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Add labels and buttons to Hierarchy rows</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="author" content="Unity Technologies">
+<meta property="relative-path-to-manual" content="">
+<meta property="version-switcher-versions-with-this-page" content="Versions with this page:">
+<meta property="version-switcher-versions-without-this-page" content="Versions without this page:">
+<meta property="version-switcher-supported" content="Supported">
+<meta property="version-switcher-legacy" content="Legacy">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<link rel="canonical" href="https://docs.unity3d.com/6000.6/Documentation/Manual/hierarchy-add-row-elements.html">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="/StaticFilesConfig/UnityVersionsInfo.js"></script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js?ts=20261113"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js?ts=20261113"></script><script type="text/javascript" src="../StaticFilesManual/js/image-comp.js?ts=20261113"></script><script type="text/javascript" src="docdata/toc.js?ts=20261113"></script><script type="text/javascript" src="docdata/global_toc.js?ts=20261113"></script><link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css?ts=20261113">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/icons.css?ts=20261113">
+<link rel="stylesheet" href="../StaticFilesManual/css/prism.css">
+<script src="../StaticFilesManual/js/prism.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><script src="../StaticFilesManual/js/jquery.sidebar.min.js"></script><link rel="stylesheet" href="../StaticFilesManual/css/mobileoptimisation.css">
+<script src="../StaticFilesManual/js/mobileoptimisation.js"></script>
+</head>
+<body>
+<div id="DocsAnalyticsData" data-area="none" data-pagetype="manual"></div>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity.com/">unity.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                                Version: <b>Unity 6.6</b> (6000.6)
+                                <div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+<ul id="OtherVersionsContentUl"></ul>
+<div id="otherVersionsLegend"><ul>
+<li>
+<div id="supportedColour" class="legendBox"></div>Supported</li>
+<li>
+<div id="notFoundColour" class="legendBox"></div>Legacy</li>
+</ul></div>
+</div>
+<div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+</div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/hierarchy-add-row-elements.html">English</a></li>
+<li><a href="/cn/current/Manual/hierarchy-add-row-elements.html">中文</a></li>
+<li><a href="/ja/current/Manual/hierarchy-add-row-elements.html">日本語</a></li>
+<li><a href="/kr/current/Manual/hierarchy-add-row-elements.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div>
+<div class="mobileLogo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc" id="customScrollbar">
+<h2>Unity Manual</h2>
+<div class="search-form sidebar-search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" id="mobileSearchBtn" class="submit" value="Search">
+</form></div>
+<div class="toggle version-number sidebar-version-switcher" id="VersionNumber" data-target=".otherversionscontent"><form id="otherVersionsContentMobileForm"><div class="ui-field-contain">
+<label for="select-native-4">Version: Unity 6.6</label><select name="select-native-4" id="versionsSelectMobile"><option>Select a different version</option>
+<optgroup id="versionsWithThisPageMobile" label="Versions with this page"></optgroup>
+<optgroup id="versionsWithoutThisPageMobile" label="Versions without this page"></optgroup></select>
+</div></form></div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/hierarchy-add-row-elements.html">English</a></li>
+<li><a href="/cn/current/Manual/hierarchy-add-row-elements.html">中文</a></li>
+<li><a href="/ja/current/Manual/hierarchy-add-row-elements.html">日本語</a></li>
+<li><a href="/kr/current/Manual/hierarchy-add-row-elements.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="extending-the-editor.html">Extending the Unity Editor</a></li>
+<li><a href="hierarchy-extend-lp.html">Extending the Hierarchy window</a></li>
+<li>Add labels and buttons to Hierarchy rows</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="hierarchy-highlight-rows.html"></a></span><div class="tip">Highlight GameObjects in the Hierarchy window</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="hierarchy-custom-tooltips.html"></a></span><div class="tip">Display custom tooltips in the Hierarchy window</div>
+</div>
+</div></div>
+<div id="_leavefeedback"></div>
+<h1>Add labels and buttons to Hierarchy rows</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Add your own elements to the rows of the <strong>Hierarchy</strong> window to display information at a glance or to run an action on a specific item. For example, you can display how many child GameObjects a collapsed GameObject has, or add a button that locates the prefab asset of a prefab instance in the <strong>Project</strong> window.</p>
+
+<p>Each row has containers that you can add <span class="tooltip" tabindex="0" ><a href="UIE-VisualTree.html">visual elements</a><span class="tooltiptext">A node of a visual tree that instantiates or derives from the C# <a href="../ScriptReference/UIElements.VisualElement.html"><code>VisualElement</code></a> class. You can style the look, define the behaviour, and display it on screen as part of the UI. <a class="tooltipMoreInfoLink" aria-label="Navigate to more info about UIE-VisualTree.html" href="UIE-VisualTree.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#visualelement" aria-label="Go to glossary anchor for visualelement">Glossary</a></span></span></span> to. <a href="../ScriptReference/Unity.Hierarchy.HierarchyViewItem-LeftCustomContainer.html"><code>LeftCustomContainer</code></a> is next to the name of the item, and <a href="../ScriptReference/Unity.Hierarchy.HierarchyViewItem-RightCustomContainer.html"><code>RightCustomContainer</code></a> is at the end of the row. To change the style of a row instead, refer to <a href="hierarchy-highlight-rows.html">Highlight GameObjects in the Hierarchy window</a>.</p>
+
+<h2>Prerequisites</h2>
+
+<p>Before you begin, complete the following steps:</p>
+
+<ul>
+<li>Disable the <a href="class-EditorManager.html#hierarchy"><strong>Use Legacy Hierarchy</strong></a> setting, if you enabled it. For more information, refer to <a href="configure-hierarchy-window.html#switch-to-the-legacy-hierarchy-window">Switch to the legacy Hierarchy window</a>.</li>
+<li>In the <strong>Project</strong> window, create the <code>Assets/Editor/HierarchyExtensions</code> folder. The scripts on this page load their style sheets from this folder.</li>
+</ul>
+
+<h2>Display the child count of an item</h2>
+
+<p>The following script adds a label next to the name of each item that has child items. The label displays the number of direct child items.</p>
+
+<p>To display the number of child items of each item:</p>
+
+<ol>
+<li><p>In the <code>Assets/Editor/HierarchyExtensions</code> folder, right-click and select <strong>Create</strong> &gt; <strong>Scripting</strong> &gt; <strong>Empty C# Script</strong>.</p></li>
+<li><p>Name the script <code>ChildCount.cs</code>.</p></li>
+<li>
+<p>Open the script and replace its contents with the following code:</p>
+
+<pre><code class="lang-cs">using Unity.Hierarchy;
+using Unity.Hierarchy.Editor;
+using UnityEditor;
+using UnityEngine.UIElements;
+
+public static class ChildCount
+{
+    const string k_ChildCountUssClassName = &quot;hierarchy-child-count&quot;;
+
+    [InitializeOnLoadMethod]
+    static void Initialize()
+    {
+        HierarchyWindow.BindViewItem += OnBindViewItem;
+    }
+
+    static void OnBindViewItem(HierarchyWindow window, HierarchyView view, HierarchyViewItem item)
+    {
+        int childCount = view.ViewModel.GetChildrenCount(item.Node);
+
+        // Rows are reused, so check whether this row already has a label from an earlier bind.
+        Label label = item.LeftCustomContainer.Q&lt;Label&gt;(className: k_ChildCountUssClassName);
+
+        if (childCount &gt; 0)
+        {
+            if (label == null)
+            {
+                label = new Label();
+                label.AddToClassList(k_ChildCountUssClassName);
+                item.LeftCustomContainer.Add(label);
+            }
+
+            label.text = $&quot;[{childCount}]&quot;;
+            label.style.display = DisplayStyle.Flex;
+        }
+        else if (label != null)
+        {
+            // Hide the label so that a reused row doesn't display the count of another item.
+            label.style.display = DisplayStyle.None;
+        }
+    }
+}
+</code></pre>
+
+<p>The script contains the following parts:</p>
+
+<ul>
+<li>The view model, represented by the <a href="../ScriptReference/Unity.Hierarchy.HierarchyViewModel.html"><code>HierarchyViewModel</code></a> class, contains the state of each node in the view. <a href="../ScriptReference/Unity.Hierarchy.HierarchyViewModel.GetChildrenCount.html"><code>GetChildrenCount</code></a> returns the number of direct child nodes of a node.</li>
+<li>The <strong>Hierarchy</strong> window reuses rows, so a row can already have a label from an item it displayed before. The script queries <code>LeftCustomContainer</code> for the label and creates one only if the row doesn’t have one.</li>
+<li>If the item has no child items, the script hides the label instead of removing it, so the row can reuse the label later.</li>
+</ul>
+</li>
+<li><p>Save the script.</p></li>
+</ol>
+
+<p>Each item that has child items displays the number of its child items in square brackets after its name.</p>
+
+<figure>
+<img src="../uploads/Main/hierarchy-child-count-all.png" alt="The Hierarchy window with the number of child items in square brackets after the names of the scene and the Enemies, Environment, and Crate GameObjects.">
+<figcaption>The Hierarchy window with the number of child items in square brackets after the names of the scene and the Enemies, Environment, and Crate GameObjects.</figcaption>
+</figure>
+
+<h2>Display the count only for collapsed items</h2>
+
+<p>When an item is expanded, the <strong>Hierarchy</strong> window already displays its child items, so the count isn’t as useful. The view model stores the state of each node as flags, represented by the <a href="../ScriptReference/Unity.Hierarchy.HierarchyNodeFlags.html"><code>HierarchyNodeFlags</code></a> enum. For example, a node that’s expanded has the <code>Expanded</code> flag.</p>
+
+<p>To display the count only for collapsed items:</p>
+
+<ol>
+<li>
+<p>Replace the contents of <code>ChildCount.cs</code> with the following code:</p>
+
+<pre><code class="lang-cs">using Unity.Hierarchy;
+using Unity.Hierarchy.Editor;
+using UnityEditor;
+using UnityEngine.UIElements;
+
+public static class ChildCount
+{
+    const string k_ChildCountUssClassName = &quot;hierarchy-child-count&quot;;
+
+    [InitializeOnLoadMethod]
+    static void Initialize()
+    {
+        HierarchyWindow.BindViewItem += OnBindViewItem;
+    }
+
+    static void OnBindViewItem(HierarchyWindow window, HierarchyView view, HierarchyViewItem item)
+    {
+        HierarchyNode node = item.Node;
+        int childCount = view.ViewModel.GetChildrenCount(node);
+        Label label = item.LeftCustomContainer.Q&lt;Label&gt;(className: k_ChildCountUssClassName);
+
+        // Display the count only when the item has children and is collapsed.
+        bool isCollapsed = view.ViewModel.DoesNotHaveFlags(node, HierarchyNodeFlags.Expanded);
+
+        if (childCount &gt; 0 &amp;&amp; isCollapsed)
+        {
+            if (label == null)
+            {
+                label = new Label();
+                label.AddToClassList(k_ChildCountUssClassName);
+                item.LeftCustomContainer.Add(label);
+            }
+
+            label.text = $&quot;[{childCount}]&quot;;
+            label.style.display = DisplayStyle.Flex;
+        }
+        else if (label != null)
+        {
+            label.style.display = DisplayStyle.None;
+        }
+    }
+}
+</code></pre>
+
+<p>
+<a href="../ScriptReference/Unity.Hierarchy.HierarchyViewModel.DoesNotHaveFlags.html"><code>DoesNotHaveFlags</code></a> returns <code>true</code> if the node doesn’t have the <code>Expanded</code> flag. When you expand or collapse an item, the Unity Editor unbinds and binds the visible rows again, so <code>BindViewItem</code> runs again and the label updates.</p>
+</li>
+<li><p>Save the script.</p></li>
+<li><p>In the <strong>Hierarchy</strong> window, expand and collapse an item that has child items.</p></li>
+</ol>
+
+<p>The count appears when you collapse the item and disappears when you expand it.</p>
+
+<figure>
+<img src="../uploads/Main/hierarchy-child-count-collapsed.png" alt="The Hierarchy window with child counts only on the collapsed Environment and Crate GameObjects.">
+<figcaption>The Hierarchy window with child counts only on the collapsed Environment and Crate GameObjects.</figcaption>
+</figure>
+
+<h2>Add a button that locates a prefab asset</h2>
+
+<p>You can add interactive elements, such as buttons, to a row. The following script adds a button to each GameObject in a prefab instance. When you select the button, the Editor highlights the prefab asset in the <strong>Project</strong> window.</p>
+
+<p>To add a button to the GameObjects in prefab instances:</p>
+
+<ol>
+<li><p>In the <code>Assets/Editor/HierarchyExtensions</code> folder, right-click and select <strong>Create</strong> &gt; <strong>UI Toolkit</strong> &gt; <strong>Style Sheet (USS)</strong>.</p></li>
+<li><p>Name the style sheet <code>PrefabPingButton.uss</code>.</p></li>
+<li>
+<p>Open the style sheet and replace its contents with the following code:</p>
+
+<pre><code class="lang-css">.prefab-ping-button {
+    width: 16px;
+    height: 16px;
+    font-size: 8px;
+    padding-bottom: 4px;
+    margin-left: 2px;
+    margin-right: 2px;
+    -unity-text-align: middle-center;
+}
+</code></pre>
+</li>
+<li><p>In the same folder, right-click and select <strong>Create</strong> &gt; <strong>Scripting</strong> &gt; <strong>Empty C# Script</strong>.</p></li>
+<li><p>Name the script <code>PrefabPingButton.cs</code>.</p></li>
+<li>
+<p>Open the script and replace its contents with the following code:</p>
+
+<pre><code class="lang-cs">using Unity.Hierarchy;
+using Unity.Hierarchy.Editor;
+using UnityEditor;
+using UnityEngine;
+using UnityEngine.UIElements;
+
+public static class PrefabPingButton
+{
+    const string k_StyleSheetPath = &quot;Assets/Editor/HierarchyExtensions/PrefabPingButton.uss&quot;;
+    const string k_PingButtonUssClassName = &quot;prefab-ping-button&quot;;
+
+    [InitializeOnLoadMethod]
+    static void Initialize()
+    {
+        HierarchyWindow.BindView += OnBindView;
+        HierarchyWindow.BindViewItem += OnBindViewItem;
+        HierarchyWindow.UnbindViewItem += OnUnbindViewItem;
+    }
+
+    static void OnBindView(HierarchyWindow window, HierarchyView view)
+    {
+        StyleSheet styleSheet = AssetDatabase.LoadAssetAtPath&lt;StyleSheet&gt;(k_StyleSheetPath);
+        view.styleSheets.Add(styleSheet);
+    }
+
+    static void OnBindViewItem(HierarchyWindow window, HierarchyView view, HierarchyViewItem item)
+    {
+        if (item.Handler is not HierarchyGameObjectHandler handler)
+        {
+            return;
+        }
+
+        GameObject gameObject = handler.GetGameObject(item.Node);
+        if (gameObject == null || !PrefabUtility.IsPartOfPrefabInstance(gameObject))
+        {
+            return;
+        }
+
+        // Find the prefab asset of the outermost prefab instance.
+        GameObject prefabRoot = PrefabUtility.GetOutermostPrefabInstanceRoot(gameObject);
+        GameObject prefabAsset = PrefabUtility.GetCorrespondingObjectFromSource(prefabRoot);
+        if (prefabAsset == null)
+        {
+            return;
+        }
+
+        // Highlight the prefab asset in the Project window when you select the button.
+        Button pingButton = new Button(() =&gt; EditorGUIUtility.PingObject(prefabAsset))
+        {
+            text = &quot;▶&quot;,
+            tooltip = &quot;Ping Prefab Asset in Project Window&quot;
+        };
+        pingButton.AddToClassList(k_PingButtonUssClassName);
+        item.RightCustomContainer.Add(pingButton);
+    }
+
+    // Runs when a row stops displaying an item, before the Hierarchy window reuses the row.
+    static void OnUnbindViewItem(HierarchyWindow window, HierarchyView view, HierarchyViewItem item)
+    {
+        item.RightCustomContainer.Query&lt;Button&gt;(className: k_PingButtonUssClassName)
+            .ForEach(button =&gt; button.RemoveFromHierarchy());
+    }
+}
+</code></pre>
+
+<p>The script contains the following parts:</p>
+
+<ul>
+<li>
+<code>OnBindViewItem</code> uses <a href="../ScriptReference/PrefabUtility.html"><code>PrefabUtility</code></a> to find the prefab asset of the outermost prefab instance, then adds a button to <code>RightCustomContainer</code>. The button calls <a href="../ScriptReference/EditorGUIUtility.PingObject.html"><code>EditorGUIUtility.PingObject</code></a> to highlight the asset.</li>
+<li>
+<code>OnUnbindViewItem</code> runs when the row stops displaying the item. It removes the button, so the button doesn’t appear on the next item that the row displays.</li>
+</ul>
+
+<p>This script creates the button each time the row displays an item, and removes it in <code>UnbindViewItem</code>. <code>ChildCount.cs</code> uses a different approach: it creates its label the first time a row needs it, then keeps the label and only updates or hides it. Creating and removing elements is simpler, because every row starts empty. Keeping and reusing elements creates fewer new elements, which helps because the <strong>Hierarchy</strong> window binds rows often. For example, it binds every visible row again each time you expand or collapse an item.</p>
+</li>
+<li><p>Save the script.</p></li>
+<li><p>Select the button on a prefab instance in the <strong>Hierarchy</strong> window.</p></li>
+</ol>
+
+<p>The <strong>Project</strong> window displays the prefab asset and highlights it.</p>
+
+<figure>
+<img src="../uploads/Main/hierarchy-prefab-ping-button.png" alt="The Hierarchy window with a button at the end of the rows of the Crate prefab instance and its Lid child GameObject.">
+<figcaption>The Hierarchy window with a button at the end of the rows of the Crate prefab instance and its Lid child GameObject.</figcaption>
+</figure>
+
+<p>
+<strong>Note</strong>: The button is hidden if the <strong>Hierarchy</strong> window is too narrow. If you don’t see the button, widen the <strong>Hierarchy</strong> window. </p>
+
+<h2>Additional resources</h2>
+
+<ul>
+<li><a href="hierarchy-extend-lp.html">Extending the Hierarchy window</a></li>
+<li><a href="hierarchy-custom-tooltips.html">Display custom tooltips in the Hierarchy window</a></li>
+<li><span class="tooltip" tabindex="0" ><a href="Prefabs.html">Prefabs</a><span class="tooltiptext">An asset type that allows you to store a GameObject complete with components and properties. The prefab acts as a template from which you can create new object instances in the scene. <a class="tooltipMoreInfoLink" aria-label="Navigate to more info about Prefabs.html" href="Prefabs.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#prefab" aria-label="Go to glossary anchor for prefab">Glossary</a></span></span></span></li>
+<li><a href="../ScriptReference/Unity.Hierarchy.HierarchyViewItem.html"><code>HierarchyViewItem</code></a></li>
+<li><a href="../ScriptReference/Unity.Hierarchy.HierarchyViewModel.html"><code>HierarchyViewModel</code></a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="hierarchy-highlight-rows.html"></a></span><div class="tip">Highlight GameObjects in the Hierarchy window</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="hierarchy-custom-tooltips.html"></a></span><div class="tip">Display custom tooltips in the Hierarchy window</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 79827756. Built on: 2026-11-13.</div>
+<div class="menu">
+<a href="https://learn.unity.com/">Tutorials</a><a href="https://answers.unity3d.com">Community Answers</a><a href="https://support.unity3d.com/hc/en-us">Knowledge Base</a><a href="https://forum.unity3d.com">Forums</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">Terms of use</a><a href="https://unity.com/legal">Legal</a><a href="https://unity.com/legal/privacy-policy">Privacy Policy</a><a href="https://unity.com/legal/cookie-policy">Cookies</a><a href="https://unity.com/legal/docs-terms">Documentation Terms of Use</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

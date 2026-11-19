@@ -1,0 +1,547 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: 'en-us', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Upgrade to Unity 6.6</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="author" content="Unity Technologies">
+<meta property="relative-path-to-manual" content="">
+<meta property="version-switcher-versions-with-this-page" content="Versions with this page:">
+<meta property="version-switcher-versions-without-this-page" content="Versions without this page:">
+<meta property="version-switcher-supported" content="Supported">
+<meta property="version-switcher-legacy" content="Legacy">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<link rel="canonical" href="https://docs.unity3d.com/6000.6/Documentation/Manual/UpgradeGuideUnity66.html">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="/StaticFilesConfig/UnityVersionsInfo.js"></script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js?ts=20261113"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js?ts=20261113"></script><script type="text/javascript" src="../StaticFilesManual/js/image-comp.js?ts=20261113"></script><script type="text/javascript" src="docdata/toc.js?ts=20261113"></script><script type="text/javascript" src="docdata/global_toc.js?ts=20261113"></script><link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css?ts=20261113">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/icons.css?ts=20261113">
+<link rel="stylesheet" href="../StaticFilesManual/css/prism.css">
+<script src="../StaticFilesManual/js/prism.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><script src="../StaticFilesManual/js/jquery.sidebar.min.js"></script><link rel="stylesheet" href="../StaticFilesManual/css/mobileoptimisation.css">
+<script src="../StaticFilesManual/js/mobileoptimisation.js"></script>
+</head>
+<body>
+<div id="DocsAnalyticsData" data-area="none" data-pagetype="manual"></div>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity.com/">unity.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                                Version: <b>Unity 6.6</b> (6000.6)
+                                <div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+<ul id="OtherVersionsContentUl"></ul>
+<div id="otherVersionsLegend"><ul>
+<li>
+<div id="supportedColour" class="legendBox"></div>Supported</li>
+<li>
+<div id="notFoundColour" class="legendBox"></div>Legacy</li>
+</ul></div>
+</div>
+<div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+</div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/UpgradeGuideUnity66.html">English</a></li>
+<li><a href="/cn/current/Manual/UpgradeGuideUnity66.html">中文</a></li>
+<li><a href="/ja/current/Manual/UpgradeGuideUnity66.html">日本語</a></li>
+<li><a href="/kr/current/Manual/UpgradeGuideUnity66.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div>
+<div class="mobileLogo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc" id="customScrollbar">
+<h2>Unity Manual</h2>
+<div class="search-form sidebar-search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" id="mobileSearchBtn" class="submit" value="Search">
+</form></div>
+<div class="toggle version-number sidebar-version-switcher" id="VersionNumber" data-target=".otherversionscontent"><form id="otherVersionsContentMobileForm"><div class="ui-field-contain">
+<label for="select-native-4">Version: Unity 6.6</label><select name="select-native-4" id="versionsSelectMobile"><option>Select a different version</option>
+<optgroup id="versionsWithThisPageMobile" label="Versions with this page"></optgroup>
+<optgroup id="versionsWithoutThisPageMobile" label="Versions without this page"></optgroup></select>
+</div></form></div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/UpgradeGuideUnity66.html">English</a></li>
+<li><a href="/cn/current/Manual/UpgradeGuideUnity66.html">中文</a></li>
+<li><a href="/ja/current/Manual/UpgradeGuideUnity66.html">日本語</a></li>
+<li><a href="/kr/current/Manual/UpgradeGuideUnity66.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UpgradeGuides.html">Upgrade Unity</a></li>
+<li>Upgrade to Unity 6.6</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="APIUpdater.html"></a></span><div class="tip">API updater</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="UpgradeGuideUnity65.html"></a></span><div class="tip">Upgrade to Unity 6.5</div>
+</div>
+</div></div>
+<div id="_leavefeedback"></div>
+<h1>Upgrade to Unity 6.6</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>This page lists changes in Unity 6.6 (6000.6) in these areas that can affect existing projects when you upgrade from Unity 6.5 (6000.5) to Unity 6.6 (6000.6):</p>
+
+<ul>
+<li><span class="tooltip" tabindex="0" ><a href="#cameras">Cameras</a><span class="tooltiptext">A component which creates an image of a particular viewpoint in your scene. The output is either drawn to the screen or captured as a texture. <a class="tooltipMoreInfoLink" aria-label="Navigate to more info about CamerasOverview.html" href="CamerasOverview.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Camera" aria-label="Go to glossary anchor for Camera">Glossary</a></span></span></span></li>
+<li><a href="#editor">Editor and workflow</a></li>
+<li><a href="#graphics">Graphics</a></li>
+<li><a href="#optimization">Optimization</a></li>
+<li><a href="#platforms">Platforms</a></li>
+<li><a href="#programming">Programming</a></li>
+<li><a href="#ui-toolkit">UI Toolkit</a></li>
+</ul>
+
+<p><a name="cameras" aria-hidden="true"></a></p>
+
+<h2>Cameras</h2>
+
+<p>This section outlines recent updates to the camera system that can affect your upgrade experience.</p>
+
+<h3>Cinemachine 3 is a core package</h3>
+
+<p>The <code>com.unity.cinemachine</code> package is now a core package and part of the Unity Editor. Any project that depends on this package will automatically upgrade to the version that is part of the Editor.</p>
+
+<p>If your project uses Cinemachine 3, this change doesn’t affect you. If your project uses Cinemachine 2, Unity automatically updates it to use Cinemachine 3. </p>
+
+<p>Cinemachine 3 is a major version change with a different API and data format. </p>
+
+<p>To transition to Cinemachine 3, refer to <a href="https://docs.unity3d.com/Packages/com.unity.cinemachine@3.1/manual/CinemachineUpgradeFrom2.html">Upgrade a Project from Cinemachine 2.x</a>. To continue using Cinemachine 2, you must update the manifest of your project to reference a local copy of Cinemachine 2.</p>
+
+<p><a name="editor" aria-hidden="true"></a></p>
+
+<h2>Editor and workflow</h2>
+
+<p>This section outlines recent updates to the Unity Editor and its general workflows that can affect your upgrade experience.</p>
+
+<h3>YAML file format change</h3>
+
+<p>Word wrapping is disabled in YAML text files and the <strong>Reduce Version Control Noise</strong> option has been removed from the Unity Editor settings.</p>
+
+<p>
+<strong>Reduce Version Control Noise</strong> was previously enabled by default, which disabled word wrapping of references in YAML files. Because of this, most projects already had word wrapping disabled.</p>
+
+<p>The equivalent API, <code>serializeInlineMappingsOnOneLine</code> setter is now a no-op and the getter always returns true.</p>
+
+<p>The impact of this change is that you might see changes to YAML files that appear unrelated to any changes you made to your assets.</p>
+
+<p>To prevent multiple contributors from experiencing these changes, consider reserializing all your assets. For more information, refer to the <a href="../ScriptReference/AssetDatabase.ForceReserializeAssets.html"><code>ForceReserializeAssets</code></a> API.</p>
+
+<p><a name="graphics" aria-hidden="true"></a></p>
+
+<h2>Graphics</h2>
+
+<p>This section outlines recent updates to graphics that can affect your upgrade experience.</p>
+
+<h3>Removed dynamic batching</h3>
+
+<p>Dynamic batching is now obsolete. For information about other methods of optimizing draw calls, refer to <a href="optimizing-draw-calls-choose-method.html">Choose a method for optimizing calls</a>.</p>
+
+<h3>Render Pipeline Core no longer depends on Terrain</h3>
+
+<p>Removed the dependency on <code>com.unity.modules.terrain</code> package from the <code>com.unity.render-pipelines.core</code> package. If your project relies on Terrain indirectly through the Render Pipeline Core, Universal Render Pipeline, or High Definition Render Pipeline packages, add the <code>com.unity.modules.terrain</code> package to your project through the <strong>Package Manager</strong> &gt; <strong>Built-in</strong> tab. Terrain is still included in new projects’ dependencies by default.</p>
+
+<h3>Removed Rendering Debugger legacy state management</h3>
+
+<p>The legacy Debug UI infrastructure in the <code>com.unity.render-pipelines.core</code> package is now obsolete. Using these APIs now triggers an <code>[Obsolete(..., true)]</code> attribute, resulting in compilation errors. This change affects <code>DebugState</code>, <code>DebugState&lt;T&gt;</code>, legacy <code>DebugUIDrawer</code> implementations, and their associated types. You must migrate any projects using these features to the current Rendering Debugger pattern.</p>
+
+<p>The following APIs no longer compile:</p>
+
+<ul>
+<li>Debug State classes: <code>DebugState</code>, <code>DebugState&lt;T&gt;</code>, and all concrete implementations (such as <code>DebugStateBool</code>, <code>DebugStateInt</code>, <code>DebugStateFloat</code>, <code>DebugStateColor</code>, and <code>DebugStateVector</code> variants).</li>
+<li>Legacy Debug UI Drawers: All older <code>DebugUIDrawer</code> custom drawer implementations.</li>
+<li>Supporting types: <code>DebugStateAttribute</code> and <code>LegacyStyles</code>.</li>
+</ul>
+
+<p>To upgrade your code, follow these steps:</p>
+
+<ol>
+<li>
+<p>Implement <code>ISerializedDebugDisplaySettings</code> on your debug settings classes.<br>
+ If your debug settings class previously relied on <code>DebugState</code> for serialization, you must now implement <code>ISerializedDebugDisplaySettings</code>. This interface allows for automatic serialization via the <code>DebugDisplaySerializer</code>. </p>
+
+<p>The following example demonstrates implementing <code>ISerializedDebugDisplaySettings</code>:</p>
+
+<pre><code class="lang-csharp">[Serializable]
+public class MyDebugSettings : IDebugDisplaySettingsData, ISerializedDebugDisplaySettings
+{
+    public bool myFeatureEnabled;
+
+    void IDebugDisplaySettingsData.Reset()
+    {
+        myFeatureEnabled = false;
+    }
+}
+</code></pre>
+</li>
+<li>
+<p>Implement the <code>Create</code> method for custom <code>DebugUI.Widget</code> implementations.<br>
+ Custom widgets that formerly used <code>DebugUIDrawer</code> for rendering must now implement the abstract <code>Create</code> method to return their <code>VisualElement</code>.</p>
+
+<p>The following example demonstrates a custom <code>DebugUI.Widget</code> implementation with the <code>Create</code> method:</p>
+
+<pre><code class="lang-csharp">public class MyCustomWidget : DebugUI.Widget
+{
+    protected override VisualElement Create()
+    {
+        var container = new VisualElement();
+        // Use UI Toolkit to build your UI here
+        return container;
+    }
+}
+</code></pre>
+</li>
+</ol>
+
+<p>The Rendering Debugger now handles <code>ToVisualElement</code> calls internally, which in turn executes your defined <code>Create</code> logic.</p>
+
+<h3>Surface shader code generation now uses caching preprocessor</h3>
+
+<p>Surface shader code generation now uses the caching preprocessor. For information about the preprocessor behavior changes, refer to the <a href="https://discussions.unity.com/t/new-shader-preprocessor/768416">New shader preprocessor Discussions post</a>.</p>
+
+<h3>Deprecated Progressive CPU Lightmapper</h3>
+
+<p>The Progressive CPU Lightmapper is now deprecated and will be removed in a future release. Existing projects can continue to bake with it, but the recommended best practice is to migrate to the Unity Compute Light Baker or the Progressive GPU Lightmapper.</p>
+
+<p>Baked lighting might look different after you change the backend, so review and adjust your lighting setup after you migrate. For more information, refer to <a href="progressive-lightmapper.html">Choose a light baking backend</a> and <a href="unity-compute-light-baker.html">Unity Compute Light Baker</a>.</p>
+
+<p><a name="optimization" aria-hidden="true"></a></p>
+
+<h2>Optimization</h2>
+
+<p>This section outlines recent updates to optimization that can affect your upgrade experience.</p>
+
+<h3>Performance testing API is a core package</h3>
+
+<p>The <code>com.unity.test-framework.performance</code> package is now a core package and part of the Unity Editor. Any project that depends on this package now automatically uses the version that is part of the Editor.</p>
+
+<p><a name="platforms" aria-hidden="true"></a></p>
+
+<h2>Platforms</h2>
+
+<p>This section outlines recent updates to platform-specific tools and settings that can affect your upgrade experience.</p>
+
+<h3>Android</h3>
+
+<p>This section outlines recent updates to Android-specific tools and settings.</p>
+
+<h4>Removed Legacy and Round icons</h4>
+
+<p>Removed support for Legacy and Round Android icons. Unity now supports only Adaptive Android icons.</p>
+
+<p>When you upgrade a project that uses Legacy and Round Android icons, Unity displays a warning message and excludes these icons from Android builds.</p>
+
+<p>To update your icon settings, follow these steps:</p>
+
+<ol>
+<li>Open <strong>Edit</strong> &gt; <strong>Project Settings</strong> &gt; <strong>Player</strong> &gt; <strong>Android</strong> &gt; <strong>Icon</strong>.</li>
+<li>Verify your Adaptive icon settings.</li>
+</ol>
+
+<p>You can remove any unused Legacy and Round icon assets from your project. The warning clears when you open the <strong>Player</strong> settings.</p>
+
+<h4>Removed legacy chained signal handler behavior on Android</h4>
+
+<p>The <code>legacy</code> option for the <code>-androidChainedSignalHandlerBehavior</code> command-line argument has been removed from the Android Player runtime. This option was added as a workaround for older Android versions that didn’t handle native crash reporting. This behavior handled native crashes, such as SIGSEGV at JNI boundaries using <code>setjmp</code> and <code>longjmp</code> functions, and wrapped them into Java exceptions. This approach is now obsolete because app stores, such as the Google Play Console, now handle native crashes directly. Furthermore, this legacy behavior prevented third-party crash-reporting SDKs, such as Firebase Crashlytics or Bugsnag, from receiving signals. This caused background worker threads to stop responding upon crashing.</p>
+
+<p>In Unity 6.6, the <code>legacy</code> option has been fully removed. If you explicitly pass <code>legacy</code> as a command-line argument, Unity now does the following:</p>
+
+<ol>
+<li>Logs an error to Logcat: <code>ChainedSignalHandler: Legacy behavior has been removed. The default chained signal handler behavior will be used instead</code>.</li>
+<li>Uses the default chained signal handler behavior instead of the legacy behavior.</li>
+</ol>
+
+<p>Refer to the following based on your project setup:</p>
+
+<ul>
+<li>Command-line fallback: If your build pipelines, launch scripts, or custom Activity templates still pass <code>-androidChainedSignalHandlerBehavior legacy</code>, Unity doesn’t fail to boot and automatically falls back to the default behavior. However, it logs an error in Logcat. Remove this obsolete argument to keep your logs clean.</li>
+<li>Java exception handling: If your application framework relied on capturing native crashes inside Java try/catch blocks at the JNI boundary, the legacy behavior is no longer available. Native crashes now terminate the process and are handled as standard native signals.</li>
+<li>Crash reporting and multithreading: Native crash handlers, including Unity Cloud Diagnostics and third-party tools, now capture native crashes across all threads. This includes background worker threads and Java-invoked threads, which previously didn’t report crashes.</li>
+</ul>
+
+<h4>Raised minimum supported OpenGL ES version for Android from GLES 3.0 to GLES 3.1</h4>
+
+<p>The minimum OpenGL ES version on Android is now ES 3.1, raised from ES 3.0.</p>
+
+<p>When you select OpenGL ES3 in the Android Graphics API list, the following occurs:</p>
+
+<ul>
+<li>The generated manifest declares <code>&lt;uses-feature android:glEsVersion=&quot;0x00030001&quot; /&gt;</code>.</li>
+<li>The Player no longer creates an ES 3.0 context at runtime.</li>
+<li>Devices that support only ES 3.0 and do not support Vulkan can no longer run the app, as the Play Store filters them out and initialization fails on-device.</li>
+</ul>
+
+<p>You cannot revert to ES 3.0.</p>
+
+<p>
+<code>PlayerSettings.openGLRequireES31</code> is deprecated. The getter always returns <code>true</code>, the setter is a no-op. Referencing the property raises an obsolete warning, which becomes a build error under warnings-as-errors. The <strong>Require ES3.1</strong> property is replaced with <strong>Use OpenGL ES 3.0 shaders</strong> in <strong>Player</strong> &gt; <strong>Android</strong> &gt; <strong>Other Settings</strong>.</p>
+
+<p>For compatibility reasons, if your project never used <strong>Require ES3.1</strong> or similar, the upgraded project automatically enables <strong>Use OpenGL ES 3.0 shaders</strong>. This gives you the option to upgrade OpenGL ES 3.0 shaders to version 3.1 as needed, preventing visual artifacts that might otherwise occur if Unity forced OpenGL ES 3.1 shaders. For example, OpenGL ES 3.1 shaders raise the <code>MAX_VISIBLE_LIGHTS</code> limit from 16 to 32, which increases the application’s workload. The <strong>Use OpenGL ES 3.0 shaders</strong> setting provides a transition period so you can adapt to these changes without causing performance regressions in your upgraded project.</p>
+
+<p>To update your code for this change, follow these steps:</p>
+
+<ol>
+<li>Remove calls to <code>PlayerSettings.openGLRequireES31</code>. ES 3.1 is now implied whenever OpenGL ES3 is selected.</li>
+<li>Disable <strong>Player</strong> &gt; <strong>Android</strong> &gt; <strong>Other Settings</strong> &gt; <strong>Use OpenGL ES 3.0 shaders</strong> to use <strong>SHADER_API_GLES31</strong> shader keyword instead of <strong>SHADER_API_GLES30</strong>.</li>
+<li>To require a higher version, use <code>PlayerSettings.openGLRequireES31AEP</code> or <code>openGLRequireES32</code>, or enable the <strong>Require ES3.1+AEP</strong> or <strong>Require ES3.2</strong> checkboxes in <strong>Player</strong> &gt; <strong>Android</strong> &gt; <strong>Other Settings</strong>.</li>
+</ol>
+
+<p><a name="programming" aria-hidden="true"></a></p>
+
+<h2>Programming</h2>
+
+<p>This section outlines recent updates to the Programming system that can affect your upgrade experience.</p>
+
+<h3>UNITY_64 and DEVELOPMENT_BUILD scripting symbols are deprecated</h3>
+
+<p>The <code>UNITY_64</code> and <code>DEVELOPMENT_BUILD</code> preprocessor symbols are deprecated, and C# diagnostics now follow the Managed Code Variant setting. These updates involve the following:</p>
+
+<ul>
+<li>
+<p>Added a new <strong>Managed Code Variant</strong> setting. This per-platform setting controls which diagnostic defines are emitted into your C# code, independently of the native binary. To access it, go to <strong>Edit</strong> &gt; <strong>Project Settings</strong> &gt; <strong>Player</strong> &gt; <strong>Other Settings</strong> &gt; <strong>Managed Code Variant</strong>. For a list of the variants and the defines they emit, refer to <a href="managed-code-variants.html#managed-code-variant">Adding diagnostics to C# code</a>. </p>
+
+<ul>
+<li>
+<code>UNITY_ENABLE_CHECKS</code> replaces the extra safety checks and assertions meaning of <code>DEVELOPMENT_BUILD</code>, and <code>UNITY_INCLUDE_INSTRUMENTATION</code> replaces the profiling and diagnostic logging meaning. This enables profiling without any diagnostics checks.</li>
+<li>The variant can also be read or set from build scripts with <a href="../ScriptReference/PlayerSettings.GetManagedCodeVariant.html"><code>PlayerSettings.GetManagedCodeVariant</code></a> and <a href="../ScriptReference/PlayerSettings.SetManagedCodeVariant.html"><code>PlayerSettings.SetManagedCodeVariant</code></a>.</li>
+<li>In the Editor, both <code>UNITY_ENABLE_CHECKS</code> and <code>UNITY_INCLUDE_INSTRUMENTATION</code> are always defined. <code>UNITY_ASSERTIONS</code> and <code>ENABLE_PROFILER</code> have historically been defined for development builds, and continue to be defined during this transitional period.</li>
+</ul>
+</li>
+<li><p>Deprecated <code>UNITY_64</code> and <code>DEVELOPMENT_BUILD</code> scripting symbols. Using either symbol in an <code>#if</code> directive or a <code>[Conditional(...)]</code> attribute now raises a Roslyn analyzer warning (<code>UAC0008</code> for <code>UNITY_64</code>, <code>UAC0009</code> for <code>DEVELOPMENT_BUILD</code>) in the Console and in your IDE.</p></li>
+</ul>
+
+<h4>Impact of not updating your code</h4>
+
+<p>In Unity 6.6, the <code>UNITY_64</code> and <code>DEVELOPMENT_BUILD</code> defines continue to work. Unity displays deprecation warnings but <code>DEVELOPMENT_BUILD</code> is still emitted for development builds, so your project still works at runtime. However, if your assemblies are compiled with warnings as errors, the warnings become build errors immediately. </p>
+
+<p>In Unity 6.8, these defines will be fully removed. Using them will become a hard compilation error and <code>DEVELOPMENT_BUILD</code> will no longer be emitted by the compilation pipeline. If you migrate now, you can update your codebase incrementally.</p>
+
+<h4>Behavior impact in your project</h4>
+
+<p>If you never used these defines, your project is still impacted by these changes. Many built-in features and packages previously used <code>DEVELOPMENT_BUILD</code> internally and now use the <strong>Managed Code Variant</strong> setting instead. Unity includes these features based on the option you set for <strong>Managed Code Variant</strong>, instead of the <strong>Development Build</strong> setting. The default option is <strong>Release</strong>, which defines none of the diagnostic symbols, so a Development Build using the default variant no longer contains these diagnostics. The affected features include the following:</p>
+
+<ul>
+<li>Scriptable Render Pipeline (URP/HDRP/Core): Debug overlays, Rendering Debugger runtime resources, Render Graph Viewer, render-graph validation, the magenta incompatible objects pass, Frame Debugger support, and the Volume panel are now gated by <code>UNITY_ENABLE_CHECKS</code> (Debug/Checked). Render Graph profiling samplers, URP’s per-pass <code>ScriptableRenderPass.profilingSampler</code>, and HDRP’s dynamic-resolution overlay are gated by <code>UNITY_INCLUDE_INSTRUMENTATION</code> (Debug/Checked/Instrumented). Build-time stripping of debug shaders and rendering-debugger resources now follows the variant too, so a non-development <strong>Checked</strong> build keeps them and a <strong>Release</strong> build strips them. As a side effect, non-development Release builds no longer ship debug-display shader variants they previously included, reducing build size and shader-variant count.</li>
+<li>Unity Physics: Simulation integrity checks are now compiled in for the Debug/Checked variants. You can still override the checks with <code>UNITY_PHYSICS_DISABLE_INTEGRITY_CHECKS</code>.</li>
+<li>Entities: Entities Journaling, the data behind the Entities Journaling window, is now compiled in for Debug, Checked, and Instrumented variants. You can still override it with <code>DISABLE_ENTITIES_JOURNALING</code>.</li>
+<li>Adaptive Performance: Apple and Android provider logging is now available in Debug, Checked, and Instrumented variants.</li>
+</ul>
+
+<p>To achieve the diagnostic behavior that a Development Build previously provided, set the <strong>Managed Code Variant</strong> to <strong>Checked</strong> (which enables both the check and instrumentation paths) for the platforms where you enable the <strong>Development Build</strong> checkbox. Use <strong>Debug</strong> if you also want <code>DEBUG</code> and unoptimized code for stepping through with a debugger.</p>
+
+<p>If you have a custom Scriptable Render Pipeline with build processors that read <code>CoreBuildData.developmentBuild</code>, this property is now <code>[Obsolete]</code> and always returns <code>false</code>. Use <code>CoreBuildData.useDiagnosticChecks</code> instead.</p>
+
+<h4>Update your code</h4>
+
+<ol>
+<li>
+<p>Replace <code>UNITY_64</code>. The bitness of the native binary is not known when scripts are compiled, so replace any compile-time <code>#if UNITY_64</code> with a runtime check on <code>IntPtr.Size</code> (<code>8</code> = 64-bit, <code>4</code> = 32-bit), or with bitness-independent code.</p>
+
+<p>For example, the following code uses <code>UNITY_64</code> at compile time:</p>
+
+<pre><code class="lang-csharp">#if !UNITY_64 &amp;&amp; UNITY_ANDROID
+    return HashWithoutUnalignedLoads(buffer, length);
+#else
+    return HashWithUnalignedLoads(buffer, length);
+#endif
+</code></pre>
+
+<p>Replace it with the following runtime check on <code>IntPtr.Size</code>:</p>
+
+<pre><code class="lang-csharp">#if UNITY_ANDROID
+    if (IntPtr.Size == 4)
+        return HashWithoutUnalignedLoads(buffer, length);
+#endif
+    return HashWithUnalignedLoads(buffer, length);
+</code></pre>
+</li>
+<li>
+<p>Replace <code>DEVELOPMENT_BUILD</code>:</p>
+
+<ul>
+<li>
+<p>If the code was for safety checks, validation, assertions: use <code>#if UNITY_ENABLE_CHECKS</code> (Debug/Checked).</p>
+
+<p>For example, the following check runs only in the Editor or a development build:</p>
+
+<pre><code class="lang-csharp">#if UNITY_EDITOR || DEVELOPMENT_BUILD
+    SafetyChecks.CheckAlignmentAndThrow(ptr, nameof(ptr));
+#endif
+</code></pre>
+
+<p>Replace the condition with <code>UNITY_ENABLE_CHECKS</code>:</p>
+
+<pre><code class="lang-csharp">#if UNITY_ENABLE_CHECKS
+    SafetyChecks.CheckAlignmentAndThrow(ptr, nameof(ptr));
+#endif
+</code></pre>
+</li>
+</ul>
+
+<p>Compound gates such as <code>#if UNITY_EDITOR || DEVELOPMENT_BUILD</code> become <code>#if UNITY_EDITOR || UNITY_ENABLE_CHECKS</code>. Because the Editor already defines the new symbols, you can usually drop the redundant <code>UNITY_EDITOR ||</code> part.</p>
+
+<ul>
+<li>
+<p>If the code was for profiler instrumentation, debug names, or diagnostic logging: use <code>#if UNITY_INCLUDE_INSTRUMENTATION</code> (Debug/Checked/Instrumented), or layer it onto a <code>[Conditional]</code> attribute:</p>
+
+<p>For example, the following method is conditional on <code>DEVELOPMENT_BUILD</code>:</p>
+
+<pre><code class="lang-csharp">[Conditional(&quot;DEVELOPMENT_BUILD&quot;)]
+public static void LogDiagnostic(string message) { ... }
+</code></pre>
+
+<p>Replace the symbol in the attribute:</p>
+
+<pre><code class="lang-csharp">[Conditional(&quot;UNITY_INCLUDE_INSTRUMENTATION&quot;)]
+public static void LogDiagnostic(string message) { ... }
+</code></pre>
+</li>
+<li>
+<p>A runtime check for a development Player: use the runtime property <code>Debug.isDebugBuild</code>. This is the correct choice when the new variant defines are not equivalent. For example, a non-development Player can ship with the Checked variant, so a <code>#if UNITY_ENABLE_CHECKS</code> block would compile sensitive code, such as logging that might leak authentication tokens, into a production build.</p>
+
+<p>For example, the following log call previously shipped only in the Editor or a development build:</p>
+
+<pre><code class="lang-csharp">#if UNITY_EDITOR || DEVELOPMENT_BUILD
+    Debug.LogError($&quot;Rejecting connection: {payload}&quot;);
+#endif
+</code></pre>
+
+<p>Replace the compile-time check with the runtime check:</p>
+
+<pre><code class="lang-csharp">if (Debug.isDebugBuild)
+    Debug.LogError($&quot;Rejecting connection: {payload}&quot;);
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>Choose the Managed Code Variant for each platform: In <strong>Edit</strong> &gt; <strong>Project Settings</strong> &gt; <strong>Player</strong> &gt; <strong>Other Settings</strong> &gt; <strong>Managed Code Variant</strong>, select the variant whose diagnostics you want in your Player builds (Release for shipping; Checked or Debug while developing). From a build script, call <code>PlayerSettings.SetManagedCodeVariant(namedBuildTarget, ManagedCodeVariant.Checked)</code>.</p></li>
+<li><p>Replace <code>BuildOptions.ForceEnableAssertions</code>: This enum value is now <code>[Obsolete]</code>. Use <code>PlayerSettings.SetManagedCodeVariant(namedBuildTarget, ManagedCodeVariant.Checked)</code> instead.</p></li>
+</ol>
+
+<h4>To make sure your code compiles against multiple Unity versions</h4>
+
+<p>For package and Asset Store authors whose code also targets Unity versions older than 6.6, where the new defines don’t exist, gate on <code>UNITY_6000_6_OR_NEWER</code> and fall back to a runtime <code>Debug.isDebugBuild</code> check. This lets you keep the diagnostic body written once:</p>
+
+<pre><code class="lang-csharp">#if !UNITY_6000_6_OR_NEWER || UNITY_ENABLE_CHECKS
+#if !UNITY_6000_6_OR_NEWER
+    if (Debug.isDebugBuild)
+#endif
+    {
+        // diagnostic body, written exactly once
+        if (library == null)
+            Debug.LogWarning(&quot;No library assigned.&quot;);
+    }
+#endif
+</code></pre>
+
+<p>For <code>[Conditional]</code> methods, select the attribute per Unity version:</p>
+
+<pre><code class="lang-csharp">#if UNITY_6000_6_OR_NEWER
+[Conditional(&quot;UNITY_INCLUDE_INSTRUMENTATION&quot;)]
+#else
+[Conditional(&quot;DEVELOPMENT_BUILD&quot;)]
+#endif
+static void LogDiagnostic(...) { ... }
+</code></pre>
+
+<p>For more information, refer to <a href="managed-code-variants.html">Adding diagnostics to C# code</a>, <a href="../ScriptReference/ManagedCodeVariant.html"><code>ManagedCodeVariant</code></a>, and the <a href="scripting-symbol-reference.html">Unity scripting symbol reference</a> documentation.</p>
+
+<h3>Dictionary serialization works alongside existing dictionary solutions</h3>
+
+<p>Unity 6.5 and earlier versions didn’t support serializing fields declared as <code>Dictionary&lt;TKey, TValue&gt;</code>. A common alternative solution was a wrapper type that derives from it, or a <code>[Serializable]</code> class that stores parallel key and value lists and rebuilds the dictionary in <code>ISerializationCallbackReceiver.OnAfterDeserialize</code>.</p>
+
+<p>Unity 6.6 serializes a field whose declared type is <code>Dictionary&lt;TKey, TValue&gt;</code> when it has <code>[SerializeField]</code>. A field whose declared type derives from <code>Dictionary&lt;TKey, TValue&gt;</code>, or wraps it in another class, remains a regular serialized class handled by the callback code it already uses. Those solutions keep working without changes, whether the type is one you wrote or one that comes from a package. You can use serialized dictionaries in new code and leave your existing fields as they are.</p>
+
+<p>If you choose to migrate a field to Unity’s dictionary serialization, you must migrate its data yourself. Add the new field alongside the old one, copy the data across from an editor script, and delete the old field only after you have checked the result. If you delete the old field first, its data is lost. For the full procedure, refer to <a href="script-serialization-dictionaries-migrate.html">Migrate a custom dictionary solution to built-in dictionary serialization</a>.</p>
+
+<p>For more information, refer to <a href="script-serialization-dictionaries.html">Dictionary serialization</a>.</p>
+
+<p><a name="ui-toolkit" aria-hidden="true"></a></p>
+
+<h2>UI Toolkit</h2>
+
+<p>This section outlines recent updates to Unity’s UI Toolkit that can affect your upgrade experience.</p>
+
+<h3>Removed DefaultEventSystem.LegacyInputProcessor</h3>
+
+<p>The <code>DefaultEventSystem.LegacyInputProcessor</code> has been removed. As a result, the obsolete method <code>UIToolkitInputConfiguration.SetRuntimeInputBackend</code> now causes a compile error in projects that call it. To fix the error, remove any calls to that method from your project. You do not need to replace them with anything, as the method no longer has an effect.</p>
+
+<h3>Removed UXML Factory/Traits</h3>
+
+<p>In Unity 6.0, UI Toolkit introduced a modern UI element authoring system based on <code>UxmlElement</code> and <code>UxmlAttribute</code>, powered by Unity serialization. This new system replaces the legacy UXML Factory/Traits workflow, which was deprecated and is now removed.</p>
+
+<p>While the legacy system was supported for backward compatibility, maintaining dual workflows has created bugs, confusion, and long-term costs. The new system offers a cleaner, more robust, and consistent UI experience, so we’re moving forward with it exclusively.</p>
+
+<p>For more information and examples, refer to <a href="ui-systems/migrate-custom-control.html">Migrate custom controls from an earlier version to Unity 6</a>, <a href="UIE-custom-controls.html">Custom controls</a> documentation and <a href="../ScriptReference/UIElements.UxmlElementAttribute.html"><code>UxmlElementAttribute</code> API reference</a>.</p>
+
+<h2>Additional resources</h2>
+
+<ul>
+<li><a href="WhatsNew.html">New in Unity</a></li>
+<li><a href="UpgradeGuides.html">Upgrade Unity</a></li>
+<li><a href="system-requirements.html">System requirements</a></li>
+<li><a href="GettingStartedInstallingUnity.html">Install Unity</a></li>
+<li><a href="upgrade-project.html">Upgrade your Unity project</a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="APIUpdater.html"></a></span><div class="tip">API updater</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="UpgradeGuideUnity65.html"></a></span><div class="tip">Upgrade to Unity 6.5</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 79827756. Built on: 2026-11-13.</div>
+<div class="menu">
+<a href="https://learn.unity.com/">Tutorials</a><a href="https://answers.unity3d.com">Community Answers</a><a href="https://support.unity3d.com/hc/en-us">Knowledge Base</a><a href="https://forum.unity3d.com">Forums</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">Terms of use</a><a href="https://unity.com/legal">Legal</a><a href="https://unity.com/legal/privacy-policy">Privacy Policy</a><a href="https://unity.com/legal/cookie-policy">Cookies</a><a href="https://unity.com/legal/docs-terms">Documentation Terms of Use</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

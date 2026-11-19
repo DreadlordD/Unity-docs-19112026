@@ -1,0 +1,311 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: 'en-us', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Update a toolbar control when its state changes</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="author" content="Unity Technologies">
+<meta property="relative-path-to-manual" content="">
+<meta property="version-switcher-versions-with-this-page" content="Versions with this page:">
+<meta property="version-switcher-versions-without-this-page" content="Versions without this page:">
+<meta property="version-switcher-supported" content="Supported">
+<meta property="version-switcher-legacy" content="Legacy">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<link rel="canonical" href="https://docs.unity3d.com/6000.6/Documentation/Manual/toolbar-control-state.html">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="/StaticFilesConfig/UnityVersionsInfo.js"></script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js?ts=20261113"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js?ts=20261113"></script><script type="text/javascript" src="../StaticFilesManual/js/image-comp.js?ts=20261113"></script><script type="text/javascript" src="docdata/toc.js?ts=20261113"></script><script type="text/javascript" src="docdata/global_toc.js?ts=20261113"></script><link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css?ts=20261113">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/icons.css?ts=20261113">
+<link rel="stylesheet" href="../StaticFilesManual/css/prism.css">
+<script src="../StaticFilesManual/js/prism.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><script src="../StaticFilesManual/js/jquery.sidebar.min.js"></script><link rel="stylesheet" href="../StaticFilesManual/css/mobileoptimisation.css">
+<script src="../StaticFilesManual/js/mobileoptimisation.js"></script>
+</head>
+<body>
+<div id="DocsAnalyticsData" data-area="none" data-pagetype="manual"></div>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity.com/">unity.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                                Version: <b>Unity 6.6</b> (6000.6)
+                                <div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+<ul id="OtherVersionsContentUl"></ul>
+<div id="otherVersionsLegend"><ul>
+<li>
+<div id="supportedColour" class="legendBox"></div>Supported</li>
+<li>
+<div id="notFoundColour" class="legendBox"></div>Legacy</li>
+</ul></div>
+</div>
+<div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+</div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/toolbar-control-state.html">English</a></li>
+<li><a href="/cn/current/Manual/toolbar-control-state.html">中文</a></li>
+<li><a href="/ja/current/Manual/toolbar-control-state.html">日本語</a></li>
+<li><a href="/kr/current/Manual/toolbar-control-state.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div>
+<div class="mobileLogo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc" id="customScrollbar">
+<h2>Unity Manual</h2>
+<div class="search-form sidebar-search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" id="mobileSearchBtn" class="submit" value="Search">
+</form></div>
+<div class="toggle version-number sidebar-version-switcher" id="VersionNumber" data-target=".otherversionscontent"><form id="otherVersionsContentMobileForm"><div class="ui-field-contain">
+<label for="select-native-4">Version: Unity 6.6</label><select name="select-native-4" id="versionsSelectMobile"><option>Select a different version</option>
+<optgroup id="versionsWithThisPageMobile" label="Versions with this page"></optgroup>
+<optgroup id="versionsWithoutThisPageMobile" label="Versions without this page"></optgroup></select>
+</div></form></div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/toolbar-control-state.html">English</a></li>
+<li><a href="/cn/current/Manual/toolbar-control-state.html">中文</a></li>
+<li><a href="/ja/current/Manual/toolbar-control-state.html">日本語</a></li>
+<li><a href="/kr/current/Manual/toolbar-control-state.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="extending-the-editor.html">Extending the Unity Editor</a></li>
+<li><a href="toolbar-custom-controls-lp.html">Custom toolbar controls</a></li>
+<li>Update a toolbar control when its state changes</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="toolbar-button-create-gameobjects.html"></a></span><div class="tip">Add a toolbar button that creates GameObjects</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="toolbar-scene-selector.html"></a></span><div class="tip">Add a scene selector dropdown to the toolbar</div>
+</div>
+</div></div>
+<div id="_leavefeedback"></div>
+<h1>Update a toolbar control when its state changes</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>If a toolbar control represents a setting, such as whether the <strong>Scene</strong> view grid is visible, the control must display the current state of that setting. This includes changes that you make elsewhere in the Editor. Use this approach for toggles, dropdowns, and any control whose text, icon, or value depends on the state of the Unity Editor.</p>
+
+<p>The toolbar doesn’t read the state of your setting again on its own. A control keeps its original content and value until you call <a href="../ScriptReference/Toolbars.MainToolbar.Refresh.html"><code>MainToolbar.Refresh</code></a>. When you interact with a control, the Editor calls your callback with the new value. Your code then applies the change and calls <code>MainToolbar.Refresh</code> to tell the toolbar to redraw the control. The toolbar then calls your <a href="../ScriptReference/Toolbars.MainToolbarElementAttribute.html"><code>MainToolbarElement</code></a> method again, which reads the current state.</p>
+
+<h2>Prerequisites</h2>
+
+<ul>
+<li>Complete <a href="toolbar-add-button.html">Add a custom button to the toolbar</a>.</li>
+</ul>
+
+<h2>Create a toggle that refreshes itself</h2>
+
+<p>The following script creates a toolbar toggle that shows or hides the <strong>Scene</strong> view grid when you select it. The toggle’s icon changes to indicate whether the grid is visible.</p>
+
+<p>To create the <strong>Scene</strong> view grid toggle:</p>
+
+<ol>
+<li><p>In the <code>Assets/Editor</code> folder, create an empty C# script called <code>SceneGridToggle.cs</code>.</p></li>
+<li>
+<p>Replace the contents of the script with the following code:</p>
+
+<pre><code class="lang-cs">using UnityEditor;
+using UnityEditor.Toolbars;
+using UnityEngine;
+
+public class SceneGridToggle
+{
+    const string k_Path = &quot;Example/Scene Grid&quot;;
+
+    [MainToolbarElement(k_Path, defaultDockPosition = MainToolbarDockPosition.Middle)]
+    public static MainToolbarElement CreateGridToggle()
+    {
+        // Read the current state every time the toolbar asks for the control.
+        SceneView sceneView = SceneView.lastActiveSceneView;
+        bool showGrid = sceneView != null &amp;&amp; sceneView.showGrid;
+
+        string iconName = showGrid ? &quot;scenevis_visible&quot; : &quot;scenevis_hidden&quot;;
+        Texture2D icon = EditorGUIUtility.IconContent(iconName).image as Texture2D;
+        MainToolbarContent content = new MainToolbarContent(&quot;Grid&quot;, icon, &quot;Show or hide the Scene view grid&quot;);
+
+        return new MainToolbarToggle(content, showGrid, OnToggleChanged);
+    }
+
+    static void OnToggleChanged(bool value)
+    {
+        // The toolbar doesn't read the grid state again on its own. Apply the new value,
+        // then refresh the control so it reflects the change.
+        if (SceneView.lastActiveSceneView != null)
+        {
+            SceneView.lastActiveSceneView.showGrid = value;
+        }
+
+        MainToolbar.Refresh(k_Path);
+    }
+}
+</code></pre>
+
+<p>The script contains the following parts:</p>
+
+<ul>
+<li>
+<code>CreateGridToggle</code> reads whether the grid is visible and chooses an icon to match. It passes the current value to <a href="../ScriptReference/Toolbars.MainToolbarToggle.html"><code>MainToolbarToggle</code></a>.</li>
+<li>
+<code>OnToggleChanged</code> runs when you select the toggle. It shows or hides the grid, then calls <code>MainToolbar.Refresh</code> with the same path as the <code>MainToolbarElement</code> attribute. To avoid repeating the path in the attribute and the <code>Refresh</code> call, the script stores it in a constant.</li>
+</ul>
+</li>
+<li><p>Save the script.</p></li>
+<li><p>In the Editor, right-click an empty area of the toolbar and select <strong>Example</strong> &gt; <strong>Scene Grid</strong> to display the <strong>Grid</strong> toggle.</p></li>
+<li><p>Select the <strong>Grid</strong> toggle.</p></li>
+</ol>
+
+<p>The grid appears or disappears in the <strong>Scene</strong> view, and the icon of the <strong>Grid</strong> toggle changes to match.</p>
+
+<h2>Respond to changes outside the toolbar</h2>
+
+<p>The previous script refreshes the toggle only when you select it. If you show or <a href="CustomizeGrid.html">hide the grid</a> from the <strong>Scene</strong> view, the toggle displays an outdated state. To keep the toggle in sync with the <strong>Scene</strong> view grid, subscribe to an event that reports the change, and call <code>MainToolbar.Refresh</code> from the event handler.</p>
+
+<p>The following script updates the toggle when you change the grid from either the toolbar or the <strong>Scene</strong> view.</p>
+
+<p>To keep the toggle in sync with the <strong>Scene</strong> view:</p>
+
+<ol>
+<li>
+<p>Replace the contents of <code>SceneGridToggle.cs</code> with the following code:</p>
+
+<pre><code class="lang-cs">using UnityEditor;
+using UnityEditor.Toolbars;
+using UnityEngine;
+
+[InitializeOnLoad]
+public class SceneGridToggle
+{
+    const string k_Path = &quot;Example/Scene Grid (Synced)&quot;;
+
+    static SceneGridToggle()
+    {
+        // Refresh the control when the grid changes outside the toolbar,
+        // for example from the Scene view toolbar.
+        SceneView.lastActiveSceneViewChanged += OnLastActiveSceneViewChanged;
+        OnLastActiveSceneViewChanged(null, SceneView.lastActiveSceneView);
+    }
+
+    [MainToolbarElement(k_Path, defaultDockPosition = MainToolbarDockPosition.Middle)]
+    public static MainToolbarElement CreateGridToggle()
+    {
+        SceneView sceneView = SceneView.lastActiveSceneView;
+        bool showGrid = sceneView != null &amp;&amp; sceneView.showGrid;
+
+        string iconName = showGrid ? &quot;scenevis_visible&quot; : &quot;scenevis_hidden&quot;;
+        Texture2D icon = EditorGUIUtility.IconContent(iconName).image as Texture2D;
+        MainToolbarContent content = new MainToolbarContent(&quot;Grid&quot;, icon, &quot;Show or hide the Scene view grid&quot;);
+
+        return new MainToolbarToggle(content, showGrid, OnToggleChanged);
+    }
+
+    static void OnToggleChanged(bool value)
+    {
+        if (SceneView.lastActiveSceneView != null)
+        {
+            SceneView.lastActiveSceneView.showGrid = value;
+        }
+
+        MainToolbar.Refresh(k_Path);
+    }
+
+    static void OnLastActiveSceneViewChanged(SceneView oldView, SceneView newView)
+    {
+        if (oldView != null)
+        {
+            oldView.gridVisibilityChanged -= OnGridVisibilityChanged;
+        }
+        if (newView != null)
+        {
+            newView.gridVisibilityChanged += OnGridVisibilityChanged;
+        }
+
+        MainToolbar.Refresh(k_Path);
+    }
+
+    static void OnGridVisibilityChanged(bool visible)
+    {
+        MainToolbar.Refresh(k_Path);
+    }
+}
+</code></pre>
+
+<p>The <a href="../ScriptReference/InitializeOnLoadAttribute.html"><code>InitializeOnLoad</code></a> attribute runs the static constructor when the Editor loads the script. The constructor subscribes to <a href="../ScriptReference/SceneView-gridVisibilityChanged.html"><code>SceneView.gridVisibilityChanged</code></a> on the active <strong>Scene</strong> view. It also subscribes to <a href="../ScriptReference/SceneView-lastActiveSceneViewChanged.html"><code>SceneView.lastActiveSceneViewChanged</code></a> to move the subscription when the active <strong>Scene</strong> view changes, and calls the handler once so that it subscribes to the <strong>Scene</strong> view that’s already open.</p>
+</li>
+<li><p>Save the script.</p></li>
+<li><p>In the Editor, right-click an empty area of the toolbar and select <strong>Example</strong> &gt; <strong>Scene Grid (Synced)</strong> to display the <strong>Grid</strong> toggle.</p></li>
+<li><p>In the <strong>Scene</strong> view, select <strong>Toggle grid visibility</strong> in the <strong><a href="overlay-grid-snap-reference.html">Grid and Snap</a></strong> overlay.</p></li>
+</ol>
+
+<p>The <strong>Grid</strong> toggle now updates when you change the grid from either the toolbar or the <strong>Scene</strong> view.</p>
+
+<p>You can use the same approach for other controls. For example, to create a <a href="../ScriptReference/Toolbars.MainToolbarDropdown.html"><code>MainToolbarDropdown</code></a> that displays the selected item, store the selection in a field and call <code>MainToolbar.Refresh</code> when the selection changes.</p>
+
+<h2>Additional resources</h2>
+
+<ul>
+<li><a href="toolbar-custom-controls-lp.html">Custom toolbar controls</a></li>
+<li><a href="toolbar-add-button.html">Add a custom button to the toolbar</a></li>
+<li><a href="../ScriptReference/Toolbars.MainToolbar.Refresh.html"><code>MainToolbar.Refresh</code></a></li>
+<li><a href="../ScriptReference/Toolbars.MainToolbarToggle.html"><code>MainToolbarToggle</code></a></li>
+<li><a href="../ScriptReference/Toolbars.MainToolbarDropdown.html"><code>MainToolbarDropdown</code></a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="toolbar-button-create-gameobjects.html"></a></span><div class="tip">Add a toolbar button that creates GameObjects</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="toolbar-scene-selector.html"></a></span><div class="tip">Add a scene selector dropdown to the toolbar</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 79827756. Built on: 2026-11-13.</div>
+<div class="menu">
+<a href="https://learn.unity.com/">Tutorials</a><a href="https://answers.unity3d.com">Community Answers</a><a href="https://support.unity3d.com/hc/en-us">Knowledge Base</a><a href="https://forum.unity3d.com">Forums</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">Terms of use</a><a href="https://unity.com/legal">Legal</a><a href="https://unity.com/legal/privacy-policy">Privacy Policy</a><a href="https://unity.com/legal/cookie-policy">Cookies</a><a href="https://unity.com/legal/docs-terms">Documentation Terms of Use</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

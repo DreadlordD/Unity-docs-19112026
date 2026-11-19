@@ -1,0 +1,250 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: 'en-us', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Temporary asset changes at runtime</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="author" content="Unity Technologies">
+<meta property="relative-path-to-manual" content="">
+<meta property="version-switcher-versions-with-this-page" content="Versions with this page:">
+<meta property="version-switcher-versions-without-this-page" content="Versions without this page:">
+<meta property="version-switcher-supported" content="Supported">
+<meta property="version-switcher-legacy" content="Legacy">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<link rel="canonical" href="https://docs.unity3d.com/6000.6/Documentation/Manual/ModifyingSourceAssetsThroughScripting.html">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="/StaticFilesConfig/UnityVersionsInfo.js"></script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js?ts=20261113"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js?ts=20261113"></script><script type="text/javascript" src="../StaticFilesManual/js/image-comp.js?ts=20261113"></script><script type="text/javascript" src="docdata/toc.js?ts=20261113"></script><script type="text/javascript" src="docdata/global_toc.js?ts=20261113"></script><link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css?ts=20261113">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/icons.css?ts=20261113">
+<link rel="stylesheet" href="../StaticFilesManual/css/prism.css">
+<script src="../StaticFilesManual/js/prism.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><script src="../StaticFilesManual/js/jquery.sidebar.min.js"></script><link rel="stylesheet" href="../StaticFilesManual/css/mobileoptimisation.css">
+<script src="../StaticFilesManual/js/mobileoptimisation.js"></script>
+</head>
+<body>
+<div id="DocsAnalyticsData" data-area="none" data-pagetype="manual"></div>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity.com/">unity.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                                Version: <b>Unity 6.6</b> (6000.6)
+                                <div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+<ul id="OtherVersionsContentUl"></ul>
+<div id="otherVersionsLegend"><ul>
+<li>
+<div id="supportedColour" class="legendBox"></div>Supported</li>
+<li>
+<div id="notFoundColour" class="legendBox"></div>Legacy</li>
+</ul></div>
+</div>
+<div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+</div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/ModifyingSourceAssetsThroughScripting.html">English</a></li>
+<li><a href="/cn/current/Manual/ModifyingSourceAssetsThroughScripting.html">中文</a></li>
+<li><a href="/ja/current/Manual/ModifyingSourceAssetsThroughScripting.html">日本語</a></li>
+<li><a href="/kr/current/Manual/ModifyingSourceAssetsThroughScripting.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div>
+<div class="mobileLogo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc" id="customScrollbar">
+<h2>Unity Manual</h2>
+<div class="search-form sidebar-search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" id="mobileSearchBtn" class="submit" value="Search">
+</form></div>
+<div class="toggle version-number sidebar-version-switcher" id="VersionNumber" data-target=".otherversionscontent"><form id="otherVersionsContentMobileForm"><div class="ui-field-contain">
+<label for="select-native-4">Version: Unity 6.6</label><select name="select-native-4" id="versionsSelectMobile"><option>Select a different version</option>
+<optgroup id="versionsWithThisPageMobile" label="Versions with this page"></optgroup>
+<optgroup id="versionsWithoutThisPageMobile" label="Versions without this page"></optgroup></select>
+</div></form></div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/ModifyingSourceAssetsThroughScripting.html">English</a></li>
+<li><a href="/cn/current/Manual/ModifyingSourceAssetsThroughScripting.html">中文</a></li>
+<li><a href="/ja/current/Manual/ModifyingSourceAssetsThroughScripting.html">日本語</a></li>
+<li><a href="/kr/current/Manual/ModifyingSourceAssetsThroughScripting.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="assets-and-media.html">Assets and media</a></li>
+<li>Temporary asset changes at runtime</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="assets-typetrees.html"></a></span><div class="tip">TypeTrees in content builds</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="AssetPackages.html"></a></span><div class="tip">Distribute assets as packages</div>
+</div>
+</div></div>
+<div id="_leavefeedback"></div>
+<h1>Temporary asset changes at runtime</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>When a script holds a reference to an asset, that reference points to the asset itself. Any change made through the reference affects every object that uses the asset, and in the Unity Editor the change can persist in the asset file. To change an asset without affecting other objects, you can modify a copy of the asset instead. </p>
+
+<p>You can make a copy of an asset with <a href="../ScriptReference/Object.Instantiate.html"><code>Object.Instantiate</code></a> and assign the copy to the object. Alternatively, materials, meshes, and Physics materials have shortcut properties which make the copy for you.</p>
+
+<p>Shortcut properties can be useful if a single object needs its own version of an asset, and your script only needs to change it once or a few times. However, the first time a script accesses a shortcut property on a component, Unity creates a copy even if the script only reads from it, which means that you might create more copies than you intend on. Creating a copy of an object with <code>Object.Instantiate</code> gives you better control over when a copy is created, and it allows you to share a modified copy with several objects.</p>
+
+<h2>Make a temporary copy of an asset</h2>
+
+<p>To make a temporary copy of an asset, create a copy with <a href="../ScriptReference/Object.Instantiate.html"><code>Object.Instantiate</code></a>, assign the copy to the component, and then modify the copy. The original asset and every other object that uses it stays unchanged. </p>
+
+<p>The following example gives an enemy a low-friction copy of its Physics material. The enemy slides across surfaces more easily, but other enemies that use the same Physics material asset aren’t affected. The example requires a non-kinematic Rigidbody, and a single collider that has a Physics material assigned:</p>
+
+<pre><code class="lang-cs">using UnityEngine;
+
+[RequireComponent(typeof(Collider))]
+public class FreezeEnemy : MonoBehaviour
+{
+    PhysicsMaterial m_FrozenMaterial;
+
+    public void Freeze()
+    {
+        // Only make one copy. The shortcut property Collider.material does this check for you.
+        if (m_FrozenMaterial != null)
+            return;
+
+        Collider enemyCollider = GetComponent&lt;Collider&gt;();
+
+        // Copy the shared asset and assign the copy to this collider only.
+        m_FrozenMaterial = Instantiate(enemyCollider.sharedMaterial);
+        enemyCollider.sharedMaterial = m_FrozenMaterial;
+
+        m_FrozenMaterial.dynamicFriction = 0f;
+        m_FrozenMaterial.staticFriction = 0f;
+    }
+
+    void OnDestroy()
+    {
+        // Unity doesn't destroy runtime copies automatically.
+        if (m_FrozenMaterial != null)
+            Destroy(m_FrozenMaterial);
+    }
+}
+</code></pre>
+
+<h2>Use shortcut properties to modify assets</h2>
+
+<p>The following asset types have shortcut properties that make the copy for you, as follows:</p>
+
+<ul>
+<li>
+<strong>Material</strong>: <a href="../ScriptReference/Renderer-material.html"><code>Renderer.material</code></a>.</li>
+<li>
+<strong>Mesh</strong>: <a href="../ScriptReference/MeshFilter-mesh.html"><code>MeshFilter.mesh</code></a>.</li>
+<li>
+<strong>Physics materials</strong>: <a href="../ScriptReference/Collider-material.html"><code>Collider.material</code></a>.</li>
+</ul>
+
+<p>Each of these components also has a shared property, such as <code>Renderer.sharedMaterial</code>, that returns the asset currently assigned to the component. Before a copy is assigned, this is the original asset. After a shortcut property or a script assigns a copy, the shared property returns the copy. To restore the original asset later, store a reference to it before you make a copy.</p>
+
+<p>The first time a script accesses a shortcut property, Unity copies the shared asset, assigns the copy to that component, and returns the copy. Later calls on the same component return the same copy. Unity makes the copy even if the script only reads a value from it. The result is the same as making the copy yourself with <code>Object.Instantiate</code>.</p>
+
+<p>The following is an example of using shortcut properties to achieve the same outcome as the previous example:</p>
+
+<pre><code class="lang-cs">using UnityEngine;
+
+[RequireComponent(typeof(Collider))]
+public class FreezeEnemyShortcut : MonoBehaviour
+{
+    PhysicsMaterial m_FrozenMaterial;
+
+    public void Freeze()
+    {
+        // The first access to Collider.material copies the shared asset
+        // and assigns the copy to this collider.
+        m_FrozenMaterial = GetComponent&lt;Collider&gt;().material;
+        m_FrozenMaterial.dynamicFriction = 0f;
+        m_FrozenMaterial.staticFriction = 0f;
+    }
+
+    void OnDestroy()
+    {
+        // Destroy the cached copy. Accessing Collider.material here
+        // creates a new copy if one doesn't exist yet.
+        if (m_FrozenMaterial != null)
+            Destroy(m_FrozenMaterial);
+    }
+}
+</code></pre>
+
+<h2>Impact on performance</h2>
+
+<p>Each copy is a separate object in memory. If many objects each make their own copy the project can end up with thousands of copies of the same asset.</p>
+
+<p>Unity doesn’t destroy copies when the GameObject that uses them is destroyed. You must destroy each copy with <a href="../ScriptReference/Object.Destroy.html"><code>Object.Destroy</code></a> when it’s no longer needed. <a href="../ScriptReference/Resources.UnloadUnusedAssets.html"><code>Resources.UnloadUnusedAssets</code></a> also destroys unused copies, but Unity only usually calls it when loading a new scene.</p>
+
+<p>If you access <code>Renderer.material</code> or <code>MeshFilter.mesh</code> in Edit mode, Unity logs an error because the copy leaks into the scene. Use the shared properties in Editor code instead. Changes made through a shared property affect the asset assigned to the component, so to change a single object, create a copy with <code>Object.Instantiate</code>, assign the copy through the shared property, and then modify the copy.</p>
+
+<h2>Additional resources</h2>
+
+<ul>
+<li><a href="LoadingResourcesatRuntime.html">Loading resources at runtime</a></li>
+<li><a href="StreamingAssets.html">Streaming assets directly into a build</a></li>
+<li><a href="../ScriptReference/Renderer-material.html"><code>Renderer.material</code> API reference</a></li>
+<li><a href="../ScriptReference/MeshFilter-mesh.html"><code>MeshFilter.mesh</code>API reference</a></li>
+<li><a href="../ScriptReference/Object.Instantiate.html"><code>Object.Instantiate</code> API reference</a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="assets-typetrees.html"></a></span><div class="tip">TypeTrees in content builds</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="AssetPackages.html"></a></span><div class="tip">Distribute assets as packages</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 79827756. Built on: 2026-11-13.</div>
+<div class="menu">
+<a href="https://learn.unity.com/">Tutorials</a><a href="https://answers.unity3d.com">Community Answers</a><a href="https://support.unity3d.com/hc/en-us">Knowledge Base</a><a href="https://forum.unity3d.com">Forums</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">Terms of use</a><a href="https://unity.com/legal">Legal</a><a href="https://unity.com/legal/privacy-policy">Privacy Policy</a><a href="https://unity.com/legal/cookie-policy">Cookies</a><a href="https://unity.com/legal/docs-terms">Documentation Terms of Use</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: 'en-us', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Introduction to transforms</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="author" content="Unity Technologies">
+<meta property="relative-path-to-manual" content="">
+<meta property="version-switcher-versions-with-this-page" content="Versions with this page:">
+<meta property="version-switcher-versions-without-this-page" content="Versions without this page:">
+<meta property="version-switcher-supported" content="Supported">
+<meta property="version-switcher-legacy" content="Legacy">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<link rel="canonical" href="https://docs.unity3d.com/6000.6/Documentation/Manual/class-Transform.html">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="/StaticFilesConfig/UnityVersionsInfo.js"></script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js?ts=20261113"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js?ts=20261113"></script><script type="text/javascript" src="../StaticFilesManual/js/image-comp.js?ts=20261113"></script><script type="text/javascript" src="docdata/toc.js?ts=20261113"></script><script type="text/javascript" src="docdata/global_toc.js?ts=20261113"></script><link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css?ts=20261113">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/icons.css?ts=20261113">
+<link rel="stylesheet" href="../StaticFilesManual/css/prism.css">
+<script src="../StaticFilesManual/js/prism.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><script src="../StaticFilesManual/js/jquery.sidebar.min.js"></script><link rel="stylesheet" href="../StaticFilesManual/css/mobileoptimisation.css">
+<script src="../StaticFilesManual/js/mobileoptimisation.js"></script>
+</head>
+<body>
+<div id="DocsAnalyticsData" data-area="none" data-pagetype="manual"></div>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity.com/">unity.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                                Version: <b>Unity 6.6</b> (6000.6)
+                                <div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+<ul id="OtherVersionsContentUl"></ul>
+<div id="otherVersionsLegend"><ul>
+<li>
+<div id="supportedColour" class="legendBox"></div>Supported</li>
+<li>
+<div id="notFoundColour" class="legendBox"></div>Legacy</li>
+</ul></div>
+</div>
+<div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+</div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/class-Transform.html">English</a></li>
+<li><a href="/cn/current/Manual/class-Transform.html">中文</a></li>
+<li><a href="/ja/current/Manual/class-Transform.html">日本語</a></li>
+<li><a href="/kr/current/Manual/class-Transform.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div>
+<div class="mobileLogo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc" id="customScrollbar">
+<h2>Unity Manual</h2>
+<div class="search-form sidebar-search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" id="mobileSearchBtn" class="submit" value="Search">
+</form></div>
+<div class="toggle version-number sidebar-version-switcher" id="VersionNumber" data-target=".otherversionscontent"><form id="otherVersionsContentMobileForm"><div class="ui-field-contain">
+<label for="select-native-4">Version: Unity 6.6</label><select name="select-native-4" id="versionsSelectMobile"><option>Select a different version</option>
+<optgroup id="versionsWithThisPageMobile" label="Versions with this page"></optgroup>
+<optgroup id="versionsWithoutThisPageMobile" label="Versions without this page"></optgroup></select>
+</div></form></div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/class-Transform.html">English</a></li>
+<li><a href="/cn/current/Manual/class-Transform.html">中文</a></li>
+<li><a href="/ja/current/Manual/class-Transform.html">日本語</a></li>
+<li><a href="/kr/current/Manual/class-Transform.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="working-with-gameobjects.html">GameObjects</a></li>
+<li><a href="transforms-landing.html">Transforms</a></li>
+<li>Introduction to transforms</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="transforms-landing.html"></a></span><div class="tip">Transforms</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="transformhandle-landing.html"></a></span><div class="tip">Using unmanaged API for transform operations</div>
+</div>
+</div></div>
+<div id="_leavefeedback"></div>
+<h1>Introduction to transforms</h1>
+<!--BeginSwitchLink--><a href='../ScriptReference/Transform.html' title='Go to Transform page in the Scripting Reference' class='switch-link gray-btn sbtn left'>Switch to Scripting</a><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Every GameObject has a <strong>Transform</strong> component attached, which you can’t remove. Every <strong>Transform</strong> component stores a GameObject’s <a href="../ScriptReference/Transform-localPosition.html">local position</a>, <a href="../ScriptReference/Transform-localRotation.html">local rotation</a>, <a href="../ScriptReference/Transform-localScale.html">local scale</a> and <a href="../ScriptReference/Transform-parent.html">parenting state</a>. Unity uses these local values relative to the GameObject’s parent transform to compute its position, rotation, and scale in a world space.</p>
+
+<figure>
+<img src="../uploads/Main/TransformExample4.png" alt="The Transform component">
+<figcaption>The Transform component</figcaption>
+</figure>
+
+<p><a id="parent" aria-hidden="true"></a></p>
+
+<h2>Parent and child relationship</h2>
+
+<p>You can group GameObjects into parent-child hierarchies:</p>
+
+<ul>
+<li>A GameObject which has other GameObjects connected to it becomes a parent.</li>
+<li>A GameObject which is connected to another GameObject becomes a child.</li>
+</ul>
+
+<p>A child GameObject takes on its parent GameObject’s transform properties, so it moves, rotates, and scales exactly as its parent does. Child GameObjects can have child GameObjects of their own. A GameObject can have multiple child GameObjects, but only one parent GameObject.</p>
+
+<figure>
+<img src="../uploads/Main/parenting-in-hierarchy-window.png" alt="Child 1 and Child 2 are the child GameObjects of Parent. Child 3 is a child GameObject of Child 2, and a descendant GameObject of Parent.">
+<figcaption>Child 1 and Child 2 are the child GameObjects of Parent. Child 3 is a child GameObject of Child 2, and a descendant GameObject of Parent.</figcaption>
+</figure>
+
+<p>To learn more about parent-child relationships, refer to <a href="hierarchy-parent-child.html">Parent-child relationships in the Hierarchy window</a>.</p>
+
+<h2 id="local-and-world-space">Local and world space</h2>
+
+<p>Every GameObject has a <strong>Position</strong>, <strong>Rotation</strong>, and <strong>Scale</strong> in two spaces:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Space name</strong></th>
+	<th style="text-align:left;"><strong>Space description</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><a href="../ScriptReference/Space.World.html">World space</a></td>
+	<td style="text-align:left;">World space refers to the position of a GameObject relative to the origin point (0, 0, 0) of the x-, y-, and z-axes of the scene. The <code>transform.position</code> property gives a GameObject’s current position in world space.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="../ScriptReference/Space.Self.html">Local space</a></td>
+	<td style="text-align:left;">Local space refers to the position of an object relative to its parent GameObject, including any rotation and scale of the parent GameObject. The <code>transform.localPosition</code> property gives a GameObject’s current position in local space, which is relative to the parent GameObject if there’s one. If a GameObject has no parent, its <code>transform.localPosition</code> is the same as its <code>transform.position</code>.</td>
+</tr>
+</tbody>
+</table>
+
+<p>For example, a scene has two GameObjects that have the following parent-child relationships:</p>
+
+<ul>
+<li>The parent GameObject has a Transform component with a (0.5, 0.5, 0.5) position, no rotation, and a (1, 1, 1) scale.</li>
+<li>The child GameObject has a Transform component with a (1, 1, 1) position, no rotation, and a (1, 1, 1) scale.</li>
+</ul>
+
+<p>In this case, the child GameObject has a local space position of (1, 1, 1), and a world space position of (1.5, 1.5, 1.5) because it takes on the parent’s transform properties.</p>
+
+<figure>
+<img src="../uploads/Main/class-Transform-Combined.png" alt="Parent and child in the Scene view. The parent is a blue cube and the child is a white sphere.">
+<figcaption>Parent and child in the Scene view. The parent is a blue cube and the child is a white sphere.</figcaption>
+</figure>
+
+<p>
+<strong>Tip</strong>: Before you add a child GameObject to another GameObject, set the position and rotation of the parent GameObject’s transform to (0, 0, 0), and its scale to (1, 1, 1). In this case, the local coordinates of the child’s transform are the same as the global coordinates. This makes it easier to ensure the child transform is in the right position.</p>
+
+<p>For more information about local and world space, refer to <a href="../ScriptReference/Space.html">the <code>Space</code> API reference</a>.</p>
+
+<h2>TransformHandle API</h2>
+
+<p>TransformHandle API allows you to interact with transforms using an unmanaged struct, which makes it compatible with the Burst compiler. To learn more about <code>TransformHandle</code> API, refer to <a href="transformhandle-landing.html">Using unmanaged API for transform operations</a>.</p>
+
+<h2>Edit transforms in the Editor</h2>
+
+<p>In 2D space, you can manipulate transforms on the x-axis or the y-axis only. In 3D space, you can manipulate transforms on the x-axis, y-axis, and z-axis. In Unity, these axes are represented by the colors red, green, and blue respectively.</p>
+
+<p>
+<strong>Tip</strong>: You can change the colors of the Transform axes via the <a href="preferences-colors.html">Colors preferences</a>. To do this, go to <strong>Edit</strong> &gt; <strong>Preferences</strong> &gt; <strong>Colors</strong> (macOS: <strong>Unity</strong> &gt; <strong>Settings</strong> &gt; <strong>Colors</strong>) in the main menu.</p>
+
+<figure>
+<img src="../uploads/Main/TransformExample2.png" alt="A Transform showing the color-coding of the axes">
+<figcaption>A Transform showing the color-coding of the axes</figcaption>
+</figure>
+
+<p>There are two primary ways you can edit a Transform’s properties in the Unity Editor:</p>
+
+<ul>
+<li>In the <span class="tooltip" tabindex="0" ><a href="UsingTheSceneView.html">Scene view</a><span class="tooltiptext">An interactive view into the world you are creating. You use the Scene View to select and position scenery, characters, cameras, lights, and all other types of Game Object. <a class="tooltipMoreInfoLink" aria-label="Navigate to more info about UsingTheSceneView.html" href="UsingTheSceneView.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#SceneView" aria-label="Go to glossary anchor for SceneView">Glossary</a></span></span></span>.</li>
+<li>In the <a href="UsingTheInspector.html">Inspector window</a>.</li>
+</ul>
+
+<p>To learn more about editing transforms in the Editor, refer to <a href="PositioningGameObjects.html">Position GameObjects</a>.</p>
+
+<h2>Change a transform from a script</h2>
+
+<p>You can manipulate transforms from a script by using the <a href="../ScriptReference/GameObject-transform.html"><code>transform</code></a> property of the GameObject. The following example illustrates some basic operations to manipulate the transform values of a parent and child GameObject. To use it, attach the script to a GameObject, and assign a parent GameObject and its child GameObject in the Inspector. If you set up the GameObjects as in the <a href="#local-and-world-space">Local and world space</a> example, the child’s position in world space changes from (1.5, 1.5, 1.5) to (1.5, 2, 2).</p>
+
+<pre><code class="lang-cs">public class TransformExample : MonoBehaviour
+{
+    [SerializeField] GameObject parent;
+    [SerializeField] GameObject child;
+
+    void Start()
+    {
+        SetPosition();
+    }
+
+    void SetPosition()
+    {
+        Debug.Log($&quot;Parent World position is: {parent.transform.position} before movement.&quot; +
+                  $&quot;Child World position is: {child.transform.position} before movement.&quot;);
+
+        //Access and assign a copy of the parent World position value to Vector3.
+        var parentWorldPosition = parent.transform.position;
+        //Access and assign a copy of the child  World position value to Vector3.
+        var childWorldPosition = child.transform.position;
+
+        //Access and assign a copy of the child Local position value to Vector3.
+        var childLocalPosition = child.transform.localPosition;
+        //Modify the childLocalPosition y and z values.
+        childLocalPosition += new Vector3(0, (float)0.5, (float)0.5);
+
+        //Apply a new Vector3 value to the child transform local position.
+        //You can't directly assign the value to the axis. To assign the value, you must use Vector3.
+        //Assigning the value directly, such as child.transform.localPosition.y = 0, causes compiler error CS1612.
+        child.transform.localPosition = childLocalPosition;
+
+        Debug.Log($&quot;Parent World position is: {parent.transform.position} after movement.&quot; +
+                  $&quot;Child World position is: {child.transform.position} after movement.&quot;);
+    }
+}
+</code></pre>
+
+<p>
+<strong>Note</strong>: Don’t set <a href="../ScriptReference/Transform-position.html"><code>transform.position</code></a> on a GameObject that has a <span class="tooltip" tabindex="0" ><a href="class-Rigidbody.html">Rigidbody</a><span class="tooltiptext">A component that allows a GameObject to be affected by simulated gravity and other forces. <a class="tooltipMoreInfoLink" aria-label="Navigate to more info about class-Rigidbody.html" href="class-Rigidbody.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Rigidbody" aria-label="Go to glossary anchor for Rigidbody">Glossary</a></span></span></span> component when <a href="../ScriptReference/Rigidbody-isKinematic.html"><code>Rigidbody.isKinematic</code></a> is set to <code>false</code>. Use the <a href="../ScriptReference/Rigidbody.MovePosition.html"><code>Rigidbody.MovePosition</code></a> method instead. When a GameObject has a Rigidbody component that’s not kinematic, the physics engine controls its position and rotation. Setting <code>transform.position</code> directly bypasses the physics simulation and can cause unexpected behavior, such as GameObjects that teleport or miss collisions with other GameObjects.</p>
+
+<p>For a complete reference of every member of the <code>Transform</code> class and usage examples, refer to the <a href="../ScriptReference/Transform.html"><code>Transform</code></a> API reference.</p>
+
+<h2>Properties</h2>
+
+<p>The following table describes the properties of the Transform component in the Inspector window:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Property:</strong></th>
+	<th style="text-align:left;"><strong>Function:</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Position</strong></td>
+	<td style="text-align:left;">Position of the Transform in the x, y, and z coordinates.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Rotation</strong></td>
+	<td style="text-align:left;">Rotation of the Transform around the x-axis, y-axis, and z-axis, measured in degrees.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Scale</strong></td>
+	<td style="text-align:left;">Scale of the Transform along the x-axis, y-axis, and z-axis. The value 1 is the original size (the size at which you imported the GameObject).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Enable Constrained Proportions</strong></td>
+	<td style="text-align:left;">Force the scale to maintain its current proportions, so that changing one axis changes the other two axes. Disabled by default.</td>
+</tr>
+</tbody>
+</table>
+
+<p>Unity measures the <strong>Position</strong>, <strong>Rotation</strong> and <strong>Scale</strong> values of a Transform relative to the Transform’s parent. If the Transform has no parent, Unity measures the properties in world space.</p>
+
+<h2>Transforms and scale</h2>
+
+<p>The Scale property of the Transform determines the difference between the size of a mesh in your modeling application and the size of that mesh in Unity. The mesh’s size in Unity (and therefore the Transform’s scale) is important, especially during physics simulation. By default, the physics engine assumes that one unit in world space corresponds to one meter (1 m). If a GameObject is large, it can appear to fall slowly. The simulation is correct because you’re watching a large GameObject fall a great distance.</p>
+
+<p>Three factors affect the Scale of your GameObject:</p>
+
+<ul>
+<li>The size of your mesh in your 3D modeling application.</li>
+<li>The <strong>Mesh Scale Factor</strong> setting in the GameObject’s <strong>Import Settings</strong>.</li>
+<li>The Scale values of your Transform component.</li>
+</ul>
+
+<p>Don’t adjust the Scale of your GameObject in the Transform component. If you create your models at real-life scale, you won’t have to change your Transform’s Scale. You can also adjust the scale at which your mesh is imported because some optimizations occur based on the import size. Do this in the <strong>Import settings</strong> for your individual mesh. Instantiating a GameObject that has an adjusted Scale value can decrease performance.</p>
+
+<p>Never set any Scale axis to 0 in the Transform component. Doing so can cause undefined results for math calculations, such as NaN (Not a Number) values in rendering, which leads to incorrect graphical artifacts on screen.</p>
+
+<p>Changing the Scale affects the position of child Transforms. For example, scaling the Transform of the parent GameObject to (0, 0, 0) positions all child Transforms at (0, 0, 0) relative to the Transform of the parent GameObject.</p>
+
+<h2>Non-uniform scaling</h2>
+
+<p>Non-uniform scaling is when the Scale in a Transform has different values for x, y, and z, for example (2, 4, 2). In contrast, uniform scaling has the same value for x, y, and z, for example (3, 3, 3). Non-uniform scaling can be useful in a few specific cases but it behaves differently to uniform scaling:</p>
+
+<ul>
+<li>Some components don’t fully support non-uniform scaling. For example, some components have a circular or spherical element defined by a radius property, such as Sphere Collider, Capsule Collider, Light, and Audio Source. This means the circular shape remains circular under non-uniform scaling instead of elliptical.</li>
+<li>If a child GameObject has a non-uniformly scaled parent GameObject and is rotated relative to that parent GameObject, it might appear skewed. There are components that support simple non-uniform scaling but that don’t work correctly when skewed like this. For example, a skewed Box Collider doesn’t match the shape of the rendered mesh accurately.</li>
+<li>A child GameObject of a non-uniformly scaled parent GameObject doesn’t have its scale automatically updated when it rotates. As a result, the child GameObject’s shape might appear to change abruptly when you update the scale, for example, if the child GameObject is detached from the parent GameObject.</li>
+</ul>
+
+<h2>Additional resources</h2>
+
+<ul>
+<li><a href="PositioningGameObjects.html">Position GameObjects</a></li>
+<li><a href="GridSnapping.html">Scene view grid snapping</a></li>
+<li><a href="hierarchy-parent-child.html">Parent-child relationships in the Hierarchy window</a></li>
+<li><a href="class-Quaternion.html">Controlling rotation with the Quaternion class</a></li>
+<li><a href="transformhandle-landing.html">Using unmanaged API for transform operations</a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="transforms-landing.html"></a></span><div class="tip">Transforms</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="transformhandle-landing.html"></a></span><div class="tip">Using unmanaged API for transform operations</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 79827756. Built on: 2026-11-13.</div>
+<div class="menu">
+<a href="https://learn.unity.com/">Tutorials</a><a href="https://answers.unity3d.com">Community Answers</a><a href="https://support.unity3d.com/hc/en-us">Knowledge Base</a><a href="https://forum.unity3d.com">Forums</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">Terms of use</a><a href="https://unity.com/legal">Legal</a><a href="https://unity.com/legal/privacy-policy">Privacy Policy</a><a href="https://unity.com/legal/cookie-policy">Cookies</a><a href="https://unity.com/legal/docs-terms">Documentation Terms of Use</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

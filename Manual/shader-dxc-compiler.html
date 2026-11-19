@@ -1,0 +1,232 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: 'en-us', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Compile shaders with the DirectX 12 compiler</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="author" content="Unity Technologies">
+<meta property="relative-path-to-manual" content="">
+<meta property="version-switcher-versions-with-this-page" content="Versions with this page:">
+<meta property="version-switcher-versions-without-this-page" content="Versions without this page:">
+<meta property="version-switcher-supported" content="Supported">
+<meta property="version-switcher-legacy" content="Legacy">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<link rel="canonical" href="https://docs.unity3d.com/6000.6/Documentation/Manual/shader-dxc-compiler.html">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="/StaticFilesConfig/UnityVersionsInfo.js"></script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js?ts=20261113"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js?ts=20261113"></script><script type="text/javascript" src="../StaticFilesManual/js/image-comp.js?ts=20261113"></script><script type="text/javascript" src="docdata/toc.js?ts=20261113"></script><script type="text/javascript" src="docdata/global_toc.js?ts=20261113"></script><link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css?ts=20261113">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/icons.css?ts=20261113">
+<link rel="stylesheet" href="../StaticFilesManual/css/prism.css">
+<script src="../StaticFilesManual/js/prism.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><script src="../StaticFilesManual/js/jquery.sidebar.min.js"></script><link rel="stylesheet" href="../StaticFilesManual/css/mobileoptimisation.css">
+<script src="../StaticFilesManual/js/mobileoptimisation.js"></script>
+</head>
+<body>
+<div id="DocsAnalyticsData" data-area="none" data-pagetype="manual"></div>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity.com/">unity.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                                Version: <b>Unity 6.6</b> (6000.6)
+                                <div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+<ul id="OtherVersionsContentUl"></ul>
+<div id="otherVersionsLegend"><ul>
+<li>
+<div id="supportedColour" class="legendBox"></div>Supported</li>
+<li>
+<div id="notFoundColour" class="legendBox"></div>Legacy</li>
+</ul></div>
+</div>
+<div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+</div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/shader-dxc-compiler.html">English</a></li>
+<li><a href="/cn/current/Manual/shader-dxc-compiler.html">中文</a></li>
+<li><a href="/ja/current/Manual/shader-dxc-compiler.html">日本語</a></li>
+<li><a href="/kr/current/Manual/shader-dxc-compiler.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div>
+<div class="mobileLogo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc" id="customScrollbar">
+<h2>Unity Manual</h2>
+<div class="search-form sidebar-search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" id="mobileSearchBtn" class="submit" value="Search">
+</form></div>
+<div class="toggle version-number sidebar-version-switcher" id="VersionNumber" data-target=".otherversionscontent"><form id="otherVersionsContentMobileForm"><div class="ui-field-contain">
+<label for="select-native-4">Version: Unity 6.6</label><select name="select-native-4" id="versionsSelectMobile"><option>Select a different version</option>
+<optgroup id="versionsWithThisPageMobile" label="Versions with this page"></optgroup>
+<optgroup id="versionsWithoutThisPageMobile" label="Versions without this page"></optgroup></select>
+</div></form></div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/shader-dxc-compiler.html">English</a></li>
+<li><a href="/cn/current/Manual/shader-dxc-compiler.html">中文</a></li>
+<li><a href="/ja/current/Manual/shader-dxc-compiler.html">日本語</a></li>
+<li><a href="/kr/current/Manual/shader-dxc-compiler.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="materials-and-shaders.html">Materials and shaders</a></li>
+<li><a href="Shaders.html">Custom shaders</a></li>
+<li><a href="shader-troubleshooting.html">Troubleshooting shaders</a></li>
+<li><a href="shader-reducing.html">Reducing the size or number of shaders</a></li>
+<li>Compile shaders with the DirectX 12 compiler</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="shader-compilation.html"></a></span><div class="tip">Shader compilation</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="shader-variants-landing.html"></a></span><div class="tip">Reducing shader variants</div>
+</div>
+</div></div>
+<div id="_leavefeedback"></div>
+<h1>Compile shaders with the DirectX 12 compiler</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>By default, Unity compiles shaders using the DirectX 11 (DX11) compiler FXC. To speed up compilation and use the latest shader features on some platforms, use the DirectX 12 (DX12) compiler DXC instead.</p>
+
+<p>
+<strong>Note</strong>: DXC in Unity is supported only on <a href="Windows.html">Windows</a> platforms using the DX12 graphics API. On Vulkan and Metal platforms, DXC support in Unity is experimental and not ready for production use. DXC isn’t compatible with DX11.</p>
+
+<p>Using DXC has the following advantages over FXC:</p>
+
+<ul>
+<li>DXC supports shader model 6 features such as 16-bit data types and wave operations.</li>
+<li>The shaders compile more quickly.</li>
+<li>The compiled shaders are smaller.</li>
+<li>The compiled shaders work better with external GPU debugging and profiling tools such as <a href="DebuggingShadersWithPIX.html">Microsoft PIX</a> and <a href="RenderDocIntegration.html">RenderDoc</a>.</li>
+</ul>
+
+<p>For more information about the different shader compilers, refer to <a href="shader-compilation.html">shader compilation</a>.</p>
+
+<h2>Enable the DXC compiler for all shaders on Windows platforms</h2>
+
+<p>If you build your project for Windows platforms and use the DirectX 12 (DX12) graphics API, you can enable the DXC compiler for all shaders.</p>
+
+<p>
+<strong>Important</strong>: This is recommended if you build only for DX12. If you build for both DX11 and DX12, Unity compiles two sets of shaders by using FXC for DX11 and DXC for DX12.</p>
+
+<p>Follow these steps:</p>
+
+<ol>
+<li>Open the <strong>Build Profiles</strong> window. For more information, refer to <a href="build-profiles.html">Introduction to build profiles</a>.</li>
+<li>Select a Windows platform profile, or create a new one.</li>
+<li>Add <strong>Graphics Settings</strong>. For more information, refer to <a href="build-profiles-reference.html">Build Profiles window reference</a>.</li>
+<li>In the <strong>Shader Build Settings</strong> section, open the <strong>Shader Compiler Backend Selection</strong> dropdown.</li>
+<li>Select <strong>Add</strong> (<strong>+</strong>).</li>
+<li>Set <strong>Graphics API</strong> to <strong>Direct3D12</strong>.</li>
+<li>Set <strong>Compiler</strong> to <strong>DirectX 12 Compiler (DXC)</strong>.</li>
+</ol>
+
+<p>For more information about the DirectX graphics APIs, refer to <a href="UsingDX11GL3Features.html">DirectX</a>.</p>
+
+<h2>Use a specific compiler for a shader pass</h2>
+
+<p>To use either the FXC or DXC compiler for a specific shader pass in a custom shader on any platform, add one of the following <code>#pragma</code> directives to the shader code:</p>
+
+<ul>
+<li>
+<code>#pragma use_dxc</code> to use the DXC compiler for the shader pass.</li>
+<li>
+<code>#pragma never_use_dxc</code> to use the FXC compiler for the shader pass.</li>
+</ul>
+
+<p>To restrict the directive to specific platforms or graphics APIs, add the platform or graphics API name after the directive. For example, <code>#pragma use_dxc d3d12</code>. For a full list of names, refer to <a href="SL-ShaderCompilationAPIs.html">Set the graphics API or platform for a shader</a>.</p>
+
+<p>The <code>#pragma</code> directives override the value you set in your build profile.</p>
+
+<p>For more information about <code>#pragma</code> directives, refer to <a href="writing-shader-programs-pragma-directives.html">Pass information to shader compilers in HLSL</a>.</p>
+
+<h2>Upgrade shaders for the DXC compiler on Windows</h2>
+
+<p>Unity’s built-in shaders are already compatible with the DXC compiler.</p>
+
+<p>If you have <a href="writing-custom-shaders.html">custom shaders</a>, make the following changes to make sure they’re compatible with the DXC compiler:</p>
+
+<ol>
+<li>If you need to modify a value from a constant buffer, copy it into a local variable first. DXC doesn’t allow you to write directly to constant buffer variables.</li>
+<li>Replace the <code>COLOR</code> semantic with <code>SV_Target</code>.</li>
+<li>Replace the <code>POSITION</code> semantic with <code>SV_Position</code>.</li>
+<li>Replace the <code>VFACE</code> float semantic with the <code>SV_IsFrontFace</code> boolean.</li>
+<li>Replace implicit vector truncation statements with explicit statements. For example, instead of <code>float a = uv.xy</code>, use <code>float a = uv.x</code> or <code>float a = uv.y</code>.</li>
+<li>If you use <code>Texture2DMS</code> to declare a multisampled texture, make sure you include a sample count. For example <code>Texture2DMS&lt;float4, 4&gt;</code> instead of only <code>Texture2DMS&lt;float4&gt;</code>.</li>
+<li>If you declare an unordered access view (UAV) resource such as <code>RWBuffer</code>, add <code>: register(uN)</code> to the declaration, where <code>N</code> is the index in your <a href="../ScriptReference/Graphics.SetRandomWriteTarget.html">Graphics.SetRandomWriteTarget</a> call.</li>
+<li>Don’t declare resources such as <code>StructuredBuffer</code> in the argument list of a shader method. Declare them outside the method instead.</li>
+</ol>
+
+<p>You might also need to make changes to your shader code based on the following:</p>
+
+<ul>
+<li>DXC calculates <code>atan2(0,0)</code> as π ÷ 2, but FXC calculates it as NaN.</li>
+<li>DXC calculates <code>round(0.5)</code> as 0.0, but FXC calculates it as 1.0 for constants and 0.0 for non-constants.</li>
+</ul>
+
+<p>For a full list of HLSL differences between the two compilers, refer to <a href="https://github.com/microsoft/DirectXShaderCompiler/wiki/Porting-shaders-from-FXC-to-DXC">Porting shaders from FXC to DXC</a> on the Microsoft website.</p>
+
+<h2>Additional resources</h2>
+
+<ul>
+<li><a href="SL-ShaderCompileTargets.html">Set a shader to require GPU features</a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="shader-compilation.html"></a></span><div class="tip">Shader compilation</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="shader-variants-landing.html"></a></span><div class="tip">Reducing shader variants</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 79827756. Built on: 2026-11-13.</div>
+<div class="menu">
+<a href="https://learn.unity.com/">Tutorials</a><a href="https://answers.unity3d.com">Community Answers</a><a href="https://support.unity3d.com/hc/en-us">Knowledge Base</a><a href="https://forum.unity3d.com">Forums</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">Terms of use</a><a href="https://unity.com/legal">Legal</a><a href="https://unity.com/legal/privacy-policy">Privacy Policy</a><a href="https://unity.com/legal/cookie-policy">Cookies</a><a href="https://unity.com/legal/docs-terms">Documentation Terms of Use</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

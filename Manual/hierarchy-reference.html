@@ -1,0 +1,352 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: 'en-us', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Hierarchy window reference</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="author" content="Unity Technologies">
+<meta property="relative-path-to-manual" content="">
+<meta property="version-switcher-versions-with-this-page" content="Versions with this page:">
+<meta property="version-switcher-versions-without-this-page" content="Versions without this page:">
+<meta property="version-switcher-supported" content="Supported">
+<meta property="version-switcher-legacy" content="Legacy">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<link rel="canonical" href="https://docs.unity3d.com/6000.6/Documentation/Manual/hierarchy-reference.html">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="/StaticFilesConfig/UnityVersionsInfo.js"></script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js?ts=20261113"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js?ts=20261113"></script><script type="text/javascript" src="../StaticFilesManual/js/image-comp.js?ts=20261113"></script><script type="text/javascript" src="docdata/toc.js?ts=20261113"></script><script type="text/javascript" src="docdata/global_toc.js?ts=20261113"></script><link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css?ts=20261113">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/icons.css?ts=20261113">
+<link rel="stylesheet" href="../StaticFilesManual/css/prism.css">
+<script src="../StaticFilesManual/js/prism.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><script src="../StaticFilesManual/js/jquery.sidebar.min.js"></script><link rel="stylesheet" href="../StaticFilesManual/css/mobileoptimisation.css">
+<script src="../StaticFilesManual/js/mobileoptimisation.js"></script>
+</head>
+<body>
+<div id="DocsAnalyticsData" data-area="none" data-pagetype="manual"></div>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity.com/">unity.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                                Version: <b>Unity 6.6</b> (6000.6)
+                                <div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+<ul id="OtherVersionsContentUl"></ul>
+<div id="otherVersionsLegend"><ul>
+<li>
+<div id="supportedColour" class="legendBox"></div>Supported</li>
+<li>
+<div id="notFoundColour" class="legendBox"></div>Legacy</li>
+</ul></div>
+</div>
+<div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+</div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/hierarchy-reference.html">English</a></li>
+<li><a href="/cn/current/Manual/hierarchy-reference.html">中文</a></li>
+<li><a href="/ja/current/Manual/hierarchy-reference.html">日本語</a></li>
+<li><a href="/kr/current/Manual/hierarchy-reference.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div>
+<div class="mobileLogo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc" id="customScrollbar">
+<h2>Unity Manual</h2>
+<div class="search-form sidebar-search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" id="mobileSearchBtn" class="submit" value="Search">
+</form></div>
+<div class="toggle version-number sidebar-version-switcher" id="VersionNumber" data-target=".otherversionscontent"><form id="otherVersionsContentMobileForm"><div class="ui-field-contain">
+<label for="select-native-4">Version: Unity 6.6</label><select name="select-native-4" id="versionsSelectMobile"><option>Select a different version</option>
+<optgroup id="versionsWithThisPageMobile" label="Versions with this page"></optgroup>
+<optgroup id="versionsWithoutThisPageMobile" label="Versions without this page"></optgroup></select>
+</div></form></div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/hierarchy-reference.html">English</a></li>
+<li><a href="/cn/current/Manual/hierarchy-reference.html">中文</a></li>
+<li><a href="/ja/current/Manual/hierarchy-reference.html">日本語</a></li>
+<li><a href="/kr/current/Manual/hierarchy-reference.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="unity-editor.html">Unity Editor interface</a></li>
+<li><a href="editor-windows-views-reference.html">Unity Editor windows and views reference</a></li>
+<li><a href="hierarchy-window.html">Hierarchy window</a></li>
+<li>Hierarchy window reference</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="configure-hierarchy-window.html"></a></span><div class="tip">Configure the Hierarchy window</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="UsingTheSceneView.html"></a></span><div class="tip">Scene view reference</div>
+</div>
+</div></div>
+<div id="_leavefeedback"></div>
+<h1>Hierarchy window reference</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Explore the settings and functions in the <strong>Hierarchy</strong> window to view and organize items in your scene.</p>
+
+<p>For more information about managing GameObjects in the <strong>Hierarchy</strong> window, refer to <a href="Hierarchy.html">Manage GameObjects in the Hierarchy window</a>.</p>
+
+<p>To review Editor preferences that can affect the <strong>Hierarchy</strong> window, refer to the <a href="preferences-general.html#hierarchy-window">General tab of the Preferences window</a>.</p>
+
+<p><a id="icons-in-the-hierarchy-window" aria-hidden="true"></a></p>
+
+<h2>Icons in the Hierarchy window</h2>
+
+<p>The <strong>Hierarchy</strong> window uses a variety of icons to indicate the type, attached components, visibility, and pickability of items in your scene.</p>
+
+<h3>GameObject icon priority</h3>
+
+<p>By default, the Unity Editor displays an icon next to the name of each GameObject in the <strong>Hierarchy</strong> window based on the components attached to that GameObject. You can quickly review which components are in your scene by glancing at the icons next to each GameObject.</p>
+
+<p>You can control which types of icons display in the <strong>Hierarchy</strong> window with the <strong>GameObject Icons</strong> setting in the <a href="preferences-general.html#hierarchy-window">General tab of the Preferences window</a>. For example, you can display:</p>
+
+<ul>
+<li>Custom icons and icons taken from components.</li>
+<li>Component icons only.</li>
+<li>The default GameObject icon only.</li>
+</ul>
+
+<p>Which icon the Editor displays next to the GameObject name in the <strong>Hierarchy</strong> window follows this order of priority:</p>
+
+<ol>
+<li>
+<strong>Custom icon</strong>: Any icon you assign to the GameObject in the <strong>Inspector</strong> window. For more information, refer to <a href="InspectorAssignIcons.html">Assign icons to inspected items</a>.</li>
+<li>
+<strong>Prefab icon</strong>: A prefab icon if the GameObject is a prefab instance root. If the prefab is a prefab variant, the Editor displays the prefab variant icon. If the prefab is a prefab model, the Editor displays the prefab model icon.</li>
+<li>
+<strong>Component icon</strong>: The icon of the first component listed after the Transform or Rect Transform component in the <strong>Inspector</strong> window. For example, if you have a GameObject with a Transform component and then a Mesh Renderer component, the <strong>Hierarchy</strong> window displays the Mesh Renderer icon next to the GameObject name.</li>
+<li>
+<strong>Transform icon</strong>: If the GameObject has no other components attached to it, it displays the Transform or Rect Transform icon. Every GameObject has a Transform or Rect Transform component, so this icon is always available.</li>
+</ol>
+
+<h3>GameObject and prefab icons</h3>
+
+<p>You can identify the following types of items using these icons in the <strong>Hierarchy</strong> window.</p>
+
+<p>This list isn’t exhaustive. In many contexts, the <strong>Hierarchy</strong> window displays the icon of the first component listed after the Transform or Rect Transform component that is attached to the GameObject in the <strong>Inspector</strong> window.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Item</strong></th>
+	<th style="text-align:left;"><strong>Icon</strong></th>
+	<th style="text-align:left;"><strong>Description</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">GameObject</td>
+	<td style="text-align:left;"><img src="../uploads/Main/GameObject-icon.png" alt="The icon for a GameObject is an outline of a cube."></td>
+	<td style="text-align:left;">The foundational building blocks of all items in a scene. GameObjects are containers for components, which provide functionality. In the <strong>Hierarchy</strong> window, the default GameObject icon only displays if you have set the <strong>GameObject Icons</strong> setting in the <a href="preferences-general.html#hierarchy-window">General tab of the Preferences window</a> to <strong>Do not change GameObject icons</strong>. Otherwise, what icon displays is determined by the components attached to the GameObject, whether you have selected a custom icon for the GameObject, or whether the GameObject is a prefab. For more information, refer to <a href="GameObjects.html">Introduction to GameObjects</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Prefab</td>
+	<td style="text-align:left;"><img src="../uploads/Main/Prefab-icon.png" alt="The icon for a prefab is a blue cube."></td>
+	<td style="text-align:left;">Prefabs are assets that act as a template for specific items in your scene. When you edit a prefab asset, updates are applied to all instances of that asset that appear in your scene. For more information, refer to <a href="Prefabs.html">Introduction to prefabs</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Prefab variant</td>
+	<td style="text-align:left;"><img src="../uploads/Main/PrefabVariant-icon.png" alt="The icon for a prefab variant is a blue cube with one side shaded gray."></td>
+	<td style="text-align:left;">A prefab variant inherits properties from a base prefab asset but overrides some of those properties with different values. Essentially, it’s a new prefab that’s based on an original. Editing the base prefab also updates the variant, except for properties that are already changed in the variant. For more information, refer to <a href="PrefabVariants.html">Create variations of prefabs</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Prefab model</td>
+	<td style="text-align:left;"><img src="../uploads/Main/PrefabModel-icon.png" alt="The icon for a prefab model is a blue cube with one side gray and a line cut into the top."></td>
+	<td style="text-align:left;">Prefab models are prefabs that are imported from other 3D modeling software. Prefab models can contain skeletons, materials, meshes, animations, and more.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a id="scene-visibility-icons" aria-hidden="true"></a></p>
+
+<h3>Scene visibility icons</h3>
+
+<p>The scene visibility status controls whether the GameObject is hidden or displayed in the <strong>Scene</strong> view. You can toggle visibility on and off in the <strong>Visibility</strong> column of the <strong>Hierarchy</strong> window. For more information, refer to <a href="SceneVisibility.html">Scene visibility</a>.</p>
+
+<p>The following visibility states are available.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">State</th>
+	<th style="text-align:left;">Icon</th>
+	<th style="text-align:left;">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">Visible</td>
+	<td style="text-align:left;"><img src="../uploads/Main/SceneViewVisibility-icon.png" alt="The icon for a visible GameObject is an eye."></td>
+	<td style="text-align:left;">The GameObject and all its child GameObjects are visible in the scene. This is the default status for a new GameObject. This status icon is visible only when you hover over the GameObject.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Hidden</td>
+	<td style="text-align:left;"><img src="../uploads/Main/Hidden-icon.png" alt="The icon for a hidden GameObject is an eye with a strikethrough."></td>
+	<td style="text-align:left;">The GameObject and all its child GameObjects are hidden in the scene.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Visible parent</td>
+	<td style="text-align:left;"><img src="../uploads/Main/VisibleParent-icon.png" alt="The icon for a visible parent GameObject is an eye with a dot underneath the right corner."></td>
+	<td style="text-align:left;">The GameObject is visible in the scene, but one or more of its child GameObjects are hidden.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Hidden parent</td>
+	<td style="text-align:left;"><img src="../uploads/Main/Hidden-parent-icon.png" alt="The icon for a hidden parent GameObject is an eye with a dot underneath the right corner and a strikethrough."></td>
+	<td style="text-align:left;">The GameObject is hidden in the scene, but one or more of its child GameObjects are visible.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a id="scene-pickability-icons" aria-hidden="true"></a></p>
+
+<h3>Scene pickability icons</h3>
+
+<p>The scene pickability status controls whether you can select the GameObject in the <strong>Scene</strong> view. You can toggle pickability on and off in the <strong>Picking</strong> column of the <strong>Hierarchy</strong> window. For more information, refer to <a href="ScenePickingControls.html">Control which GameObjects are selectable in the Scene view</a>.</p>
+
+<p>The following pickability states are available.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">State</th>
+	<th style="text-align:left;">Icon</th>
+	<th style="text-align:left;">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">Pickable</td>
+	<td style="text-align:left;"><img src="../uploads/Main/Pickable-icon.png" alt="The icon for a pickable GameObject is a hand with pointing finger."></td>
+	<td style="text-align:left;">You can select the GameObject, and any of its child GameObjects, in the <strong>Scene</strong> view. This is the default status for a new GameObject. This status icon is visible only when you hover over the GameObject.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Not pickable</td>
+	<td style="text-align:left;"><img src="../uploads/Main/Not-pickable-icon.png" alt="The icon for a not pickable GameObject is a hand with pointing finger with a strikethrough."></td>
+	<td style="text-align:left;">You can’t select the GameObject, or any of its child GameObjects, in the <strong>Scene</strong> view.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Pickable parent</td>
+	<td style="text-align:left;"><img src="../uploads/Main/Pickable-parent-icon.png" alt="The icon for a pickable parent GameObject is a hand with pointing finger with a dot underneath the right corner."></td>
+	<td style="text-align:left;">You can select the GameObject in the <strong>Scene</strong> view, but you can’t select one or more of its child GameObjects.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Not pickable parent</td>
+	<td style="text-align:left;"><img src="../uploads/Main/Not-pickable-parent-icon.png" alt="The icon for a not pickable parent GameObject is a hand with pointing finger with a dot underneath the right corner and a strikethrough."></td>
+	<td style="text-align:left;">You can’t select the GameObject in the <strong>Scene</strong> view, but you can select one or more of its child GameObjects.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="OverrideIndicator" aria-hidden="true"></a></p>
+
+<h2>Prefab override indicators</h2>
+
+<p>When you edit a prefab instance in a scene, Unity displays an indicator next to the parent GameObject in the <strong>Hierarchy</strong> window. This indicator highlights any prefab that has non-default override values in any of its child GameObjects. The override indicator appears as a blue line on the left side of the margin and is identical to the instance override in the <strong>Inspector</strong> window.</p>
+
+<p>To open the <a href="prefab-instance-inspector-reference.html">Overrides dropdown</a> directly from the <strong>Hierarchy</strong> window, select the override indicator. For more information, refer to <a href="PrefabInstanceOverrides.html">Override prefab instances</a>.</p>
+
+<figure>
+<img src="../uploads/Main/hierarchy-override-indicator.png" alt="In the Hierarchy window, an override indicator marks each parent prefab that has child GameObjects with non-default override values.">
+<figcaption>In the Hierarchy window, an override indicator marks each parent prefab that has child GameObjects with non-default override values.</figcaption>
+</figure>
+
+<p>GameObjects you add to the prefab instance have a plus badge on their icons.</p>
+
+<figure>
+<img src="../uploads/Main/prefab-instance-hierarchy-override.png" alt="The Hierarchy window showing a prefab instance with a child GameObject called Banana added as an override.">
+<figcaption>The Hierarchy window showing a prefab instance with a child GameObject called Banana added as an override.</figcaption>
+</figure>
+
+<p>For more information about editing prefabs from the <strong>Hierarchy</strong> window, refer to <a href="EditingInPrefabMode.html">Edit prefab assets</a>.</p>
+
+<h2>Additional resources</h2>
+
+<ul>
+<li><a href="Hierarchy.html">Manage GameObjects in the Hierarchy window</a></li>
+<li><a href="SceneVisibility.html">Scene visibility</a></li>
+<li><a href="ScenePickingControls.html">Control which GameObjects are selectable in the Scene view</a></li>
+<li><a href="PrefabInstanceOverrides.html">Override prefab instances</a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="configure-hierarchy-window.html"></a></span><div class="tip">Configure the Hierarchy window</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="UsingTheSceneView.html"></a></span><div class="tip">Scene view reference</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 79827756. Built on: 2026-11-13.</div>
+<div class="menu">
+<a href="https://learn.unity.com/">Tutorials</a><a href="https://answers.unity3d.com">Community Answers</a><a href="https://support.unity3d.com/hc/en-us">Knowledge Base</a><a href="https://forum.unity3d.com">Forums</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">Terms of use</a><a href="https://unity.com/legal">Legal</a><a href="https://unity.com/legal/privacy-policy">Privacy Policy</a><a href="https://unity.com/legal/cookie-policy">Cookies</a><a href="https://unity.com/legal/docs-terms">Documentation Terms of Use</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

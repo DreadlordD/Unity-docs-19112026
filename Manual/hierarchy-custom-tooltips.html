@@ -1,0 +1,451 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: 'en-us', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Display custom tooltips in the Hierarchy window</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="author" content="Unity Technologies">
+<meta property="relative-path-to-manual" content="">
+<meta property="version-switcher-versions-with-this-page" content="Versions with this page:">
+<meta property="version-switcher-versions-without-this-page" content="Versions without this page:">
+<meta property="version-switcher-supported" content="Supported">
+<meta property="version-switcher-legacy" content="Legacy">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<link rel="canonical" href="https://docs.unity3d.com/6000.6/Documentation/Manual/hierarchy-custom-tooltips.html">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="/StaticFilesConfig/UnityVersionsInfo.js"></script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js?ts=20261113"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js?ts=20261113"></script><script type="text/javascript" src="../StaticFilesManual/js/image-comp.js?ts=20261113"></script><script type="text/javascript" src="docdata/toc.js?ts=20261113"></script><script type="text/javascript" src="docdata/global_toc.js?ts=20261113"></script><link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css?ts=20261113">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/icons.css?ts=20261113">
+<link rel="stylesheet" href="../StaticFilesManual/css/prism.css">
+<script src="../StaticFilesManual/js/prism.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><script src="../StaticFilesManual/js/jquery.sidebar.min.js"></script><link rel="stylesheet" href="../StaticFilesManual/css/mobileoptimisation.css">
+<script src="../StaticFilesManual/js/mobileoptimisation.js"></script>
+</head>
+<body>
+<div id="DocsAnalyticsData" data-area="none" data-pagetype="manual"></div>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity.com/">unity.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                                Version: <b>Unity 6.6</b> (6000.6)
+                                <div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+<ul id="OtherVersionsContentUl"></ul>
+<div id="otherVersionsLegend"><ul>
+<li>
+<div id="supportedColour" class="legendBox"></div>Supported</li>
+<li>
+<div id="notFoundColour" class="legendBox"></div>Legacy</li>
+</ul></div>
+</div>
+<div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+</div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/hierarchy-custom-tooltips.html">English</a></li>
+<li><a href="/cn/current/Manual/hierarchy-custom-tooltips.html">中文</a></li>
+<li><a href="/ja/current/Manual/hierarchy-custom-tooltips.html">日本語</a></li>
+<li><a href="/kr/current/Manual/hierarchy-custom-tooltips.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div>
+<div class="mobileLogo"><a aria-label="go to the homepage" href="https://docs.unity3d.com"></a></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc" id="customScrollbar">
+<h2>Unity Manual</h2>
+<div class="search-form sidebar-search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" aria-label="Search manual documentation" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" id="mobileSearchBtn" class="submit" value="Search">
+</form></div>
+<div class="toggle version-number sidebar-version-switcher" id="VersionNumber" data-target=".otherversionscontent"><form id="otherVersionsContentMobileForm"><div class="ui-field-contain">
+<label for="select-native-4">Version: Unity 6.6</label><select name="select-native-4" id="versionsSelectMobile"><option>Select a different version</option>
+<optgroup id="versionsWithThisPageMobile" label="Versions with this page"></optgroup>
+<optgroup id="versionsWithoutThisPageMobile" label="Versions without this page"></optgroup></select>
+</div></form></div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/hierarchy-custom-tooltips.html">English</a></li>
+<li><a href="/cn/current/Manual/hierarchy-custom-tooltips.html">中文</a></li>
+<li><a href="/ja/current/Manual/hierarchy-custom-tooltips.html">日本語</a></li>
+<li><a href="/kr/current/Manual/hierarchy-custom-tooltips.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="extending-the-editor.html">Extending the Unity Editor</a></li>
+<li><a href="hierarchy-extend-lp.html">Extending the Hierarchy window</a></li>
+<li>Display custom tooltips in the Hierarchy window</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="hierarchy-add-row-elements.html"></a></span><div class="tip">Add labels and buttons to Hierarchy rows</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="hierarchy-add-column.html"></a></span><div class="tip">Add a custom column to the Hierarchy window</div>
+</div>
+</div></div>
+<div id="_leavefeedback"></div>
+<h1>Display custom tooltips in the Hierarchy window</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Display your own information when you hover over an item in the <strong>Hierarchy</strong> window. For example, you can attach notes to GameObjects in your scene and read them in the <strong>Hierarchy</strong> window without selecting each GameObject.</p>
+
+<p>By default, GameObjects in the <strong>Hierarchy</strong> window have a tooltip only while you search, when the tooltip displays the path of the GameObject, starting with its scene. To set your own tooltip, subscribe to the <a href="../ScriptReference/Unity.Hierarchy.Editor.HierarchyWindow-GetTooltip.html"><code>HierarchyWindow.GetTooltip</code></a> event. The Unity Editor raises the event when you hover over an item, and passes the default tooltip text in a <code>StringBuilder</code>. After your event handler returns, the Editor displays the text that the <code>StringBuilder</code> contains.</p>
+
+<h2>Prerequisites</h2>
+
+<p>Before you begin, complete the following steps:</p>
+
+<ul>
+<li>Disable the <a href="class-EditorManager.html#hierarchy"><strong>Use Legacy Hierarchy</strong></a> setting, if you enabled it. For more information, refer to <a href="configure-hierarchy-window.html#switch-to-the-legacy-hierarchy-window">Switch to the legacy Hierarchy window</a>.</li>
+<li>In the <strong>Project</strong> window, create the <code>Assets/Scripts</code> and <code>Assets/Editor/HierarchyExtensions</code> folders. The scripts on this page load their style sheets from <code>Assets/Editor/HierarchyExtensions</code>.</li>
+</ul>
+
+<h2>Create the Notes component</h2>
+
+<p>The scripts on this page display the text of a <code>Notes</code> component in the tooltip.</p>
+
+<p>To create the <code>Notes</code> component:</p>
+
+<ol>
+<li><p>In the <code>Assets/Scripts</code> folder, right-click and select <strong>Create</strong> &gt; <strong>Scripting</strong> &gt; <strong>Empty C# Script</strong>.</p></li>
+<li><p>Name the script <code>Notes.cs</code>.</p></li>
+<li>
+<p>Open the script and replace its contents with the following code:</p>
+
+<pre><code class="lang-cs">using UnityEngine;
+
+// Stores a note about a GameObject.
+public class Notes : MonoBehaviour
+{
+    [TextArea(3, 10)]
+    public string note;
+}
+</code></pre>
+</li>
+<li><p>Save the script.</p></li>
+<li><p>In the <strong>Hierarchy</strong> window, select a GameObject.</p></li>
+<li><p>In the <strong>Inspector</strong> window, select <strong>Add Component</strong> &gt; <strong>Scripts</strong> &gt; <strong>Notes</strong>.</p></li>
+<li><p>In the <strong>Note</strong> field of the <strong>Notes</strong> component, enter some text.</p></li>
+</ol>
+
+<p>The selected GameObject now has a note. The scripts on this page ignore empty notes.</p>
+
+<h2>Display a note as a tooltip</h2>
+
+<p>The following script sets the tooltip of each GameObject that has a note.</p>
+
+<p>To display a note as a tooltip:</p>
+
+<ol>
+<li><p>In the <code>Assets/Editor/HierarchyExtensions</code> folder, right-click and select <strong>Create</strong> &gt; <strong>Scripting</strong> &gt; <strong>Empty C# Script</strong>.</p></li>
+<li><p>Name the script <code>NotesTooltip.cs</code>.</p></li>
+<li>
+<p>Open the script and replace its contents with the following code:</p>
+
+<pre><code class="lang-cs">using System.Text;
+using Unity.Hierarchy;
+using Unity.Hierarchy.Editor;
+using UnityEditor;
+using UnityEngine;
+
+public static class NotesTooltip
+{
+    [InitializeOnLoadMethod]
+    static void Initialize()
+    {
+        HierarchyWindow.GetTooltip += OnGetTooltip;
+    }
+
+    // Runs when you hover over an item. The tooltip parameter contains the default tooltip text.
+    static void OnGetTooltip(HierarchyWindow window, HierarchyView view, HierarchyViewItem item, StringBuilder tooltip, bool filtering)
+    {
+        if (item.Handler is not HierarchyGameObjectHandler handler)
+        {
+            return;
+        }
+
+        GameObject gameObject = handler.GetGameObject(item.Node);
+        if (gameObject == null || !gameObject.TryGetComponent&lt;Notes&gt;(out Notes notes) || string.IsNullOrWhiteSpace(notes.note))
+        {
+            return;
+        }
+
+        // Replace the default tooltip with the note.
+        tooltip.Clear();
+        tooltip.Append(&quot;Note: &quot;);
+        tooltip.Append(notes.note);
+    }
+}
+</code></pre>
+
+<p>
+<code>OnGetTooltip</code> returns without changes if the GameObject has no note, so other GameObjects keep the default tooltip. Otherwise, it clears the default tooltip and adds the note.</p>
+</li>
+<li><p>Save the script.</p></li>
+<li><p>In the <strong>Hierarchy</strong> window, hover over a GameObject that has a note.</p></li>
+</ol>
+
+<p>The tooltip displays the note.</p>
+
+<h2>Keep the default tooltip during a search</h2>
+
+<p>When you search in the <strong>Hierarchy</strong> window, the default tooltip displays the path of each GameObject, starting with its scene. The path is useful, because search results don’t display parent GameObjects. The previous script clears the path. The <code>filtering</code> parameter of <code>GetTooltip</code> is <code>true</code> when the <strong>Hierarchy</strong> window displays search results.</p>
+
+<p>The following script keeps the default tooltip during a search and adds the note after it.</p>
+
+<p>To keep the default tooltip during a search:</p>
+
+<ol>
+<li>
+<p>Replace the contents of <code>NotesTooltip.cs</code> with the following code:</p>
+
+<pre><code class="lang-cs">using System.Text;
+using Unity.Hierarchy;
+using Unity.Hierarchy.Editor;
+using UnityEditor;
+using UnityEngine;
+
+public static class NotesTooltip
+{
+    [InitializeOnLoadMethod]
+    static void Initialize()
+    {
+        HierarchyWindow.GetTooltip += OnGetTooltip;
+    }
+
+    static void OnGetTooltip(HierarchyWindow window, HierarchyView view, HierarchyViewItem item, StringBuilder tooltip, bool filtering)
+    {
+        if (item.Handler is not HierarchyGameObjectHandler handler)
+        {
+            return;
+        }
+
+        GameObject gameObject = handler.GetGameObject(item.Node);
+        if (gameObject == null || !gameObject.TryGetComponent&lt;Notes&gt;(out Notes notes) || string.IsNullOrWhiteSpace(notes.note))
+        {
+            return;
+        }
+
+        if (filtering)
+        {
+            // During a search, keep the default tooltip and add the note after it.
+            tooltip.Append(&quot;\nNote: &quot;);
+            tooltip.Append(notes.note);
+        }
+        else
+        {
+            tooltip.Clear();
+            tooltip.Append(&quot;Note: &quot;);
+            tooltip.Append(notes.note);
+        }
+    }
+}
+</code></pre>
+</li>
+<li><p>Save the script.</p></li>
+<li><p>In the <strong>Hierarchy</strong> window search field, enter the name of a GameObject that has a note.</p></li>
+<li><p>Hover over the GameObject in the search results.</p></li>
+</ol>
+
+<p>During a search, the tooltip displays the default tooltip followed by the note. When you clear the search, the tooltip displays only the note.</p>
+
+<h2>Indicate which GameObjects have notes</h2>
+
+<p>Tooltips appear only when you hover over an item. To indicate which GameObjects have a note without hovering, display an indicator over the item icon. <a href="../ScriptReference/Unity.Hierarchy.HierarchyViewItem-OverlayIcon.html"><code>OverlayIcon</code></a> is an element over the icon of a row that you can use to indicate the state of an item, such as a prefab with a broken reference.</p>
+
+<p>To add an information icon over the icon of each GameObject that has a note:</p>
+
+<ol>
+<li><p>In the <code>Assets/Editor/HierarchyExtensions</code> folder, right-click and select <strong>Create</strong> &gt; <strong>UI Toolkit</strong> &gt; <strong>Style Sheet (USS)</strong>.</p></li>
+<li><p>Name the style sheet <code>NotesTooltip.uss</code>.</p></li>
+<li>
+<p>Open the style sheet and replace its contents with the following code:</p>
+
+<pre><code class="lang-css">.hierarchy-item__notes-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: 8px 8px;
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-image: var(--unity-icons-console_entry_info_small);
+}
+</code></pre>
+
+<p>The style sheet places a small built-in information icon in the upper-left corner of the item icon.</p>
+</li>
+<li>
+<p>Replace the contents of <code>NotesTooltip.cs</code> with the following code:</p>
+
+<pre><code class="lang-cs">using System.Text;
+using Unity.Hierarchy;
+using Unity.Hierarchy.Editor;
+using UnityEditor;
+using UnityEngine;
+using UnityEngine.UIElements;
+
+public static class NotesTooltip
+{
+    const string k_StyleSheetPath = &quot;Assets/Editor/HierarchyExtensions/NotesTooltip.uss&quot;;
+    const string k_NotesOverlayUssClassName = &quot;hierarchy-item__notes-overlay&quot;;
+
+    [InitializeOnLoadMethod]
+    static void Initialize()
+    {
+        HierarchyWindow.BindView += OnBindView;
+        HierarchyWindow.BindViewItem += OnBindViewItem;
+        HierarchyWindow.GetTooltip += OnGetTooltip;
+    }
+
+    static void OnBindView(HierarchyWindow window, HierarchyView view)
+    {
+        StyleSheet styleSheet = AssetDatabase.LoadAssetAtPath&lt;StyleSheet&gt;(k_StyleSheetPath);
+        view.styleSheets.Add(styleSheet);
+    }
+
+    static void OnBindViewItem(HierarchyWindow window, HierarchyView view, HierarchyViewItem item)
+    {
+        if (item.Handler is not HierarchyGameObjectHandler handler)
+        {
+            item.OverlayIcon.Q(className: k_NotesOverlayUssClassName)?.RemoveFromHierarchy();
+            return;
+        }
+
+        GameObject gameObject = handler.GetGameObject(item.Node);
+        bool hasNote = TryGetNote(gameObject, out _);
+        VisualElement notesOverlay = item.OverlayIcon.Q(className: k_NotesOverlayUssClassName);
+
+        // Add an indicator over the icon of items that have a note. Remove any indicator
+        // that a reused row kept from an item that has a note.
+        if (hasNote &amp;&amp; notesOverlay == null)
+        {
+            notesOverlay = new VisualElement();
+            notesOverlay.AddToClassList(k_NotesOverlayUssClassName);
+            item.OverlayIcon.Add(notesOverlay);
+        }
+        else if (!hasNote &amp;&amp; notesOverlay != null)
+        {
+            notesOverlay.RemoveFromHierarchy();
+        }
+    }
+
+    static void OnGetTooltip(HierarchyWindow window, HierarchyView view, HierarchyViewItem item, StringBuilder tooltip, bool filtering)
+    {
+        if (item.Handler is not HierarchyGameObjectHandler handler)
+        {
+            return;
+        }
+
+        GameObject gameObject = handler.GetGameObject(item.Node);
+        if (!TryGetNote(gameObject, out string note))
+        {
+            return;
+        }
+
+        if (filtering)
+        {
+            tooltip.Append(&quot;\nNote: &quot;);
+            tooltip.Append(note);
+        }
+        else
+        {
+            tooltip.Clear();
+            tooltip.Append(&quot;Note: &quot;);
+            tooltip.Append(note);
+        }
+    }
+
+    static bool TryGetNote(GameObject gameObject, out string note)
+    {
+        note = null;
+        if (gameObject == null || !gameObject.TryGetComponent&lt;Notes&gt;(out Notes notes) || string.IsNullOrWhiteSpace(notes.note))
+        {
+            return false;
+        }
+
+        note = notes.note;
+        return true;
+    }
+}
+</code></pre>
+
+<p>
+<code>OnBindViewItem</code> adds the indicator to <code>OverlayIcon</code> if the GameObject has a note, and removes any indicator that the row kept from an item it displayed before. Both event handlers use <code>TryGetNote</code> to read the note.</p>
+</li>
+<li><p>Save the script.</p></li>
+</ol>
+
+<p>GameObjects that have a note display an information icon over their icon in the <strong>Hierarchy</strong> window, and display the note when you hover over them.</p>
+
+<p>The icon updates when the <strong>Hierarchy</strong> window binds the row again, for example when you expand or collapse a parent GameObject or scroll the row into view. If you add or clear a note, the icon can be out of date until then. The tooltip always shows the current note.</p>
+
+<figure>
+<img src="../uploads/Main/hierarchy-notes-indicator.png" alt="The Hierarchy window with a small information icon in the upper-left corner of the icon of the Goblin GameObject, which has a note.">
+<figcaption>The Hierarchy window with a small information icon in the upper-left corner of the icon of the Goblin GameObject, which has a note.</figcaption>
+</figure>
+
+<h2>Additional resources</h2>
+
+<ul>
+<li><a href="hierarchy-extend-lp.html">Extending the Hierarchy window</a></li>
+<li><a href="hierarchy-add-row-elements.html">Add labels and buttons to Hierarchy rows</a></li>
+<li><a href="Hierarchy.html">Manage GameObjects in the Hierarchy window</a></li>
+<li><a href="../ScriptReference/Unity.Hierarchy.Editor.HierarchyWindow-GetTooltip.html"><code>HierarchyWindow.GetTooltip</code></a></li>
+<li><a href="../ScriptReference/Unity.Hierarchy.HierarchyViewItem.html"><code>HierarchyViewItem</code></a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a aria-label="go to the previous page" href="hierarchy-add-row-elements.html"></a></span><div class="tip">Add labels and buttons to Hierarchy rows</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a aria-label="go to the next page" href="hierarchy-add-column.html"></a></span><div class="tip">Add a custom column to the Hierarchy window</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright ©2005-2026 Unity Technologies. All rights reserved. Built from job ID 79827756. Built on: 2026-11-13.</div>
+<div class="menu">
+<a href="https://learn.unity.com/">Tutorials</a><a href="https://answers.unity3d.com">Community Answers</a><a href="https://support.unity3d.com/hc/en-us">Knowledge Base</a><a href="https://forum.unity3d.com">Forums</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">Terms of use</a><a href="https://unity.com/legal">Legal</a><a href="https://unity.com/legal/privacy-policy">Privacy Policy</a><a href="https://unity.com/legal/cookie-policy">Cookies</a><a href="https://unity.com/legal/docs-terms">Documentation Terms of Use</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>
